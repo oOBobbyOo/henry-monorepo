@@ -10,6 +10,8 @@
     "format": "pnpm -F @henry/lint run lint:fix"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@henry/lint": "workspace:*",
     "@types/node": "^22.10.6",
     "husky": "^9.1.7",
@@ -18,7 +20,7 @@
   },
   "packageManager": "pnpm@9.11.0",
   "lint-staged": {
-    "**/*.{ts,tsx}": [
+    "**/*.{ts,tsx,md}": [
       "pnpm format"
     ]
   }

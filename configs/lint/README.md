@@ -8,14 +8,16 @@ pnpm add -D husky
 pnpm exec husky init
 
 ## pre-commit
+### v8
 pnpm exec husky add .husky/pre-commit "pnpm exec lint-staged"
-
+### v9
 echo "pnpm exec lint-staged" > .husky/pre-commit
 
 ## commit-msg
+### v8
 pnpm exec husky add .husky/commit-msg "pnpm exec commitlint --edit $1"
-
-echo "pnpm exec commitlint --edit $1" > .husky/commit-msg
+### v9
+echo "pnpm exec commitlint --edit \$1" > .husky/commit-msg
 ```
 
 ```bash
