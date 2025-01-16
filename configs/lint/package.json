@@ -1,0 +1,30 @@
+{
+  "name": "@henry/lint",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "commitlint.config.mjs",
+    "eslint.config.mjs",
+    "prettier.config.mjs"
+  ],
+  "scripts": {
+    "lint:eslint": "eslint . --fix",
+    "lint:prettier": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint:fix": "pnpm run lint:prettier && pnpm run lint:eslint"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.14.0",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint-react/eslint-plugin": "^1.23.2",
+    "@unocss/eslint-plugin": "^65.4.0",
+    "eslint": "^9.18.0",
+    "eslint-plugin-format": "^1.0.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
+    "prettier": "^3.2.5"
+  }
+}
