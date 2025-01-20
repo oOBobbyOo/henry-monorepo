@@ -10,9 +10,11 @@
     }
   },
   "dependencies": {
-    "dayjs": "^1.11.13"
+    "dayjs": "^1.11.13",
+    "nprogress": "^0.2.0"
   },
   "devDependencies": {
-    "@henry/tsconfig": "workspace:*"
+    "@henry/tsconfig": "workspace:*",
+    "@types/nprogress": "^0.2.3"
   }
 }
