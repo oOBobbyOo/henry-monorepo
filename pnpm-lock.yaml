@@ -80,6 +80,9 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0
     devDependencies:
+      '@henry/lint':
+        specifier: workspace:*
+        version: link:../../configs/lint
       '@henry/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig

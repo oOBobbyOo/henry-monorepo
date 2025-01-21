@@ -6,16 +6,13 @@ const DATE_FORMAT = 'YYYY-MM-DD'
 
 export const dateUtil = dayjs
 
-export const formatToDateTime = (
+export function formatToDateTime(
   date: ConfigType,
-  format = DATE_TIME_FORMAT
-): string => {
+  format = DATE_TIME_FORMAT,
+): string {
   return dateUtil(date).format(format)
 }
 
-export const formatToDate = (
-  date: ConfigType,
-  format = DATE_FORMAT
-): string => {
+export function formatToDate(date: ConfigType, format = DATE_FORMAT): string {
   return dateUtil(date).format(format)
 }

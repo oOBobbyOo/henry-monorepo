@@ -1,5 +1,5 @@
 // @see https://github.com/rstacruz/nprogress
-import type NProgress from "nprogress"
+import type NProgress from 'nprogress'
 
 /**
  * @description 创建一个NProgress实例
@@ -13,7 +13,7 @@ async function loadNProgress() {
   if (nProgressInstance) {
     return nProgressInstance
   }
-  nProgressInstance = await import("nprogress")
+  nProgressInstance = await import('nprogress')
   nProgressInstance.configure({
     showSpinner: true,
     speed: 300,
