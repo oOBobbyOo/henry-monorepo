@@ -29,6 +29,9 @@ importers:
       turbo:
         specifier: ^2.3.3
         version: 2.3.3
+      typescript:
+        specifier: ^5.7.3
+        version: 5.7.3
 
   configs/lint:
     devDependencies:
@@ -68,6 +71,9 @@ importers:
       prettier:
         specifier: ^3.2.5
         version: 3.2.5
+      typescript:
+        specifier: ^5.7.3
+        version: 5.7.3
 
   configs/tsconfig: {}
 
