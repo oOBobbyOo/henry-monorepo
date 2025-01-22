@@ -4,6 +4,13 @@
   "private": true,
   "license": "MIT",
   "files": [
-    "base.json"
-  ]
+    "base.json",
+    "library.json",
+    "nuxt.json",
+    "vite.json",
+    "vue.json"
+  ],
+  "devDependencies": {
+    "@vue/tsconfig": "^0.7.0"
+  }
 }
