@@ -1,2 +1,5 @@
 export * from './date'
 export * from './env'
+export * from './file'
+export * from './is'
+export * from './nprogress'
