@@ -201,10 +201,12 @@ class HttpClient {
   // 文件上传
   async upload<T>(
     url: string,
-    data: FormData,
+    file: File,
     config?: AxiosRequestConfig,
   ): Promise<T> {
-    return this.request<T>({ method: 'POST', url, data, ...config })
+    const formData = new FormData()
+    formData.append('file', file)
+    return this.request<T>({ method: 'POST', url, data: formData, ...config })
   }
 }
 
