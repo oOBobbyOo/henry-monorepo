@@ -1,5 +1,5 @@
 {
-  "name": "@henry/utils",
+  "name": "@henry/types",
   "type": "module",
   "version": "0.0.0",
   "license": "MIT",
@@ -9,14 +9,9 @@
       "default": "./src/index.ts"
     }
   },
-  "dependencies": {
-    "dayjs": "^1.11.13",
-    "nprogress": "^0.2.0"
-  },
   "devDependencies": {
     "@henry/lint": "workspace:*",
     "@henry/tsconfig": "workspace:*",
-    "@henry/types": "workspace:*",
-    "@types/nprogress": "^0.2.3"
+    "vite": "^6.1.0"
   }
 }
