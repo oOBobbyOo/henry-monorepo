@@ -1,0 +1,19 @@
+{
+  "name": "@henry/request",
+  "type": "module",
+  "version": "0.0.0",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "axios": "^1.7.9"
+  },
+  "devDependencies": {
+    "@henry/lint": "workspace:*",
+    "@henry/tsconfig": "workspace:*"
+  }
+}
