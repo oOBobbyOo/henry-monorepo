@@ -193,6 +193,7 @@ class HttpClient {
       method: 'GET',
       url,
       responseType: 'blob',
+      headers: { 'Content-Type': 'application/octet-stream' },
       ...config,
     })
     return response
@@ -206,7 +207,13 @@ class HttpClient {
   ): Promise<T> {
     const formData = new FormData()
     formData.append('file', file)
-    return this.request<T>({ method: 'POST', url, data: formData, ...config })
+    return this.request<T>({
+      method: 'POST',
+      url,
+      data: formData,
+      headers: { 'Content-Type': 'multipart/form-data' },
+      ...config,
+    })
   }
 }
 
