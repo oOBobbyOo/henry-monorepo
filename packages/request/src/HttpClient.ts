@@ -7,19 +7,25 @@ import type {
 } from 'axios'
 import axios from 'axios'
 
-interface RequestConfig extends AxiosRequestConfig {
-  cache?: boolean
-  cacheTTL?: number
-  useAbortController?: boolean
+// 定义拦截器类型
+type RequestInterceptor = (
+  config: InternalAxiosRequestConfig,
+) => InternalAxiosRequestConfig
+type ResponseInterceptor = (response: AxiosResponse) => AxiosResponse
+type ErrorInterceptor = (error: AxiosError) => Promise<AxiosError>
+
+// 定义缓存项接口
+interface CacheItem<T = any> {
+  data: T
+  expireTime: number
 }
 
-type RequestInterceptor = (
-  config: AxiosRequestConfig,
-) => AxiosRequestConfig | Promise<AxiosRequestConfig>
-type ResponseInterceptor = (
-  response: AxiosResponse,
-) => AxiosResponse | Promise<AxiosResponse>
-type ErrorInterceptor = (error: AxiosError) => Promise<AxiosError>
+// HttpClient 配置接口
+interface HttpClientConfig extends AxiosRequestConfig {
+  cache?: boolean
+  cacheTTL?: number
+  headers?: Record<string, string>
+}
 
 class HttpClient {
   private instance: AxiosInstance
@@ -27,17 +33,15 @@ class HttpClient {
   private responseInterceptors: ResponseInterceptor[] = []
   private errorInterceptors: ErrorInterceptor[] = []
   private abortControllers: Map<string, AbortController> = new Map()
-  private cache: Map<string, AxiosResponse> = new Map()
+  private cache: Map<string, CacheItem> = new Map()
 
-  constructor(baseURL: string, defaultHeaders: Record<string, string> = {}) {
-    this.instance = axios.create({
-      baseURL,
-      headers: defaultHeaders,
-    })
-    this.initializeInterceptors()
+  constructor(private config: HttpClientConfig = {}) {
+    this.instance = axios.create(config)
+    this.setupGlobalInterceptors()
   }
 
-  private initializeInterceptors(): void {
+  // 设置全局拦截器
+  private setupGlobalInterceptors(): void {
     // 全局请求拦截器
     this.instance.interceptors.request.use(
       (config: InternalAxiosRequestConfig) => {
@@ -55,7 +59,7 @@ class HttpClient {
     // 全局响应拦截器
     this.instance.interceptors.response.use(
       (response: AxiosResponse) => {
-        return response
+        return response.data
       },
       (error: AxiosError) => {
         // 统一错误处理
@@ -67,20 +71,18 @@ class HttpClient {
     )
   }
 
+  // 获取 token
   private getToken(): string {
     return localStorage.getItem('token') || ''
   }
 
   // 生成请求唯一标识
-  private generateRequestKey(config: RequestConfig): string {
-    return [
-      config.method,
-      config.url,
-      JSON.stringify(config.params),
-      JSON.stringify(config.data),
-    ].join('|')
+  private generateRequestKey(config: HttpClientConfig): string {
+    const { method, url, params, data } = config
+    return [method, url, JSON.stringify(params), JSON.stringify(data)].join('&')
   }
 
+  // 获取 AbortController 实例
   private getAbortController(key: string): AbortController {
     if (this.abortControllers.has(key)) {
       this.abortControllers.get(key)?.abort()
@@ -91,43 +93,45 @@ class HttpClient {
   }
 
   // 添加请求拦截器
-  addRequestInterceptor(interceptor: RequestInterceptor): void {
+  public addRequestInterceptor(interceptor: RequestInterceptor): void {
     this.requestInterceptors.push(interceptor)
   }
 
   // 添加响应拦截器
-  addResponseInterceptor(interceptor: ResponseInterceptor): void {
+  public addResponseInterceptor(interceptor: ResponseInterceptor): void {
     this.responseInterceptors.push(interceptor)
   }
 
   // 添加错误拦截器
-  addErrorInterceptor(interceptor: ErrorInterceptor): void {
+  public addErrorInterceptor(interceptor: ErrorInterceptor): void {
     this.errorInterceptors.push(interceptor)
   }
 
   // 发送请求
-  private async request<T>(
-    config: AxiosRequestConfig,
-    useCache: boolean = false,
-  ): Promise<T> {
+  public async request<T>(config: HttpClientConfig): Promise<T> {
     const requestKey = this.generateRequestKey(config)
-    // 取消重复请求
-    const abortController = this.getAbortController(requestKey)
+    const cacheEnabled = config.cache ?? this.config.cache
 
-    // 检查缓存
-    if (useCache && this.cache.has(requestKey)) {
-      return this.cache.get(requestKey)?.data as T
+    // 处理缓存
+    if (config.method?.toLowerCase() === 'get' && cacheEnabled) {
+      const cacheItem = this.cache.get(requestKey)
+      if (cacheItem && cacheItem.expireTime > Date.now()) {
+        return Promise.resolve(cacheItem.data as T)
+      }
     }
+
+    // 取消重复请求
+    const controller = this.getAbortController(requestKey)
 
     try {
       // 应用实例请求拦截器
       for (const interceptor of this.requestInterceptors) {
-        config = await interceptor(config)
+        config = await interceptor(config as InternalAxiosRequestConfig)
       }
 
       const response = await this.instance.request<T>({
         ...config,
-        signal: abortController.signal,
+        signal: controller.signal,
       })
 
       // 应用实例响应拦截器
@@ -135,9 +139,13 @@ class HttpClient {
         response.data = (await interceptor(response)) as T
       }
 
-      // 缓存响应
-      if (useCache) {
-        this.cache.set(requestKey, response)
+      // 缓存处理
+      if (config.method?.toLowerCase() === 'get' && cacheEnabled) {
+        const ttl = config.cacheTTL ?? this.config.cacheTTL ?? 60000
+        this.cache.set(requestKey, {
+          data: response,
+          expireTime: Date.now() + ttl,
+        })
       }
 
       return response.data
@@ -151,68 +159,67 @@ class HttpClient {
   }
 
   // GET 请求
-  async get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
-    return this.request<T>({ method: 'GET', url, ...config })
+  public async get<T>(url: string, config?: HttpClientConfig): Promise<T> {
+    return this.request<T>({ ...config, url, method: 'GET' })
   }
 
   // POST 请求
-  async post<T>(
+  public async post<T>(
     url: string,
     data?: any,
-    config?: AxiosRequestConfig,
+    config?: HttpClientConfig,
   ): Promise<T> {
-    return this.request<T>({ method: 'POST', url, data, ...config })
+    return this.request<T>({ ...config, url, data, method: 'POST' })
   }
 
   // PUT 请求
-  async put<T>(
+  public async put<T>(
     url: string,
     data?: any,
-    config?: AxiosRequestConfig,
+    config?: HttpClientConfig,
   ): Promise<T> {
-    return this.request<T>({ method: 'PUT', url, data, ...config })
+    return this.request<T>({ ...config, url, data, method: 'PUT' })
   }
 
   // PATCH 请求
-  async patch<T>(
+  public async patch<T>(
     url: string,
     data?: any,
-    config?: AxiosRequestConfig,
+    config?: HttpClientConfig,
   ): Promise<T> {
-    return this.request<T>({ method: 'PATCH', url, data, ...config })
+    return this.request<T>({ ...config, url, data, method: 'PATCH' })
   }
 
   // DELETE 请求
-  async delete<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
-    return this.request<T>({ method: 'DELETE', url, ...config })
+  public async delete<T>(url: string, config?: HttpClientConfig): Promise<T> {
+    return this.request<T>({ ...config, url, method: 'DELETE' })
   }
 
   // 文件下载
-  async download(url: string, config?: AxiosRequestConfig): Promise<Blob> {
-    const response = await this.request<Blob>({
-      method: 'GET',
+  public async download(url: string, config?: HttpClientConfig): Promise<Blob> {
+    return this.request<Blob>({
+      ...config,
       url,
       responseType: 'blob',
+      method: 'GET',
       headers: { 'Content-Type': 'application/octet-stream' },
-      ...config,
     })
-    return response
   }
 
   // 文件上传
-  async upload<T>(
+  public async upload<T>(
     url: string,
     file: File,
-    config?: AxiosRequestConfig,
+    config?: HttpClientConfig,
   ): Promise<T> {
     const formData = new FormData()
     formData.append('file', file)
     return this.request<T>({
-      method: 'POST',
+      ...config,
       url,
       data: formData,
+      method: 'POST',
       headers: { 'Content-Type': 'multipart/form-data' },
-      ...config,
     })
   }
 }

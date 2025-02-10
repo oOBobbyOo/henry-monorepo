@@ -1,7 +1,14 @@
 import HttpClient from './HttpClient'
 
-const url = import.meta.env.VITE_API_URL
+const baseURL = import.meta.env.VITE_API_URL
 
-const request = new HttpClient(url)
+const request = new HttpClient({
+  baseURL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  cache: true,
+  cacheTTL: 30000,
+})
 
 export default request
