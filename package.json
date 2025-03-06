@@ -5,6 +5,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:nuxt": "pnpm -F @henry/nuxt-temp run dev",
     "lint": "turbo run lint",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
