@@ -9,7 +9,7 @@ import axios from 'axios'
 
 // 定义拦截器类型
 type RequestInterceptor = (
-  config: InternalAxiosRequestConfig,
+  config: InternalAxiosRequestConfig
 ) => InternalAxiosRequestConfig
 type ResponseInterceptor = (response: AxiosResponse) => AxiosResponse
 type ErrorInterceptor = (error: AxiosError) => Promise<AxiosError>
@@ -79,7 +79,9 @@ class HttpClient {
   // 生成请求唯一标识
   private generateRequestKey(config: HttpClientConfig): string {
     const { method, url, params, data } = config
-    return [method, url, JSON.stringify(params), JSON.stringify(data)].join('&')
+    return [method, url, JSON.stringify(params), JSON.stringify(data)].join(
+      '&',
+    )
   }
 
   // 获取 AbortController 实例
