@@ -1,11 +1,12 @@
 {
   "name": "henry-monorepo",
   "private": true,
-  "packageManager": "pnpm@10.5.2",
+  "packageManager": "pnpm@10.6.2",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "dev:nuxt": "pnpm -F @henry/nuxt-temp run dev",
+    "dev:antd-admin": "pnpm -F @henry/react-antd-admin run dev",
+    "dev:nuxt-temp": "pnpm -F @henry/nuxt-temp run dev",
     "lint": "turbo run lint",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
