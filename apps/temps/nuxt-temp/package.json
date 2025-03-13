@@ -9,14 +9,14 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^3.15.4",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "nuxt": "catalog:prod",
+    "vue": "catalog:prod",
+    "vue-router": "catalog:prod"
   },
   "devDependencies": {
-    "@unocss/nuxt": "66.1.0-beta.3",
-    "@unocss/preset-web-fonts": "66.1.0-beta.3",
-    "unocss": "66.1.0-beta.3",
-    "vue-tsc": "^2.2.8"
+    "@unocss/nuxt": "catalog:dev",
+    "@unocss/preset-web-fonts": "catalog:dev",
+    "unocss": "catalog:dev",
+    "vue-tsc": "catalog:dev"
   }
 }

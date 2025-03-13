@@ -10,13 +10,13 @@
     }
   },
   "dependencies": {
-    "dayjs": "^1.11.13",
-    "nprogress": "^0.2.0"
+    "dayjs": "catalog:prod",
+    "nprogress": "catalog:prod"
   },
   "devDependencies": {
     "@henry/lint": "workspace:*",
     "@henry/tsconfig": "workspace:*",
     "@henry/types": "workspace:*",
-    "@types/nprogress": "^0.2.3"
+    "@types/nprogress": "catalog:dev"
   }
 }

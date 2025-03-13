@@ -10,7 +10,7 @@
     }
   },
   "dependencies": {
-    "axios": "^1.7.9"
+    "axios": "catalog:prod"
   },
   "devDependencies": {
     "@henry/lint": "workspace:*",

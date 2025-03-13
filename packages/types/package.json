@@ -12,6 +12,6 @@
   "devDependencies": {
     "@henry/lint": "workspace:*",
     "@henry/tsconfig": "workspace:*",
-    "vite": "^6.1.0"
+    "vite": "catalog:dev"
   }
 }

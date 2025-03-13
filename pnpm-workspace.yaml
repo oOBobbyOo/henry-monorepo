@@ -2,3 +2,42 @@ packages:
   - 'apps/**'
   - 'packages/*'
   - 'configs/*'
+catalogs:
+  dev:
+    '@antfu/eslint-config': ^4.10.1
+    '@commitlint/cli': ^19.6.1
+    '@commitlint/config-conventional': ^19.6.0
+    '@eslint-react/eslint-plugin': ^1.23.2
+    '@eslint/js': ^9.21.0
+    '@types/node': ^22.10.6
+    '@types/nprogress': ^0.2.3
+    '@types/react': ^19.0.10
+    '@types/react-dom': ^19.0.4
+    '@unocss/eslint-plugin': ^65.4.0
+    '@unocss/nuxt': 66.1.0-beta.3
+    '@unocss/preset-web-fonts': 66.1.0-beta.3
+    '@vitejs/plugin-react': ^4.3.4
+    '@vue/tsconfig': ^0.7.0
+    eslint: ^9.21.0
+    eslint-plugin-format: ^1.0.1
+    eslint-plugin-react-hooks: ^5.1.0
+    eslint-plugin-react-refresh: ^0.4.19
+    globals: ^15.15.0
+    husky: ^9.1.7
+    lint-staged: ^15.3.0
+    prettier: ^3.2.5
+    turbo: ^2.4.4
+    typescript: ^5.7.3
+    typescript-eslint: ^8.24.1
+    unocss: 66.1.0-beta.3
+    vite: ^6.2.0
+    vue-tsc: ^2.2.8
+  prod:
+    axios: ^1.7.9
+    dayjs: ^1.11.13
+    nprogress: ^0.2.0
+    nuxt: ^3.15.4
+    react: ^19.0.0
+    react-dom: ^19.0.0
+    vue: ^3.5.13
+    vue-router: ^4.5.0

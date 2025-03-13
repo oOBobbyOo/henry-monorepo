@@ -11,6 +11,6 @@
     "vue.json"
   ],
   "devDependencies": {
-    "@vue/tsconfig": "^0.7.0"
+    "@vue/tsconfig": "catalog:dev"
   }
 }
