@@ -18,7 +18,7 @@
     "@types/react": "catalog:dev",
     "@types/react-dom": "catalog:dev",
     "@vitejs/plugin-react": "catalog:dev",
-    "eslint": "^9.21.0",
+    "eslint": "catalog:dev",
     "eslint-plugin-react-hooks": "catalog:dev",
     "eslint-plugin-react-refresh": "catalog:dev",
     "globals": "catalog:dev",
