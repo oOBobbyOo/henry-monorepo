@@ -1,0 +1,14 @@
+<script setup lang="ts">
+
+</script>
+
+<template>
+  <div>
+    app
+  </div>
+  <HelloWorld msg="Vite + Vue" />
+</template>
+
+<style scoped>
+
+</style>

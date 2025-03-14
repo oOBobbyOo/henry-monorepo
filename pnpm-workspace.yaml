@@ -17,6 +17,7 @@ catalogs:
     '@unocss/nuxt': 66.1.0-beta.3
     '@unocss/preset-web-fonts': 66.1.0-beta.3
     '@vitejs/plugin-react': ^4.3.4
+    '@vitejs/plugin-vue': ^5.2.1
     '@vue/tsconfig': ^0.7.0
     eslint: ^9.21.0
     eslint-plugin-format: ^1.0.1

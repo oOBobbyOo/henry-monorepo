@@ -6,6 +6,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "dev:antd-admin": "pnpm -F @henry/react-antd-admin run dev",
+    "dev:naive-admin": "pnpm -F @henry/vue-naive-admin run dev",
     "dev:nuxt-temp": "pnpm -F @henry/nuxt-temp run dev",
     "lint": "turbo run lint",
     "preinstall": "npx only-allow pnpm",
