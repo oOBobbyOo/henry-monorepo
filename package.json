@@ -11,7 +11,7 @@
     "lint": "turbo run lint",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
-    "lint:fix": "eslint . --cache --max-warnings 0 --fix"
+    "lint:fix": "eslint . --cache --max-warnings 0 --no-warn-ignored --fix"
   },
   "devDependencies": {
     "@commitlint/cli": "catalog:dev",

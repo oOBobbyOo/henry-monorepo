@@ -4,9 +4,10 @@
 
 <template>
   <div>
-    app
+    <n-button type="primary">
+      Primary
+    </n-button>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
