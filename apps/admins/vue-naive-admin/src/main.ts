@@ -5,4 +5,10 @@ import '@unocss/reset/normalize.css'
 import 'virtual:uno.css'
 import './styles/index.css'
 
-createApp(App).mount('#app')
+async function bootstrap() {
+  const app = createApp(App)
+
+  app.mount('#app')
+}
+
+bootstrap()
