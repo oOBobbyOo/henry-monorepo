@@ -15,8 +15,9 @@ catalogs:
     '@types/react': ^19.0.10
     '@types/react-dom': ^19.0.4
     '@unocss/eslint-plugin': ^65.4.0
-    '@unocss/nuxt': 66.1.0-beta.3
-    '@unocss/preset-web-fonts': 66.1.0-beta.3
+    '@unocss/nuxt': ^66.1.0-beta.5
+    '@unocss/preset-web-fonts': ^66.1.0-beta.5
+    '@unocss/reset': ^66.1.0-beta.5
     '@vitejs/plugin-react': ^4.3.4
     '@vitejs/plugin-vue': ^5.2.1
     '@vue/tsconfig': ^0.7.0
@@ -31,7 +32,7 @@ catalogs:
     turbo: ^2.4.4
     typescript: ^5.7.3
     typescript-eslint: ^8.24.1
-    unocss: 66.1.0-beta.3
+    unocss: 66.1.0-beta.5
     unplugin-auto-import: ^19.1.1
     unplugin-vue-components: ^28.4.1
     vite: ^6.2.0

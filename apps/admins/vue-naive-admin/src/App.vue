@@ -4,9 +4,7 @@
 
 <template>
   <div>
-    <n-button type="primary">
-      Primary
-    </n-button>
+    app
   </div>
 </template>
 

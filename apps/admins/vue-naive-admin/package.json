@@ -15,9 +15,13 @@
     "vue-router": "catalog:prod"
   },
   "devDependencies": {
+    "@henry/lint": "workspace:*",
+    "@unocss/preset-web-fonts": "catalog:dev",
+    "@unocss/reset": "catalog:dev",
     "@vitejs/plugin-vue": "catalog:dev",
     "@vue/tsconfig": "catalog:dev",
     "typescript": "catalog:dev",
+    "unocss": "catalog:dev",
     "unplugin-auto-import": "catalog:dev",
     "unplugin-vue-components": "catalog:dev",
     "vite": "catalog:dev",
