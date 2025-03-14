@@ -9,7 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "catalog:prod"
+    "naive-ui": "catalog:prod",
+    "pinia": "catalog:prod",
+    "vue": "catalog:prod",
+    "vue-router": "catalog:prod"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "catalog:dev",
