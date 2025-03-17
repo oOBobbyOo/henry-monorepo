@@ -1,4 +1,7 @@
+import { fileURLToPath } from 'node:url'
 import vue from '@vitejs/plugin-vue'
+
+// @see https://github.com/antfu/unocss
 import UnoCSS from 'unocss/vite'
 
 // @see https://github.com/unplugin/unplugin-auto-import
@@ -11,31 +14,39 @@ import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [
-    UnoCSS(),
-    vue(),
-    AutoImport({
-      imports: [
-        'vue',
-        'vue-router',
-        {
-          'naive-ui': [
-            'useDialog',
-            'useMessage',
-            'useNotification',
-            'useLoadingBar',
-          ],
-        },
-      ],
-      eslintrc: {
-        enabled: true,
-        filepath: './.eslintrc-auto-import.json',
-        globalsPropValue: true,
+export default defineConfig(() => {
+  return {
+    resolve: {
+      alias: {
+        '~': fileURLToPath(new URL('./', import.meta.url)),
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
-    }),
-    Components({
-      resolvers: [NaiveUiResolver()],
-    }),
-  ],
+    },
+    plugins: [
+      UnoCSS(),
+      vue(),
+      AutoImport({
+        imports: [
+          'vue',
+          'vue-router',
+          {
+            'naive-ui': [
+              'useDialog',
+              'useMessage',
+              'useNotification',
+              'useLoadingBar',
+            ],
+          },
+        ],
+        eslintrc: {
+          enabled: true,
+          filepath: './.eslintrc-auto-import.json',
+          globalsPropValue: true,
+        },
+      }),
+      Components({
+        resolvers: [NaiveUiResolver()],
+      }),
+    ],
+  }
 })

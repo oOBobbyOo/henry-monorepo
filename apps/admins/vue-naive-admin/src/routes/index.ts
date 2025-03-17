@@ -1,10 +1,11 @@
 import type { App } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter } from 'vue-router'
+import { getHistory } from './utils'
 
-const { VITE_BASE_URL } = import.meta.env
+const { VITE_ROUTE_MODE = 'web', VITE_BASE_URL } = import.meta.env
 
 export const router = createRouter({
-  history: createWebHistory(VITE_BASE_URL),
+  history: getHistory(VITE_ROUTE_MODE, VITE_BASE_URL),
   routes: [],
   scrollBehavior(to, _from, savedPosition) {
     if (savedPosition) {
