@@ -1,5 +1,5 @@
 // 根路由
-export const RootRoute = {
+const RootRoute = {
   path: '/',
   name: 'Root',
   redirect: '/dashboard',
@@ -8,18 +8,22 @@ export const RootRoute = {
   },
 }
 
-export const LoginRoute = {
+const LoginRoute = {
   path: '/login',
   name: 'Login',
+  component: () => import('@/views/login/index.vue'),
   meta: {
     title: '登录',
   },
 }
 
-export const NotFound = {
+const NotFound = {
   path: '/:pathMatch(.*)*',
   name: 'NotFound',
+  component: () => import('@/views/not-found/index.vue'),
   meta: {
     title: '找不到页面',
   },
 }
+
+export const constantRoutes = [RootRoute, LoginRoute, NotFound]
