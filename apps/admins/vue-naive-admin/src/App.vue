@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <div>
+  <n-config-provider class="wh-full">
     <router-view />
-  </div>
+  </n-config-provider>
 </template>
 
 <style scoped>
