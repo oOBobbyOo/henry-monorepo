@@ -3,9 +3,9 @@ defineOptions({ name: 'GlobalContent' })
 </script>
 
 <template>
-  <div>global-content</div>
+  <router-view v-slot="{ Component, route }">
+    <component :is="Component" :key="route.path" />
+  </router-view>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
