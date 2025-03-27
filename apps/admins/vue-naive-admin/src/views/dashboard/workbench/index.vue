@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>dashboard</div>
+  <div>workbench</div>
 </template>
 
 <style scoped>

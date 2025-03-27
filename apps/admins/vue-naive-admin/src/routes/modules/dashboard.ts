@@ -4,6 +4,7 @@ const dashboard = {
   path: '/dashboard',
   name: 'Dashboard',
   component: BasicLayout,
+  redirect: '/dashboard/analysis',
   meta: {
     title: '首页',
   },
@@ -11,9 +12,17 @@ const dashboard = {
     {
       path: 'analysis',
       name: 'Analysis',
-      component: () => import('@/views/dashboard/index.vue'),
+      component: () => import('@/views/dashboard/analysis/index.vue'),
       meta: {
         title: '分析页',
+      },
+    },
+    {
+      path: 'workbench',
+      name: 'Workbench',
+      component: () => import('@/views/dashboard/workbench/index.vue'),
+      meta: {
+        title: '工作台',
       },
     },
   ],
