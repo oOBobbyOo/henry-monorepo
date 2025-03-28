@@ -106,6 +106,9 @@ catalogs:
       specifier: ^2.2.8
       version: 2.2.8
   prod:
+    '@iconify/vue':
+      specifier: ^4.3.0
+      version: 4.3.0
     axios:
       specifier: ^1.7.9
       version: 1.8.3
@@ -217,6 +220,9 @@ importers:
       '@henry/vhooks':
         specifier: workspace:*
         version: link:../../../packages/vhooks
+      '@iconify/vue':
+        specifier: catalog:prod
+        version: 4.3.0(vue@3.5.13(typescript@5.8.2))
       naive-ui:
         specifier: catalog:prod
         version: 2.41.0(vue@3.5.13(typescript@5.8.2))
@@ -971,6 +977,11 @@ packages:
 
   '@iconify/utils@2.3.0':
     resolution: {integrity: sha512-GmQ78prtwYW6EtzXRU1rY+KwOKfz32PD7iJh6Iyqw68GiKuoZ2A6pRtzWONz5VQJbp50mEjXh/7NkumtrAgRKA==}
+
+  '@iconify/vue@4.3.0':
+    resolution: {integrity: sha512-Xq0h6zMrHBbrW8jXJ9fISi+x8oDQllg5hTDkDuxnWiskJ63rpJu9CvJshj8VniHVTbsxCg9fVoPAaNp3RQI5OQ==}
+    peerDependencies:
+      vue: '>=3'
 
   '@ioredis/commands@1.2.0':
     resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==}
@@ -6095,6 +6106,11 @@ snapshots:
       mlly: 1.7.4
     transitivePeerDependencies:
       - supports-color
+
+  '@iconify/vue@4.3.0(vue@3.5.13(typescript@5.8.2))':
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 3.5.13(typescript@5.8.2)
 
   '@ioredis/commands@1.2.0': {}
 

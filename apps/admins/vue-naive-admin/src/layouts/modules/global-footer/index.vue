@@ -3,7 +3,9 @@ defineOptions({ name: 'GlobalFooter' })
 </script>
 
 <template>
-  <div>global-footer</div>
+  <div class="layout-footer flex-center">
+    Copyright © 2025 by @henry
+  </div>
 </template>
 
 <style scoped>

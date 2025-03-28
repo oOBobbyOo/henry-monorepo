@@ -1,10 +1,10 @@
 <script setup lang='ts'>
-defineOptions({ name: 'GlobalHeader' })
+
 </script>
 
 <template>
-  <div class="layout-header">
-    global-header
+  <div class="layout-tabs">
+    global-tabs
   </div>
 </template>
 

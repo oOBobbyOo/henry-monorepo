@@ -38,6 +38,7 @@ catalogs:
     vite: ^6.2.0
     vue-tsc: ^2.2.8
   prod:
+    '@iconify/vue': ^4.3.0
     axios: ^1.7.9
     dayjs: ^1.11.13
     naive-ui: ^2.41.0

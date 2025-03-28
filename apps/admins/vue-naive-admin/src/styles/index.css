@@ -1,5 +1,2 @@
-html,
-body,
-#app {
-  height: 100%;
-}
+@import url('./variable.css');
+@import url('./global.css');

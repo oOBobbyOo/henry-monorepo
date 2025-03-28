@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@henry/vhooks": "workspace:*",
+    "@iconify/vue": "catalog:prod",
     "naive-ui": "catalog:prod",
     "pinia": "catalog:prod",
     "vue": "catalog:prod",

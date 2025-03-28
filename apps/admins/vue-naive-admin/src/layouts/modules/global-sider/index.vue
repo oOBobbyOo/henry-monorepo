@@ -3,7 +3,9 @@ defineOptions({ name: 'GlobalSider' })
 </script>
 
 <template>
-  <div>global-sider</div>
+  <div class="layout-sider">
+    global-sider
+  </div>
 </template>
 
 <style scoped></style>

@@ -5,6 +5,7 @@ import GlobalContent from '../modules/global-content/index.vue'
 import GlobalFooter from '../modules/global-footer/index.vue'
 import GlobalHeader from '../modules/global-header/index.vue'
 import GlobalSider from '../modules/global-sider/index.vue'
+import GlobalTabs from '../modules/global-tabs/index.vue'
 
 defineOptions({ name: 'BasicLayout' })
 
@@ -22,14 +23,15 @@ const appStore = useAppStore()
     >
       <GlobalSider />
     </n-layout-sider>
-    <n-layout embedded :native-scrollbar="false">
-      <n-layout-header bordered>
+    <n-layout embedded :native-scrollbar="false" content-class="min-h-full flex-col">
+      <n-layout-header bordered position="absolute" class="z-999">
         <GlobalHeader />
+        <GlobalTabs />
       </n-layout-header>
-      <n-layout-content>
+      <n-layout-content embedded class="flex-1 p-t-[116px] p-b-[64px] px-4">
         <GlobalContent />
       </n-layout-content>
-      <n-layout-footer bordered>
+      <n-layout-footer bordered position="absolute" class="z-999">
         <GlobalFooter />
       </n-layout-footer>
     </n-layout>
