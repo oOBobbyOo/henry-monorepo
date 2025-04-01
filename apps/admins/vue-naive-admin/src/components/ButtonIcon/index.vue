@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<ButtonIconProps>(), {
   icon: '',
   content: '',
   placement: 'bottom',
-  zIndex: 98,
+  zIndex: 999,
 })
 
 interface ButtonIconProps {
@@ -23,12 +23,15 @@ interface ButtonIconProps {
 <template>
   <n-tooltip :placement="placement" :z-index="zIndex" :disabled="!content">
     <template #trigger>
-      <n-button quaternary :class="`h-8 ${props.class}`" v-bind="$attrs">
+      <n-button quaternary :class="`h-9 text-size-lg ${props.class}`" v-bind="$attrs">
         <div class="flex-center gap-2">
-          <slot />
+          <slot>
+            <SvgIcon :icon="icon" />
+          </slot>
         </div>
       </n-button>
     </template>
+    {{ content }}
   </n-tooltip>
 </template>
 

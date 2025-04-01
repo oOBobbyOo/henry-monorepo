@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@henry/lint": "workspace:*",
+    "@iconify/json": "catalog:dev",
     "@unocss/preset-web-fonts": "catalog:dev",
     "@unocss/reset": "catalog:dev",
     "@vitejs/plugin-vue": "catalog:dev",

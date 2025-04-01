@@ -6,7 +6,6 @@ export default antfu(
     formatters: true,
     typescript: true,
     vue: true,
-    react: true,
     ignores: ['node_modules', 'dist', 'auto-imports.d.ts', 'compoents.d.ts'],
   },
 )
