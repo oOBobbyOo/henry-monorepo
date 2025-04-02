@@ -22,7 +22,10 @@ const { isFullscreen, toggle } = useFullscreen()
     <SiderToggler :collapsed="appStore.siderCollapse" @click="appStore.toggleSiderCollapse" />
     <div class="h-full flex-y-center justify-end">
       <FullScreen :full="isFullscreen" @click="toggle" />
-      <LangSwitch />
+      <LangSwitch
+        :lang="appStore.locale" :lang-options="appStore.localeOptions"
+        @change-lang="appStore.changeLocale"
+      />
       <DarkMode :theme-schema="themeStore.themeSchema" />
     </div>
   </div>
