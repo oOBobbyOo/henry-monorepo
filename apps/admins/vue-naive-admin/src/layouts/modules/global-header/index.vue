@@ -1,11 +1,12 @@
 <script setup lang='ts'>
 import { useAppStore } from '@/stores/modules/app'
-
 import { useThemeStore } from '@/stores/modules/theme'
+
 import { useFullscreen } from '@vueuse/core'
 
 import DarkMode from './components/DarkMode/index.vue'
 import FullScreen from './components/FullScreen/index.vue'
+import LangSwitch from './components/LangSwitch/index.vue'
 import SiderToggler from './components/SiderToggler/index.vue'
 
 defineOptions({ name: 'GlobalHeader' })
@@ -21,6 +22,7 @@ const { isFullscreen, toggle } = useFullscreen()
     <SiderToggler :collapsed="appStore.siderCollapse" @click="appStore.toggleSiderCollapse" />
     <div class="h-full flex-y-center justify-end">
       <FullScreen :full="isFullscreen" @click="toggle" />
+      <LangSwitch />
       <DarkMode :theme-schema="themeStore.themeSchema" />
     </div>
   </div>

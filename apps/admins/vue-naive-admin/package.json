@@ -17,6 +17,7 @@
     "naive-ui": "catalog:prod",
     "pinia": "catalog:prod",
     "vue": "catalog:prod",
+    "vue-i18n": "catalog:prod",
     "vue-router": "catalog:prod"
   },
   "devDependencies": {
