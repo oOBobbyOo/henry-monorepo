@@ -10,6 +10,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     ButtonIcon: typeof import('./src/components/ButtonIcon/index.vue')['default']
     DarkMode: typeof import('./src/components/DarkMode/index.vue')['default']
+    IconGridiconsFullscreen: typeof import('~icons/gridicons/fullscreen')['default']
+    IconGridiconsFullscreenExit: typeof import('~icons/gridicons/fullscreen-exit')['default']
     NButton: typeof import('naive-ui')['NButton']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NLayout: typeof import('naive-ui')['NLayout']
