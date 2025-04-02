@@ -7,6 +7,10 @@ import UnoCSS from 'unocss/vite'
 // @see https://github.com/unplugin/unplugin-auto-import
 import AutoImport from 'unplugin-auto-import/vite'
 
+// @see https://github.com/unplugin/unplugin-icons
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
+
 // @see https://github.com/unplugin/unplugin-vue-components
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
@@ -46,7 +50,17 @@ export default defineConfig(() => {
         },
       }),
       Components({
-        resolvers: [NaiveUiResolver()],
+        resolvers: [
+          NaiveUiResolver(),
+          IconsResolver({
+            componentPrefix: 'icon',
+          }),
+        ],
+      }),
+      Icons({
+        autoInstall: true,
+        compiler: 'vue3',
+        scale: 1,
       }),
     ],
   }

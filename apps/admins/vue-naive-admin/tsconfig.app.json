@@ -5,10 +5,10 @@
 
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "~/*": ["./*"]
     },
-    "types": ["vite/client"],
+    "types": ["vite/client", "unplugin-icons/types/vue", "naive-ui/volar"],
 
     /* Linting */
     "strict": true,

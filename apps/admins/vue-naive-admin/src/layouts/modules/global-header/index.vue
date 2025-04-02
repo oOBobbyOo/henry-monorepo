@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import { useAppStore } from '@/stores/modules/app'
+
 import { useThemeStore } from '@/stores/modules/theme'
 
 import DarkMode from './components/DarkMode/index.vue'

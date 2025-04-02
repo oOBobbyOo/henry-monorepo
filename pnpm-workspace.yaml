@@ -21,6 +21,7 @@ catalogs:
     '@unocss/reset': ^66.1.0-beta.5
     '@vitejs/plugin-react': ^4.3.4
     '@vitejs/plugin-vue': ^5.2.1
+    '@vue/compiler-sfc': ^3.5.13
     '@vue/tsconfig': ^0.7.0
     eslint: ^9.21.0
     eslint-plugin-format: ^1.0.1
@@ -35,6 +36,7 @@ catalogs:
     typescript-eslint: ^8.24.1
     unocss: 66.1.0-beta.5
     unplugin-auto-import: ^19.1.1
+    unplugin-icons: ^22.1.0
     unplugin-vue-components: ^28.4.1
     vite: ^6.2.0
     vue-tsc: ^2.2.8
