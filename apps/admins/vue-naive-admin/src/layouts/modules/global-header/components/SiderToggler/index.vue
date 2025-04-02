@@ -38,7 +38,7 @@ const icon = computed(() => {
 <template>
   <ButtonIcon
     :key="String(collapsed)"
-    content="折叠菜单"
+    :content="collapsed ? $t('header.expandMenu') : $t('header.collapseMenu')"
     placement="bottom-start"
   >
     <SvgIcon :icon="icon" />

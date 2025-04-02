@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import type { PopoverPlacement } from 'naive-ui'
 import { toggleDark } from '@/composables/dark'
+import { $t } from '@/locales'
 import { computed } from 'vue'
 
 defineOptions({ name: 'DarkMode' })
@@ -27,7 +28,7 @@ const content = computed(() => {
   if (!props.showTooltip)
     return ''
 
-  return '主题模式'
+  return $t('header.themeSchema')
 })
 </script>
 

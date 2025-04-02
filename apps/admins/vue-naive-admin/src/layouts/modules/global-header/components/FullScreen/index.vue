@@ -9,7 +9,7 @@ interface Props {
 </script>
 
 <template>
-  <ButtonIcon :key="String(full)" content="全屏">
+  <ButtonIcon :key="String(full)" :content="full ? $t('header.fullscreenExit') : $t('header.fullscreen')">
     <icon-gridicons-fullscreen-exit v-if="full" />
     <icon-gridicons-fullscreen v-else />
   </ButtonIcon>
