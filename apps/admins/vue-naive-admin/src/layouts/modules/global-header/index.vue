@@ -8,6 +8,7 @@ import DarkMode from './components/DarkMode/index.vue'
 import FullScreen from './components/FullScreen/index.vue'
 import LangSwitch from './components/LangSwitch/index.vue'
 import SiderToggler from './components/SiderToggler/index.vue'
+import UserAvatar from './components/UserAvatar/index.vue'
 
 defineOptions({ name: 'GlobalHeader' })
 
@@ -20,13 +21,14 @@ const { isFullscreen, toggle } = useFullscreen()
 <template>
   <div class="layout-header flex-between px-3">
     <SiderToggler :collapsed="appStore.siderCollapse" @click="appStore.toggleSiderCollapse" />
-    <div class="h-full flex-y-center justify-end">
+    <div class="h-full flex-y-center justify-end gap-1">
       <FullScreen :full="isFullscreen" @click="toggle" />
       <LangSwitch
         :lang="appStore.locale" :lang-options="appStore.localeOptions"
         @change-lang="appStore.changeLocale"
       />
       <DarkMode :theme-schema="themeStore.themeSchema" />
+      <UserAvatar />
     </div>
   </div>
 </template>

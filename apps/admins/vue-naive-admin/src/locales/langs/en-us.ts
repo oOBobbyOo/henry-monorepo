@@ -6,7 +6,8 @@ const local = {
     fullscreenExit: 'Exit Fullscreen',
     lang: 'Switch Language',
     themeSchema: 'Theme Schema',
-
+    userCenter: 'User Center',
+    logout: 'Logout',
   },
 }
 
