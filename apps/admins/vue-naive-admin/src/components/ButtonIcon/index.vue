@@ -23,7 +23,7 @@ interface ButtonIconProps {
 <template>
   <n-tooltip :placement="placement" :z-index="zIndex" :disabled="!content">
     <template #trigger>
-      <n-button quaternary :class="`h-9 text-size-lg ${props.class}`" v-bind="$attrs">
+      <n-button quaternary :class="`text-size-lg ${props.class}`" v-bind="$attrs">
         <div class="flex-center gap-2">
           <slot>
             <SvgIcon :icon="icon" />

@@ -21,13 +21,13 @@ const { isFullscreen, toggle } = useFullscreen()
 <template>
   <div class="layout-header flex-between px-3">
     <SiderToggler :collapsed="appStore.siderCollapse" @click="appStore.toggleSiderCollapse" />
-    <div class="h-full flex-y-center justify-end gap-1">
+    <div class="h-full flex-y-center justify-end gap-2">
       <FullScreen :full="isFullscreen" @click="toggle" />
       <LangSwitch
         :lang="appStore.locale" :lang-options="appStore.localeOptions"
         @change-lang="appStore.changeLocale"
       />
-      <DarkMode :theme-schema="themeStore.themeSchema" />
+      <DarkMode circle :theme-schema="themeStore.themeSchema" />
       <UserAvatar />
     </div>
   </div>

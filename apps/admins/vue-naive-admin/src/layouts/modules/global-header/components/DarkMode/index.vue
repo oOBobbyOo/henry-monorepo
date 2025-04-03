@@ -33,7 +33,7 @@ const content = computed(() => {
 </script>
 
 <template>
-  <ButtonIcon :icon="icon" :content="content" :placement="placement" @click="toggleDark" />
+  <ButtonIcon circle :icon="icon" :content="content" :placement="placement" @click="toggleDark" />
 </template>
 
 <style scoped>
