@@ -16,10 +16,10 @@ const appStore = useAppStore()
   <n-layout has-sider embedded class="wh-full">
     <n-layout-sider
       bordered
-      :collapse="appStore.siderCollapse"
       collapse-mode="width"
       :collapsed-width="64"
       :width="240"
+      :collapsed="appStore.siderCollapse"
     >
       <GlobalSider />
     </n-layout-sider>
