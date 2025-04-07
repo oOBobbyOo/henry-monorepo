@@ -1,9 +1,21 @@
-import type { RouteRecordRaw } from 'vue-router'
+import 'vue-router'
 
-export type IRouterMap = 'web' | 'hash' | 'memory'
+declare module 'vue-router' {
+  interface RouteMeta {
+    title?: string // 标题
+    i18nKey?: string // 多语言
+    icon?: string // 图标
+    order?: number // 序号
+    requiresAuth?: boolean // 身份验证
+    hideInMenu?: boolean // 菜单隐藏
+    keepAlive?: boolean // 缓存
+    transition?: string // 页面动画
+    href?: string // 外链
+  }
 
-export type IRouteRecordRaw = RouteRecordRaw
+  type RouterMode = 'web' | 'hash' | 'memory'
 
-export interface IModuleRaw {
-  default: Array<RouteRecordRaw> | RouteRecordRaw
+  interface RouteModuleRaw {
+    default: Array<RouteRecordRaw> | RouteRecordRaw
+  }
 }

@@ -1,14 +1,14 @@
 import type { App } from 'vue'
 import { createRouter } from 'vue-router'
-import { constantRoutes } from './constantRoutes'
-import { dynamicRoutes } from './dynamicRoutes'
+import { createRouterGuard } from './guards'
+import { routes } from './routes'
 import { getHistory } from './utils'
 
 const { VITE_ROUTE_MODE = 'web', VITE_BASE_URL } = import.meta.env
 
 export const router = createRouter({
   history: getHistory(VITE_ROUTE_MODE, VITE_BASE_URL),
-  routes: [...constantRoutes, ...dynamicRoutes],
+  routes,
   scrollBehavior(to, _from, savedPosition) {
     if (savedPosition) {
       return savedPosition
@@ -27,6 +27,8 @@ export const router = createRouter({
 
 export async function setupRouter(app: App) {
   app.use(router)
+
+  createRouterGuard(router)
 
   await router.isReady()
 }

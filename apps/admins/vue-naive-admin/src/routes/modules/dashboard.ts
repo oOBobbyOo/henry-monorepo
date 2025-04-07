@@ -1,6 +1,7 @@
+import type { RouteRecordRaw } from 'vue-router'
 import BasicLayout from '@/layouts/basic-layout/index.vue'
 
-const dashboard = {
+const dashboard: RouteRecordRaw = {
   path: '/dashboard',
   name: 'Dashboard',
   component: BasicLayout,
