@@ -6,9 +6,11 @@ defineOptions({ name: 'GlobalSider' })
 </script>
 
 <template>
-  <div class="layout-sider">
+  <div class="layout-sider h-full flex-col">
     <GlobalLogo />
-    <GlobalMenus />
+    <n-scrollbar class="flex-1">
+      <GlobalMenus />
+    </n-scrollbar>
   </div>
 </template>
 
