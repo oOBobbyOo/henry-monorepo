@@ -5,8 +5,12 @@ const about: RouteRecordRaw = {
   path: '/about',
   name: 'About',
   component: BasicLayout,
+  redirect: '/about/index',
   meta: {
     title: '关于',
+    i18nKey: 'route.about',
+    icon: 'fluent:book-information-24-regular',
+    keepAlive: true,
   },
   children: [
     {
@@ -15,6 +19,9 @@ const about: RouteRecordRaw = {
       component: () => import('@/views/about/index.vue'),
       meta: {
         title: '关于',
+        i18nKey: 'route.about',
+        icon: 'fluent:book-information-24-regular',
+        keepAlive: true,
       },
     },
   ],

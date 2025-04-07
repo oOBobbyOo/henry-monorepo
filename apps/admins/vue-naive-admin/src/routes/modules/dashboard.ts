@@ -8,6 +8,9 @@ const dashboard: RouteRecordRaw = {
   redirect: '/dashboard/analysis',
   meta: {
     title: '首页',
+    i18nKey: 'route.dashboard',
+    icon: 'mdi:monitor-dashboard',
+    keepAlive: true,
   },
   children: [
     {
@@ -16,6 +19,9 @@ const dashboard: RouteRecordRaw = {
       component: () => import('@/views/dashboard/analysis/index.vue'),
       meta: {
         title: '分析页',
+        i18nKey: 'route.analysis',
+        icon: 'icon-park-outline:analysis',
+
       },
     },
     {
@@ -24,6 +30,9 @@ const dashboard: RouteRecordRaw = {
       component: () => import('@/views/dashboard/workbench/index.vue'),
       meta: {
         title: '工作台',
+        i18nKey: 'route.workbench',
+        icon: 'icon-park-outline:workbench',
+        keepAlive: true,
       },
     },
   ],
