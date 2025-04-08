@@ -9,7 +9,7 @@ declare module 'vue-router' {
     requiresAuth?: boolean // 身份验证
     hideInMenu?: boolean // 菜单隐藏
     keepAlive?: boolean // 缓存
-    transition?: string // 页面动画
+    transitionName?: string // 过渡动画
     href?: string // 外链
   }
 
