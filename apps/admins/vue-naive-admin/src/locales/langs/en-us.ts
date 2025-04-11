@@ -9,6 +9,11 @@ const local = {
     userCenter: 'User Center',
     logout: 'Logout',
   },
+  route: {
+    dashboard: 'Dashboard',
+    analysis: 'Analysis',
+    workbench: 'Workbench',
+  },
 }
 
 export default local

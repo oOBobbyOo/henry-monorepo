@@ -9,6 +9,11 @@ const local = {
     userCenter: '个人中心',
     logout: '退出登录',
   },
+  route: {
+    dashboard: '仪表盘',
+    analysis: '分析页',
+    workbench: '工作台',
+  },
 }
 
 export default local
