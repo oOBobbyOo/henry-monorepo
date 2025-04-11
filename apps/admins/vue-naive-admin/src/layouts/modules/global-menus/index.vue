@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import type { MenuOption } from 'naive-ui'
+import { useSvgIcon } from '@/hooks/useSvgIcon'
 import { useAppStore } from '@/stores/modules/app'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -10,24 +11,30 @@ const router = useRouter()
 
 const appStore = useAppStore()
 
+const { SvgIconVNode } = useSvgIcon()
+
 const menus: MenuOption[] = [
   {
     label: '首页',
     key: 'Dashboard',
+    icon: SvgIconVNode({ icon: 'mdi:monitor-dashboard' }),
     children: [
       {
         label: '分析页',
         key: 'Analysis',
+        icon: SvgIconVNode({ icon: 'icon-park-outline:analysis' }),
       },
       {
         label: '工作台',
         key: 'Workbench',
+        icon: SvgIconVNode({ icon: 'icon-park-outline:workbench' }),
       },
     ],
   },
   {
     label: '关于',
     key: 'AboutIndex',
+    icon: SvgIconVNode({ icon: 'fluent:book-information-24-regular' }),
   },
 ]
 
