@@ -18,6 +18,8 @@
     "@eslint/js": "catalog:dev",
     "@types/react": "catalog:dev",
     "@types/react-dom": "catalog:dev",
+    "@unocss/preset-web-fonts": "catalog:dev",
+    "@unocss/reset": "catalog:dev",
     "@vitejs/plugin-react": "catalog:dev",
     "eslint": "catalog:dev",
     "eslint-plugin-react-hooks": "catalog:dev",
@@ -25,6 +27,7 @@
     "globals": "catalog:dev",
     "typescript": "catalog:dev",
     "typescript-eslint": "catalog:dev",
+    "unocss": "catalog:dev",
     "vite": "catalog:dev"
   }
 }

@@ -1,5 +1,8 @@
 import { fileURLToPath } from 'node:url'
 import react from '@vitejs/plugin-react'
+// @see https://github.com/antfu/unocss
+import UnoCSS from 'unocss/vite'
+
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
@@ -12,6 +15,7 @@ export default defineConfig(() => {
       },
     },
     plugins: [
+      UnoCSS(),
       react(),
     ],
   }
