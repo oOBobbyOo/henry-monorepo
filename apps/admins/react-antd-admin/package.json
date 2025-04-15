@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "antd": "catalog:prod",
     "react": "catalog:prod",
     "react-dom": "catalog:prod",
     "react-router-dom": "catalog:prod"

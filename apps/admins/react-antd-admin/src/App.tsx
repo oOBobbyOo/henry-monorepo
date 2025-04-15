@@ -1,11 +1,14 @@
 import { Router } from '@/routes'
+import { ConfigProvider } from 'antd'
 import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
+    <ConfigProvider>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ConfigProvider>
   )
 }
 
