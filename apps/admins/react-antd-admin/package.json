@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "catalog:prod",
-    "react-dom": "catalog:prod"
+    "react-dom": "catalog:prod",
+    "react-router-dom": "catalog:prod"
   },
   "devDependencies": {
     "@eslint/js": "catalog:dev",
