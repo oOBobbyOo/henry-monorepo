@@ -13,7 +13,8 @@
     "antd": "catalog:prod",
     "react": "catalog:prod",
     "react-dom": "catalog:prod",
-    "react-router-dom": "catalog:prod"
+    "react-router-dom": "catalog:prod",
+    "zustand": "catalog:prod"
   },
   "devDependencies": {
     "@eslint/js": "catalog:dev",
