@@ -1,11 +1,14 @@
+import { Layout } from 'antd'
 import { Outlet } from 'react-router-dom'
+
+const { Content } = Layout
 
 function GlobalContent() {
   return (
-    <div>
+    <Content>
       GlobalContent
       <Outlet />
-    </div>
+    </Content>
   )
 }
 

@@ -1,10 +1,14 @@
 import { Router } from '@/routes'
-import { ConfigProvider } from 'antd'
+import { ConfigProvider, theme } from 'antd'
 import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <ConfigProvider>
+    <ConfigProvider
+      theme={{
+        algorithm: theme.defaultAlgorithm,
+      }}
+    >
       <BrowserRouter>
         <Router />
       </BrowserRouter>

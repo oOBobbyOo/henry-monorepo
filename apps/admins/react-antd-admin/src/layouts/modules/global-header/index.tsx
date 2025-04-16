@@ -1,7 +1,9 @@
+import { Layout } from 'antd'
+
+const { Header } = Layout
+
 function GlobalHeader() {
-  return (
-    <div>GlobalHeader</div>
-  )
+  return <Header>GlobalHeader</Header>
 }
 
 export default GlobalHeader

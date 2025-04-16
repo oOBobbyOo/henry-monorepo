@@ -1,7 +1,9 @@
+import { Layout } from 'antd'
+
+const { Footer } = Layout
+
 function GlobalFooter() {
-  return (
-    <div>GlobalFooter</div>
-  )
+  return <Footer>GlobalFooter</Footer>
 }
 
 export default GlobalFooter
