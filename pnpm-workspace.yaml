@@ -11,6 +11,7 @@ catalogs:
     '@eslint/eslintrc': ^3.3.0
     '@eslint/js': ^9.21.0
     '@iconify/json': ^2.2.322
+    '@types/mockjs': ^1.0.10
     '@types/node': ^22.10.6
     '@types/nprogress': ^0.2.3
     '@types/react': ^19.0.10
@@ -30,6 +31,7 @@ catalogs:
     globals: ^15.15.0
     husky: ^9.1.7
     lint-staged: ^15.3.0
+    mockjs: ^1.1.0
     prettier: ^3.2.5
     turbo: ^2.4.4
     typescript: ^5.7.3
@@ -39,6 +41,7 @@ catalogs:
     unplugin-icons: ^22.1.0
     unplugin-vue-components: ^28.4.1
     vite: ^6.2.0
+    vite-plugin-mock: ^3.0.2
     vue-tsc: ^2.2.8
   prod:
     '@iconify/vue': ^4.3.0
