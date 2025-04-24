@@ -13,6 +13,13 @@ const local = {
     dashboard: 'Dashboard',
     analysis: 'Analysis',
     workbench: 'Workbench',
+    manage: {
+      system: 'System Manage',
+      user: 'User Manage',
+      role: 'Role Manage',
+      menu: 'Menu Manage',
+    },
+    about: 'About',
   },
 }
 

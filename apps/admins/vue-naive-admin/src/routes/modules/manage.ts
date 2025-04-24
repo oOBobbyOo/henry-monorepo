@@ -7,8 +7,8 @@ const manage: RouteRecordRaw = {
   component: BasicLayout,
   redirect: '/manage/user',
   meta: {
-    title: '管理',
-    i18nKey: 'route.manage',
+    title: '系统管理',
+    i18nKey: 'route.manage.system',
     icon: 'carbon:cloud-service-management',
     keepAlive: true,
   },

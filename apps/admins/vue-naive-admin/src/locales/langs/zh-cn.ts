@@ -13,6 +13,13 @@ const local = {
     dashboard: '仪表盘',
     analysis: '分析页',
     workbench: '工作台',
+    manage: {
+      system: '系统管理',
+      user: '用户管理',
+      role: '角色管理',
+      menu: '菜单管理',
+    },
+    about: '关于',
   },
 }
 
