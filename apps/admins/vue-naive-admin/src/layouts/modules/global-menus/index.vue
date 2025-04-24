@@ -54,6 +54,28 @@ const menus: MenuOption[] = [
     ],
   },
   {
+    label: '异常页',
+    key: 'Exception',
+    icon: SvgIconVNode({ icon: 'ant-design:exception-outlined' }),
+    children: [
+      {
+        label: '403',
+        key: 'Exception403',
+        icon: SvgIconVNode({ icon: 'ic:baseline-block' }),
+      },
+      {
+        label: '404',
+        key: 'Exception404',
+        icon: SvgIconVNode({ icon: 'ic:baseline-web-asset-off' }),
+      },
+      {
+        label: '500',
+        key: 'Exception500',
+        icon: SvgIconVNode({ icon: 'ic:baseline-wifi-off' }),
+      },
+    ],
+  },
+  {
     label: '关于',
     key: 'AboutIndex',
     icon: SvgIconVNode({ icon: 'fluent:book-information-24-regular' }),
