@@ -44,6 +44,7 @@ catalogs:
     vite-plugin-mock: ^3.0.2
     vue-tsc: ^2.2.8
   prod:
+    '@better-scroll/core': ^2.5.1
     '@iconify/vue': ^4.3.0
     '@vueuse/core': ^13.0.0
     antd: ^5.24.7

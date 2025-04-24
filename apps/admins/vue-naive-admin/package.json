@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@better-scroll/core": "catalog:prod",
     "@henry/request": "workspace:*",
     "@henry/vhooks": "workspace:*",
     "@iconify/vue": "catalog:prod",

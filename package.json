@@ -1,7 +1,7 @@
 {
   "name": "henry-monorepo",
   "private": true,
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@10.9.0",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",

@@ -8,6 +8,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    BetterScroll: typeof import('./src/components/BetterScroll/index.vue')['default']
     ButtonIcon: typeof import('./src/components/ButtonIcon/index.vue')['default']
     DarkMode: typeof import('./src/components/DarkMode/index.vue')['default']
     IconGridiconsFullscreen: typeof import('~icons/gridicons/fullscreen')['default']
