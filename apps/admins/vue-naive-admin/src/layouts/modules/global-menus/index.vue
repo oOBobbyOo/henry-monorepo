@@ -32,6 +32,28 @@ const menus: MenuOption[] = [
     ],
   },
   {
+    label: '系统管理',
+    key: 'Manage',
+    icon: SvgIconVNode({ icon: 'carbon:cloud-service-management' }),
+    children: [
+      {
+        label: '用户管理',
+        key: 'UserManage',
+        icon: SvgIconVNode({ icon: 'ic:round-manage-accounts' }),
+      },
+      {
+        label: '角色管理',
+        key: 'RoleManage',
+        icon: SvgIconVNode({ icon: 'carbon:user-role' }),
+      },
+      {
+        label: '菜单管理',
+        key: 'MenuManage',
+        icon: SvgIconVNode({ icon: 'material-symbols:route' }),
+      },
+    ],
+  },
+  {
     label: '关于',
     key: 'AboutIndex',
     icon: SvgIconVNode({ icon: 'fluent:book-information-24-regular' }),
