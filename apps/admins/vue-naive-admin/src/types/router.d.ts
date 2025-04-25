@@ -11,6 +11,7 @@ declare module 'vue-router' {
     keepAlive?: boolean // 缓存
     transitionName?: string // 过渡动画
     href?: string // 外链
+    query?: Record<string, string> // 路由参数
   }
 
   type RouterMode = 'web' | 'hash' | 'memory'

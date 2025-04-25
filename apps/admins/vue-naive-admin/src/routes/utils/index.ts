@@ -52,3 +52,51 @@ export function generateMenus(routes: RouteRecordRaw[], parentPath?: string) {
 
   return menus
 }
+
+export function findMenuPath(targetKey: string, menu: App.Global.Menu) {
+  const path: string[] = []
+
+  function dfs(item: App.Global.Menu): boolean {
+    path.push(item.key)
+
+    if (item.key === targetKey) {
+      return true
+    }
+
+    if (item.children) {
+      for (const child of item.children) {
+        if (dfs(child)) {
+          return true
+        }
+      }
+    }
+
+    path.pop()
+
+    return false
+  }
+
+  if (dfs(menu)) {
+    return path
+  }
+
+  return null
+}
+
+export function getSelectedMenuKeyPathByKey(selectedKey: string, menus: App.Global.Menu[]) {
+  const keyPath: string[] = []
+
+  menus.some((menu) => {
+    const path = findMenuPath(selectedKey, menu)
+
+    const find = Boolean(path?.length)
+
+    if (find) {
+      keyPath.push(...path!)
+    }
+
+    return find
+  })
+
+  return keyPath
+}

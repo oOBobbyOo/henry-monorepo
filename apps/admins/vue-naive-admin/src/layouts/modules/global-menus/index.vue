@@ -1,13 +1,15 @@
 <script setup lang='ts'>
+import { useRouterPush } from '@/hooks/useRouterPush'
+import { getSelectedMenuKeyPathByKey } from '@/routes/utils'
 import { useAppStore } from '@/stores/modules/app'
 import { useRouteStore } from '@/stores/modules/route'
 import { ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 
 defineOptions({ name: 'GlobalMenus' })
 
 const route = useRoute()
-const router = useRouter()
+const { routerPushByKeyWithMetaQuery } = useRouterPush()
 
 const appStore = useAppStore()
 const routeStore = useRouteStore()
@@ -21,15 +23,13 @@ function onExpandedKeys(keys: string[]) {
 }
 
 function updateExpandedKeys() {
-
+  expandedKeys.value = getSelectedMenuKeyPathByKey(selectedKey.value, routeStore.menus)
 }
 
 function onSelectedKey(key: string) {
   selectedKey.value = key
 
-  router.push({
-    name: key,
-  })
+  routerPushByKeyWithMetaQuery(key)
 }
 
 watch(
