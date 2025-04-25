@@ -1,5 +1,5 @@
-import { dynamicRoutes } from '@/routes/routes/dynamicRoutes'
-import { generateMenus } from '@/routes/utils'
+import { dynamicRoutes } from '@/router/routes/dynamicRoutes'
+import { generateMenus } from '@/router/utils'
 import { defineStore } from 'pinia'
 
 export const useRouteStore = defineStore('route', () => {

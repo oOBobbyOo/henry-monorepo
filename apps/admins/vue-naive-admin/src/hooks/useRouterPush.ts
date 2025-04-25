@@ -1,5 +1,5 @@
 import type { RouteLocationRaw } from 'vue-router'
-import { router as globalRouter } from '@/routes'
+import { router as globalRouter } from '@/router'
 import { useRouter } from 'vue-router'
 
 export function useRouterPush(inSetup = true) {

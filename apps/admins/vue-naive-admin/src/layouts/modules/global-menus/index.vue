@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { useRouterPush } from '@/hooks/useRouterPush'
-import { getSelectedMenuKeyPathByKey } from '@/routes/utils'
+import { getSelectedMenuKeyPathByKey } from '@/router/utils'
 import { useAppStore } from '@/stores/modules/app'
 import { useRouteStore } from '@/stores/modules/route'
 import { ref, watch } from 'vue'
