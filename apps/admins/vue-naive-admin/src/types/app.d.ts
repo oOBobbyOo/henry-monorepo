@@ -7,4 +7,18 @@ declare namespace App {
       key: LangType
     }
   }
+
+  namespace Global {
+    type VNode = import('vue').VNode
+
+    interface Menu {
+      key: string
+      label: string
+      i18nKey?: string
+      routeKey: string
+      routePath: string
+      icon?: () => VNode
+      children?: Menu[]
+    }
+  }
 }
