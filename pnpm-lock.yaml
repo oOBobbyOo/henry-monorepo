@@ -277,6 +277,9 @@ importers:
       '@henry/request':
         specifier: workspace:*
         version: link:../../../packages/request
+      '@henry/utils':
+        specifier: workspace:*
+        version: link:../../../packages/utils
       '@henry/vhooks':
         specifier: workspace:*
         version: link:../../../packages/vhooks

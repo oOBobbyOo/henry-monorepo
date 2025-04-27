@@ -11,9 +11,10 @@ const RootRoute: RouteRecordRaw = {
 }
 
 const LoginRoute: RouteRecordRaw = {
-  path: '/login',
+  path: '/login/:module(pwd-login|code-login|register|reset-pwd)?',
   name: 'Login',
   component: () => import('@/views/login/index.vue'),
+  props: true,
   meta: {
     title: '登录',
   },

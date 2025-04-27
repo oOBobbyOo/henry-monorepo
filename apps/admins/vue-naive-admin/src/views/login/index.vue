@@ -23,17 +23,21 @@ const activeModule = computed(() => moduleMap[props.module || 'pwd-login'])
 </script>
 
 <template>
-  <div class="relative flex-center">
-    <main class="pt-6">
-      <h3 class="text-4 font-medium">
-        {{ $t(activeModule.label) }}
-      </h3>
-      <div class="pt-6">
-        <Transition mode="out-in" appear>
-          <component :is="activeModule.component" />
-        </Transition>
+  <div class="relative size-full flex-center overflow-hidden">
+    <n-card :bordered="false" class="relative z-4 w-auto rd-3">
+      <div class="w-100">
+        <main class="pt-6">
+          <h3 class="text-4 font-medium">
+            {{ $t(activeModule.label) }}
+          </h3>
+          <div class="pt-6">
+            <Transition mode="out-in" appear>
+              <component :is="activeModule.component" />
+            </Transition>
+          </div>
+        </main>
       </div>
-    </main>
+    </n-card>
   </div>
 </template>
 

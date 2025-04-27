@@ -1,5 +1,7 @@
 declare namespace Auth {
   type Component = import('vue').Component
+  type FormRule = import('naive-ui').FormItemRule
+  type FormItemRule = import('naive-ui').FormItemRule
 
   type LoginModuleKey = 'pwd-login' | 'code-login' | 'register' | 'reset-pwd'
 

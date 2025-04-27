@@ -13,6 +13,7 @@
   "dependencies": {
     "@better-scroll/core": "catalog:prod",
     "@henry/request": "workspace:*",
+    "@henry/utils": "workspace:*",
     "@henry/vhooks": "workspace:*",
     "@iconify/vue": "catalog:prod",
     "@vueuse/core": "catalog:prod",
