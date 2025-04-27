@@ -1,7 +1,7 @@
 import { useRafFn } from '@vueuse/core'
 import { computed, onScopeDispose, ref } from 'vue'
 
-export default function useCountDown(seconds: number) {
+export function useCountDown(seconds: number) {
   const FPS_PER_SECOND = 60
 
   const fps = ref(0)
