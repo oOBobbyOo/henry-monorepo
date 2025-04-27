@@ -26,7 +26,9 @@ const naiveDateLocale = computed(() => {
     :date-locale="naiveDateLocale"
     class="wh-full"
   >
-    <router-view />
+    <app-provider>
+      <router-view />
+    </app-provider>
   </n-config-provider>
 </template>
 
