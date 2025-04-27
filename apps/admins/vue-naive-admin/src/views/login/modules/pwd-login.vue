@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { useFormRules } from '@/hooks/useFormRules'
 import { useNaiveForm } from '@/hooks/useNaiveForm'
+import { useRouterPush } from '@/hooks/useRouterPush'
 import { computed, reactive } from 'vue'
 
 defineOptions({ name: 'PwdLogin' })
@@ -18,6 +19,7 @@ const rules = computed(() => {
   }
 })
 
+const { toggleLoginModule } = useRouterPush()
 const { formRef, validate } = useNaiveForm()
 
 async function handleSubmit() {
@@ -46,11 +48,11 @@ async function handleSubmit() {
       <n-button type="primary" size="large" round block @click="handleSubmit">
         {{ $t('common.confirm') }}
       </n-button>
-      <div class="flex-y-center justify-between gap-12px">
+      <div class="flex-y-center justify-between gap-4" @click="toggleLoginModule('code-login')">
         <n-button class="flex-1" block>
           {{ $t('page.login.codeLogin.title') }}
         </n-button>
-        <n-button class="flex-1" block>
+        <n-button class="flex-1" block @click="toggleLoginModule('register')">
           {{ $t('page.login.register.title') }}
         </n-button>
       </div>

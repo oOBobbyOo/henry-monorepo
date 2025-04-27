@@ -35,7 +35,7 @@ export function useRouterPush(inSetup = true) {
   }
 
   async function toHome() {
-    return routerPushByKey('root')
+    return routerPushByKey('Root')
   }
 
   /**
@@ -59,7 +59,7 @@ export function useRouterPush(inSetup = true) {
       redirect,
     }
 
-    return routerPushByKey('login', options)
+    return routerPushByKey('Login', options)
   }
 
   /**
@@ -70,7 +70,7 @@ export function useRouterPush(inSetup = true) {
   async function toggleLoginModule(module: Auth.LoginModuleKey) {
     const query = route.value.query as Record<string, string>
 
-    return routerPushByKey('login', { query, params: { module } })
+    return routerPushByKey('Login', { query, params: { module } })
   }
 
   /**
