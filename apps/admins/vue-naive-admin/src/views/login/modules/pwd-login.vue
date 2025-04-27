@@ -41,7 +41,7 @@ async function handleSubmit() {
     <n-space vertical :size="24">
       <div class="flex-y-center justify-between">
         <n-checkbox>{{ $t('page.login.pwdLogin.rememberMe') }}</n-checkbox>
-        <n-button quaternary>
+        <n-button quaternary @click="toggleLoginModule('reset-pwd')">
           {{ $t('page.login.pwdLogin.forgetPassword') }}
         </n-button>
       </div>
