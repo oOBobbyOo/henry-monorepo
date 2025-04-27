@@ -9,6 +9,7 @@
     }
   },
   "dependencies": {
+    "@vueuse/core": "catalog:prod",
     "vue": "catalog:prod"
   },
   "devDependencies": {
