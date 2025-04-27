@@ -1,4 +1,5 @@
 <script setup lang='ts'>
+import { useCaptcha } from '@/hooks/useCaptcha'
 import { useFormRules } from '@/hooks/useFormRules'
 import { useNaiveForm } from '@/hooks/useNaiveForm'
 import { useRouterPush } from '@/hooks/useRouterPush'
@@ -21,6 +22,7 @@ const rules = computed(() => {
 
 const { toggleLoginModule } = useRouterPush()
 const { formRef, validate } = useNaiveForm()
+const { label, isCounting, loading, getCaptcha } = useCaptcha()
 
 async function handleSubmit() {
   await validate()
@@ -35,10 +37,12 @@ async function handleSubmit() {
     <n-form-item path="code">
       <div class="w-full flex-y-center gap-4">
         <n-input v-model:value="model.code" :placeholder="$t('page.login.common.codePlaceholder')" />
-        <n-button size="large" />
+        <n-button size="large" :disabled="isCounting" :loading="loading" @click="getCaptcha(model.phone)">
+          {{ label }}
+        </n-button>
       </div>
     </n-form-item>
-    <n-space vertical :size="18">
+    <n-space vertical :size="18" class="w-full">
       <n-button type="primary" size="large" round block @click="handleSubmit">
         {{ $t('common.confirm') }}
       </n-button>

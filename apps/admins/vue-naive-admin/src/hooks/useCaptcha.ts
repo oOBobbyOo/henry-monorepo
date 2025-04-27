@@ -25,12 +25,12 @@ export function useCaptcha() {
 
   function isPhoneValid(phone: string) {
     if (phone.trim() === '') {
-      // window.$message?.error?.($t('form.phone.required'))
+      window.$message?.error?.($t('form.phone.required'))
       return false
     }
 
     if (!REG_PHONE.test(phone)) {
-      // window.$message?.error?.($t('form.phone.invalid'))
+      window.$message?.error?.($t('form.phone.invalid'))
       return false
     }
 
@@ -51,7 +51,7 @@ export function useCaptcha() {
       setTimeout(resolve, 500)
     })
 
-    // window.$message?.success?.($t('page.login.codeLogin.sendCodeSuccess'))
+    window.$message?.success?.($t('page.login.codeLogin.sendCodeSuccess'))
 
     start()
 

@@ -32,9 +32,9 @@ async function handleSubmit() {
     <n-form-item path="username">
       <n-input v-model:value="model.username" :placeholder="$t('page.login.common.userNamePlaceholder')" />
     </n-form-item>
-    <n-form-item path="password">
+    <n-form-item path="pwd">
       <n-input
-        v-model.value="model.password" type="password" show-password-on="click"
+        v-model.value="model.password" type="password" show-password-on="click" clearable
         :placeholder="$t('page.login.common.passwordPlaceholder')"
       />
     </n-form-item>
@@ -48,8 +48,8 @@ async function handleSubmit() {
       <n-button type="primary" size="large" round block @click="handleSubmit">
         {{ $t('common.confirm') }}
       </n-button>
-      <div class="flex-y-center justify-between gap-4" @click="toggleLoginModule('code-login')">
-        <n-button class="flex-1" block>
+      <div class="flex-y-center justify-between gap-4">
+        <n-button class="flex-1" block @click="toggleLoginModule('code-login')">
           {{ $t('page.login.codeLogin.title') }}
         </n-button>
         <n-button class="flex-1" block @click="toggleLoginModule('register')">
