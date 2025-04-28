@@ -1,4 +1,4 @@
-export * from './await-to-ts'
+export * from './await-to'
 export * from './date'
 export * from './env'
 export * from './file'
