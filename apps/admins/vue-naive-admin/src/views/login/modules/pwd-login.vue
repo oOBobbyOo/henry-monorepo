@@ -52,7 +52,7 @@ async function handleSubmit() {
           {{ $t('page.login.pwdLogin.forgetPassword') }}
         </n-button>
       </div>
-      <n-button type="primary" size="large" round block @click="handleSubmit">
+      <n-button type="primary" size="large" round block :loading="authStore.loading" @click="handleSubmit">
         {{ $t('common.confirm') }}
       </n-button>
       <div class="flex-y-center justify-between gap-4">

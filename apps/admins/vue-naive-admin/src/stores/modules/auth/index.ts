@@ -8,7 +8,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 export const useAuthStore = defineStore('auth', () => {
-  const { loading: loginLoading, startLoading, endLoading } = useLoading()
+  const { loading, startLoading, endLoading } = useLoading()
 
   const userStore = useUserStore()
 
@@ -91,7 +91,7 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   return {
-    loginLoading,
+    loading,
     pwdLogin,
     codeLogin,
     register,

@@ -72,7 +72,7 @@ async function handleSubmit() {
       />
     </n-form-item>
     <n-space vertical :size="18" class="w-full">
-      <n-button type="primary" size="large" round block @click="handleSubmit">
+      <n-button type="primary" size="large" round block :loading="authStore.loading" @click="handleSubmit">
         {{ $t('common.confirm') }}
       </n-button>
       <n-button size="large" round block @click="toggleLoginModule('pwd-login')">
