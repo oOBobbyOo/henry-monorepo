@@ -1,29 +1,35 @@
 import request from '@henry/request'
 
 export function loginByUser({ username, password }: Auth.PwdLogin.FormModel) {
-  return request.post('/api/loginByUser', {
+  return request.post<Api.LoginToken>('/api/loginByUser', {
     username,
     password,
   })
 }
 
 export function loginByPhone({ phone, code }: Auth.CodeLogin.FormModel) {
-  return request.post('/api/loginByPhone', {
+  return request.post<Api.LoginToken>('/api/loginByPhone', {
     phone,
     code,
   })
 }
 
-export function register({ phone, code, password }: Auth.Register.FormModel) {
-  return request.post('/api/loginByCode', {
+export function getCaptcha({ phone }: Auth.CodeLogin.FormModel) {
+  return request.post<Api.LoginToken>('/api/getCaptcha', {
+    phone,
+  })
+}
+
+export function registerUser({ phone, code, password }: Omit<Auth.Register.FormModel, 'confirmPassword'>) {
+  return request.post('/api/registerUser', {
     phone,
     code,
     password,
   })
 }
 
-export function resetPwd({ phone, code, password }: Auth.ResetPwd.FormModel) {
-  return request.post('/api/resetPwd', {
+export function resetPassword({ phone, code, password }: Omit<Auth.ResetPwd.FormModel, 'confirmPassword'>) {
+  return request.post('/api/resetPassword', {
     phone,
     code,
     password,

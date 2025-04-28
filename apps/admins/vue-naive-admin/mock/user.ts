@@ -26,7 +26,7 @@ const userData = Mock.mock({
 
 export default [
   {
-    url: '/api/user',
+    url: '/api/getUserInfo',
     method: 'get',
     response: () => {
       return requestSuccess(userData)

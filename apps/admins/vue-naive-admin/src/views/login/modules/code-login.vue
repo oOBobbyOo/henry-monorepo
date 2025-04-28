@@ -3,6 +3,7 @@ import { useCaptcha } from '@/hooks/useCaptcha'
 import { useFormRules } from '@/hooks/useFormRules'
 import { useNaiveForm } from '@/hooks/useNaiveForm'
 import { useRouterPush } from '@/hooks/useRouterPush'
+import { useAuthStore } from '@/stores/modules/auth'
 import { computed, reactive } from 'vue'
 
 defineOptions({ name: 'CodeLogin' })
@@ -24,8 +25,12 @@ const { toggleLoginModule } = useRouterPush()
 const { formRef, validate } = useNaiveForm()
 const { label, isCounting, loading, getCaptcha } = useCaptcha()
 
+const authStore = useAuthStore()
+
 async function handleSubmit() {
   await validate()
+
+  await authStore.codeLogin(model)
 }
 </script>
 

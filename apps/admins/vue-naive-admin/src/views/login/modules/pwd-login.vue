@@ -2,6 +2,7 @@
 import { useFormRules } from '@/hooks/useFormRules'
 import { useNaiveForm } from '@/hooks/useNaiveForm'
 import { useRouterPush } from '@/hooks/useRouterPush'
+import { useAuthStore } from '@/stores/modules/auth'
 import { computed, reactive } from 'vue'
 
 defineOptions({ name: 'PwdLogin' })
@@ -22,8 +23,12 @@ const rules = computed(() => {
 const { toggleLoginModule } = useRouterPush()
 const { formRef, validate } = useNaiveForm()
 
+const authStore = useAuthStore()
+
 async function handleSubmit() {
   await validate()
+
+  await authStore.pwdLogin(model)
 }
 </script>
 
@@ -32,9 +37,11 @@ async function handleSubmit() {
     <n-form-item path="username">
       <n-input v-model:value="model.username" :placeholder="$t('page.login.common.userNamePlaceholder')" />
     </n-form-item>
-    <n-form-item path="pwd">
+    <n-form-item path="password">
       <n-input
-        v-model.value="model.password" type="password" show-password-on="click" clearable
+        v-model:value="model.password"
+        type="password"
+        show-password-on="click"
         :placeholder="$t('page.login.common.passwordPlaceholder')"
       />
     </n-form-item>
