@@ -19,8 +19,8 @@ import Components from 'unplugin-vue-components/vite'
 
 import { defineConfig, loadEnv } from 'vite'
 
-// @see https://github.com/vbenjs/vite-plugin-mock
-import { viteMockServe } from 'vite-plugin-mock'
+// @see https://github.com/condorheroblog/vite-plugin-fake-server
+import { vitePluginFakeServer } from 'vite-plugin-fake-server'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
@@ -72,11 +72,11 @@ export default defineConfig(({ mode }) => {
         compiler: 'vue3',
         scale: 1,
       }),
-      viteMockServe({
-        mockPath: 'mock', // 目录位置
-        enable: Boolean(VITE_MOCK_ENABLE), // 是否启用 mock 功能
-        watchFiles: true, // 将监视文件夹中的文件更改。 并实时同步到请求结果
-        logger: true, // 是否在控制台显示请求日志
+      vitePluginFakeServer({
+        include: 'mock',
+        infixName: 'mock',
+        enableDev: Boolean(VITE_MOCK_ENABLE),
+        enableProd: Boolean(VITE_MOCK_ENABLE),
       }),
     ],
     server: {

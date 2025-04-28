@@ -1,25 +1,25 @@
-import type { MockMethod } from 'vite-plugin-mock'
+import Mock from 'mockjs'
+import { defineFakeRoute } from 'vite-plugin-fake-server/client'
 import { requestSuccess } from './_utils'
 
-export default [
+const loginToken = Mock.mock({
+  token: '123456',
+  refreshToken: '123456',
+})
+
+export default defineFakeRoute([
   {
     url: '/api/loginByUser',
     method: 'post',
     response: () => {
-      return requestSuccess({
-        token: '123456',
-        accessToken: '123456',
-      })
+      return requestSuccess(loginToken)
     },
   },
   {
     url: '/api/loginByPhone',
     method: 'post',
     response: () => {
-      return requestSuccess({
-        token: '123456',
-        accessToken: '123456',
-      })
+      return requestSuccess(loginToken)
     },
   },
   {
@@ -50,4 +50,4 @@ export default [
       return requestSuccess({})
     },
   },
-] as MockMethod[]
+])

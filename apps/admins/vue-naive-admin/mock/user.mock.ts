@@ -1,5 +1,5 @@
-import type { MockMethod } from 'vite-plugin-mock'
 import Mock from 'mockjs'
+import { defineFakeRoute } from 'vite-plugin-fake-server/client'
 import { requestSuccess } from './_utils'
 
 const userData = Mock.mock({
@@ -24,7 +24,7 @@ const userData = Mock.mock({
   ],
 })
 
-export default [
+export default defineFakeRoute([
   {
     url: '/api/getUserInfo',
     method: 'get',
@@ -32,4 +32,4 @@ export default [
       return requestSuccess(userData)
     },
   },
-] as MockMethod[]
+])
