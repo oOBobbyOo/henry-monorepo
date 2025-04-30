@@ -2,6 +2,7 @@ import { loginByPhone, loginByUser, registerUser, resetPassword } from '@/api/au
 import { getUserInfo } from '@/api/user'
 import { $t } from '@/locales'
 import { useUserStore } from '@/stores/modules/user'
+import { localforage } from '@/utils'
 import { to } from '@henry/utils'
 import { useLoading } from '@henry/vhooks'
 import { defineStore } from 'pinia'
@@ -55,6 +56,9 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   async function loginByToken(loginToken: Api.LoginToken) {
+    localforage.set('token', loginToken.token)
+    localforage.set('refreshToken', loginToken.refreshToken)
+
     const [error, userInfo] = await to(getUserInfo())
 
     if (!error) {

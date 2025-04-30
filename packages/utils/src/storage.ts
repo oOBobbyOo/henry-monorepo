@@ -91,6 +91,6 @@ export class EnhancedStorage {
   }
 }
 
-export function createStorage(config: StorageConfig = {}): EnhancedStorage {
+export function createLocalforage(config: StorageConfig = {}): EnhancedStorage {
   return new EnhancedStorage(config)
 }
