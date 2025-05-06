@@ -17,3 +17,9 @@ export function requestFailed<T>(data: T, message = '请求失败') {
     success: false,
   }
 }
+
+// 返回请求头 token
+export function getRequestToken({ headers }): string | undefined {
+  const token = headers?.authorization?.split(' ')[1]
+  return token
+}
