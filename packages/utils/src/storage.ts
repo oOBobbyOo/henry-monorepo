@@ -6,6 +6,12 @@ interface StorageItem<T> {
 }
 
 interface StorageConfig {
+  type?: 'local' | 'session'
+  storagePrefix?: string
+  defaultTTL?: number
+}
+
+interface EnhancedStorageConfig {
   driver?: 'local' | 'indexedDB' | 'webSQL'
   storagePrefix?: string
   defaultTTL?: number
@@ -22,7 +28,7 @@ export class EnhancedStorage {
   private prefix: string
   private defaultTTL: number
 
-  constructor(config: StorageConfig = {}) {
+  constructor(config: EnhancedStorageConfig = {}) {
     this.prefix = config.storagePrefix || ''
     this.defaultTTL = config.defaultTTL || 24 * 60 * 60 * 1000 // 默认1天
 
@@ -91,6 +97,68 @@ export class EnhancedStorage {
   }
 }
 
-export function createLocalforage(config: StorageConfig = {}): EnhancedStorage {
+export class Storage {
+  private prefix: string
+  private storage: any
+  private defaultTTL: number
+
+  constructor(config: StorageConfig = {
+    type: 'local',
+    storagePrefix: '',
+  }) {
+    this.prefix = config.storagePrefix || ''
+    this.storage = config.type === 'local' ? localStorage : sessionStorage
+    this.defaultTTL = config.defaultTTL || 24 * 60 * 60 * 1000 // 默认1天
+  }
+
+  private getKey(key: string): string {
+    return `${this.prefix}${key}`
+  }
+
+  set(key: string, value: any, ttl?: number) {
+    const storageKey = this.getKey(key)
+    const expires = Date.now() + (ttl || this.defaultTTL)
+    const item = {
+      value,
+      expires,
+    }
+    this.storage.setItem(storageKey, JSON.stringify(item))
+  }
+
+  get(key: string) {
+    const storageKey = this.getKey(key)
+    const itemStr = this.storage.getItem(storageKey)
+    if (!itemStr)
+      return null
+    try {
+      const item = JSON.parse(itemStr)
+      if (item.expires && Date.now() > item.expires) {
+        this.remove(key)
+        return null
+      }
+      return item.value
+    }
+    catch {
+      this.remove(key)
+      return null
+    }
+  }
+
+  remove(key: string) {
+    this.storage.removeItem(this.getKey(key))
+  }
+
+  clear() {
+    Object.keys(this.storage)
+      .filter(k => k.startsWith(this.prefix))
+      .forEach(k => this.storage.removeItem(k))
+  }
+}
+
+export function createLocalforage(config: EnhancedStorageConfig = { driver: 'local' }) {
   return new EnhancedStorage(config)
+}
+
+export function createStorage(config: StorageConfig = { type: 'local' }) {
+  return new Storage(config)
 }
