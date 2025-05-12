@@ -1,4 +1,4 @@
-import request from '@henry/request'
+import { request } from '@/utils'
 
 export function loginByUser({ username, password }: Auth.PwdLogin.FormModel) {
   return request.post<Api.LoginToken>('/api/loginByUser', {

@@ -1,6 +1,6 @@
 import Mock from 'mockjs'
 import { defineFakeRoute } from 'vite-plugin-fake-server/client'
-import { requestSuccess } from './_utils'
+import { getRequestToken, requestFailed, requestSuccess } from './_utils'
 
 const userData = Mock.mock({
   uid: '@id()',
@@ -28,7 +28,10 @@ export default defineFakeRoute([
   {
     url: '/api/getUserInfo',
     method: 'get',
-    response: () => {
+    response: (request) => {
+      const accessToken = getRequestToken(request)
+      if (!accessToken)
+        return requestFailed({})
       return requestSuccess(userData)
     },
   },

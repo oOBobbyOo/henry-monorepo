@@ -27,7 +27,7 @@ interface HttpClientConfig extends AxiosRequestConfig {
   headers?: Record<string, string>
 }
 
-class HttpClient {
+export class HttpClient {
   private instance: AxiosInstance
   private requestInterceptors: RequestInterceptor[] = []
   private responseInterceptors: ResponseInterceptor[] = []
@@ -59,7 +59,9 @@ class HttpClient {
     // 全局响应拦截器
     this.instance.interceptors.response.use(
       (response: AxiosResponse) => {
-        return response.data
+        if (response.data?.code === 200)
+          return response.data
+        return Promise.reject(response.data)
       },
       (error: AxiosError) => {
         // 统一错误处理
@@ -225,5 +227,3 @@ class HttpClient {
     })
   }
 }
-
-export default HttpClient
