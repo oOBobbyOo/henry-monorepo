@@ -22,9 +22,9 @@ interface CacheItem<T = any> {
 
 // HttpClient 配置接口
 interface HttpClientConfig extends AxiosRequestConfig {
-  cache?: boolean
-  cacheTTL?: number
   headers?: Record<string, string>
+  cacheEnabled?: boolean
+  cacheTTL?: number
 }
 
 export class HttpClient {
@@ -34,9 +34,21 @@ export class HttpClient {
   private errorInterceptors: ErrorInterceptor[] = []
   private abortControllers: Map<string, AbortController> = new Map()
   private cache: Map<string, CacheItem> = new Map()
+  private cacheEnabled: boolean
+  private cacheTTL: number
 
-  constructor(private config: HttpClientConfig = {}) {
-    this.instance = axios.create(config)
+  constructor({ cacheEnabled, cacheTTL, ...config }: HttpClientConfig) {
+    this.cacheEnabled = cacheEnabled || true
+    this.cacheTTL = cacheTTL || 30000
+    this.instance = axios.create({
+      ...config,
+      headers: {
+        // 默认headers
+        'Content-Type': 'application/json',
+        // 合并全局自定义headers
+        ...(config.headers || {}),
+      },
+    })
     this.setupGlobalInterceptors()
   }
 
@@ -114,13 +126,16 @@ export class HttpClient {
   // 发送请求
   public async request<T>(config: HttpClientConfig): Promise<T> {
     const requestKey = this.generateRequestKey(config)
-    const cacheEnabled = config.cache ?? this.config.cache
+    const cacheEnabled = config.cacheEnabled ?? this.cacheEnabled
 
     // 处理缓存
     if (config.method?.toLowerCase() === 'get' && cacheEnabled) {
       const cacheItem = this.cache.get(requestKey)
       if (cacheItem && cacheItem.expireTime > Date.now()) {
-        return Promise.resolve(cacheItem.data as T)
+        return Promise.resolve({
+          ...cacheItem.data,
+          headers: { ...cacheItem.data.headers, 'x-cache': 'HIT' },
+        })
       }
     }
 
@@ -145,7 +160,7 @@ export class HttpClient {
 
       // 缓存处理
       if (config.method?.toLowerCase() === 'get' && cacheEnabled) {
-        const ttl = config.cacheTTL ?? this.config.cacheTTL ?? 60000
+        const ttl = config.cacheTTL ?? this.cacheTTL
         this.cache.set(requestKey, {
           data: response,
           expireTime: Date.now() + ttl,
