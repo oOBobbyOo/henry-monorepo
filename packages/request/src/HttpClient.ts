@@ -22,7 +22,6 @@ interface CacheItem<T = any> {
 
 // HttpClient 配置接口
 interface HttpClientConfig extends AxiosRequestConfig {
-  headers?: Record<string, string>
   cacheEnabled?: boolean
   cacheTTL?: number
 }
@@ -124,12 +123,12 @@ export class HttpClient {
   }
 
   // 发送请求
-  public async request<T>(config: HttpClientConfig): Promise<T> {
+  public async request<T>({ cacheEnabled, cacheTTL, ...config }: HttpClientConfig): Promise<T> {
     const requestKey = this.generateRequestKey(config)
-    const cacheEnabled = config.cacheEnabled ?? this.cacheEnabled
+    const isCached = cacheEnabled ?? this.cacheEnabled
 
     // 处理缓存
-    if (config.method?.toLowerCase() === 'get' && cacheEnabled) {
+    if (config.method?.toLowerCase() === 'get' && isCached) {
       const cacheItem = this.cache.get(requestKey)
       if (cacheItem && cacheItem.expireTime > Date.now()) {
         return Promise.resolve({
@@ -160,7 +159,7 @@ export class HttpClient {
 
       // 缓存处理
       if (config.method?.toLowerCase() === 'get' && cacheEnabled) {
-        const ttl = config.cacheTTL ?? this.cacheTTL
+        const ttl = cacheTTL ?? this.cacheTTL
         this.cache.set(requestKey, {
           data: response,
           expireTime: Date.now() + ttl,
