@@ -1,8 +1,9 @@
 import { loginByPhone, loginByUser, registerUser, resetPassword } from '@/api/auth'
 import { getUserInfo } from '@/api/user'
+import { useRouterPush } from '@/hooks/useRouterPush'
 import { $t } from '@/locales'
 import { useUserStore } from '@/stores/modules/user'
-import { localStg } from '@/utils'
+import { getToken, setToken } from '@/utils'
 import { to } from '@henry/utils'
 import { useLoading } from '@henry/vhooks'
 import { defineStore } from 'pinia'
@@ -10,10 +11,11 @@ import { ref } from 'vue'
 
 export const useAuthStore = defineStore('auth', () => {
   const { loading, startLoading, endLoading } = useLoading()
+  const { redirectFromLogin } = useRouterPush(false)
 
   const userStore = useUserStore()
 
-  const token = ref('')
+  const token = ref(getToken())
 
   async function pwdLogin({ username, password }: Auth.PwdLogin.FormModel) {
     startLoading()
@@ -24,6 +26,8 @@ export const useAuthStore = defineStore('auth', () => {
       const pass = await loginByToken(loginToken)
 
       if (pass) {
+        await redirectFromLogin()
+
         window.$notification?.success({
           title: $t('page.login.common.loginSuccess'),
           content: $t('page.login.common.welcomeBack', { userName: username }),
@@ -44,6 +48,8 @@ export const useAuthStore = defineStore('auth', () => {
       const pass = await loginByToken(loginToken)
 
       if (pass) {
+        await redirectFromLogin()
+
         window.$notification?.success({
           title: $t('page.login.common.loginSuccess'),
           content: $t('page.login.common.welcomeBack', { userName: phone }),
@@ -56,8 +62,7 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   async function loginByToken(loginToken: Api.LoginToken) {
-    localStg.set('TOKEN', loginToken.token)
-    localStg.set('REFRESH_TOKEN', loginToken.refreshToken)
+    setToken(loginToken.token, loginToken.token)
 
     const [error, userInfo] = await to(getUserInfo())
 
@@ -95,6 +100,7 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   return {
+    token,
     loading,
     pwdLogin,
     codeLogin,
