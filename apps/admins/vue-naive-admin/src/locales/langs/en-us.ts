@@ -66,12 +66,14 @@ const local = {
       },
       register: {
         title: 'Register',
+        registerSuccess: 'Register successfully',
         agreement: 'I have read and agree to',
         protocol: '《User Agreement》',
         policy: '《Privacy Policy》',
       },
       resetPwd: {
         title: 'Reset Password',
+        resetPwdSuccess: 'Password reset successful',
       },
     },
   },

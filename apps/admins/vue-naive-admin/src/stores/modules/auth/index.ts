@@ -11,12 +11,13 @@ import { ref } from 'vue'
 
 export const useAuthStore = defineStore('auth', () => {
   const { loading, startLoading, endLoading } = useLoading()
-  const { redirectFromLogin } = useRouterPush(false)
+  const { redirectFromLogin, toggleLoginModule } = useRouterPush(false)
 
   const userStore = useUserStore()
 
   const token = ref(getToken())
 
+  // 密码登录
   async function pwdLogin({ username, password }: Auth.PwdLogin.FormModel) {
     startLoading()
 
@@ -39,6 +40,7 @@ export const useAuthStore = defineStore('auth', () => {
     endLoading()
   }
 
+  // 验证码登录
   async function codeLogin({ phone, code }: Auth.CodeLogin.FormModel) {
     startLoading()
 
@@ -75,25 +77,29 @@ export const useAuthStore = defineStore('auth', () => {
     return false
   }
 
+  // 注册账号
   async function register({ phone, code, password }: Omit<Auth.Register.FormModel, 'confirmPassword'>) {
     startLoading()
 
     const [error] = await to(registerUser({ phone, code, password }))
 
     if (!error) {
-      window.$message?.success($t('page.login.common.validateSuccess'))
+      window.$message?.success($t('page.login.register.registerSuccess'))
     }
 
     endLoading()
   }
 
+  // 重置密码
   async function resetPwd({ phone, code, password }: Omit<Auth.ResetPwd.FormModel, 'confirmPassword'>) {
     startLoading()
 
     const [error] = await to(resetPassword({ phone, code, password }))
 
     if (!error) {
-      window.$message?.success($t('page.login.common.validateSuccess'))
+      await toggleLoginModule('pwd-login')
+
+      window.$message?.success($t('page.login.resetPwd.resetPwdSuccess'))
     }
 
     endLoading()

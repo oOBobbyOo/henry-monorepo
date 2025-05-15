@@ -66,12 +66,14 @@ const local = {
       },
       register: {
         title: '注册账号',
+        registerSuccess: '注册成功',
         agreement: '我已经仔细阅读并接受',
         protocol: '《用户协议》',
         policy: '《隐私权政策》',
       },
       resetPwd: {
         title: '重置密码',
+        resetPwdSuccess: '重置密码成功',
       },
     },
   },
