@@ -1,5 +1,6 @@
 // @see https://github.com/rstacruz/nprogress
 import type NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 /**
  * @description 创建一个NProgress实例
