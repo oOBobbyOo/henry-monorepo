@@ -7,7 +7,7 @@ import { getToken, setToken } from '@/utils'
 import { to } from '@henry/utils'
 import { useLoading } from '@henry/vhooks'
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
 export const useAuthStore = defineStore('auth', () => {
   const { loading, startLoading, endLoading } = useLoading()
@@ -16,6 +16,8 @@ export const useAuthStore = defineStore('auth', () => {
   const userStore = useUserStore()
 
   const token = ref(getToken())
+
+  const isLogin = computed(() => Boolean(token.value))
 
   // 密码登录
   async function pwdLogin({ username, password }: Auth.PwdLogin.FormModel) {
@@ -107,6 +109,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   return {
     token,
+    isLogin,
     loading,
     pwdLogin,
     codeLogin,
