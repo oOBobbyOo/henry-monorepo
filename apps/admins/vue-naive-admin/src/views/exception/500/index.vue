@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>500</div>
+  <ExceptionBase type="500" />
 </template>
 
 <style scoped>

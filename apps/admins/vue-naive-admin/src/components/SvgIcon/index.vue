@@ -10,8 +10,10 @@ interface SvgIconProps {
   icon?: string
 }
 
+const localPrefix = 'local:'
+
 const isLocalIcon = computed(() => {
-  return icon && icon.startsWith('local:')
+  return icon && icon.startsWith(localPrefix)
 })
 
 const attrs = useAttrs()
@@ -22,7 +24,10 @@ const bindAttrs = computed<{ class: string, style: string }>(() => ({
 }))
 
 const symbolId = computed(() => {
-  return icon && icon.replace('local:', '')
+  const { VITE_ICON_LOCAL_PREFIX: prefix } = import.meta.env
+  const defaultLocalIcon = 'no-icon'
+  const iconName = icon?.replace(localPrefix, '') || defaultLocalIcon
+  return `#${prefix}-${iconName}`
 })
 </script>
 

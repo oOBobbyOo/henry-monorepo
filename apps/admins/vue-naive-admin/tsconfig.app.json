@@ -8,7 +8,7 @@
       "@/*": ["./src/*"],
       "~/*": ["./*"]
     },
-    "types": ["vite/client", "unplugin-icons/types/vue", "naive-ui/volar"],
+    "types": ["vite/client", "vite-plugin-svg-icons/client", "unplugin-icons/types/vue", "naive-ui/volar"],
 
     /* Linting */
     "strict": true,

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>403</div>
+  <ExceptionBase type="403" />
 </template>
 
 <style scoped>

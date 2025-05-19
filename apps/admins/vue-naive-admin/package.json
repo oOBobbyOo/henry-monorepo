@@ -41,6 +41,7 @@
     "unplugin-vue-components": "catalog:dev",
     "vite": "catalog:dev",
     "vite-plugin-fake-server": "catalog:dev",
+    "vite-plugin-svg-icons": "catalog:dev",
     "vue-tsc": "catalog:dev"
   }
 }

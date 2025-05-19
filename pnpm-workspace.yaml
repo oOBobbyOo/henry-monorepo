@@ -43,6 +43,7 @@ catalogs:
     vite: ^6.2.0
     vite-plugin-fake-server: ^2.2.0
     vite-plugin-mock: ^3.0.2
+    vite-plugin-svg-icons: ^2.0.1
     vue-tsc: ^2.2.8
   prod:
     '@better-scroll/core': ^2.5.1

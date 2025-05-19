@@ -4,9 +4,7 @@ import { setupI18n } from './locales'
 import { setupRouter } from './router'
 import { setupStore } from './stores'
 
-import '@unocss/reset/normalize.css'
-import 'virtual:uno.css'
-import './styles/index.css'
+import './plugins/assets'
 
 async function bootstrap() {
   const app = createApp(App)

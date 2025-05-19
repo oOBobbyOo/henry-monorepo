@@ -28,7 +28,12 @@ const appStore = useAppStore()
         <GlobalHeader />
         <GlobalTabs />
       </n-layout-header>
-      <n-layout-content embedded :native-scrollbar="false" class="flex-1 p-t-[100px] p-b-[50px]">
+      <n-layout-content
+        embedded
+        :native-scrollbar="false"
+        content-class="size-full"
+        class="flex-1 p-t-[100px] p-b-[50px]"
+      >
         <GlobalContent />
       </n-layout-content>
       <n-layout-footer bordered position="absolute" class="z-999">

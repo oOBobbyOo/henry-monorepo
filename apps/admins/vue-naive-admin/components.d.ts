@@ -13,6 +13,7 @@ declare module 'vue' {
     ButtonIcon: typeof import('./src/components/ButtonIcon/index.vue')['default']
     Card: typeof import('./src/components/Card/index.vue')['default']
     DarkMode: typeof import('./src/components/DarkMode/index.vue')['default']
+    ExceptionBase: typeof import('./src/components/ExceptionBase/index.vue')['default']
     IconGridiconsFullscreen: typeof import('~icons/gridicons/fullscreen')['default']
     IconGridiconsFullscreenExit: typeof import('~icons/gridicons/fullscreen-exit')['default']
     NAvatar: typeof import('naive-ui')['NAvatar']
