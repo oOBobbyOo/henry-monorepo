@@ -16,6 +16,12 @@ declare namespace App {
       icon?: () => VNode
       children?: Menu[]
     }
+
+    interface Tab {
+      id: string
+      label: string
+      icon: string
+    }
   }
 
   namespace I18n {
