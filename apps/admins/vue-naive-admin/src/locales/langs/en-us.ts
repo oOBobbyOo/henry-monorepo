@@ -54,6 +54,9 @@ const local = {
   },
   theme: {
     themeDrawerTitle: 'Theme Configuration',
+    themeColor: {
+      title: 'Theme Color',
+    },
   },
   route: {
     dashboard: 'Dashboard',

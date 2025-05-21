@@ -54,6 +54,9 @@ const local = {
   },
   theme: {
     themeDrawerTitle: '主题配置',
+    themeColor: {
+      title: '主题颜色',
+    },
   },
   route: {
     dashboard: '仪表盘',
