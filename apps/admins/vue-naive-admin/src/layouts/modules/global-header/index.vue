@@ -7,6 +7,7 @@ import { useFullscreen } from '@vueuse/core'
 import DarkMode from './components/DarkMode/index.vue'
 import LangSwitch from './components/LangSwitch/index.vue'
 import SiderToggler from './components/SiderToggler/index.vue'
+import ThemeButton from './components/ThemeButton/index.vue'
 import UserAvatar from './components/UserAvatar/index.vue'
 
 defineOptions({ name: 'GlobalHeader' })
@@ -27,6 +28,7 @@ const { isFullscreen, toggle } = useFullscreen()
         @change-lang="appStore.changeLocale"
       />
       <DarkMode circle :theme-schema="themeStore.themeSchema" />
+      <ThemeButton />
       <UserAvatar />
     </div>
   </div>
