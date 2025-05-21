@@ -56,7 +56,12 @@ function handleClose() {
     <slot />
     <template #suffix>
       <slot name="suffix">
-        <SvgIcon icon="mdi:close" @pointerdown.stop="handleClose" />
+        <div
+          v-if="closable"
+          class="w-4 h-4 inline-flex items-center justify-center rd-50% text-sm hover:text-white hover:bg-gray-300" @pointerdown.stop="handleClose"
+        >
+          <SvgIcon icon="mdi:close" />
+        </div>
       </slot>
     </template>
   </component>

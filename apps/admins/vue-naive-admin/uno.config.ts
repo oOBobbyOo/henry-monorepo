@@ -19,6 +19,7 @@ export default defineConfig({
     'flex-between': 'flex justify-between items-center',
     'flex-col': 'flex flex-col',
     'flex-col-center': 'flex-center flex-col',
+    'flex-1-hidden': 'flex-1 overflow-hidden',
   },
   presets: [
     presetWind4(),

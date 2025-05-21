@@ -144,6 +144,13 @@ const local = {
       invalid: '邮箱格式不正确',
     },
   },
+  icon: {
+    themeConfig: '主题配置',
+    themeSchema: '主题模式',
+    reload: '刷新页面',
+    pin: '固定',
+    unpin: '取消固定',
+  },
 }
 
 export default local

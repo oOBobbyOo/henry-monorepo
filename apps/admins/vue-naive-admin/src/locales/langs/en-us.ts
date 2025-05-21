@@ -144,6 +144,13 @@ const local = {
       invalid: 'Email format is incorrect',
     },
   },
+  icon: {
+    themeConfig: 'Theme Configuration',
+    themeSchema: 'Theme Schema',
+    reload: 'Reload Page',
+    pin: 'Pin',
+    unpin: 'Unpin',
+  },
 }
 
 export default local

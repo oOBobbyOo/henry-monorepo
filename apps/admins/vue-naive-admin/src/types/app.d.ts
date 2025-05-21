@@ -1,6 +1,7 @@
 declare namespace App {
   namespace Global {
     type VNode = import('vue').VNode
+    type RouteName = import('vue-router').RouteRecordNameGeneric
 
     interface RouterPushOptions {
       query?: Record<string, string>
@@ -11,8 +12,9 @@ declare namespace App {
       key: string
       label: string
       i18nKey?: string
-      routeKey: string
+      routeKey: RouteName
       routePath: string
+      fullPath: string
       icon?: () => VNode
       children?: Menu[]
     }
@@ -20,7 +22,11 @@ declare namespace App {
     interface Tab {
       id: string
       label: string
-      icon: string
+      i18nKey?: string
+      routeKey: RouteName
+      routePath: string
+      fullPath: string
+      icon?: string
     }
   }
 

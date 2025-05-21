@@ -16,7 +16,10 @@ declare module 'vue-router' {
 
   type RouterMode = 'web' | 'hash' | 'memory'
 
+  type Route = RouteLocationNormalizedLoaded<Name>
+
   interface RouteModuleRaw {
     default: Array<RouteRecordRaw> | RouteRecordRaw
   }
+
 }

@@ -5,7 +5,6 @@ import { useThemeStore } from '@/stores/modules/theme'
 import { useFullscreen } from '@vueuse/core'
 
 import DarkMode from './components/DarkMode/index.vue'
-import FullScreen from './components/FullScreen/index.vue'
 import LangSwitch from './components/LangSwitch/index.vue'
 import SiderToggler from './components/SiderToggler/index.vue'
 import UserAvatar from './components/UserAvatar/index.vue'
@@ -19,7 +18,7 @@ const { isFullscreen, toggle } = useFullscreen()
 </script>
 
 <template>
-  <div class="layout-header flex-between px-3">
+  <div class="layout-header flex-between px-4">
     <SiderToggler :collapsed="appStore.siderCollapse" @click="appStore.toggleSiderCollapse" />
     <div class="h-full flex-y-center justify-end gap-2">
       <FullScreen :full="isFullscreen" @click="toggle" />
