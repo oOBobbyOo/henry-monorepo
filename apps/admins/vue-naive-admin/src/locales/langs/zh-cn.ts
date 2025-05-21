@@ -52,6 +52,9 @@ const local = {
     userCenter: '个人中心',
     logout: '退出登录',
   },
+  theme: {
+    themeDrawerTitle: '主题配置',
+  },
   route: {
     dashboard: '仪表盘',
     analysis: '分析页',

@@ -6,6 +6,7 @@ import GlobalFooter from '../modules/global-footer/index.vue'
 import GlobalHeader from '../modules/global-header/index.vue'
 import GlobalSider from '../modules/global-sider/index.vue'
 import GlobalTabs from '../modules/global-tabs/index.vue'
+import ThemeDrawer from '../modules/theme-drawer/index.vue'
 
 defineOptions({ name: 'BasicLayout' })
 
@@ -35,6 +36,7 @@ const appStore = useAppStore()
         class="flex-1 p-t-[100px] p-b-[50px]"
       >
         <GlobalContent />
+        <ThemeDrawer />
       </n-layout-content>
       <n-layout-footer bordered position="absolute" class="z-999">
         <GlobalFooter />

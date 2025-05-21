@@ -6,6 +6,7 @@ import { ref } from 'vue'
 
 export const useAppStore = defineStore('app', () => {
   const { bool: siderCollapse, setBool: setSiderCollapse, toggle: toggleSiderCollapse } = useBoolean()
+  const { bool: themeDrawerVisible, setTrue: openThemeDrawer, setFalse: closeThemeDrawer } = useBoolean()
 
   const layoutMode = 'basic'
 
@@ -35,5 +36,8 @@ export const useAppStore = defineStore('app', () => {
     siderCollapse,
     setSiderCollapse,
     toggleSiderCollapse,
+    themeDrawerVisible,
+    openThemeDrawer,
+    closeThemeDrawer,
   }
 })

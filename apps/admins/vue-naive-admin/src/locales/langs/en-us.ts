@@ -52,6 +52,9 @@ const local = {
     userCenter: 'User Center',
     logout: 'Logout',
   },
+  theme: {
+    themeDrawerTitle: 'Theme Configuration',
+  },
   route: {
     dashboard: 'Dashboard',
     analysis: 'Analysis',
