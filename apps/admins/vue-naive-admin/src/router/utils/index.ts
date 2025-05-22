@@ -11,6 +11,30 @@ export function getHistory(mode: RouterMode, baseUrl?: string) {
   return map.get(mode) as RouterHistory
 }
 
+/**
+ * sort route by order
+ * @param route route
+ */
+function sortRouteByOrder(route: RouteRecordRaw) {
+  if (route.children?.length) {
+    route.children.sort((next, prev) => (Number(next.meta?.order) || 0) - (Number(prev.meta?.order) || 0))
+    route.children.forEach(sortRouteByOrder)
+  }
+
+  return route
+}
+
+/**
+ * sort routes by order
+ * @param routes routes
+ */
+export function sortRoutesByOrder(routes: RouteRecordRaw[]) {
+  routes.sort((next, prev) => (Number(next.meta?.order) || 0) - (Number(prev.meta?.order) || 0))
+  routes.forEach(sortRouteByOrder)
+
+  return routes
+}
+
 export function generateMenu(route: RouteRecordRaw, parentPath?: string) {
   const { SvgIconVNode } = useSvgIcon()
 
@@ -23,7 +47,7 @@ export function generateMenu(route: RouteRecordRaw, parentPath?: string) {
     key: name as string,
     label,
     i18nKey,
-    routeKey: name as string,
+    routeKey: name,
     routePath,
     icon: SvgIconVNode({ icon }),
   }

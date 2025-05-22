@@ -11,6 +11,7 @@ const manage: RouteRecordRaw = {
     i18nKey: 'route.manage.system',
     icon: 'carbon:cloud-service-management',
     keepAlive: true,
+    order: 9,
   },
   children: [
     {

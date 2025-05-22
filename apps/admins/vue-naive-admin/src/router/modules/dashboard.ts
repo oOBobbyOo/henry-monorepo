@@ -11,6 +11,7 @@ const dashboard: RouteRecordRaw = {
     i18nKey: 'route.dashboard',
     icon: 'mdi:monitor-dashboard',
     keepAlive: true,
+    order: 1,
   },
   children: [
     {

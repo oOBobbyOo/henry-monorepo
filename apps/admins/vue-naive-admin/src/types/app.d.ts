@@ -14,7 +14,6 @@ declare namespace App {
       i18nKey?: string
       routeKey: RouteName
       routePath: string
-      fullPath: string
       icon?: () => VNode
       children?: Menu[]
     }

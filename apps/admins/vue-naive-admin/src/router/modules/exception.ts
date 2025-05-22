@@ -11,6 +11,7 @@ const exception: RouteRecordRaw = {
     i18nKey: 'route.exception.page',
     icon: 'ant-design:exception-outlined',
     keepAlive: true,
+    order: 8,
   },
   children: [
     {

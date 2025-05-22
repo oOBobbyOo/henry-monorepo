@@ -11,6 +11,7 @@ const about: RouteRecordRaw = {
     i18nKey: 'route.about',
     icon: 'fluent:book-information-24-regular',
     keepAlive: true,
+    order: 10,
   },
   children: [
     {
