@@ -34,13 +34,13 @@ function changeLang(lang: App.I18n.LangType) {
 </script>
 
 <template>
-  <n-dropdown :value="lang" :options="langOptions" trigger="hover" @select="changeLang">
+  <NDropdown :value="lang" :options="langOptions" trigger="hover" @select="changeLang">
     <div>
       <ButtonIcon circle :content="tooltipContent" placement="left">
         <SvgIcon icon="heroicons:language" />
       </ButtonIcon>
     </div>
-  </n-dropdown>
+  </NDropdown>
 </template>
 
 <style scoped>

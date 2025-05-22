@@ -20,17 +20,17 @@ const naiveDateLocale = computed(() => {
 </script>
 
 <template>
-  <n-config-provider
+  <NConfigProvider
     :theme="naiveDarkTheme"
     :theme-overrides="themeStore.naiveTheme"
     :locale="naiveLocale"
     :date-locale="naiveDateLocale"
-    class="wh-full"
+    class="h-full"
   >
-    <app-provider>
-      <router-view />
-    </app-provider>
-  </n-config-provider>
+    <AppProvider>
+      <RouterView />
+    </AppProvider>
+  </NConfigProvider>
 </template>
 
 <style scoped>

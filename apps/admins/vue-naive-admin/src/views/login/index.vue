@@ -24,7 +24,7 @@ const activeModule = computed(() => moduleMap[props.module || 'pwd-login'])
 
 <template>
   <div class="relative size-full flex-center overflow-hidden">
-    <n-card :bordered="false" class="relative z-4 w-auto rd-3">
+    <NCard :bordered="false" class="relative z-4 w-auto rd-3">
       <div class="w-100">
         <main class="pt-6">
           <h3 class="text-4 font-medium">
@@ -37,7 +37,7 @@ const activeModule = computed(() => moduleMap[props.module || 'pwd-login'])
           </div>
         </main>
       </div>
-    </n-card>
+    </NCard>
   </div>
 </template>
 

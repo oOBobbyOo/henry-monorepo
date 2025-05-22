@@ -42,7 +42,7 @@ watch(
 </script>
 
 <template>
-  <n-menu
+  <NMenu
     v-model:expanded-keys="expandedKeys"
     mode="vertical"
     :collapsed-width="64"

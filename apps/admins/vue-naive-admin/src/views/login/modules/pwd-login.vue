@@ -33,38 +33,38 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <n-form ref="formRef" :model="model" :rules="rules" size="large" :show-label="false" @keyup.enter="handleSubmit">
-    <n-form-item path="username">
-      <n-input v-model:value="model.username" :placeholder="$t('page.login.common.userNamePlaceholder')" />
-    </n-form-item>
-    <n-form-item path="password">
-      <n-input
+  <NForm ref="formRef" :model="model" :rules="rules" size="large" :show-label="false" @keyup.enter="handleSubmit">
+    <NFormItem path="username">
+      <NInput v-model:value="model.username" :placeholder="$t('page.login.common.userNamePlaceholder')" />
+    </NFormItem>
+    <NFormItem path="password">
+      <NInput
         v-model:value="model.password"
         type="password"
         show-password-on="click"
         :placeholder="$t('page.login.common.passwordPlaceholder')"
       />
-    </n-form-item>
-    <n-space vertical :size="24">
+    </NFormItem>
+    <NSpace vertical :size="24">
       <div class="flex-y-center justify-between">
-        <n-checkbox>{{ $t('page.login.pwdLogin.rememberMe') }}</n-checkbox>
-        <n-button quaternary @click="toggleLoginModule('reset-pwd')">
+        <NCheckbox>{{ $t('page.login.pwdLogin.rememberMe') }}</NCheckbox>
+        <NButton quaternary @click="toggleLoginModule('reset-pwd')">
           {{ $t('page.login.pwdLogin.forgetPassword') }}
-        </n-button>
+        </NButton>
       </div>
-      <n-button type="primary" size="large" round block :loading="authStore.loading" @click="handleSubmit">
+      <NButton type="primary" size="large" round block :loading="authStore.loading" @click="handleSubmit">
         {{ $t('common.confirm') }}
-      </n-button>
+      </NButton>
       <div class="flex-y-center justify-between gap-4">
-        <n-button class="flex-1" block @click="toggleLoginModule('code-login')">
+        <NButton class="flex-1" block @click="toggleLoginModule('code-login')">
           {{ $t('page.login.codeLogin.title') }}
-        </n-button>
-        <n-button class="flex-1" block @click="toggleLoginModule('register')">
+        </NButton>
+        <NButton class="flex-1" block @click="toggleLoginModule('register')">
           {{ $t('page.login.register.title') }}
-        </n-button>
+        </NButton>
       </div>
-    </n-space>
-  </n-form>
+    </NSpace>
+  </NForm>
 </template>
 
 <style scoped>

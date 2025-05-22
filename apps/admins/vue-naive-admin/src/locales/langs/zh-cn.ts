@@ -122,6 +122,12 @@ const local = {
         resetPwdSuccess: '重置密码成功',
       },
     },
+    about: {
+      title: '关于',
+      introduction: `HenryAdmin 是一个优雅且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite5, TypeScript, Pinia 和 UnoCSS。`,
+      prdDep: '生产依赖',
+      devDep: '开发依赖',
+    },
   },
   form: {
     required: '不能为空',

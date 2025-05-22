@@ -14,8 +14,8 @@ const appStore = useAppStore()
 </script>
 
 <template>
-  <n-layout has-sider embedded class="wh-full">
-    <n-layout-sider
+  <NLayout has-sider embedded class="wh-full">
+    <NLayoutSider
       bordered
       collapse-mode="width"
       :collapsed-width="64"
@@ -23,13 +23,13 @@ const appStore = useAppStore()
       :collapsed="appStore.siderCollapse"
     >
       <GlobalSider />
-    </n-layout-sider>
-    <n-layout embedded content-class="min-h-full flex-col">
-      <n-layout-header bordered position="absolute" class="z-999">
+    </NLayoutSider>
+    <NLayout embedded content-class="min-h-full flex-col">
+      <NLayoutHeader bordered position="absolute" class="z-999">
         <GlobalHeader />
         <GlobalTabs />
-      </n-layout-header>
-      <n-layout-content
+      </NLayoutHeader>
+      <NLayoutContent
         embedded
         :native-scrollbar="false"
         content-class="size-full"
@@ -37,12 +37,12 @@ const appStore = useAppStore()
       >
         <GlobalContent />
         <ThemeDrawer />
-      </n-layout-content>
-      <n-layout-footer bordered position="absolute" class="z-999">
+      </NLayoutContent>
+      <NLayoutFooter bordered position="absolute" class="z-999">
         <GlobalFooter />
-      </n-layout-footer>
-    </n-layout>
-  </n-layout>
+      </NLayoutFooter>
+    </NLayout>
+  </NLayout>
 </template>
 
 <style scoped></style>

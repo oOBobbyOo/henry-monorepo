@@ -8,9 +8,9 @@ defineOptions({ name: 'GlobalSider' })
 <template>
   <div class="layout-sider h-full flex-col">
     <GlobalLogo />
-    <n-scrollbar class="flex-1">
+    <NScrollbar class="flex-1">
       <GlobalMenus />
-    </n-scrollbar>
+    </NScrollbar>
   </div>
 </template>
 

@@ -7,7 +7,7 @@ const attrs = useAttrs()
 </script>
 
 <template>
-  <n-card
+  <NCard
     size="small"
     :bordered="false"
     :segmented="{
@@ -17,7 +17,7 @@ const attrs = useAttrs()
     v-bind="attrs"
   >
     <slot />
-  </n-card>
+  </NCard>
 </template>
 
 <style scoped>

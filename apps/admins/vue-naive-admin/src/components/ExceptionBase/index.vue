@@ -28,9 +28,9 @@ const { routerPushByKey } = useRouterPush()
     <div class="flex text-400px text-primary">
       <SvgIcon :icon="icon" />
     </div>
-    <n-button type="primary" @click="routerPushByKey('root')">
+    <NButton type="primary" @click="routerPushByKey('root')">
       {{ $t('common.backToHome') }}
-    </n-button>
+    </NButton>
   </div>
 </template>
 

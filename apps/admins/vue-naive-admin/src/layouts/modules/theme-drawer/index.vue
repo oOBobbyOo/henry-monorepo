@@ -9,11 +9,11 @@ const appStore = useAppStore()
 </script>
 
 <template>
-  <n-drawer v-model:show="appStore.themeDrawerVisible" display-directive="show" :width="360">
-    <n-drawer-content :title="$t('theme.themeDrawerTitle')" :native-scrollbar="false" closable>
+  <NDrawer v-model:show="appStore.themeDrawerVisible" display-directive="show" :width="360">
+    <NDrawerContent :title="$t('theme.themeDrawerTitle')" :native-scrollbar="false" closable>
       <ThemeColor />
-    </n-drawer-content>
-  </n-drawer>
+    </NDrawerContent>
+  </NDrawer>
 </template>
 
 <style scoped>

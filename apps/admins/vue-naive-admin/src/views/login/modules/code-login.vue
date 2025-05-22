@@ -35,27 +35,27 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <n-form ref="formRef" :model="model" :rules="rules" size="large" :show-label="false" @keyup.enter="handleSubmit">
-    <n-form-item path="phone">
-      <n-input v-model:value="model.phone" :placeholder="$t('page.login.common.phonePlaceholder')" />
-    </n-form-item>
-    <n-form-item path="code">
+  <NForm ref="formRef" :model="model" :rules="rules" size="large" :show-label="false" @keyup.enter="handleSubmit">
+    <NFormItem path="phone">
+      <NInput v-model:value="model.phone" :placeholder="$t('page.login.common.phonePlaceholder')" />
+    </NFormItem>
+    <NFormItem path="code">
       <div class="w-full flex-y-center gap-4">
-        <n-input v-model:value="model.code" :placeholder="$t('page.login.common.codePlaceholder')" />
-        <n-button size="large" :disabled="isCounting" :loading="loading" @click="getCaptcha(model.phone)">
+        <NInput v-model:value="model.code" :placeholder="$t('page.login.common.codePlaceholder')" />
+        <NButton size="large" :disabled="isCounting" :loading="loading" @click="getCaptcha(model.phone)">
           {{ label }}
-        </n-button>
+        </NButton>
       </div>
-    </n-form-item>
-    <n-space vertical :size="18" class="w-full">
-      <n-button type="primary" size="large" round block :loading="authStore.loading" @click="handleSubmit">
+    </NFormItem>
+    <NSpace vertical :size="18" class="w-full">
+      <NButton type="primary" size="large" round block :loading="authStore.loading" @click="handleSubmit">
         {{ $t('common.confirm') }}
-      </n-button>
-      <n-button size="large" round block @click="toggleLoginModule('pwd-login')">
+      </NButton>
+      <NButton size="large" round block @click="toggleLoginModule('pwd-login')">
         {{ $t('page.login.common.back') }}
-      </n-button>
-    </n-space>
-  </n-form>
+      </NButton>
+    </NSpace>
+  </NForm>
 </template>
 
 <style scoped>

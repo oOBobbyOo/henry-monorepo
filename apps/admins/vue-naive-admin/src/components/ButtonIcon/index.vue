@@ -21,18 +21,18 @@ interface ButtonIconProps {
 </script>
 
 <template>
-  <n-tooltip :placement="placement" :z-index="zIndex" :disabled="!content">
+  <NTooltip :placement="placement" :z-index="zIndex" :disabled="!content">
     <template #trigger>
-      <n-button quaternary :class="`text-size-lg ${props.class}`" v-bind="$attrs">
+      <NButton quaternary :class="`text-size-lg ${props.class}`" v-bind="$attrs">
         <div class="flex-center gap-2">
           <slot>
             <SvgIcon :icon="icon" />
           </slot>
         </div>
-      </n-button>
+      </NButton>
     </template>
     {{ content }}
-  </n-tooltip>
+  </NTooltip>
 </template>
 
 <style scoped>

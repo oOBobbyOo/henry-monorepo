@@ -5,7 +5,7 @@ defineOptions({ name: 'ThemeColor' })
 </script>
 
 <template>
-  <n-divider>{{ $t('theme.themeColor.title') }}</n-divider>
+  <NDivider>{{ $t('theme.themeColor.title') }}</NDivider>
 </template>
 
 <style scoped>

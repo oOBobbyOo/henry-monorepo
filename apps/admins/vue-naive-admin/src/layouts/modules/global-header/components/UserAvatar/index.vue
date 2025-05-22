@@ -27,13 +27,13 @@ function handleSelect() {
 </script>
 
 <template>
-  <n-dropdown
+  <NDropdown
     placement="bottom"
     trigger="click"
     :options="options"
     @select="handleSelect"
   >
-    <n-avatar
+    <NAvatar
       round
       class="cursor-pointer"
       :src="userInfo?.avatar"
@@ -43,8 +43,8 @@ function handleSelect() {
           <SvgIcon icon="ph:user-circle" />
         </ButtonIcon>
       </template>
-    </n-avatar>
-  </n-dropdown>
+    </NAvatar>
+  </NDropdown>
 </template>
 
 <style scoped>
