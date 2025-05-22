@@ -11,8 +11,12 @@ export const useThemeStore = defineStore('theme', () => {
     return isDark.value ? 'dark' : 'light'
   })
 
+  /** Naive theme  */
+  const naiveTheme = {}
+
   return {
     darkMode,
     themeSchema,
+    naiveTheme,
   }
 })

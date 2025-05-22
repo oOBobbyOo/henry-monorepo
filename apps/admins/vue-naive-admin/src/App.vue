@@ -22,6 +22,7 @@ const naiveDateLocale = computed(() => {
 <template>
   <n-config-provider
     :theme="naiveDarkTheme"
+    :theme-overrides="themeStore.naiveTheme"
     :locale="naiveLocale"
     :date-locale="naiveDateLocale"
     class="wh-full"
