@@ -20,6 +20,7 @@ export default defineConfig({
     'flex-col': 'flex flex-col',
     'flex-col-center': 'flex-center flex-col',
     'flex-1-hidden': 'flex-1 overflow-hidden',
+    'card-wrapper': 'rd-8px shadow-sm',
   },
   presets: [
     presetWind4(),

@@ -1,44 +1,63 @@
 <script setup lang='ts'>
+import { useAppStore } from '@/stores/modules/app'
+import { computed } from 'vue'
 import pkg from '~/package.json'
+
+interface PkgVersionInfo {
+  name: string
+  version: string
+}
+
+interface PkgJson {
+  name: string
+  version: string
+  dependencies: PkgVersionInfo[]
+  devDependencies: PkgVersionInfo[]
+}
+
+const { name, version, dependencies, devDependencies } = pkg
+
+function transformVersionData(tuple: [string, string]): PkgVersionInfo {
+  const [$name, $version] = tuple
+  return {
+    name: $name,
+    version: $version,
+  }
+}
+
+const pkgJson: PkgJson = {
+  name,
+  version,
+  dependencies: Object.entries(dependencies).map(item => transformVersionData(item)),
+  devDependencies: Object.entries(devDependencies).map(item => transformVersionData(item)),
+}
+
+const appStore = useAppStore()
+
+const column = computed(() => (appStore.isMobile ? 1 : 2))
 </script>
 
 <template>
   <NSpace vertical :size="16">
-    <Card title="关于">
-      HenryAdmin 是一个优雅且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite5, TypeScript, Pinia 和 UnoCSS。
-    </Card>
+    <NCard :title="$t('page.about.title')" :bordered="false" size="small" segmented class="card-wrapper">
+      <p>{{ $t('page.about.introduction') }}</p>
+    </NCard>
 
-    <Card title="开发环境依赖">
-      <NDescriptions
-        label-placement="left"
-        bordered
-        :column="2"
-      >
-        <NDescriptionsItem
-          v-for="(item, key) in pkg.devDependencies"
-          :key="key"
-          :label="key"
-        >
-          {{ item }}
+    <NCard :title="$t('page.about.prdDep')" :bordered="false" size="small" segmented class="card-wrapper">
+      <NDescriptions label-placement="left" bordered size="small" :column="column">
+        <NDescriptionsItem v-for="item in pkgJson.dependencies" :key="item.name" :label="item.name">
+          {{ item.version }}
         </NDescriptionsItem>
       </NDescriptions>
-    </Card>
+    </NCard>
 
-    <Card title="生产环境依赖">
-      <NDescriptions
-        label-placement="left"
-        bordered
-        :column="2"
-      >
-        <NDescriptionsItem
-          v-for="(item, key) in pkg.dependencies"
-          :key="key"
-          :label="key"
-        >
-          {{ item }}
+    <NCard :title="$t('page.about.devDep')" :bordered="false" size="small" segmented class="card-wrapper">
+      <NDescriptions label-placement="left" bordered size="small" :column="column">
+        <NDescriptionsItem v-for="item in pkgJson.devDependencies" :key="item.name" :label="item.name">
+          {{ item.version }}
         </NDescriptionsItem>
       </NDescriptions>
-    </Card>
+    </NCard>
   </NSpace>
 </template>
 

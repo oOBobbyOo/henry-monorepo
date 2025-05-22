@@ -1,12 +1,18 @@
 import { setLocale } from '@/locales'
 import { useBoolean } from '@henry/vhooks'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 export const useAppStore = defineStore('app', () => {
+  const breakpoints = useBreakpoints(breakpointsTailwind)
+
   const { bool: siderCollapse, setBool: setSiderCollapse, toggle: toggleSiderCollapse } = useBoolean()
   const { bool: themeDrawerVisible, setTrue: openThemeDrawer, setFalse: closeThemeDrawer } = useBoolean()
+
+  /** Is mobile layout */
+  const isMobile = breakpoints.smaller('sm')
 
   const layoutMode = 'basic'
 
@@ -29,6 +35,7 @@ export const useAppStore = defineStore('app', () => {
   }
 
   return {
+    isMobile,
     layoutMode,
     locale,
     localeOptions,
