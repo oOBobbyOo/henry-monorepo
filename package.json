@@ -9,7 +9,7 @@
     "dev:naive-admin": "pnpm -F @henry/vue-naive-admin run dev",
     "dev:nuxt-temp": "pnpm -F @henry/nuxt-temp run dev",
     "build:antd-admin": "pnpm -F @henry/react-antd-admin run build",
-    "build:naive-admin": "pnpm -F @henry/vue-naive-admin run build",
+    "build:naive-admin": "pnpm -F @henry/vue-naive-admin run build:prod",
     "build:nuxt-temp": "pnpm -F @henry/nuxt-temp run build",
     "lint": "turbo run lint",
     "preinstall": "npx only-allow pnpm",
