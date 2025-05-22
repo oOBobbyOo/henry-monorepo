@@ -7,6 +7,7 @@ import vue from '@vitejs/plugin-vue'
 // @see https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
+import { setupCompressionPlugin } from './compression'
 import { setupDevtoolsPlugin } from './devtools'
 import { setupMockPlugin } from './mock'
 import { setupUnoCSSPlugin } from './unocss'
@@ -19,6 +20,7 @@ export function setupVitePlugins(viteEnv: ImportMetaEnv) {
     // For JSX / TSX support
     vueJsx(),
     ...setupUnplugin(viteEnv),
+    setupCompressionPlugin(),
     setupDevtoolsPlugin(viteEnv),
     setupMockPlugin(viteEnv),
   ]
