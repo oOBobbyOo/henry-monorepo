@@ -1,8 +1,9 @@
+import type { ImportMetaEnv } from '@henry/types'
 import { HttpClient } from '@henry/request'
 import pkg from '~/package.json'
 import { localStg } from './storage'
 
-const baseURL = import.meta.env.VITE_BASE_API
+const { VITE_BASE_API: baseURL } = import.meta.env as unknown as ImportMetaEnv
 
 export const request = new HttpClient({
   baseURL,

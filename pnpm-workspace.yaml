@@ -22,6 +22,7 @@ catalogs:
     '@unocss/reset': ^66.1.0-beta.5
     '@vitejs/plugin-react': ^4.3.4
     '@vitejs/plugin-vue': ^5.2.1
+    '@vitejs/plugin-vue-jsx': ^4.2.0
     '@vue/compiler-sfc': ^3.5.13
     '@vue/tsconfig': ^0.7.0
     eslint: ^9.21.0
@@ -44,6 +45,7 @@ catalogs:
     vite-plugin-fake-server: ^2.2.0
     vite-plugin-mock: ^3.0.2
     vite-plugin-svg-icons: ^2.0.1
+    vite-plugin-vue-devtools: ^7.7.6
     vue-tsc: ^2.2.8
   prod:
     '@better-scroll/core': ^2.5.1

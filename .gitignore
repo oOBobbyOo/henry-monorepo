@@ -12,7 +12,6 @@ coverage
 .nuxt/
 .output/
 out/
-build
 dist
 
 # misc

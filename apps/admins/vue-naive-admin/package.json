@@ -31,6 +31,7 @@
     "@unocss/preset-web-fonts": "catalog:dev",
     "@unocss/reset": "catalog:dev",
     "@vitejs/plugin-vue": "catalog:dev",
+    "@vitejs/plugin-vue-jsx": "catalog:dev",
     "@vue/compiler-sfc": "catalog:dev",
     "@vue/tsconfig": "catalog:dev",
     "mockjs": "catalog:dev",
@@ -42,6 +43,7 @@
     "vite": "catalog:dev",
     "vite-plugin-fake-server": "catalog:dev",
     "vite-plugin-svg-icons": "catalog:dev",
+    "vite-plugin-vue-devtools": "catalog:dev",
     "vue-tsc": "catalog:dev"
   }
 }
