@@ -1,0 +1,112 @@
+import type { RouteRecordRaw } from 'vue-router'
+import BasicLayout from '@/layouts/basic-layout/index.vue'
+
+const feature: RouteRecordRaw = {
+  path: '/feature',
+  name: 'Feature',
+  component: BasicLayout,
+  redirect: '/feature/chart',
+  meta: {
+    title: '功能',
+    i18nKey: 'route.feature.page',
+    icon: 'cil:featured-playlist',
+    keepAlive: true,
+    order: 5,
+  },
+  children: [
+    {
+      path: 'chart',
+      name: 'Chart',
+      redirect: '/feature/chart/echarts',
+      meta: {
+        title: '图表',
+        i18nKey: 'route.feature.chart',
+        icon: 'carbon:chart-multitype',
+        keepAlive: true,
+      },
+      children: [
+        {
+          path: 'echarts',
+          name: 'Echarts',
+          component: () => import('@/views/feature/chart/echarts/index.vue'),
+          meta: {
+            title: 'Echarts',
+            i18nKey: 'route.feature.echarts',
+            icon: 'simple-icons:apacheecharts',
+            keepAlive: true,
+          },
+        },
+        {
+          path: 'vchart',
+          name: 'Vchart',
+          component: () => import('@/views/feature/chart/vchart/index.vue'),
+          meta: {
+            title: 'Vchart',
+            i18nKey: 'route.feature.vchart',
+            icon: 'simple-icons:v',
+            keepAlive: true,
+          },
+        },
+      ],
+    },
+    {
+      path: 'editor',
+      name: 'Editor',
+      redirect: '/feature/editor/markdown',
+      meta: {
+        title: '编辑器',
+        i18nKey: 'route.feature.editor',
+        icon: 'mdi:text-box-edit',
+        keepAlive: true,
+      },
+      children: [
+        {
+          path: 'markdown',
+          name: 'Markdown',
+          component: () => import('@/views/feature/editor/markdown/index.vue'),
+          meta: {
+            title: 'markdown',
+            i18nKey: 'route.feature.markdown',
+            icon: 'ri:markdown-fill',
+            keepAlive: true,
+          },
+        },
+        {
+          path: 'quillEditor',
+          name: 'QuillEditor',
+          component: () => import('@/views/feature/editor/quillEditor/index.vue'),
+          meta: {
+            title: 'quillEditor',
+            i18nKey: 'route.feature.quillEditor',
+            icon: 'hugeicons:quill-write-01',
+            keepAlive: true,
+          },
+        },
+        {
+          path: 'wangEditor',
+          name: 'WangEditor',
+          component: () => import('@/views/feature/editor/wangEditor/index.vue'),
+          meta: {
+            title: 'wangEditor',
+            i18nKey: 'route.feature.wangEditor',
+            icon: 'mdi:file-document-edit',
+            keepAlive: true,
+          },
+        },
+      ],
+    },
+    {
+      path: 'qrcode',
+      name: 'Qrcode',
+      component: () => import('@/views/feature/qrcode/index.vue'),
+      meta: {
+        title: '二维码',
+        i18nKey: 'route.feature.qrcode',
+        icon: 'ic:baseline-qrcode',
+        keepAlive: true,
+      },
+    },
+  ],
+}
+
+export default feature

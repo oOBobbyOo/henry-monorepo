@@ -59,9 +59,22 @@ const local = {
     },
   },
   route: {
-    dashboard: '仪表盘',
-    analysis: '分析页',
-    workbench: '工作台',
+    dashboard: {
+      page: '仪表盘',
+      analysis: '分析页',
+      workbench: '工作台',
+    },
+    feature: {
+      page: '功能示例',
+      chart: '图表',
+      echarts: 'Echarts',
+      vchart: 'Vchart',
+      editor: '编辑器',
+      markdown: 'Markdown',
+      quillEditor: 'QuillEditor',
+      wangEditor: 'WangEditor',
+      qrcode: '二维码',
+    },
     manage: {
       system: '系统管理',
       user: '用户管理',

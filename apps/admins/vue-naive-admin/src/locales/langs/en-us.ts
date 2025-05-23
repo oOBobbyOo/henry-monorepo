@@ -59,9 +59,22 @@ const local = {
     },
   },
   route: {
-    dashboard: 'Dashboard',
-    analysis: 'Analysis',
-    workbench: 'Workbench',
+    dashboard: {
+      page: 'Dashboard',
+      analysis: 'Analysis',
+      workbench: 'Workbench',
+    },
+    feature: {
+      page: 'Feature',
+      chart: 'Chart',
+      echarts: 'Echarts',
+      vchart: 'Vchart',
+      editor: 'Editor',
+      markdown: 'Markdown',
+      quillEditor: 'QuillEditor',
+      wangEditor: 'WangEditor',
+      qrcode: 'Qrcode',
+    },
     manage: {
       system: 'System Manage',
       user: 'User Manage',

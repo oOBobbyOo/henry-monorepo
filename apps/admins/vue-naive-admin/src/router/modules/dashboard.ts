@@ -8,7 +8,7 @@ const dashboard: RouteRecordRaw = {
   redirect: '/dashboard/analysis',
   meta: {
     title: '首页',
-    i18nKey: 'route.dashboard',
+    i18nKey: 'route.dashboard.page',
     icon: 'mdi:monitor-dashboard',
     keepAlive: true,
     order: 1,
@@ -20,7 +20,7 @@ const dashboard: RouteRecordRaw = {
       component: () => import('@/views/dashboard/analysis/index.vue'),
       meta: {
         title: '分析页',
-        i18nKey: 'route.analysis',
+        i18nKey: 'route.dashboard.analysis',
         icon: 'icon-park-outline:analysis',
 
       },
@@ -31,7 +31,7 @@ const dashboard: RouteRecordRaw = {
       component: () => import('@/views/dashboard/workbench/index.vue'),
       meta: {
         title: '工作台',
-        i18nKey: 'route.workbench',
+        i18nKey: 'route.dashboard.workbench',
         icon: 'icon-park-outline:workbench',
         keepAlive: true,
       },
