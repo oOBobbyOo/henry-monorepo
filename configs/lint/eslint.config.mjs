@@ -12,6 +12,7 @@ export default antfu({
     '.vscode',
     '.nuxt',
     '.output',
+    '.visualizer',
     'auto-imports.d.ts',
     'compoents.d.ts',
   ],
