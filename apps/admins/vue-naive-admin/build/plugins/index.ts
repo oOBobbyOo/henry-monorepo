@@ -12,6 +12,7 @@ import { setupDevtoolsPlugin } from './devtools'
 import { setupMockPlugin } from './mock'
 import { setupUnoCSSPlugin } from './unocss'
 import { setupUnplugin } from './unplugin'
+import { setupVisualizerPlugin } from './visualizer'
 
 export function setupVitePlugins(viteEnv: ImportMetaEnv) {
   const plugins: PluginOption = [
@@ -23,6 +24,7 @@ export function setupVitePlugins(viteEnv: ImportMetaEnv) {
     setupCompressionPlugin(),
     setupDevtoolsPlugin(viteEnv),
     setupMockPlugin(viteEnv),
+    setupVisualizerPlugin(viteEnv),
   ]
 
   return plugins

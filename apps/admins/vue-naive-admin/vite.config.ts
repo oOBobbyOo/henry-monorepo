@@ -53,6 +53,7 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks: {
             'vue-venders': ['vue', 'vue-router'],
+            'naive-ui': ['naive-ui'],
           },
           entryFileNames: 'assets/js/[name]-[hash].js',
           chunkFileNames: 'assets/js/[name]-[hash].js',

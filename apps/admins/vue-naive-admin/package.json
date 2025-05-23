@@ -35,6 +35,7 @@
     "@vue/compiler-sfc": "catalog:dev",
     "@vue/tsconfig": "catalog:dev",
     "mockjs": "catalog:dev",
+    "rollup-plugin-visualizer": "catalog:dev",
     "terser": "catalog:dev",
     "typescript": "catalog:dev",
     "unocss": "catalog:dev",

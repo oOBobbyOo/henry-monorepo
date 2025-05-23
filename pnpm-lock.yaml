@@ -96,6 +96,9 @@ catalogs:
     prettier:
       specifier: ^3.2.5
       version: 3.5.3
+    rollup-plugin-visualizer:
+      specifier: ^5.9.0
+      version: 5.14.0
     terser:
       specifier: ^5.39.2
       version: 5.39.2
@@ -356,6 +359,9 @@ importers:
       mockjs:
         specifier: catalog:dev
         version: 1.1.0
+      rollup-plugin-visualizer:
+        specifier: catalog:dev
+        version: 5.14.0(rollup@4.35.0)
       terser:
         specifier: catalog:dev
         version: 5.39.2
@@ -14560,7 +14566,7 @@ snapshots:
       jest-worker: 27.5.1
       schema-utils: 4.3.0
       serialize-javascript: 6.0.2
-      terser: 5.39.0
+      terser: 5.39.2
       webpack: 5.98.0
 
   terser@5.39.0:
