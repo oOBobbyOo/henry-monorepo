@@ -145,6 +145,12 @@ catalogs:
     '@better-scroll/core':
       specifier: ^2.5.1
       version: 2.5.1
+    '@bytemd/plugin-gfm':
+      specifier: ^1.22.0
+      version: 1.22.0
+    '@bytemd/vue-next':
+      specifier: ^1.22.0
+      version: 1.22.0
     '@iconify/vue':
       specifier: ^4.3.0
       version: 4.3.0
@@ -163,6 +169,9 @@ catalogs:
     axios:
       specifier: ^1.7.9
       version: 1.8.3
+    bytemd:
+      specifier: ^1.22.0
+      version: 1.22.0
     dayjs:
       specifier: ^1.11.13
       version: 1.11.13
@@ -302,10 +311,10 @@ importers:
         specifier: catalog:prod
         version: 2.5.1
       '@bytemd/plugin-gfm':
-        specifier: ^1.22.0
+        specifier: catalog:prod
         version: 1.22.0(bytemd@1.22.0)
       '@bytemd/vue-next':
-        specifier: ^1.22.0
+        specifier: catalog:prod
         version: 1.22.0(vue@3.5.13(typescript@5.8.2))
       '@henry/request':
         specifier: workspace:*
@@ -319,6 +328,9 @@ importers:
       '@iconify/vue':
         specifier: catalog:prod
         version: 4.3.0(vue@3.5.13(typescript@5.8.2))
+      '@vueup/vue-quill':
+        specifier: ^1.2.0
+        version: 1.2.0(vue@3.5.13(typescript@5.8.2))
       '@vueuse/core':
         specifier: catalog:prod
         version: 13.0.0(vue@3.5.13(typescript@5.8.2))
@@ -329,7 +341,7 @@ importers:
         specifier: catalog:prod
         version: 5.1.12(@wangeditor/editor@5.1.23)(vue@3.5.13(typescript@5.8.2))
       bytemd:
-        specifier: ^1.22.0
+        specifier: catalog:prod
         version: 1.22.0
       naive-ui:
         specifier: catalog:prod
@@ -2502,6 +2514,11 @@ packages:
       vue:
         optional: true
 
+  '@vueup/vue-quill@1.2.0':
+    resolution: {integrity: sha512-kd5QPSHMDpycklojPXno2Kw2JSiKMYduKYQckTm1RJoVDA557MnyUXgcuuDpry4HY/Rny9nGNcK+m3AHk94wag==}
+    peerDependencies:
+      vue: ^3.2.41
+
   '@vueuse/core@13.0.0':
     resolution: {integrity: sha512-rkgb4a8/0b234lMGCT29WkCjPfsX0oxrIRR7FDndRoW3FsaC9NBzefXg/9TLhAgwM11f49XnutshM4LzJBrQ5g==}
     peerDependencies:
@@ -3384,6 +3401,10 @@ packages:
     resolution: {integrity: sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==}
     engines: {node: '>=0.10'}
 
+  deep-equal@1.1.2:
+    resolution: {integrity: sha512-5tdhKF6DbU7iIzrIOa1AOUt39ZRm13cmL1cGEh//aqR8x9+tNfbywRf0n5FD/18OKMdo7DNEtrX2t22ZAkI+eg==}
+    engines: {node: '>= 0.4'}
+
   deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
 
@@ -3973,6 +3994,9 @@ packages:
     resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
     engines: {node: '>=6'}
 
+  eventemitter3@2.0.3:
+    resolution: {integrity: sha512-jLN68Dx5kyFHaePoXWPsCGW5qdyZQtLYHkxkg02/Mz6g0kYpDx4FyP6XfArhQdlOC4b8Mv+EMxPo/8La7Tzghg==}
+
   eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
 
@@ -4024,6 +4048,12 @@ packages:
 
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
+
+  fast-diff@1.1.2:
+    resolution: {integrity: sha512-KaJUt+M9t1qaIteSvjc6P3RbMdXsNhK61GRftR6SNxqmhthcd9MGIi4T+o0jD8LUSpSnSKXE20nLtJ3fOHxQig==}
+
+  fast-diff@1.2.0:
+    resolution: {integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==}
 
   fast-diff@1.3.0:
     resolution: {integrity: sha512-VxPP4NqbUjj6MaAOafWeUn2cXWLcCtljklUtZf0Ind4XQ+QPtmA0b18zZy0jIQx+ExRVCR/ZQpBmik5lXshNsw==}
@@ -4493,6 +4523,10 @@ packages:
   is-accessor-descriptor@1.0.1:
     resolution: {integrity: sha512-YBUanLI8Yoihw923YeFUS5fs0fF2f5TSFTNiYAAzhhDscDa3lEqYuz1pDOEP5KvX94I9ey3vsqjJcLVFVU+3QA==}
     engines: {node: '>= 0.10'}
+
+  is-arguments@1.2.0:
+    resolution: {integrity: sha512-7bVbi0huj/wrIAOzb8U1aszg9kdi3KN/CyU19CTI7tAoZYEZoL9yCDXpbXN+uPsuWnP02cyug1gleqq+TU+YCA==}
+    engines: {node: '>= 0.4'}
 
   is-array-buffer@3.0.5:
     resolution: {integrity: sha512-DDfANUiiG2wC1qawP66qlTugJeL5HyzMpfr8lLK+jMQirGzNod0B12cFB/9q838Ru27sBwfw78/rdoU7RERz6A==}
@@ -5548,6 +5582,10 @@ packages:
     resolution: {integrity: sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==}
     engines: {node: '>= 0.4'}
 
+  object-is@1.1.6:
+    resolution: {integrity: sha512-F8cZ+KfGlSGi09lJT7/Nd6KJZ9ygtvYC0/UYYLI9nmQKLMnydpB9yvbv9K1uSkEu7FU9vYPmVwLg328tX+ot3Q==}
+    engines: {node: '>= 0.4'}
+
   object-keys@1.1.1:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
     engines: {node: '>= 0.4'}
@@ -5633,6 +5671,9 @@ packages:
 
   package-manager-detector@0.2.11:
     resolution: {integrity: sha512-BEnLolu+yuz22S56CU1SUKq3XC3PkwD5wv4ikR4MfGvnRVcmzXR9DwSlW2fEamyTPyXHomBJRzgapeuBvRNzJQ==}
+
+  parchment@1.1.4:
+    resolution: {integrity: sha512-J5FBQt/pM2inLzg4hEWmzQx/8h8D0CiDxaG3vyp9rKrQRSDgBlhjdP5jQGgosEajXPSQouXGHOmVdgo7QmJuOg==}
 
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
@@ -6036,6 +6077,16 @@ packages:
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+
+  quill-delta@3.6.3:
+    resolution: {integrity: sha512-wdIGBlcX13tCHOXGMVnnTVFtGRLoP0imqxM696fIPwIf5ODIYUHIvHbZcyvGlZFiFhK5XzDC2lpjbxRhnM05Tg==}
+    engines: {node: '>=0.10'}
+
+  quill-delta@4.2.2:
+    resolution: {integrity: sha512-qjbn82b/yJzOjstBgkhtBjN2TNK+ZHP/BgUQO+j6bRhWQQdmj2lH6hXG7+nwwLF41Xgn//7/83lxs9n2BkTtTg==}
+
+  quill@1.3.7:
+    resolution: {integrity: sha512-hG/DVzh/TiknWtE6QmWAF/pxoZKYxfe3J/d/+ShUWkDvvkZQVTPeVmUJVu1uE6DDooC4fWTiCLh84ul89oNz5g==}
 
   radix3@1.1.2:
     resolution: {integrity: sha512-b484I/7b8rDEdSDKckSSBA8knMpcdsXudlE/LNL639wFoHKwLbEkQFZHWEYwDC0wa0FKUcCY+GAF73Z7wxNVFA==}
@@ -10229,6 +10280,12 @@ snapshots:
       typescript: 5.8.2
       vue: 3.5.13(typescript@5.8.2)
 
+  '@vueup/vue-quill@1.2.0(vue@3.5.13(typescript@5.8.2))':
+    dependencies:
+      quill: 1.3.7
+      quill-delta: 4.2.2
+      vue: 3.5.13(typescript@5.8.2)
+
   '@vueuse/core@13.0.0(vue@3.5.13(typescript@5.8.2))':
     dependencies:
       '@types/web-bluetooth': 0.0.21
@@ -11235,6 +11292,15 @@ snapshots:
 
   decode-uri-component@0.2.2: {}
 
+  deep-equal@1.1.2:
+    dependencies:
+      is-arguments: 1.2.0
+      is-date-object: 1.1.0
+      is-regex: 1.2.1
+      object-is: 1.1.6
+      object-keys: 1.1.1
+      regexp.prototype.flags: 1.5.4
+
   deep-is@0.1.4: {}
 
   deepmerge@4.3.1: {}
@@ -12048,6 +12114,8 @@ snapshots:
 
   event-target-shim@5.0.1: {}
 
+  eventemitter3@2.0.3: {}
+
   eventemitter3@5.0.1: {}
 
   events@3.3.0: {}
@@ -12133,6 +12201,10 @@ snapshots:
       - supports-color
 
   fast-deep-equal@3.1.3: {}
+
+  fast-diff@1.1.2: {}
+
+  fast-diff@1.2.0: {}
 
   fast-diff@1.3.0: {}
 
@@ -12642,6 +12714,11 @@ snapshots:
   is-accessor-descriptor@1.0.1:
     dependencies:
       hasown: 2.0.2
+
+  is-arguments@1.2.0:
+    dependencies:
+      call-bound: 1.0.4
+      has-tostringtag: 1.0.2
 
   is-array-buffer@3.0.5:
     dependencies:
@@ -14191,6 +14268,11 @@ snapshots:
 
   object-inspect@1.13.4: {}
 
+  object-is@1.1.6:
+    dependencies:
+      call-bind: 1.0.8
+      define-properties: 1.2.1
+
   object-keys@1.1.1: {}
 
   object-visit@1.0.1:
@@ -14306,6 +14388,8 @@ snapshots:
   package-manager-detector@0.2.11:
     dependencies:
       quansync: 0.2.8
+
+  parchment@1.1.4: {}
 
   parent-module@1.0.1:
     dependencies:
@@ -14663,6 +14747,27 @@ snapshots:
       strict-uri-encode: 1.1.0
 
   queue-microtask@1.2.3: {}
+
+  quill-delta@3.6.3:
+    dependencies:
+      deep-equal: 1.1.2
+      extend: 3.0.2
+      fast-diff: 1.1.2
+
+  quill-delta@4.2.2:
+    dependencies:
+      fast-diff: 1.2.0
+      lodash.clonedeep: 4.5.0
+      lodash.isequal: 4.5.0
+
+  quill@1.3.7:
+    dependencies:
+      clone: 2.1.2
+      deep-equal: 1.1.2
+      eventemitter3: 2.0.3
+      extend: 3.0.2
+      parchment: 1.1.4
+      quill-delta: 3.6.3
 
   radix3@1.1.2: {}
 
