@@ -25,6 +25,7 @@
     "bytemd": "catalog:prod",
     "naive-ui": "catalog:prod",
     "pinia": "catalog:prod",
+    "qrcode": "catalog:prod",
     "vue": "catalog:prod",
     "vue-i18n": "catalog:prod",
     "vue-router": "catalog:prod"
@@ -34,6 +35,7 @@
     "@henry/types": "workspace:*",
     "@iconify/json": "catalog:dev",
     "@types/mockjs": "catalog:dev",
+    "@types/qrcode": "catalog:dev",
     "@unocss/preset-web-fonts": "catalog:dev",
     "@unocss/reset": "catalog:dev",
     "@vitejs/plugin-vue": "catalog:dev",
