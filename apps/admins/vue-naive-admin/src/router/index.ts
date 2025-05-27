@@ -2,12 +2,12 @@ import type { App } from 'vue'
 import { createRouter } from 'vue-router'
 import { createRouterGuard } from './guards'
 import { routes } from './routes'
-import { getHistory } from './utils'
+import { getRouterHistory } from './utils'
 
-const { VITE_ROUTE_MODE = 'web', VITE_BASE_URL } = import.meta.env
+const { VITE_ROUTER_HISTORY_MODE = 'web', VITE_BASE_URL } = import.meta.env
 
 export const router = createRouter({
-  history: getHistory(VITE_ROUTE_MODE, VITE_BASE_URL),
+  history: getRouterHistory(VITE_ROUTER_HISTORY_MODE, VITE_BASE_URL),
   routes,
   scrollBehavior(to, _from, savedPosition) {
     if (savedPosition) {

@@ -6,7 +6,7 @@ export interface ImportMetaEnv {
   /** The title of the application */
   readonly VITE_APP_TITLE: string
   /** The router history mode */
-  readonly VITE_HISTORY_MODE?: 'web' | 'hash' | 'memory'
+  readonly VITE_ROUTER_HISTORY_MODE?: 'web' | 'hash' | 'memory'
   /** The mock enable for prod */
   readonly VITE_MOCK_ENABLE: boolean
   /** The prefix of the storage key */

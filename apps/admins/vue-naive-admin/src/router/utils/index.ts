@@ -3,7 +3,7 @@ import { useSvgIcon } from '@/hooks/useSvgIcon'
 import { $t } from '@/locales'
 import { createMemoryHistory, createWebHashHistory, createWebHistory } from 'vue-router'
 
-export function getHistory(mode: RouterMode, baseUrl?: string) {
+export function getRouterHistory(mode: RouterMode, baseUrl?: string) {
   const map: Map<RouterMode, RouterHistory> = new Map()
   map.set('web', createWebHistory(baseUrl))
   map.set('hash', createWebHashHistory(baseUrl))
