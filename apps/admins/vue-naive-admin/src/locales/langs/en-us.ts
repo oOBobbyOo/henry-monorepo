@@ -54,6 +54,14 @@ const local = {
   },
   theme: {
     themeDrawerTitle: 'Theme Configuration',
+    themeSchema: {
+      title: 'Theme Schema',
+      light: 'Light',
+      dark: 'Dark',
+      auto: 'Follow System',
+    },
+    grayscale: 'Grayscale',
+    colourWeakness: 'Colour Weakness',
     themeColor: {
       title: 'Theme Color',
     },

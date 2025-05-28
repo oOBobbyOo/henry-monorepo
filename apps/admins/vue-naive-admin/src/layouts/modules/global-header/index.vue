@@ -4,7 +4,7 @@ import { useThemeStore } from '@/stores/modules/theme'
 
 import { useFullscreen } from '@vueuse/core'
 
-import DarkMode from './components/DarkMode/index.vue'
+import DarkSwitch from './components/DarkSwitch/index.vue'
 import LangSwitch from './components/LangSwitch/index.vue'
 import SiderToggler from './components/SiderToggler/index.vue'
 import ThemeButton from './components/ThemeButton/index.vue'
@@ -27,7 +27,7 @@ const { isFullscreen, toggle } = useFullscreen()
         :lang="appStore.locale" :lang-options="appStore.localeOptions"
         @change-lang="appStore.changeLocale"
       />
-      <DarkMode circle :theme-schema="themeStore.themeSchema" />
+      <DarkSwitch circle :dark-mode="themeStore.darkMode" />
       <ThemeButton />
       <UserAvatar />
     </div>

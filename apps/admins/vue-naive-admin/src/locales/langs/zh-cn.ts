@@ -54,6 +54,14 @@ const local = {
   },
   theme: {
     themeDrawerTitle: '主题配置',
+    themeSchema: {
+      title: '主题模式',
+      light: '亮色模式',
+      dark: '暗黑模式',
+      auto: '跟随系统',
+    },
+    grayscale: '灰色模式',
+    colourWeakness: '色弱模式',
     themeColor: {
       title: '主题颜色',
     },

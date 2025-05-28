@@ -4,15 +4,15 @@ import { toggleDark } from '@/composables/dark'
 import { $t } from '@/locales'
 import { computed } from 'vue'
 
-defineOptions({ name: 'DarkMode' })
+defineOptions({ name: 'DarkSwitch' })
 
-const props = withDefaults(defineProps<DarkModeProps>(), {
+const props = withDefaults(defineProps<Props>(), {
   showTooltip: true,
   placement: 'bottom',
 })
 
-interface DarkModeProps {
-  themeSchema: 'dark' | 'light'
+interface Props {
+  darkMode: boolean
   showTooltip?: boolean
   placement?: PopoverPlacement
 }
@@ -22,7 +22,9 @@ const icons = {
   dark: 'ri:moon-line',
 }
 
-const icon = computed(() => icons[props.themeSchema])
+const icon = computed(() => {
+  return props.darkMode ? icons.dark : icons.light
+})
 
 const content = computed(() => {
   if (!props.showTooltip)
