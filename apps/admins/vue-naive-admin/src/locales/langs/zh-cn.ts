@@ -64,6 +64,12 @@ const local = {
     colourWeakness: '色弱模式',
     themeColor: {
       title: '主题颜色',
+      primary: '主色',
+      info: '信息色',
+      success: '成功色',
+      warning: '警告色',
+      error: '错误色',
+      followPrimary: '跟随主色',
     },
   },
   route: {

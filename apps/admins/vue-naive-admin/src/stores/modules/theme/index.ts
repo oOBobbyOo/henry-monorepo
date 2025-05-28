@@ -16,6 +16,17 @@ export const useThemeStore = defineStore('theme', () => {
     return unref(isDark)
   })
 
+  /** Theme colors */
+  const themeColors = computed(() => {
+    const { themeColor, otherColor, isInfoFollowPrimary } = settings.value
+    const colors: Theme.ThemeColor = {
+      primary: themeColor,
+      ...otherColor,
+      info: isInfoFollowPrimary ? themeColor : otherColor.info,
+    }
+    return colors
+  })
+
   /** Naive theme  */
   const naiveTheme = {}
 
@@ -76,6 +87,22 @@ export const useThemeStore = defineStore('theme', () => {
     }
   }
 
+  /**
+   * Update theme colors
+   * @param key Theme color key
+   * @param color Theme color
+   */
+  function updateThemeColors(key: Theme.ThemeColorKey, color: string) {
+    const colorValue = color
+
+    if (key === 'primary') {
+      settings.value.themeColor = colorValue
+    }
+    else {
+      settings.value.otherColor[key] = colorValue
+    }
+  }
+
   // watch store
   scope.run(() => {
     watch(
@@ -103,9 +130,11 @@ export const useThemeStore = defineStore('theme', () => {
   return {
     ...toRefs(settings.value),
     darkMode,
+    themeColors,
     naiveTheme,
     setThemeScheme,
     setGrayscale,
     setColourWeakness,
+    updateThemeColors,
   }
 })

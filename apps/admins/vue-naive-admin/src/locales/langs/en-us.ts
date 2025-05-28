@@ -64,6 +64,12 @@ const local = {
     colourWeakness: 'Colour Weakness',
     themeColor: {
       title: 'Theme Color',
+      primary: 'Primary',
+      info: 'Info',
+      success: 'Success',
+      warning: 'Warning',
+      error: 'Error',
+      followPrimary: 'Follow Primary',
     },
   },
   route: {
