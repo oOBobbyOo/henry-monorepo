@@ -64,6 +64,7 @@ catalogs:
     axios: ^1.7.9
     bytemd: ^1.22.0
     dayjs: ^1.11.13
+    echarts: ^5.6.0
     localforage: ^1.10.0
     naive-ui: ^2.41.0
     nprogress: ^0.2.0

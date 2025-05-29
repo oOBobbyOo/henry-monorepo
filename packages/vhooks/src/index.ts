@@ -1,5 +1,6 @@
 export * from './useBoolean'
 export * from './useCountDown'
+export * from './useEcharts'
 export * from './useLoading'
 export * from './usePoller'
 export * from './useSvgIconRender'

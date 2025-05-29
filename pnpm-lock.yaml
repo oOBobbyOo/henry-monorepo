@@ -36,6 +36,9 @@ catalogs:
     '@types/nprogress':
       specifier: ^0.2.3
       version: 0.2.3
+    '@types/qrcode':
+      specifier: ^1.5.5
+      version: 1.5.5
     '@types/react':
       specifier: ^19.0.10
       version: 19.0.10
@@ -175,6 +178,9 @@ catalogs:
     dayjs:
       specifier: ^1.11.13
       version: 1.11.13
+    echarts:
+      specifier: ^5.6.0
+      version: 5.6.0
     localforage:
       specifier: ^1.10.0
       version: 1.10.0
@@ -378,7 +384,7 @@ importers:
         specifier: catalog:dev
         version: 1.0.10
       '@types/qrcode':
-        specifier: ^1.5.5
+        specifier: catalog:dev
         version: 1.5.5
       '@unocss/preset-web-fonts':
         specifier: catalog:dev
@@ -578,6 +584,9 @@ importers:
       '@vueuse/core':
         specifier: catalog:prod
         version: 13.0.0(vue@3.5.13(typescript@5.8.2))
+      echarts:
+        specifier: catalog:prod
+        version: 5.6.0
       vue:
         specifier: catalog:prod
         version: 3.5.13(typescript@5.8.2)
@@ -3589,6 +3598,9 @@ packages:
 
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
+
+  echarts@5.6.0:
+    resolution: {integrity: sha512-oTbVTsXfKuEhxftHqL5xprgLoc0k7uScAwtryCgWF6hPYFLRwOUHiFmHGCBKP5NPFNkDVopOieyUqYGH8Fa3kA==}
 
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
@@ -7126,6 +7138,9 @@ packages:
   ts-pattern@5.6.2:
     resolution: {integrity: sha512-d4IxJUXROL5NCa3amvMg6VQW2HVtZYmUTPfvVtO7zJWGYLJ+mry9v2OmYm+z67aniQoQ8/yFNadiEwtNS9qQiw==}
 
+  tslib@2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
@@ -7873,6 +7888,9 @@ packages:
   zip-stream@6.0.1:
     resolution: {integrity: sha512-zK7YHHz4ZXpW89AHXUPbQVGKI7uvkd3hzusTdotCg1UxyaVtg0zFJSTfW/Dq5f7OBBVnq6cZIaC8Ti4hb6dtCA==}
     engines: {node: '>= 14'}
+
+  zrender@5.6.1:
+    resolution: {integrity: sha512-OFXkDJKcrlx5su2XbzJvj/34Q3m6PvyCZkVPHGYpcCJ52ek4U/ymZyfuV1nKE23AyBJ51E/6Yr0mhZ7xGTO4ag==}
 
   zustand@5.0.3:
     resolution: {integrity: sha512-14fwWQtU3pH4dE0dOpdMiWjddcH+QzKIgk1cl8epwSE7yag43k/AD/m4L6+K7DytAOr9gGBe3/EXj9g7cdostg==}
@@ -11543,6 +11561,11 @@ snapshots:
   duplexer@0.1.2: {}
 
   eastasianwidth@0.2.0: {}
+
+  echarts@5.6.0:
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.6.1
 
   ee-first@1.1.1: {}
 
@@ -16070,6 +16093,8 @@ snapshots:
 
   ts-pattern@5.6.2: {}
 
+  tslib@2.3.0: {}
+
   tslib@2.8.1: {}
 
   turbo-darwin-64@2.4.4:
@@ -16997,6 +17022,10 @@ snapshots:
       archiver-utils: 5.0.2
       compress-commons: 6.0.2
       readable-stream: 4.7.0
+
+  zrender@5.6.1:
+    dependencies:
+      tslib: 2.3.0
 
   zustand@5.0.3(@types/react@19.0.10)(immer@9.0.21)(react@19.0.0):
     optionalDependencies:
