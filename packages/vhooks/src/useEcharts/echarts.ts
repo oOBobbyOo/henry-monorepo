@@ -13,6 +13,7 @@ import type {
   DatasetComponentOption,
   GridComponentOption,
   LegendComponentOption,
+  TimelineComponentOption,
   TitleComponentOption,
   ToolboxComponentOption,
   TooltipComponentOption,
@@ -24,6 +25,7 @@ import {
   DatasetComponent,
   GridComponent,
   LegendComponent,
+  TimelineComponent,
   TitleComponent,
   ToolboxComponent,
   TooltipComponent,
@@ -38,41 +40,44 @@ import { CanvasRenderer, SVGRenderer } from 'echarts/renderers'
 
 export type ECOption = echarts.ComposeOption<
   | BarSeriesOption
+  | GaugeSeriesOption
   | LineSeriesOption
   | MapSeriesOption
   | PieSeriesOption
-  | ScatterSeriesOption
   | PictorialBarSeriesOption
   | RadarSeriesOption
-  | GaugeSeriesOption
-  | TitleComponentOption
-  | LegendComponentOption
-  | TooltipComponentOption
-  | GridComponentOption
-  | ToolboxComponentOption
+  | ScatterSeriesOption
   | DatasetComponentOption
+  | GridComponentOption
+  | LegendComponentOption
+  | TimelineComponentOption
+  | TitleComponentOption
+  | ToolboxComponentOption
+  | TooltipComponentOption
+
 >
 
 echarts.use([
-  TitleComponent,
-  LegendComponent,
-  TooltipComponent,
-  GridComponent,
   DatasetComponent,
-  TransformComponent,
+  GridComponent,
+  LegendComponent,
+  TimelineComponent,
+  TitleComponent,
   ToolboxComponent,
+  TooltipComponent,
+  TransformComponent,
   BarChart,
+  GaugeChart,
   LineChart,
   MapChart,
   PieChart,
-  ScatterChart,
   PictorialBarChart,
   RadarChart,
-  GaugeChart,
+  ScatterChart,
   LabelLayout,
   UniversalTransition,
   CanvasRenderer,
   SVGRenderer,
 ])
 
-export default echarts
+export { echarts }
