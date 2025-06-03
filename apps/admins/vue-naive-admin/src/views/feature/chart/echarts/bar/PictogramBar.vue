@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import type { ECOption } from '@henry/vhooks'
 import { echarts, useEcharts } from '@henry/vhooks'
-import { month } from '../../data'
+import { monthData } from '../../data'
 
 const seriesData = [498, 520, 568, 432, 464, 332, 344, 458, 470, 468, 398, 310]
 
@@ -17,7 +17,7 @@ const options: ECOption = {
     show: true,
   },
   xAxis: {
-    data: month,
+    data: monthData,
     axisLine: {
       show: false,
     },
@@ -69,7 +69,7 @@ const options: ECOption = {
   ],
   series: [
     {
-      name: '设备在线率',
+      name: '设备在线数',
       type: 'bar',
       barWidth: 16,
       label: {
