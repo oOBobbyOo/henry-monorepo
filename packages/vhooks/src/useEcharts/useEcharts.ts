@@ -3,25 +3,26 @@ import { tryOnUnmounted, useResizeObserver } from '@vueuse/core'
 import { nextTick, onMounted, ref, shallowRef, watch } from 'vue'
 import { echarts } from './echarts'
 
-type ThemeType = 'light' | 'dark' | string
-type RendererType = 'canvas' | 'svg'
+export type EChartTheme = 'light' | 'dark'
+export type EChartRenderer = 'canvas' | 'svg'
 
 export function useEcharts(
   initialOptions: ECOption = {},
-  initialTheme: ThemeType = 'dark',
-  initialRenderer: RendererType = 'canvas',
+  initialTheme: EChartTheme = 'light',
+  initialRenderer: EChartRenderer = 'canvas',
 ) {
   const chartInstance = shallowRef<echarts.ECharts | null>(null)
   const chartRef = ref<HTMLElement | null>(null)
-  const isLoading = ref(false)
+  const isLoading = ref(true) // 加载状态
+  const error = ref<Error | null>(null) // 错误对象
 
   const chartOptions = shallowRef<ECOption>({
     ...initialOptions,
     backgroundColor: 'transparent',
   })
 
-  const theme = ref<ThemeType>(initialTheme)
-  const renderer = ref<RendererType>(initialRenderer)
+  const theme = ref<EChartTheme>(initialTheme)
+  const renderer = ref<EChartRenderer>(initialRenderer)
 
   // Manual dispose
   const disposeChart = () => {
@@ -31,22 +32,34 @@ export function useEcharts(
 
   // Initialize chart
   const initChart = async () => {
+    await nextTick()
+
     if (!chartRef.value)
       return
 
-    await nextTick()
-
     // Dispose existing instance if exists
-    disposeChart()
+    if (chartInstance.value) {
+      disposeChart()
+    }
 
-    // Create new instance
-    chartInstance.value = echarts.init(
-      chartRef.value,
-      theme.value,
-      { renderer: renderer.value },
-    )
+    isLoading.value = true
+    error.value = null
 
-    chartInstance.value.setOption(chartOptions.value)
+    try {
+      // Create new instance
+      chartInstance.value = echarts.init(
+        chartRef.value,
+        theme.value,
+        { renderer: renderer.value },
+      )
+      chartInstance.value.setOption(chartOptions.value)
+    }
+    catch (error: any) {
+      error.value = error
+    }
+    finally {
+      isLoading.value = false
+    }
   }
 
   // Set complete options (replace existing)
@@ -102,12 +115,12 @@ export function useEcharts(
   })
 
   // Change theme
-  const setTheme = (newTheme: ThemeType) => {
+  const setTheme = (newTheme: EChartTheme) => {
     theme.value = newTheme
   }
 
   // Change renderer
-  const setRenderer = (newRenderer: RendererType) => {
+  const setRenderer = (newRenderer: EChartRenderer) => {
     renderer.value = newRenderer
   }
 
@@ -138,6 +151,7 @@ export function useEcharts(
     setOptions,
     updateOptions,
     isLoading,
+    error,
     showLoading,
     hideLoading,
     setTheme,
