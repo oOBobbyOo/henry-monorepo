@@ -1,6 +1,6 @@
 // @see https://www.visactor.com/vchart/guide/tutorial_docs/Basic/How_to_Import_VChart
 
-import type { ITheme } from '@visactor/vchart'
+import type { ISpec, ITheme, IVChart } from '@visactor/vchart'
 // 引入 VChart 核心模块
 import { VChart } from '@visactor/vchart'
 // 引入柱状图
@@ -18,4 +18,4 @@ VChart.ThemeManager.registerTheme('dark', dark as ITheme)
 // 注册图表和组件
 VChart.useRegisters([registerBarChart, registerTooltip, registerDomTooltipHandler, registerCartesianCrossHair])
 
-export { VChart }
+export { ISpec, ITheme, IVChart, VChart }

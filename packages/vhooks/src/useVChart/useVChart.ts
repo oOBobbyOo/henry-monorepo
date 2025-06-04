@@ -1,5 +1,5 @@
-import type { ISpec, IVChart } from '@visactor/vchart'
 import type { Ref } from 'vue'
+import type { ISpec, IVChart } from './vchart'
 import { tryOnUnmounted } from '@vueuse/core'
 import { nextTick, onMounted, ref, shallowRef, toValue, unref } from 'vue'
 import { VChart } from './vchart'

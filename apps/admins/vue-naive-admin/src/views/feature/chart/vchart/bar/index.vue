@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import type { Component } from 'vue'
 import BaseBar from './BaseBar.vue'
+import GroupBar from './GroupBar.vue'
 
 interface Chart {
   id: string
@@ -9,6 +10,7 @@ interface Chart {
 
 const charts: Chart[] = [
   { id: 'base', component: BaseBar },
+  { id: 'group', component: GroupBar },
 ]
 </script>
 
