@@ -9,8 +9,8 @@ interface Chart {
 }
 
 const charts: Chart[] = [
-  { id: 'base', component: BaseBar },
-  { id: 'group', component: GroupBar },
+  { id: 'BaseBar', component: BaseBar },
+  { id: 'GroupBar', component: GroupBar },
 ]
 </script>
 

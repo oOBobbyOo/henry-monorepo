@@ -1,10 +1,9 @@
 <script setup lang='ts'>
 import { useThemeStore } from '@/stores/modules/theme'
 import { useVChart } from '@henry/vhooks'
-import { computed, onMounted, watch } from 'vue'
+import { onMounted, watch } from 'vue'
 
 const themeStore = useThemeStore()
-const theme = computed(() => themeStore.darkMode ? 'dark' : 'light')
 
 const spec = {
   type: 'bar',
@@ -24,7 +23,7 @@ const spec = {
   yField: 'sales',
 }
 
-const { chartRef, updateSpec, setTheme } = useVChart({ spec, theme })
+const { chartRef, updateSpec, setTheme } = useVChart({ spec, theme: themeStore.themeMode })
 
 onMounted(() => {
   setTimeout(() => {
@@ -46,7 +45,7 @@ onMounted(() => {
   }, 2000)
 })
 
-watch(theme, (newTheme) => {
+watch(() => themeStore.themeMode, (newTheme) => {
   setTheme(newTheme)
 })
 </script>

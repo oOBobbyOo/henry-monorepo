@@ -2,10 +2,9 @@
 import type { ISpec } from '@henry/vhooks'
 import { useThemeStore } from '@/stores/modules/theme'
 import { useVChart } from '@henry/vhooks'
-import { computed, watch } from 'vue'
+import { watch } from 'vue'
 
 const themeStore = useThemeStore()
-const theme = computed(() => themeStore.darkMode ? 'dark' : 'light')
 
 const spec: ISpec = {
   type: 'bar',
@@ -46,9 +45,9 @@ const spec: ISpec = {
   },
 }
 
-const { chartRef, setTheme } = useVChart({ spec, theme })
+const { chartRef, setTheme } = useVChart({ spec, theme: themeStore.themeMode })
 
-watch(theme, (newTheme) => {
+watch(() => themeStore.themeMode, (newTheme) => {
   setTheme(newTheme)
 })
 </script>

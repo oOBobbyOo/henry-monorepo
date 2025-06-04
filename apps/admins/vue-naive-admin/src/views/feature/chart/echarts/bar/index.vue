@@ -3,16 +3,14 @@ import type { Component } from 'vue'
 import CylinderBar from './CylinderBar.vue'
 import PictogramBar from './PictogramBar.vue'
 
-defineOptions({ name: 'BarCharts' })
-
 interface Chart {
   id: string
   component: Component
 }
 
 const charts: Chart[] = [
-  { id: 'gaode', component: CylinderBar },
-  { id: 'tencent', component: PictogramBar },
+  { id: 'CylinderBar', component: CylinderBar },
+  { id: 'PictogramBar', component: PictogramBar },
 ]
 </script>
 

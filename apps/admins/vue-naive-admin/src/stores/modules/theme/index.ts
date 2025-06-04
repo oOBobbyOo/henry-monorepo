@@ -16,6 +16,11 @@ export const useThemeStore = defineStore('theme', () => {
     return unref(isDark)
   })
 
+  /** Theme mode */
+  const themeMode = computed(() => {
+    return unref(isDark) ? 'dark' : 'light'
+  })
+
   /** Theme colors */
   const themeColors = computed(() => {
     const { themeColor, otherColor, isInfoFollowPrimary } = settings.value
@@ -130,6 +135,7 @@ export const useThemeStore = defineStore('theme', () => {
   return {
     ...toRefs(settings.value),
     darkMode,
+    themeMode,
     themeColors,
     naiveTheme,
     setThemeScheme,

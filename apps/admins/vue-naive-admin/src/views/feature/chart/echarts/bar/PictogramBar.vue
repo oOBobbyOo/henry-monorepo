@@ -1,6 +1,8 @@
 <script setup lang='ts'>
 import type { ECOption } from '@henry/vhooks'
+import { useThemeStore } from '@/stores/modules/theme'
 import { echarts, useEcharts } from '@henry/vhooks'
+import { watch } from 'vue'
 import { monthData } from '../../data'
 
 const seriesData = [498, 520, 568, 432, 464, 332, 344, 458, 470, 468, 398, 310]
@@ -143,7 +145,13 @@ const options: ECOption = {
   ],
 }
 
-const { chartRef } = useEcharts(options)
+const { chartRef, setTheme } = useEcharts(options)
+
+const themeStore = useThemeStore()
+
+watch(() => themeStore.themeMode, (newTheme) => {
+  setTheme(newTheme)
+})
 </script>
 
 <template>
