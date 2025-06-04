@@ -5,6 +5,9 @@ export default antfu({
   formatters: true,
   typescript: true,
   vue: true,
+  rules: {
+    'import-x/no-duplicates': 'off',
+  },
   ignores: [
     'node_modules',
     'dist',

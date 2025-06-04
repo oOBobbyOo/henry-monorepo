@@ -9,6 +9,8 @@
     }
   },
   "dependencies": {
+    "@visactor/vchart": "catalog:prod",
+    "@visactor/vchart-theme": "catalog:prod",
     "@vueuse/core": "catalog:prod",
     "echarts": "catalog:prod",
     "vue": "catalog:prod"
