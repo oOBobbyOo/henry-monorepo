@@ -80,6 +80,7 @@ const local = {
     },
     feature: {
       page: 'Feature',
+      barcode: 'BarCode',
       chart: 'Chart',
       echarts: 'Echarts',
       vchart: 'Vchart',

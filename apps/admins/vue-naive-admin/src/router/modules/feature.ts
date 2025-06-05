@@ -5,7 +5,7 @@ const feature: RouteRecordRaw = {
   path: '/feature',
   name: 'Feature',
   component: BasicLayout,
-  redirect: '/feature/chart',
+  redirect: '/feature/barcode',
   meta: {
     title: '功能',
     i18nKey: 'route.feature.page',
@@ -14,6 +14,17 @@ const feature: RouteRecordRaw = {
     order: 5,
   },
   children: [
+    {
+      path: 'barcode',
+      name: 'BarCode',
+      component: () => import('@/views/feature/barcode/index.vue'),
+      meta: {
+        title: '条形码',
+        i18nKey: 'route.feature.barcode',
+        icon: 'material-symbols:barcode',
+        keepAlive: true,
+      },
+    },
     {
       path: 'chart',
       name: 'Chart',

@@ -187,6 +187,9 @@ catalogs:
     echarts:
       specifier: ^5.6.0
       version: 5.6.0
+    jsbarcode:
+      specifier: ^3.11.6
+      version: 3.11.6
     localforage:
       specifier: ^1.10.0
       version: 1.10.0
@@ -358,6 +361,9 @@ importers:
       bytemd:
         specifier: catalog:prod
         version: 1.22.0
+      jsbarcode:
+        specifier: catalog:prod
+        version: 3.11.6
       naive-ui:
         specifier: catalog:prod
         version: 2.41.0(vue@3.5.13(typescript@5.8.2))
@@ -5102,6 +5108,9 @@ packages:
   js-yaml@4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
+
+  jsbarcode@3.11.6:
+    resolution: {integrity: sha512-G5TKGyKY1zJo0ZQKFM1IIMfy0nF2rs92BLlCz+cU4/TazIc4ZH+X1GYeDRt7TKjrYqmPfTjwTBkU/QnQlsYiuA==}
 
   jsdoc-type-pratt-parser@4.1.0:
     resolution: {integrity: sha512-Hicd6JK5Njt2QB6XYFS7ok9e37O8AYk3jTcppG4YVQnYjOemymvTcmc7OWsmq/Qqj5TdRFO5/x/tIPmBeRtGHg==}
@@ -13734,6 +13743,8 @@ snapshots:
   js-yaml@4.1.0:
     dependencies:
       argparse: 2.0.1
+
+  jsbarcode@3.11.6: {}
 
   jsdoc-type-pratt-parser@4.1.0: {}
 

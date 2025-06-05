@@ -23,6 +23,7 @@
     "@wangeditor/editor": "catalog:prod",
     "@wangeditor/editor-for-vue": "catalog:prod",
     "bytemd": "catalog:prod",
+    "jsbarcode": "catalog:prod",
     "naive-ui": "catalog:prod",
     "pinia": "catalog:prod",
     "qrcode": "catalog:prod",
