@@ -12,8 +12,12 @@ import type {
 
 import type {
   DatasetComponentOption,
+  DataZoomComponentOption,
   GridComponentOption,
   LegendComponentOption,
+  MarkAreaComponentOption,
+  MarkLineComponentOption,
+  MarkPointComponentOption,
   TimelineComponentOption,
   TitleComponentOption,
   ToolboxComponentOption,
@@ -24,8 +28,12 @@ import { BarChart, EffectScatterChart, GaugeChart, LineChart, MapChart, Pictoria
 
 import {
   DatasetComponent,
+  DataZoomComponent,
   GridComponent,
   LegendComponent,
+  MarkAreaComponent,
+  MarkLineComponent,
+  MarkPointComponent,
   TimelineComponent,
   TitleComponent,
   ToolboxComponent,
@@ -50,8 +58,12 @@ export type ECOption = echarts.ComposeOption<
   | RadarSeriesOption
   | ScatterSeriesOption
   | DatasetComponentOption
+  | DataZoomComponentOption
   | GridComponentOption
   | LegendComponentOption
+  | MarkAreaComponentOption
+  | MarkLineComponentOption
+  | MarkPointComponentOption
   | TimelineComponentOption
   | TitleComponentOption
   | ToolboxComponentOption
@@ -61,8 +73,12 @@ export type ECOption = echarts.ComposeOption<
 
 echarts.use([
   DatasetComponent,
+  DataZoomComponent,
   GridComponent,
   LegendComponent,
+  MarkAreaComponent,
+  MarkLineComponent,
+  MarkPointComponent,
   TimelineComponent,
   TitleComponent,
   ToolboxComponent,
