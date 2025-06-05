@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 // @see https://github.com/soldair/node-qrcode
-import type { QRCodeRenderersOptions, QRCodeSegment } from 'qrcode'
+import type { QRCodeRenderersOptions, QRCodeSegment, QRCodeToDataURLOptions } from 'qrcode'
 import { toCanvas, toDataURL } from 'qrcode'
 import { onMounted, unref, useTemplateRef } from 'vue'
 
@@ -12,11 +12,13 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<Emits>()
 
+export type QrCodeOptions = QRCodeRenderersOptions | QRCodeToDataURLOptions
+
 interface Props {
   tag?: 'canvas' | 'img'
   text?: string | QRCodeSegment[]
   width?: number
-  options?: QRCodeRenderersOptions
+  options?: QrCodeOptions
 }
 
 interface Emits {
