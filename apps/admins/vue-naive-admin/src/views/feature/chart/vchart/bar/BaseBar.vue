@@ -16,11 +16,43 @@ const spec = {
         { month: 'Wednesday', sales: 25 },
         { month: 'Thursday', sales: 29 },
         { month: 'Friday', sales: 38 },
+        { month: 'Saturday', sales: 15 },
+        { month: 'Sunday', sales: 45 },
       ],
     },
   ],
   xField: 'month',
   yField: 'sales',
+  animationNormal: {
+    bar: [
+      {
+        loop: true,
+        startTime: 100,
+        oneByOne: 100,
+        timeSlices: [
+          {
+            delay: 1000,
+            effects: {
+              channel: {
+                fillOpacity: { to: 0.5 },
+              },
+              easing: 'linear',
+            },
+            duration: 500,
+          },
+          {
+            effects: {
+              channel: {
+                fillOpacity: { to: 1 },
+              },
+              easing: 'linear',
+            },
+            duration: 500,
+          },
+        ],
+      },
+    ],
+  },
 }
 
 const { chartRef, updateSpec, setTheme } = useVChart({ spec, theme: themeStore.themeMode })
@@ -38,6 +70,8 @@ onMounted(() => {
             { month: 'Wednesday', sales: 5 },
             { month: 'Thursday', sales: 39 },
             { month: 'Friday', sales: 28 },
+            { month: 'Saturday', sales: 6 },
+            { month: 'Sunday', sales: 36 },
           ],
         },
       ],

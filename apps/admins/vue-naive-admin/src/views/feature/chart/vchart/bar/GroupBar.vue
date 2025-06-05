@@ -43,6 +43,10 @@ const spec: ISpec = {
     orient: 'top',
     position: 'start',
   },
+  animationAppear: {
+    duration: 500,
+    oneByOne: true,
+  },
 }
 
 const { chartRef, setTheme } = useVChart({ spec, theme: themeStore.themeMode })
