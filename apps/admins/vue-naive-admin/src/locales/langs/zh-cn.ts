@@ -89,6 +89,7 @@ const local = {
       quillEditor: 'QuillEditor',
       wangEditor: 'WangEditor',
       qrcode: '二维码',
+      textEffect: '文字效果',
     },
     manage: {
       system: '系统管理',

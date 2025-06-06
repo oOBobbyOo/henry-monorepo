@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     esbuild: {
-      drop: ['console', 'debugger'],
+      drop: viteEnv.VITE_APP_ENV === 'prod' ? ['console', 'debugger'] : [],
     },
     build: setupBuildConfig(),
   }

@@ -7,6 +7,7 @@ export default antfu({
   vue: true,
   rules: {
     'import-x/no-duplicates': 'off',
+    'no-console': 'off',
   },
   ignores: [
     'node_modules',

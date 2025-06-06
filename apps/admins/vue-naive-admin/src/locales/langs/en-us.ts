@@ -89,6 +89,7 @@ const local = {
       quillEditor: 'QuillEditor',
       wangEditor: 'WangEditor',
       qrcode: 'Qrcode',
+      textEffect: 'TextEffect',
     },
     manage: {
       system: 'System Manage',

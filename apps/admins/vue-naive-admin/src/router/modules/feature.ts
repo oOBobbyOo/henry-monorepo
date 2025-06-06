@@ -117,6 +117,17 @@ const feature: RouteRecordRaw = {
         keepAlive: true,
       },
     },
+    {
+      path: 'text-effect',
+      name: 'TextEffect',
+      component: () => import('@/views/feature/text-effect/index.vue'),
+      meta: {
+        title: '文字效果',
+        i18nKey: 'route.feature.textEffect',
+        icon: 'icon-park-solid:volume-notice',
+        keepAlive: true,
+      },
+    },
   ],
 }
 
