@@ -187,6 +187,9 @@ catalogs:
     echarts:
       specifier: ^5.6.0
       version: 5.6.0
+    js-calendar-converter:
+      specifier: ^0.0.7
+      version: 0.0.7
     jsbarcode:
       specifier: ^3.11.6
       version: 3.11.6
@@ -361,6 +364,9 @@ importers:
       bytemd:
         specifier: catalog:prod
         version: 1.22.0
+      js-calendar-converter:
+        specifier: catalog:prod
+        version: 0.0.7
       jsbarcode:
         specifier: catalog:prod
         version: 3.11.6
@@ -5094,6 +5100,9 @@ packages:
 
   js-binary-schema-parser@2.0.3:
     resolution: {integrity: sha512-xezGJmOb4lk/M1ZZLTR/jaBHQ4gG/lqQnJqdIv4721DMggsa1bDVlHXNeHYogaIEHD9vCRv0fcL4hMA+Coarkg==}
+
+  js-calendar-converter@0.0.7:
+    resolution: {integrity: sha512-w4QSGDwWaxBAxmWdfOC2CHVxEFxu48WUm9191uomUPabDyx/pVKSapZebBBVBv/H5GQc5hzDPOPmOLVA31bqjQ==}
 
   js-levenshtein@1.1.6:
     resolution: {integrity: sha512-X2BB11YZtrRqY4EnQcLX5Rh373zbK4alC1FW7D7MBhL2gtcC17cTnr6DmfHZeS0s2rTHjUTMMHfG7gO8SSdw+g==}
@@ -13733,6 +13742,8 @@ snapshots:
   js-base64@2.6.4: {}
 
   js-binary-schema-parser@2.0.3: {}
+
+  js-calendar-converter@0.0.7: {}
 
   js-levenshtein@1.1.6: {}
 

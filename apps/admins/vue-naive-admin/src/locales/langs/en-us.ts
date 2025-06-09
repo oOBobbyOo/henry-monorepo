@@ -81,6 +81,7 @@ const local = {
     feature: {
       page: 'Feature',
       barcode: 'BarCode',
+      calendar: 'Calendar',
       chart: 'Chart',
       echarts: 'Echarts',
       vchart: 'Vchart',

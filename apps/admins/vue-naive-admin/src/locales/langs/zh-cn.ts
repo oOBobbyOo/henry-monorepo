@@ -81,6 +81,7 @@ const local = {
     feature: {
       page: '功能示例',
       barcode: '条形码',
+      calendar: '日历',
       chart: '图表',
       echarts: 'Echarts',
       vchart: 'Vchart',

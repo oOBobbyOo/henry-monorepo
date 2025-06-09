@@ -4,15 +4,19 @@ import dayjs from 'dayjs'
 const DATE_TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss'
 const DATE_FORMAT = 'YYYY-MM-DD'
 
-export const dateUtil = dayjs
+function formatToDate(date: ConfigType, format = DATE_FORMAT): string {
+  return dayjs(date).format(format)
+}
 
-export function formatToDateTime(
+function formatToDateTime(
   date: ConfigType,
   format = DATE_TIME_FORMAT,
 ): string {
-  return dateUtil(date).format(format)
+  return dayjs(date).format(format)
 }
 
-export function formatToDate(date: ConfigType, format = DATE_FORMAT): string {
-  return dateUtil(date).format(format)
+export {
+  dayjs,
+  formatToDate,
+  formatToDateTime,
 }

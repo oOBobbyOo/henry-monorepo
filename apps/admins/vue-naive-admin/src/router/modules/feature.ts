@@ -26,6 +26,17 @@ const feature: RouteRecordRaw = {
       },
     },
     {
+      path: 'calendar',
+      name: 'Calendar',
+      component: () => import('@/views/feature/calendar/index.vue'),
+      meta: {
+        title: '日历',
+        i18nKey: 'route.feature.calendar',
+        icon: 'material-symbols:calendar-month-outline',
+        keepAlive: true,
+      },
+    },
+    {
       path: 'chart',
       name: 'Chart',
       redirect: '/feature/chart/echarts',
