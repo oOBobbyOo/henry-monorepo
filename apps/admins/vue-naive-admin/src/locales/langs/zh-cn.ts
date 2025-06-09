@@ -86,6 +86,7 @@ const local = {
       echarts: 'Echarts',
       vchart: 'Vchart',
       editor: '编辑器',
+      emoji: '表情包',
       markdown: 'Markdown',
       quillEditor: 'QuillEditor',
       wangEditor: 'WangEditor',

@@ -30,7 +30,8 @@
     "qrcode": "catalog:prod",
     "vue": "catalog:prod",
     "vue-i18n": "catalog:prod",
-    "vue-router": "catalog:prod"
+    "vue-router": "catalog:prod",
+    "vue3-emoji-picker": "catalog:prod"
   },
   "devDependencies": {
     "@henry/lint": "workspace:*",

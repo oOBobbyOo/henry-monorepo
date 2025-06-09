@@ -118,6 +118,17 @@ const feature: RouteRecordRaw = {
       ],
     },
     {
+      path: 'emoji',
+      name: 'Emoji',
+      component: () => import('@/views/feature/emoji/index.vue'),
+      meta: {
+        title: '表情包',
+        i18nKey: 'route.feature.emoji',
+        icon: 'material-symbols:emoji-language',
+        keepAlive: true,
+      },
+    },
+    {
       path: 'qrcode',
       name: 'Qrcode',
       component: () => import('@/views/feature/qrcode/index.vue'),
