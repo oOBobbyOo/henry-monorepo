@@ -10,6 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppProvider: typeof import('./src/components/AppProvider/index.vue')['default']
     BarCode: typeof import('./src/components/BarCode/index.vue')['default']
+    BasicBanner: typeof import('./src/components/Banner/BasicBanner.vue')['default']
     BetterScroll: typeof import('./src/components/BetterScroll/index.vue')['default']
     ButtonIcon: typeof import('./src/components/ButtonIcon/index.vue')['default']
     Card: typeof import('./src/components/Card/index.vue')['default']
@@ -37,6 +38,9 @@ declare module 'vue' {
     NFormItem: typeof import('naive-ui')['NFormItem']
     NGi: typeof import('naive-ui')['NGi']
     NGrid: typeof import('naive-ui')['NGrid']
+    NH1: typeof import('naive-ui')['NH1']
+    NH2: typeof import('naive-ui')['NH2']
+    NH3: typeof import('naive-ui')['NH3']
     NInput: typeof import('naive-ui')['NInput']
     NLayout: typeof import('naive-ui')['NLayout']
     NLayoutContent: typeof import('naive-ui')['NLayoutContent']

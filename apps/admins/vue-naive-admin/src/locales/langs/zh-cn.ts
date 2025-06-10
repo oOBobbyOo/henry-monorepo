@@ -93,6 +93,10 @@ const local = {
       qrcode: '二维码',
       textEffect: '文字效果',
     },
+    template: {
+      page: '模板示例',
+      banner: '横幅',
+    },
     manage: {
       system: '系统管理',
       user: '用户管理',

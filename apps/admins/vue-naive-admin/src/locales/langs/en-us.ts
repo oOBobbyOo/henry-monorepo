@@ -93,6 +93,10 @@ const local = {
       qrcode: 'Qrcode',
       textEffect: 'TextEffect',
     },
+    template: {
+      page: 'Template',
+      banner: 'Banner',
+    },
     manage: {
       system: 'System Manage',
       user: 'User Manage',

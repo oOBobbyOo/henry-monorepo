@@ -33,7 +33,11 @@ export const useThemeStore = defineStore('theme', () => {
   })
 
   /** Naive theme  */
-  const naiveTheme = {}
+  const naiveTheme = {
+    common: {
+      borderRadius: '6px',
+    },
+  }
 
   /** themeScheme mode */
   const themeSchemeMode = computed(() => settings.value.themeScheme)
