@@ -1,4 +1,6 @@
 <script setup lang='ts'>
+import robot from '@/assets/banner/robot.webp'
+
 function handleBannerClick() {
   console.log('[ BasicBanner ] >>:', 'banner clicked')
 }
@@ -30,6 +32,36 @@ function handleBannerClick() {
           background-color="#D4F1F7"
           title-color="#333"
           subtitle-color="#666"
+          @click="handleBannerClick"
+        />
+      </NGi>
+    </NGrid>
+
+    <NH2 class="mb-0">
+      基础横幅（图片）
+    </NH2>
+    <NGrid cols="1 s:2" :x-gap="12" :y-gap="12" responsive="screen" item-responsive>
+      <NGi>
+        <BasicBanner
+          title="欢迎回来，管理员！"
+          subtitle="今日系统访问量增长了60%，运行状态良好。"
+          button-text="查看详情"
+          button-color="#FF3E76"
+          background-color="#FF80A4"
+          button-text-color="#fff"
+          :background-image="robot"
+          @click="handleBannerClick"
+        />
+      </NGi>
+      <NGi>
+        <BasicBanner
+          title="欢迎使用本系统!"
+          subtitle="这是一个基于Vue3和Naive ui的后台管理系统模板。"
+          button-text="开始使用"
+          button-color="#1385FF"
+          button-text-color="#fff"
+          background-color="#88A7FF"
+          :background-image="robot"
           @click="handleBannerClick"
         />
       </NGi>
