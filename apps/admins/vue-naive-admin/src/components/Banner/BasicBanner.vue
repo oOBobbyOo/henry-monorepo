@@ -97,7 +97,7 @@ const meteors = computed(() => {
       </p>
       <div
         v-if="showButton"
-        class="basic-banner-button inline-block py-2 px-3 rounded-md cursor-pointer"
+        class="basic-banner__button inline-block py-2 px-3 rounded-md cursor-pointer"
         :style="{ backgroundColor: buttonColor, color: buttonTextColor }"
         @click="handleClick"
       >
