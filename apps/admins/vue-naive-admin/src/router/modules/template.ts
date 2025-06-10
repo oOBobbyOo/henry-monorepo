@@ -21,7 +21,18 @@ const template: RouteRecordRaw = {
       meta: {
         title: '横幅',
         i18nKey: 'route.template.banner',
-        icon: 'gg:template',
+        icon: 'bx:credit-card-front',
+        keepAlive: true,
+      },
+    },
+    {
+      path: 'card',
+      name: 'Card',
+      component: () => import('@/views/template/card/index.vue'),
+      meta: {
+        title: '卡片',
+        i18nKey: 'route.template.card',
+        icon: 'fluent:contact-card-16-regular',
         keepAlive: true,
       },
     },

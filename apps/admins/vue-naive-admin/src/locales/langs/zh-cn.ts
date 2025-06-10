@@ -96,6 +96,7 @@ const local = {
     template: {
       page: '模板示例',
       banner: '横幅',
+      card: '卡片',
     },
     manage: {
       system: '系统管理',

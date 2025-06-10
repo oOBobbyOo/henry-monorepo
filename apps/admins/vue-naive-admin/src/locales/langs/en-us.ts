@@ -96,6 +96,7 @@ const local = {
     template: {
       page: 'Template',
       banner: 'Banner',
+      card: 'Card',
     },
     manage: {
       system: 'System Manage',
