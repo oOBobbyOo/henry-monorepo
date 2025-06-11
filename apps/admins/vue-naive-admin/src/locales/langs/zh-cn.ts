@@ -98,6 +98,10 @@ const local = {
       banner: '横幅',
       card: '卡片',
     },
+    animate: {
+      page: '动画示例',
+      button: '按钮',
+    },
     manage: {
       system: '系统管理',
       user: '用户管理',

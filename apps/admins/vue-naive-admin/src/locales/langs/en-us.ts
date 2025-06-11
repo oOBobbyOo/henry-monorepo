@@ -98,6 +98,10 @@ const local = {
       banner: 'Banner',
       card: 'Card',
     },
+    animate: {
+      page: 'Animate',
+      button: 'Button',
+    },
     manage: {
       system: 'System Manage',
       user: 'User Manage',
