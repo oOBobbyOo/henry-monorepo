@@ -2,10 +2,11 @@
 defineOptions({ name: 'StatsCard' })
 
 withDefaults(defineProps<Props>(), {
-  backgroundColor: '#071437',
-  iconBgColor: '#eee',
-  iconColor: '#333',
+  backgroundColor: '#fff',
+  iconBgColor: 'transparent',
+  iconColor: '#fff',
   iconSize: 20,
+  textColor: '#071437',
 })
 
 interface Props {
@@ -32,10 +33,10 @@ interface Props {
       <SvgIcon :icon="icon" />
     </div>
     <div class="stats-card__content flex-1" :style="{ color: textColor }">
-      <p class="mb-1 text-xl font-600">
+      <p v-if="title" class="mb-1 text-xl font-600">
         {{ title }}
       </p>
-      <p class="opacity-70" v-html="description" />
+      <p v-if="description" class="opacity-70" v-html="description" />
     </div>
   </div>
 </template>
@@ -46,5 +47,9 @@ interface Props {
   min-height: 8rem;
   border: 1px solid rgb(239, 239, 245);
   border-radius: 16px;
+  transition: transform 0.2s ease;
+}
+.stats-card:hover {
+  transform: translateY(-5px);
 }
 </style>
