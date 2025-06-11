@@ -229,6 +229,9 @@ catalogs:
     vue-router:
       specifier: ^4.5.0
       version: 4.5.0
+    vue3-count-to:
+      specifier: ^1.1.2
+      version: 1.1.2
     vue3-emoji-picker:
       specifier: ^1.1.8
       version: 1.1.8
@@ -391,6 +394,9 @@ importers:
       vue-router:
         specifier: catalog:prod
         version: 4.5.0(vue@3.5.13(typescript@5.8.2))
+      vue3-count-to:
+        specifier: catalog:prod
+        version: 1.1.2(vue@3.5.13(typescript@5.8.2))
       vue3-emoji-picker:
         specifier: catalog:prod
         version: 1.1.8(typescript@5.8.2)
@@ -3423,6 +3429,9 @@ packages:
 
   core-js-compat@3.41.0:
     resolution: {integrity: sha512-RFsU9LySVue9RTwdDVX/T0e2Y6jRYWXERKElIjpuEOEnxaXffI0X7RUwVzfYLfzuLXSNJDYoRYUAmRUcyln20A==}
+
+  core-js@3.43.0:
+    resolution: {integrity: sha512-N6wEbTTZSYOY2rYAn85CuvWWkCK6QweMn7/4Nr3w+gDBeBhk/x4EJeY6FPo4QzDoJZxVTv8U7CMvgWk6pOHHqA==}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -8031,6 +8040,9 @@ packages:
   vue-bundle-renderer@2.1.1:
     resolution: {integrity: sha512-+qALLI5cQncuetYOXp4yScwYvqh8c6SMXee3B+M7oTZxOgtESP0l4j/fXdEJoZ+EdMxkGWIj+aSEyjXkOdmd7g==}
 
+  vue-count-to@1.0.13:
+    resolution: {integrity: sha512-6R4OVBVNtQTlcbXu6SJ8ENR35M2/CdWt3Jmv57jOUM+1ojiFmjVGvZPH8DfHpMDSA+ITs+EW5V6qthADxeyYOQ==}
+
   vue-devtools-stub@0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
 
@@ -8061,6 +8073,11 @@ packages:
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
+
+  vue3-count-to@1.1.2:
+    resolution: {integrity: sha512-C5AvlcGfyM4XvFqPDkni94rqGd5K/+RB+B4xv/1NQx3RrdC+GvXPFzeXW5hWL/jh8ehWLm4LITyK0eMKf4iJbg==}
+    peerDependencies:
+      vue: '>= 3 < 4'
 
   vue3-emoji-picker@1.1.8:
     resolution: {integrity: sha512-k9tVHeQEBVLzVCLYAkFaI1nib3FJFQwdPhWD5khJkhks3ktg3g12z5wPGOSDpIuSLNtelRGvq1qdmZuJu5khfA==}
@@ -11802,6 +11819,8 @@ snapshots:
   core-js-compat@3.41.0:
     dependencies:
       browserslist: 4.24.4
+
+  core-js@3.43.0: {}
 
   core-util-is@1.0.3: {}
 
@@ -17524,6 +17543,8 @@ snapshots:
     dependencies:
       ufo: 1.6.1
 
+  vue-count-to@1.0.13: {}
+
   vue-devtools-stub@0.1.0: {}
 
   vue-eslint-parser@10.1.1(eslint@9.22.0(jiti@2.4.2)):
@@ -17560,6 +17581,12 @@ snapshots:
       '@volar/typescript': 2.4.12
       '@vue/language-core': 2.2.8(typescript@5.8.2)
       typescript: 5.8.2
+
+  vue3-count-to@1.1.2(vue@3.5.13(typescript@5.8.2)):
+    dependencies:
+      core-js: 3.43.0
+      vue: 3.5.13(typescript@5.8.2)
+      vue-count-to: 1.0.13
 
   vue3-emoji-picker@1.1.8(typescript@5.8.2):
     dependencies:

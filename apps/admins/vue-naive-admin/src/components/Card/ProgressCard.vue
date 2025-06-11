@@ -26,9 +26,12 @@ const { title, icon, iconBgColor, iconColor, iconSize, ...restAttrs }: Props = u
         <SvgIcon :icon="icon" />
       </div>
       <div class="progress-card__title" :style="{ color: iconColor }">
-        <p class="mb-1 text-2xl font-600">
-          {{ `${restAttrs.percentage}%` }}
-        </p>
+        <CountTo
+          class="mb-1 text-2xl font-600"
+          :end-val="restAttrs.percentage"
+          :duration="3000"
+          suffix="%"
+        />
         <p v-if="title" class="text-sm opacity-60">
           {{ title }}
         </p>

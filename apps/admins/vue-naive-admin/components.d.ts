@@ -15,6 +15,7 @@ declare module 'vue' {
     ButtonIcon: typeof import('./src/components/ButtonIcon/index.vue')['default']
     Card: typeof import('./src/components/Card/index.vue')['default']
     CardBanner: typeof import('./src/components/Banner/CardBanner.vue')['default']
+    CountTo: typeof import('./src/components/CountTo/index.vue')['default']
     ExceptionBase: typeof import('./src/components/ExceptionBase/index.vue')['default']
     FullScreen: typeof import('./src/components/FullScreen/index.vue')['default']
     IconAntDesignReloadOutlined: typeof import('~icons/ant-design/reload-outlined')['default']
