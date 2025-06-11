@@ -10,7 +10,7 @@ withDefaults(defineProps<Props>(), {
 })
 
 interface Props {
-  icon: string
+  icon?: string
   title?: string
   count?: number
   description: string
@@ -39,7 +39,7 @@ interface Props {
       <p v-if="title" class="mb-1 text-xl font-600">
         {{ title }}
       </p>
-      <p v-if="description" class="opacity-70" v-html="description" />
+      <p v-if="description" class="opacity-60" v-html="description" />
     </div>
   </div>
 </template>
