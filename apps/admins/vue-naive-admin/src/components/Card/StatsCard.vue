@@ -33,6 +33,9 @@ interface Props {
       <SvgIcon :icon="icon" />
     </div>
     <div class="stats-card__content flex-1" :style="{ color: textColor }">
+      <p v-if="count" class="text-2xl font-600">
+        <NNumberAnimation :from="0" :to="count" :active="true" :show-separator="true" :precision="2" />
+      </p>
       <p v-if="title" class="mb-1 text-xl font-600">
         {{ title }}
       </p>
