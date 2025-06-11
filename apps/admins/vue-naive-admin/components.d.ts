@@ -62,6 +62,7 @@ declare module 'vue' {
     ReloadButton: typeof import('./src/components/ReloadButton/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    StatsCard: typeof import('./src/components/Card/StatsCard.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
     WangEditor: typeof import('./src/components/WangEditor/index.vue')['default']
   }
