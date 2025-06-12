@@ -24,6 +24,7 @@ declare module 'vue' {
     IconGridiconsFullscreen: typeof import('~icons/gridicons/fullscreen')['default']
     IconGridiconsFullscreenExit: typeof import('~icons/gridicons/fullscreen-exit')['default']
     MarqueeNotice: typeof import('./src/components/TextEffect/MarqueeNotice.vue')['default']
+    MisplacedButton: typeof import('./src/components/Animate/Button/MisplacedButton.vue')['default']
     NAvatar: typeof import('naive-ui')['NAvatar']
     NButton: typeof import('naive-ui')['NButton']
     NCalendar: typeof import('naive-ui')['NCalendar']
