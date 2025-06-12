@@ -65,6 +65,7 @@ declare module 'vue' {
     NTab: typeof import('naive-ui')['NTab']
     NTabs: typeof import('naive-ui')['NTabs']
     NTooltip: typeof import('naive-ui')['NTooltip']
+    PinballLoading: typeof import('./src/components/Animate/loading/PinballLoading.vue')['default']
     ProgressCard: typeof import('./src/components/Card/ProgressCard.vue')['default']
     QrCode: typeof import('./src/components/QrCode/index.vue')['default']
     RainbowButton: typeof import('./src/components/Animate/Button/RainbowButton.vue')['default']

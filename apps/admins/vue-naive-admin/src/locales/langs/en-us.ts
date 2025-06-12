@@ -101,6 +101,7 @@ const local = {
     animate: {
       page: 'Animate',
       button: 'Button',
+      loading: 'Loading',
     },
     manage: {
       system: 'System Manage',

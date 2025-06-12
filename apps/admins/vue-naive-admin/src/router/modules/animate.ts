@@ -25,6 +25,17 @@ const Animate: RouteRecordRaw = {
         keepAlive: true,
       },
     },
+    {
+      path: 'loading',
+      name: 'Loading',
+      component: () => import('@/views/animate/loading/index.vue'),
+      meta: {
+        title: '加载',
+        i18nKey: 'route.animate.loading',
+        icon: 'hugeicons:loading-03',
+        keepAlive: true,
+      },
+    },
   ],
 }
 

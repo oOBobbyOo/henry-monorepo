@@ -101,6 +101,7 @@ const local = {
     animate: {
       page: '动画示例',
       button: '按钮',
+      loading: '加载',
     },
     manage: {
       system: '系统管理',
