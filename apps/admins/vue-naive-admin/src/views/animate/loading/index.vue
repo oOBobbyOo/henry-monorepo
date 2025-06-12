@@ -8,6 +8,7 @@
       <PinballLoading />
       <ImgLoading />
       <TextReversalLoading />
+      <TextScrollLoading />
     </div>
   </div>
 </template>

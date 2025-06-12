@@ -76,6 +76,7 @@ declare module 'vue' {
     StatsCard: typeof import('./src/components/Card/StatsCard.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
     TextReversalLoading: typeof import('./src/components/Animate/loading/TextReversalLoading.vue')['default']
+    TextScrollLoading: typeof import('./src/components/Animate/loading/TextScrollLoading.vue')['default']
     WangEditor: typeof import('./src/components/WangEditor/index.vue')['default']
   }
 }
