@@ -5,9 +5,9 @@ withDefaults(defineProps<{ text?: string }>(), { text: 'Discover' })
 </script>
 
 <template>
-  <div class="button flex-center gap-2 rd-50px p-3 text-base text-white cursor-pointer">
-    <span class="text-base">{{ text }}</span>
-    <span>
+  <div class="button flex-center gap-2 rd-50px p-3  text-white cursor-pointer">
+    <span class="text-xl font-600">{{ text }}</span>
+    <span class="svg">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="50"
@@ -27,5 +27,55 @@ withDefaults(defineProps<{ text?: string }>(), { text: 'Discover' })
 .button {
   background-color: #006aff;
   border: 8px solid #c0dfff;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  border: 8px solid #b1d8ff;
+  background-color: #1b7aff;
+}
+
+.button:active {
+  border: 5px solid #c0dfff;
+}
+
+.button:hover .svg svg {
+  animation: jello-vertical 0.9s both;
+  transform-origin: left;
+}
+
+.svg {
+  padding-top: 5px;
+  height: 100%;
+  width: fit-content;
+}
+
+.svg svg {
+  width: 50px;
+  height: 30px;
+}
+
+@keyframes jello-vertical {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
 }
 </style>
