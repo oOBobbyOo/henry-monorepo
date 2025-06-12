@@ -16,6 +16,7 @@ declare module 'vue' {
     Card: typeof import('./src/components/Card/index.vue')['default']
     CardBanner: typeof import('./src/components/Banner/CardBanner.vue')['default']
     CountTo: typeof import('./src/components/CountTo/index.vue')['default']
+    CyberpunkButton: typeof import('./src/components/Animate/Button/CyberpunkButton.vue')['default']
     DiscoverButton: typeof import('./src/components/Animate/Button/DiscoverButton.vue')['default']
     ExceptionBase: typeof import('./src/components/ExceptionBase/index.vue')['default']
     FullScreen: typeof import('./src/components/FullScreen/index.vue')['default']
