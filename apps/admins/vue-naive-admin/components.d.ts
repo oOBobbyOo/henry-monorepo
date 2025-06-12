@@ -75,6 +75,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     StatsCard: typeof import('./src/components/Card/StatsCard.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
+    TextReversalLoading: typeof import('./src/components/Animate/loading/TextReversalLoading.vue')['default']
     WangEditor: typeof import('./src/components/WangEditor/index.vue')['default']
   }
 }

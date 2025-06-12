@@ -17,6 +17,7 @@ defineOptions({ name: 'PinballLoading' })
 .pinball-loading {
   width: 200px;
   height: 60px;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
 }

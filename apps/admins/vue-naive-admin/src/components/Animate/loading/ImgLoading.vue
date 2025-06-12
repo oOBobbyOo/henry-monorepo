@@ -10,8 +10,8 @@ defineOptions({ name: 'ImgLoading' })
 .img-loading {
   width: 64px;
   height: 64px;
+  margin: 0 auto;
   position: relative;
-  background: #fff;
   border-radius: 4px;
   overflow: hidden;
 }
