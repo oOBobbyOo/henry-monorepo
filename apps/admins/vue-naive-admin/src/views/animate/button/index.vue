@@ -8,6 +8,7 @@
       <CyberpunkButton />
       <DiscoverButton />
       <MisplacedButton />
+      <RainbowButton />
     </div>
   </div>
 </template>
