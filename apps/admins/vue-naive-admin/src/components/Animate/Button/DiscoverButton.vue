@@ -45,14 +45,13 @@ withDefaults(defineProps<{ text?: string }>(), { text: 'Discover' })
 }
 
 .svg {
-  padding-top: 5px;
   height: 100%;
   width: fit-content;
 }
 
 .svg svg {
   width: 50px;
-  height: 30px;
+  height: 28px;
 }
 
 @keyframes jello-vertical {

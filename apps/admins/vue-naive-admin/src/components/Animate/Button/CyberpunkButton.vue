@@ -3,23 +3,19 @@ defineOptions({ name: 'CyberpunkButton' })
 </script>
 
 <template>
-  <button>Cyberpunk</button>
+  <button class="relative p-4 text-3xl font-600 text-white border-none cursor-pointer">
+    Cyberpunk
+  </button>
 </template>
 
 <style scoped>
 button,
 button::after {
-  font-size: 36px;
   font-family: 'Bebas Neue', cursive;
-  font-weight: bold;
   background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
-  border: 0;
-  color: #fff;
   letter-spacing: 3px;
   box-shadow: 6px 0px 0px #00e6f6;
   outline: transparent;
-  position: relative;
-  cursor: pointer;
 }
 
 button::after {
