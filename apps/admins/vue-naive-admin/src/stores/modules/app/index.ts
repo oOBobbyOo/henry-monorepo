@@ -1,18 +1,18 @@
 import { setLocale } from '@/locales'
 import { useBoolean } from '@henry/vhooks'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { effectScope, onScopeDispose, ref, watch } from 'vue'
 
 export const useAppStore = defineStore('app', () => {
+  const scope = effectScope()
+
   const breakpoints = useBreakpoints(breakpointsTailwind)
+  const isMobile = breakpoints.smaller('sm')
+  const isTablet = breakpoints.smaller('lg')
 
   const { bool: siderCollapse, setBool: setSiderCollapse, toggle: toggleSiderCollapse } = useBoolean()
   const { bool: themeDrawerVisible, setTrue: openThemeDrawer, setFalse: closeThemeDrawer } = useBoolean()
-
-  /** Is mobile layout */
-  const isMobile = breakpoints.smaller('sm')
 
   const layoutMode = 'basic'
 
@@ -34,8 +34,24 @@ export const useAppStore = defineStore('app', () => {
     setLocale(lang)
   }
 
+  // watch store
+  scope.run(() => {
+    watch(locale, () => {
+    })
+
+    watch(isTablet, (val) => {
+      setSiderCollapse(val)
+    })
+  })
+
+  /** On scope dispose */
+  onScopeDispose(() => {
+    scope.stop()
+  })
+
   return {
     isMobile,
+    isTablet,
     layoutMode,
     locale,
     localeOptions,
