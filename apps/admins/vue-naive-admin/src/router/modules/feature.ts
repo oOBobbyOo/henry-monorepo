@@ -1,10 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router'
-import BasicLayout from '@/layouts/basic-layout/index.vue'
+import Layout from '@/layouts/index.vue'
 
 const feature: RouteRecordRaw = {
   path: '/feature',
   name: 'Feature',
-  component: BasicLayout,
+  component: Layout,
   redirect: '/feature/barcode',
   meta: {
     title: '功能',

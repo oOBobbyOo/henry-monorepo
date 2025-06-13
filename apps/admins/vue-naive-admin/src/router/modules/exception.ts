@@ -1,10 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router'
-import BasicLayout from '@/layouts/basic-layout/index.vue'
+import Layout from '@/layouts/index.vue'
 
 const exception: RouteRecordRaw = {
   path: '/exception',
   name: 'Exception',
-  component: BasicLayout,
+  component: Layout,
   redirect: '/exception/403',
   meta: {
     title: '异常页',

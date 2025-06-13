@@ -1,15 +1,20 @@
 <script setup lang='ts'>
 import { useAppStore } from '@/stores/modules/app'
+import { computed } from 'vue'
 
 defineOptions({ name: 'GlobalLogo' })
 
 const appStore = useAppStore()
+
+const collapsed = computed(() => {
+  return appStore.isMobile ? false : appStore.siderCollapse
+})
 </script>
 
 <template>
   <div flex-center p-4>
     <h1 className="logo">
-      {{ appStore.siderCollapse ? 'HA' : 'Heny Admin' }}
+      {{ collapsed ? 'HA' : 'Heny Admin' }}
     </h1>
   </div>
 </template>

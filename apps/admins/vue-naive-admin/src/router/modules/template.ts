@@ -1,10 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router'
-import BasicLayout from '@/layouts/basic-layout/index.vue'
+import Layout from '@/layouts/index.vue'
 
 const template: RouteRecordRaw = {
   path: '/template',
   name: 'Template',
-  component: BasicLayout,
+  component: Layout,
   redirect: '/template/banner',
   meta: {
     title: '模板示例',

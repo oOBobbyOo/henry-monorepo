@@ -2,6 +2,9 @@ declare namespace Theme {
   /** Theme scheme */
   type ThemeScheme = 'light' | 'dark' | 'auto'
 
+  /** Theme layout mode */
+  type ThemeLayoutMode = 'basic' | 'mobile'
+
   interface ThemeSetting {
     /** Theme scheme */
     themeScheme: ThemeScheme
@@ -15,6 +18,11 @@ declare namespace Theme {
     otherColor: OtherColor
     /** Whether info color is followed by the primary color */
     isInfoFollowPrimary: boolean
+    /** Layout */
+    layout: {
+      /** Layout mode */
+      mode: ThemeLayoutMode
+    }
   }
 
   interface OtherColor {

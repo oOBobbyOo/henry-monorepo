@@ -1,10 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router'
-import BasicLayout from '@/layouts/basic-layout/index.vue'
+import Layout from '@/layouts/index.vue'
 
 const Animate: RouteRecordRaw = {
   path: '/animate',
   name: 'Animate',
-  component: BasicLayout,
+  component: Layout,
   redirect: '/animate/button',
   meta: {
     title: '动画示例',

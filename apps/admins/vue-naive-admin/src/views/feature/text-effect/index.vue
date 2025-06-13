@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="h-full">
+  <div>
     <NCard title="公告通知" :bordered="false" class="card-wrapper h-full" content-class="overflow-hidden space-y-4">
       <MarqueeNotice text="这是一条默认类型的滚动公告" />
 

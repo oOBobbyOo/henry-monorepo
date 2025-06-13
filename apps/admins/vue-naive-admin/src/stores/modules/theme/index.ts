@@ -112,6 +112,14 @@ export const useThemeStore = defineStore('theme', () => {
     }
   }
 
+  /**
+   * Set theme layout
+   * @param mode Theme layout mode
+   */
+  function setThemeLayout(mode: Theme.ThemeLayoutMode) {
+    settings.value.layout.mode = mode
+  }
+
   // watch store
   scope.run(() => {
     watch(
@@ -146,5 +154,6 @@ export const useThemeStore = defineStore('theme', () => {
     setGrayscale,
     setColourWeakness,
     updateThemeColors,
+    setThemeLayout,
   }
 })

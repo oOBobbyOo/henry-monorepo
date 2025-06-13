@@ -1,10 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router'
-import BasicLayout from '@/layouts/basic-layout/index.vue'
+import Layout from '@/layouts/index.vue'
 
 const about: RouteRecordRaw = {
   path: '/about',
   name: 'About',
-  component: BasicLayout,
+  component: Layout,
   redirect: '/about/index',
   meta: {
     title: '关于',

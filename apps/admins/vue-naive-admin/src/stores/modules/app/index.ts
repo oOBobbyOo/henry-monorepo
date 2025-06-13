@@ -9,12 +9,10 @@ export const useAppStore = defineStore('app', () => {
 
   const breakpoints = useBreakpoints(breakpointsTailwind)
   const isMobile = breakpoints.smaller('sm')
-  const isTablet = breakpoints.smaller('lg')
+  const isTablet = breakpoints.between('sm', 'lg')
 
   const { bool: siderCollapse, setBool: setSiderCollapse, toggle: toggleSiderCollapse } = useBoolean()
   const { bool: themeDrawerVisible, setTrue: openThemeDrawer, setFalse: closeThemeDrawer } = useBoolean()
-
-  const layoutMode = 'basic'
 
   const locale = ref<App.I18n.LangType>('zh-CN')
 
@@ -52,7 +50,6 @@ export const useAppStore = defineStore('app', () => {
   return {
     isMobile,
     isTablet,
-    layoutMode,
     locale,
     localeOptions,
     changeLocale,

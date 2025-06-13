@@ -10,4 +10,7 @@ export const themeSettings: Theme.ThemeSetting = {
     error: '#f5222d',
   },
   isInfoFollowPrimary: true,
+  layout: {
+    mode: 'basic',
+  },
 }

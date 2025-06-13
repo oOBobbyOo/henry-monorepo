@@ -37,7 +37,7 @@ updateTitle(dayjs().year(), dayjs().month() + 1, dayjs().date())
 </script>
 
 <template>
-  <div class="h-full">
+  <div>
     <NCard title="日历" :bordered="false" class="card-wrapper h-full" content-class="overflow-hidden">
       <NCalendar
         v-model:value="currentDate"

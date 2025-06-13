@@ -1,10 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router'
-import BasicLayout from '@/layouts/basic-layout/index.vue'
+import Layout from '@/layouts/index.vue'
 
 const manage: RouteRecordRaw = {
   path: '/manage',
   name: 'Manage',
-  component: BasicLayout,
+  component: Layout,
   redirect: '/manage/user',
   meta: {
     title: '系统管理',

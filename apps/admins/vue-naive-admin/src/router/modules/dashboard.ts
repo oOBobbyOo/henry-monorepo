@@ -1,10 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router'
-import BasicLayout from '@/layouts/basic-layout/index.vue'
+import Layout from '@/layouts/index.vue'
 
 const dashboard: RouteRecordRaw = {
   path: '/dashboard',
   name: 'Dashboard',
-  component: BasicLayout,
+  component: Layout,
   redirect: '/dashboard/analysis',
   meta: {
     title: '首页',
