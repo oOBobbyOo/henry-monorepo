@@ -12,6 +12,7 @@ declare module 'vue' {
     BarCode: typeof import('./src/components/BarCode/index.vue')['default']
     BasicBanner: typeof import('./src/components/Banner/BasicBanner.vue')['default']
     BetterScroll: typeof import('./src/components/BetterScroll/index.vue')['default']
+    BlcokBounceLoading: typeof import('./src/components/Animate/loading/BlcokBounceLoading.vue')['default']
     ButtonIcon: typeof import('./src/components/ButtonIcon/index.vue')['default']
     Card: typeof import('./src/components/Card/index.vue')['default']
     CardBanner: typeof import('./src/components/Banner/CardBanner.vue')['default']
