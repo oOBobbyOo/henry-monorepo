@@ -71,6 +71,7 @@ declare module 'vue' {
     NTooltip: typeof import('naive-ui')['NTooltip']
     PaperLayerLoading: typeof import('./src/components/Animate/loading/PaperLayerLoading.vue')['default']
     PinballLoading: typeof import('./src/components/Animate/loading/PinballLoading.vue')['default']
+    ProgressBarLoading: typeof import('./src/components/Animate/loading/ProgressBarLoading.vue')['default']
     ProgressCard: typeof import('./src/components/Card/ProgressCard.vue')['default']
     QrCode: typeof import('./src/components/QrCode/index.vue')['default']
     RainbowButton: typeof import('./src/components/Animate/Button/RainbowButton.vue')['default']

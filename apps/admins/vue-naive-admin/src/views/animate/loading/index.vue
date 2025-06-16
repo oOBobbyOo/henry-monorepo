@@ -5,6 +5,7 @@ import Block3DLoading from '@/components/Animate/loading/Block3DLoading.vue'
 import ImgLoading from '@/components/Animate/loading/ImgLoading.vue'
 import PaperLayerLoading from '@/components/Animate/loading/PaperLayerLoading.vue'
 import PinballLoading from '@/components/Animate/loading/PinballLoading.vue'
+import ProgressBarLoading from '@/components/Animate/loading/ProgressBarLoading.vue'
 import StripWaveLoading from '@/components/Animate/loading/StripWaveLoading.vue'
 import TextReversalLoading from '@/components/Animate/loading/TextReversalLoading.vue'
 import TextScrollLoading from '@/components/Animate/loading/TextScrollLoading.vue'
@@ -21,11 +22,12 @@ import WaterRipplesLoading from '@/components/Animate/loading/WaterRipplesLoadin
       <ImgLoading />
       <PaperLayerLoading />
       <PinballLoading />
+      <ProgressBarLoading />
       <StripWaveLoading />
+      <WaterRipplesLoading />
       <TextReversalLoading />
       <TextScrollLoading />
       <TextWaveLoading />
-      <WaterRipplesLoading />
     </div>
   </div>
 </template>
