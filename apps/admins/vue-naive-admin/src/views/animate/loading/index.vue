@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import BlockBounceLoading from '@/components/Animate/loading/BlcokBounceLoading.vue'
+import Block3DLoading from '@/components/Animate/loading/Block3DLoading.vue'
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import BlockBounceLoading from '@/components/Animate/loading/BlcokBounceLoading.
       <TextReversalLoading />
       <TextScrollLoading />
       <BlockBounceLoading />
+      <Block3DLoading />
     </div>
   </div>
 </template>
