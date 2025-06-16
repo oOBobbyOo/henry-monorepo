@@ -6,6 +6,7 @@ import PaperLayerLoading from '@/components/Animate/loading/PaperLayerLoading.vu
 import PinballLoading from '@/components/Animate/loading/PinballLoading.vue'
 import TextReversalLoading from '@/components/Animate/loading/TextReversalLoading.vue'
 import TextScrollLoading from '@/components/Animate/loading/TextScrollLoading.vue'
+import TextWaveLoading from '@/components/Animate/loading/TextWaveLoading.vue'
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import TextScrollLoading from '@/components/Animate/loading/TextScrollLoading.vu
       <PinballLoading />
       <TextReversalLoading />
       <TextScrollLoading />
+      <TextWaveLoading />
     </div>
   </div>
 </template>

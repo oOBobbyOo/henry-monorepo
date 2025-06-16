@@ -80,6 +80,7 @@ declare module 'vue' {
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
     TextReversalLoading: typeof import('./src/components/Animate/loading/TextReversalLoading.vue')['default']
     TextScrollLoading: typeof import('./src/components/Animate/loading/TextScrollLoading.vue')['default']
+    TextWaveLoading: typeof import('./src/components/Animate/loading/TextWaveLoading.vue')['default']
     WangEditor: typeof import('./src/components/WangEditor/index.vue')['default']
   }
 }
