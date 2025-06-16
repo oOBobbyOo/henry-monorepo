@@ -9,6 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppProvider: typeof import('./src/components/AppProvider/index.vue')['default']
+    BallRotationLoading: typeof import('./src/components/Animate/loading/BallRotationLoading.vue')['default']
     BarCode: typeof import('./src/components/BarCode/index.vue')['default']
     BasicBanner: typeof import('./src/components/Banner/BasicBanner.vue')['default']
     BetterScroll: typeof import('./src/components/BetterScroll/index.vue')['default']
