@@ -83,5 +83,6 @@ declare module 'vue' {
     TextScrollLoading: typeof import('./src/components/Animate/loading/TextScrollLoading.vue')['default']
     TextWaveLoading: typeof import('./src/components/Animate/loading/TextWaveLoading.vue')['default']
     WangEditor: typeof import('./src/components/WangEditor/index.vue')['default']
+    WaterRipplesLoading: typeof import('./src/components/Animate/loading/WaterRipplesLoading.vue')['default']
   }
 }

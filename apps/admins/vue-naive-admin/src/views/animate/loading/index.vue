@@ -8,6 +8,7 @@ import StripWaveLoading from '@/components/Animate/loading/StripWaveLoading.vue'
 import TextReversalLoading from '@/components/Animate/loading/TextReversalLoading.vue'
 import TextScrollLoading from '@/components/Animate/loading/TextScrollLoading.vue'
 import TextWaveLoading from '@/components/Animate/loading/TextWaveLoading.vue'
+import WaterRipplesLoading from '@/components/Animate/loading/WaterRipplesLoading.vue'
 </script>
 
 <template>
@@ -22,6 +23,7 @@ import TextWaveLoading from '@/components/Animate/loading/TextWaveLoading.vue'
       <TextReversalLoading />
       <TextScrollLoading />
       <TextWaveLoading />
+      <WaterRipplesLoading />
     </div>
   </div>
 </template>
