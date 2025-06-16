@@ -11,6 +11,7 @@
       <RainbowButton />
       <SkewButton />
       <SweepButton />
+      <ComicButton />
     </div>
   </div>
 </template>
