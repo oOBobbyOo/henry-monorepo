@@ -78,6 +78,7 @@ declare module 'vue' {
     ReloadButton: typeof import('./src/components/ReloadButton/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SkewButton: typeof import('./src/components/Animate/Button/SkewButton.vue')['default']
     StatsCard: typeof import('./src/components/Card/StatsCard.vue')['default']
     StripWaveLoading: typeof import('./src/components/Animate/loading/StripWaveLoading.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']

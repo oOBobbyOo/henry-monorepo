@@ -9,6 +9,7 @@
       <DiscoverButton />
       <MisplacedButton />
       <RainbowButton />
+      <SkewButton />
     </div>
   </div>
 </template>
