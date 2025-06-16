@@ -82,6 +82,7 @@ declare module 'vue' {
     StatsCard: typeof import('./src/components/Card/StatsCard.vue')['default']
     StripWaveLoading: typeof import('./src/components/Animate/loading/StripWaveLoading.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
+    SweepButton: typeof import('./src/components/Animate/Button/SweepButton.vue')['default']
     TextReversalLoading: typeof import('./src/components/Animate/loading/TextReversalLoading.vue')['default']
     TextScrollLoading: typeof import('./src/components/Animate/loading/TextScrollLoading.vue')['default']
     TextWaveLoading: typeof import('./src/components/Animate/loading/TextWaveLoading.vue')['default']

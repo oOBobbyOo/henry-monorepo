@@ -10,6 +10,7 @@
       <MisplacedButton />
       <RainbowButton />
       <SkewButton />
+      <SweepButton />
     </div>
   </div>
 </template>
