@@ -41,7 +41,7 @@ defineOptions({ name: 'Block3DLoading' })
   position: relative;
   transform-style: preserve-3d;
   transform-origin: 50% 50%;
-  margin-top: calc(var(--size) * 1.5 * -1);
+  margin-top: calc(var(--size) * 0.5 * -1);
   transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
 }
 
