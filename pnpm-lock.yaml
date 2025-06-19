@@ -220,6 +220,9 @@ catalogs:
     react-router-dom:
       specifier: ^7.5.0
       version: 7.5.0
+    seemly:
+      specifier: ^0.3.10
+      version: 0.3.10
     vue:
       specifier: ^3.5.13
       version: 3.5.13
@@ -385,6 +388,9 @@ importers:
       qrcode:
         specifier: catalog:prod
         version: 1.5.4
+      seemly:
+        specifier: catalog:prod
+        version: 0.3.10
       vue:
         specifier: catalog:prod
         version: 3.5.13(typescript@5.8.2)

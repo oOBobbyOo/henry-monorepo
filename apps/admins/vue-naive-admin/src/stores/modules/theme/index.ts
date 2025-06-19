@@ -2,7 +2,7 @@ import { isDark } from '@/composables/dark'
 import { usePreferredColorScheme } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { computed, effectScope, onScopeDispose, ref, toRefs, unref, watch } from 'vue'
-import { initThemeSettings } from './shared'
+import { getNaiveTheme, initThemeSettings } from './shared'
 
 export const useThemeStore = defineStore('theme', () => {
   const scope = effectScope()
@@ -33,11 +33,7 @@ export const useThemeStore = defineStore('theme', () => {
   })
 
   /** Naive theme  */
-  const naiveTheme = {
-    common: {
-      borderRadius: '6px',
-    },
-  }
+  const naiveTheme = computed(() => getNaiveTheme(themeColors.value))
 
   /** themeScheme mode */
   const themeSchemeMode = computed(() => settings.value.themeScheme)

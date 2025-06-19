@@ -28,6 +28,7 @@
     "naive-ui": "catalog:prod",
     "pinia": "catalog:prod",
     "qrcode": "catalog:prod",
+    "seemly": "catalog:prod",
     "vue": "catalog:prod",
     "vue-i18n": "catalog:prod",
     "vue-router": "catalog:prod",
