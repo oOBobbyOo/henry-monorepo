@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import BetterScroll from '@/components/BetterScroll/index.vue'
 import { useTabStore } from '@/stores/modules/tab'
+import { useThemeStore } from '@/stores/modules/theme'
 import { useElementBounding } from '@vueuse/core'
 import { nextTick, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
@@ -8,6 +9,7 @@ import PageTab from './components/PageTab/index.vue'
 
 const route = useRoute()
 const tabStore = useTabStore()
+const themeStore = useThemeStore()
 
 const bsWrapper = ref<HTMLElement>()
 const { width: bsWrapperWidth, left: bsWrapperLeft } = useElementBounding(bsWrapper)
@@ -84,14 +86,20 @@ watch(
 <template>
   <div class="layout-tabs size-full flex-y-center px-4">
     <div ref="bsWrapper" class="h-full flex-1-hidden">
-      <BetterScroll :options="{ scrollX: true, scrollY: false }">
-        <div ref="tabRef" class="h-full flex items-end pr-18px">
+      <BetterScroll ref="bsScroll" :options="{ scrollX: true, scrollY: false }">
+        <div
+          ref="tabRef"
+          class="h-full flex items-end pr-18px"
+          :class="[themeStore.tab.mode === 'chrome' ? 'items-end' : 'items-center gap-12px']"
+        >
           <PageTab
             v-for="tab in tabStore.tabs"
             :key="tab.id"
             :[TAB_DATA_ID]="tab.id"
-            mode="chrome"
+            :mode="themeStore.tab.mode"
+            :dark-mode="themeStore.darkMode"
             :active="tab.id === tabStore.activeTabId"
+            :active-color="themeStore.themeColor"
             @pointerdown="tabStore.switchRouteByTab(tab)"
             @close="handleCloseTab(tab)"
           >

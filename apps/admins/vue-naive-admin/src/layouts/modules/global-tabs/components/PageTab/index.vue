@@ -1,6 +1,8 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
+import ButtonTab from '../ButtonTab/index.vue'
 import ChromeTab from '../ChromeTab/index.vue'
+import style from './index.module.css'
 
 defineOptions({ name: 'PageTab' })
 
@@ -12,11 +14,14 @@ const props = withDefaults(defineProps<PageTabProps>(), {
 
 const emit = defineEmits<Emits>()
 
-interface PageTabProps {
-  mode?: 'chrome'
+export interface PageTabProps {
+  mode?: Theme.ThemeTabMode
+  darkMode?: boolean
   commonClass?: string
   chromeClass?: string
   buttonClass?: string
+  active?: boolean
+  activeColor?: string
   closable?: boolean
 }
 
@@ -25,12 +30,16 @@ interface Emits {
 }
 
 const activeTabComponent = computed(() => {
-  const { mode, chromeClass } = props
+  const { mode, chromeClass, buttonClass } = props
 
   const tabComponentMap = {
     chrome: {
       component: ChromeTab,
       class: chromeClass,
+    },
+    button: {
+      component: ButtonTab,
+      class: buttonClass,
     },
   }
 
@@ -58,7 +67,11 @@ function handleClose() {
       <slot name="suffix">
         <div
           v-if="closable"
-          class="w-4 h-4 inline-flex items-center justify-center rd-50% text-sm hover:text-white hover:bg-gray-300" @pointerdown.stop="handleClose"
+          class="w-4 h-4 inline-flex items-center justify-center rd-50% text-sm"
+          :class="[
+            style['close-tab'],
+          ]"
+          @pointerdown.stop="handleClose"
         >
           <SvgIcon icon="mdi:close" />
         </div>

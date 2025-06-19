@@ -1,0 +1,46 @@
+/** Button Tab */
+.button-tab {
+  border-color: #e5e7eb;
+}
+
+.button-tab_dark {
+  border-color: #ffffff3d;
+}
+
+.button-tab .close-tab:hover {
+  color: #ffffff;
+}
+
+.button-tab_dark .close-tab:hover {
+  color: #000000;
+}
+
+/** Chrome Tab */
+.chrome-tab:hover .chrome-tab__bg {
+  color: #f2f3f4;
+}
+
+.chrome-tab_dark:hover .chrome-tab__bg {
+  color: #333333;
+}
+
+.chrome-tab .close-tab:hover {
+  color: #ffffff;
+  background-color: #9ca3af;
+}
+
+.chrome-tab_dark .close-tab:hover {
+  color: #000000;
+}
+
+.chrome-tab_active .chrome-tab__divider {
+  opacity: 0;
+}
+
+.chrome-tab:hover .chrome-tab__divider {
+  opacity: 0;
+}
+
+.chrome-tab_dark .chrome-tab__divider {
+  background-color: rgba(255, 255, 255, 0.9);
+}

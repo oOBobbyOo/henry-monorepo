@@ -13,4 +13,10 @@ export const themeSettings: Theme.ThemeSetting = {
   layout: {
     mode: 'basic',
   },
+  tab: {
+    visible: true,
+    cache: true,
+    height: 44,
+    mode: 'chrome',
+  },
 }

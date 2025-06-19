@@ -5,6 +5,9 @@ declare namespace Theme {
   /** Theme layout mode */
   type ThemeLayoutMode = 'basic' | 'mobile'
 
+  /** Theme tab mode */
+  type ThemeTabMode = 'chrome' | 'button'
+
   interface ThemeSetting {
     /** Theme scheme */
     themeScheme: ThemeScheme
@@ -22,6 +25,17 @@ declare namespace Theme {
     layout: {
       /** Layout mode */
       mode: ThemeLayoutMode
+    }
+    /** Tab */
+    tab: {
+      /** Tab visible */
+      visible: boolean
+      /** Tab cache */
+      cache: boolean
+      /** Tab height */
+      height: number
+      /** Tab mode */
+      mode: ThemeTabMode
     }
   }
 
