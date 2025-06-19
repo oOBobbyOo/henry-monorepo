@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import ButtonTab from '../ButtonTab/index.vue'
 import ChromeTab from '../ChromeTab/index.vue'
 import style from './index.module.css'
+import { createTabCssVars } from './shard'
 
 defineOptions({ name: 'PageTab' })
 
@@ -10,6 +11,7 @@ const props = withDefaults(defineProps<PageTabProps>(), {
   mode: 'chrome',
   commonClass: 'transition-all-300',
   closable: true,
+  activeColor: '#1890ff',
 })
 
 const emit = defineEmits<Emits>()
@@ -46,6 +48,8 @@ const activeTabComponent = computed(() => {
   return tabComponentMap[mode]
 })
 
+const cssVars = computed(() => createTabCssVars(props.activeColor))
+
 const bindProps = computed(() => {
   const { chromeClass: _chromeCls, buttonClass: _btnCls, ...rest } = props
 
@@ -58,7 +62,12 @@ function handleClose() {
 </script>
 
 <template>
-  <component :is="activeTabComponent.component" :class="activeTabComponent.class" v-bind="bindProps">
+  <component
+    :is="activeTabComponent.component"
+    :class="activeTabComponent.class"
+    :style="cssVars"
+    v-bind="bindProps"
+  >
     <template #prefix>
       <slot name="prefix" />
     </template>
