@@ -3,14 +3,13 @@ defineOptions({ name: 'SkewButton' })
 </script>
 
 <template>
-  <button class="relative p-4 text-3xl font-600  border-none cursor-pointer bg-black text-white dark:bg-white dark:text-black">
+  <button class="relative p-4 text-3xl font-600 border-none cursor-pointer bg-black text-white dark:bg-white dark:text-black">
     <span>Button</span>
   </button>
 </template>
 
 <style scoped>
 button {
-  /* background: #fff; */
   text-transform: uppercase;
   transform: skew(-21deg);
 }

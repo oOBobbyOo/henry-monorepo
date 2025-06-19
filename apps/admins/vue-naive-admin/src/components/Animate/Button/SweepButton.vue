@@ -4,7 +4,7 @@ defineOptions({ name: 'SweepButton' })
 
 <template>
   <button class="relative p-4 text-3xl text-white font-600 border-none cursor-pointer">
-    Apply Now
+    Apply
   </button>
 </template>
 
@@ -13,6 +13,7 @@ button {
   background-color: rgb(0, 0, 0);
   border-radius: 9999px;
   border: 3px solid #ffffff4d;
+  box-sizing: border-box !important;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
   display: flex;
