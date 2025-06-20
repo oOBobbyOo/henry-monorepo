@@ -10,7 +10,7 @@ const footerHeight = computed(() => `${themeStore.footer.height}px`)
 </script>
 
 <template>
-  <div class="layout-footer flex-center">
+  <div class="layout-footer flex-center bg-white dark:bg-[#18181c]">
     Copyright © 2025 by @henry
   </div>
 </template>

@@ -18,16 +18,16 @@ const themeStore = useThemeStore()
 <template>
   <NLayout has-sider embedded class="wh-full">
     <NLayoutSider
-      bordered
       collapse-mode="width"
       :collapsed-width="themeStore.sider.collapsedWidth"
       :width="themeStore.sider.width"
       :collapsed="appStore.siderCollapse"
+      class="layout-sider z-2"
     >
       <GlobalSider />
     </NLayoutSider>
     <NLayout embedded content-class="min-h-full flex-col">
-      <NLayoutHeader bordered position="absolute" class="z-999">
+      <NLayoutHeader position="absolute" class="z-1">
         <GlobalHeader />
         <GlobalTabs />
       </NLayoutHeader>
@@ -40,11 +40,15 @@ const themeStore = useThemeStore()
         <GlobalContent />
         <ThemeDrawer />
       </NLayoutContent>
-      <NLayoutFooter bordered position="absolute" class="z-999">
+      <NLayoutFooter position="absolute" class="z-1">
         <GlobalFooter />
       </NLayoutFooter>
     </NLayout>
   </NLayout>
 </template>
 
-<style scoped></style>
+<style scoped>
+.layout-sider {
+  box-shadow: var(--hb-sider-shadow);
+}
+</style>
