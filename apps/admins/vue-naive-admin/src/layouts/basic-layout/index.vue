@@ -2,6 +2,7 @@
 import { useAppStore } from '@/stores/modules/app'
 
 import { useThemeStore } from '@/stores/modules/theme'
+import { computed } from 'vue'
 import GlobalContent from '../modules/global-content/index.vue'
 import GlobalFooter from '../modules/global-footer/index.vue'
 import GlobalHeader from '../modules/global-header/index.vue'
@@ -13,6 +14,13 @@ defineOptions({ name: 'BasicLayout' })
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()
+
+const contentStyle = computed(() => {
+  return {
+    'padding-top': `${themeStore.header.height + themeStore.tab.height}px`,
+    'padding-bottom': `${themeStore.footer.height}px`,
+  }
+})
 </script>
 
 <template>
@@ -22,25 +30,25 @@ const themeStore = useThemeStore()
       :collapsed-width="themeStore.sider.collapsedWidth"
       :width="themeStore.sider.width"
       :collapsed="appStore.siderCollapse"
-      class="layout-sider z-2"
+      class="layout-sider z-9"
     >
       <GlobalSider />
     </NLayoutSider>
     <NLayout embedded content-class="min-h-full flex-col">
-      <NLayoutHeader position="absolute" class="z-1">
+      <NLayoutHeader position="absolute" class="z-8">
         <GlobalHeader />
         <GlobalTabs />
       </NLayoutHeader>
       <NLayoutContent
         embedded
-        :native-scrollbar="false"
-        content-class="size-full"
-        class="flex-1 p-t-[100px] p-b-[50px]"
+        :native-scrollbar="true"
+        class="flex-1"
+        :style="contentStyle"
       >
         <GlobalContent />
         <ThemeDrawer />
       </NLayoutContent>
-      <NLayoutFooter position="absolute" class="z-1">
+      <NLayoutFooter position="absolute" class="z-8">
         <GlobalFooter />
       </NLayoutFooter>
     </NLayout>
