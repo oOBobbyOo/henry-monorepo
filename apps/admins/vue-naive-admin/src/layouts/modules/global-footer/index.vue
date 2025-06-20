@@ -6,7 +6,7 @@ defineOptions({ name: 'GlobalFooter' })
 
 const themeStore = useThemeStore()
 
-const height = computed(() => `${themeStore.footer.height}px`)
+const footerHeight = computed(() => `${themeStore.footer.height}px`)
 </script>
 
 <template>
@@ -17,7 +17,7 @@ const height = computed(() => `${themeStore.footer.height}px`)
 
 <style scoped>
 .layout-footer {
-  height: v-bind(height);
+  height: v-bind(footerHeight);
   box-shadow: var(--hb-footer-shadow);
 }
 </style>

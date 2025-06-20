@@ -16,7 +16,7 @@ defineOptions({ name: 'GlobalHeader' })
 const appStore = useAppStore()
 const themeStore = useThemeStore()
 
-const height = computed(() => `${themeStore.header.height}px`)
+const headerHeight = computed(() => `${themeStore.header.height}px`)
 
 const { isFullscreen, toggle } = useFullscreen()
 </script>
@@ -39,7 +39,7 @@ const { isFullscreen, toggle } = useFullscreen()
 
 <style scoped>
 .layout-header {
-  height: v-bind(height);
+  height: v-bind(headerHeight);
   box-shadow: var(--hb-header-shadow);
 }
 </style>

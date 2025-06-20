@@ -71,7 +71,7 @@ const local = {
       error: 'Error',
       followPrimary: 'Follow Primary',
     },
-    pageSetting: {
+    page: {
       title: 'Page Setting',
       animate: 'Page Animate',
       animateMode: 'Page Animate Mode',
@@ -87,6 +87,16 @@ const local = {
     },
     header: {
       height: 'Header Height',
+    },
+    tab: {
+      visible: 'Tab Visible',
+      cache: 'Tag Bar Info Cache',
+      height: 'Tab Height',
+      mode: {
+        title: 'Tab Mode',
+        chrome: 'Chrome',
+        button: 'Button',
+      },
     },
     footer: {
       visible: 'Footer Visible',

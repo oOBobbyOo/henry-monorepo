@@ -3,13 +3,15 @@ import BetterScroll from '@/components/BetterScroll/index.vue'
 import { useTabStore } from '@/stores/modules/tab'
 import { useThemeStore } from '@/stores/modules/theme'
 import { useElementBounding } from '@vueuse/core'
-import { nextTick, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import PageTab from './components/PageTab/index.vue'
 
 const route = useRoute()
 const tabStore = useTabStore()
 const themeStore = useThemeStore()
+
+const tabHeight = computed(() => `${themeStore.tab.height}px`)
 
 const bsWrapper = ref<HTMLElement>()
 const { width: bsWrapperWidth, left: bsWrapperLeft } = useElementBounding(bsWrapper)
@@ -119,5 +121,8 @@ watch(
 </template>
 
 <style scoped>
-
+.layout-tabs {
+  height: v-bind(tabHeight);
+  box-shadow: var(--hb-tabs-shadow);
+}
 </style>

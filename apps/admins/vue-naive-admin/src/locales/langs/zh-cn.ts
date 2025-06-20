@@ -71,7 +71,7 @@ const local = {
       error: '错误色',
       followPrimary: '跟随主色',
     },
-    pageSetting: {
+    page: {
       title: '页面设置',
       animate: '页面切换动画',
       animateMode: '页面切换动画模式',
@@ -87,6 +87,16 @@ const local = {
     },
     header: {
       height: '头部高度',
+    },
+    tab: {
+      visible: '显示标签栏',
+      cache: '标签栏信息缓存',
+      height: '标签栏高度',
+      mode: {
+        title: '标签栏风格',
+        chrome: '谷歌风格',
+        button: '按钮风格',
+      },
     },
     footer: {
       visible: '显示底部',

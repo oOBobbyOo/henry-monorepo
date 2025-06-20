@@ -14,10 +14,10 @@ html {
   box-shadow: var(--hb-header-shadow);
 } */
 
-.layout-tabs {
+/* .layout-tabs {
   height: var(--hb-tabs-height);
   box-shadow: var(--hb-tabs-shadow);
-}
+} */
 
 .layout-sider {
   box-shadow: var(--hb-sider-shadow);
