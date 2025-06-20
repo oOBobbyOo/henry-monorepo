@@ -44,4 +44,12 @@ const editorOptions = reactive({
 ::v-deep(.ql-editor) {
   height: 400px;
 }
+
+::v-deep(.ql-toolbar.ql-snow) {
+  border-color: var(--n-border-color);
+}
+
+::v-deep(.ql-container.ql-snow) {
+  border-color: var(--n-border-color);
+}
 </style>

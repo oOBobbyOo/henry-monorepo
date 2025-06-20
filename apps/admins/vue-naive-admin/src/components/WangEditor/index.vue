@@ -62,21 +62,23 @@ function handleCreated(editor: IDomEditor) {
 
 <style scoped>
 .editor-wrapper {
-  border-color: var(--n-border-color);
-  @apply: b bg-white dark:bg-dark;
+  border: 1px solid var(--n-border-color);
 }
+
 ::v-deep(.w-e-toolbar) {
   background: inherit;
 }
+
 ::v-deep(.w-e-bar-divider) {
   background-color: var(--n-border-color);
 }
+
 ::v-deep(.w-e-container) {
-  border-color: var(--n-border-color);
+  border-top: 1px solid var(--n-border-color);
   height: v-bind(height) !important;
   overflow-y: hidden;
-  @apply: b-t;
 }
+
 ::v-deep(.w-e-text-container) {
   background: inherit;
   color: var(--n-text-color);
