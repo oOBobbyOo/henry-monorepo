@@ -85,6 +85,13 @@ const local = {
         'none': 'None',
       },
     },
+    header: {
+      height: 'Header Height',
+    },
+    footer: {
+      visible: 'Footer Visible',
+      height: 'Footer Height',
+    },
   },
   route: {
     dashboard: {

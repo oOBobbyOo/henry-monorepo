@@ -36,6 +36,11 @@ declare namespace Theme {
       /** Page animate mode */
       animateMode: ThemeAnimateMode
     }
+    /** Header */
+    header: {
+      /** Header height */
+      height: number
+    }
     /** Tab */
     tab: {
       /** Tab visible */
@@ -46,6 +51,12 @@ declare namespace Theme {
       height: number
       /** Tab mode */
       mode: ThemeTabMode
+    }
+    footer: {
+      /** Footer visible */
+      visible: boolean
+      /** Footer height */
+      height: number
     }
   }
 

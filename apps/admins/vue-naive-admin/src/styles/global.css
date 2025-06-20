@@ -9,10 +9,10 @@ html {
 }
 
 /* layout */
-.layout-header {
+/* .layout-header {
   height: var(--hb-header-height);
   box-shadow: var(--hb-header-shadow);
-}
+} */
 
 .layout-tabs {
   height: var(--hb-tabs-height);
@@ -23,7 +23,7 @@ html {
   box-shadow: var(--hb-sider-shadow);
 }
 
-.layout-footer {
+/* .layout-footer {
   height: var(--hb-footer-height);
   box-shadow: var(--hb-footer-shadow);
-}
+} */

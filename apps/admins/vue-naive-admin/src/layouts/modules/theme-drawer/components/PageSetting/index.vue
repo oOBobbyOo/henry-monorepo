@@ -22,6 +22,15 @@ const themeStore = useThemeStore()
         class="w-120px"
       />
     </SettingItem>
+    <SettingItem key="header-height" :label="$t('theme.header.height')">
+      <NInputNumber v-model:value="themeStore.header.height" size="small" :step="1" class="w-120px" />
+    </SettingItem>
+    <SettingItem key="footer-visible" :label="$t('theme.footer.visible')">
+      <NSwitch v-model:value="themeStore.footer.visible" />
+    </SettingItem>
+    <SettingItem v-if="themeStore.footer.visible" key="footer-height" :label="$t('theme.footer.height')">
+      <NInputNumber v-model:value="themeStore.footer.height" size="small" :step="1" class="w-120px" />
+    </SettingItem>
   </TransitionGroup>
 </template>
 

@@ -17,10 +17,17 @@ export const themeSettings: Theme.ThemeSetting = {
     animate: true,
     animateMode: 'fade-slide',
   },
+  header: {
+    height: 56,
+  },
   tab: {
     visible: true,
     cache: true,
     height: 44,
     mode: 'chrome',
+  },
+  footer: {
+    visible: true,
+    height: 48,
   },
 }

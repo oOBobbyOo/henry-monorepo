@@ -4,6 +4,7 @@ import { useThemeStore } from '@/stores/modules/theme'
 
 import { useFullscreen } from '@vueuse/core'
 
+import { computed } from 'vue'
 import DarkSwitch from './components/DarkSwitch/index.vue'
 import LangSwitch from './components/LangSwitch/index.vue'
 import SiderToggler from './components/SiderToggler/index.vue'
@@ -14,6 +15,8 @@ defineOptions({ name: 'GlobalHeader' })
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()
+
+const height = computed(() => `${themeStore.header.height}px`)
 
 const { isFullscreen, toggle } = useFullscreen()
 </script>
@@ -35,5 +38,8 @@ const { isFullscreen, toggle } = useFullscreen()
 </template>
 
 <style scoped>
-
+.layout-header {
+  height: v-bind(height);
+  box-shadow: var(--hb-header-shadow);
+}
 </style>

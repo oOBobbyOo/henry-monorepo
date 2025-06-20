@@ -85,6 +85,13 @@ const local = {
         'none': '无',
       },
     },
+    header: {
+      height: '头部高度',
+    },
+    footer: {
+      visible: '显示底部',
+      height: '底部高度',
+    },
   },
   route: {
     dashboard: {
