@@ -52,6 +52,13 @@ declare namespace Theme {
       /** Tab mode */
       mode: ThemeTabMode
     }
+    sider: {
+      /** Sider width */
+      width: number
+      /** Collapsed sider width */
+      collapsedWidth: number
+    }
+    /** Footer */
     footer: {
       /** Footer visible */
       visible: boolean

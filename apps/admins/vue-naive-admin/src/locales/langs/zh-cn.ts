@@ -98,6 +98,10 @@ const local = {
         button: '按钮风格',
       },
     },
+    sider: {
+      width: '侧边栏宽度',
+      collapsedWidth: '侧边栏折叠宽度',
+    },
     footer: {
       visible: '显示底部',
       height: '底部高度',

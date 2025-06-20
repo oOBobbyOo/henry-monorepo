@@ -34,13 +34,20 @@ const themeStore = useThemeStore()
     <SettingItem v-if="themeStore.tab.visible" key="tab-height" :label="$t('theme.tab.height')">
       <NInputNumber v-model:value="themeStore.tab.height" size="small" :step="1" class="w-120px" />
     </SettingItem>
-    <SettingItem v-if="themeStore.tab.visible" key="5-3" :label="$t('theme.tab.mode.title')">
+    <SettingItem v-if="themeStore.tab.visible" key="tab-mode" :label="$t('theme.tab.mode.title')">
       <NSelect
         v-model:value="themeStore.tab.mode"
         :options="themeTabModeOptions"
         size="small"
         class="w-120px"
       />
+    </SettingItem>
+    <!-- Sider -->
+    <SettingItem key="sider-visiable" :label="$t('theme.sider.width')">
+      <NInputNumber v-model:value="themeStore.sider.width" size="small" :step="1" class="w-120px" />
+    </SettingItem>
+    <SettingItem key="sider-collapsedWidth" :label="$t('theme.sider.collapsedWidth')">
+      <NInputNumber v-model:value="themeStore.sider.collapsedWidth" size="small" :step="1" class="w-120px" />
     </SettingItem>
     <!-- Footer -->
     <SettingItem key="footer-visible" :label="$t('theme.footer.visible')">

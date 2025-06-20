@@ -98,6 +98,10 @@ const local = {
         button: 'Button',
       },
     },
+    sider: {
+      width: 'Sider Width',
+      collapsedWidth: 'Sider Collapsed Width',
+    },
     footer: {
       visible: 'Footer Visible',
       height: 'Footer Height',

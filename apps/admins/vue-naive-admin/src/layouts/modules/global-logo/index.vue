@@ -1,10 +1,14 @@
 <script setup lang='ts'>
 import { useAppStore } from '@/stores/modules/app'
+import { useThemeStore } from '@/stores/modules/theme'
 import { computed } from 'vue'
 
 defineOptions({ name: 'GlobalLogo' })
 
 const appStore = useAppStore()
+const themeStore = useThemeStore()
+
+const headerHeight = computed(() => `${themeStore.header.height}px`)
 
 const collapsed = computed(() => {
   return appStore.isMobile ? false : appStore.siderCollapse
@@ -12,7 +16,7 @@ const collapsed = computed(() => {
 </script>
 
 <template>
-  <div flex-center p-4>
+  <div class="logo-wrapper flex-center">
     <h1 className="logo">
       {{ collapsed ? 'HA' : 'Heny Admin' }}
     </h1>
@@ -20,6 +24,11 @@ const collapsed = computed(() => {
 </template>
 
 <style scoped>
+.logo-wrapper {
+  height: v-bind(headerHeight);
+  box-shadow: var(--hb-header-shadow);
+}
+
 .logo {
   font-size: 24px;
   font-weight: 700;

@@ -26,6 +26,10 @@ export const themeSettings: Theme.ThemeSetting = {
     height: 44,
     mode: 'chrome',
   },
+  sider: {
+    width: 240,
+    collapsedWidth: 64,
+  },
   footer: {
     visible: true,
     height: 48,

@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { useAppStore } from '@/stores/modules/app'
 
+import { useThemeStore } from '@/stores/modules/theme'
 import GlobalContent from '../modules/global-content/index.vue'
 import GlobalFooter from '../modules/global-footer/index.vue'
 import GlobalHeader from '../modules/global-header/index.vue'
@@ -11,6 +12,7 @@ import ThemeDrawer from '../modules/theme-drawer/index.vue'
 defineOptions({ name: 'BasicLayout' })
 
 const appStore = useAppStore()
+const themeStore = useThemeStore()
 </script>
 
 <template>
@@ -18,8 +20,8 @@ const appStore = useAppStore()
     <NLayoutSider
       bordered
       collapse-mode="width"
-      :collapsed-width="64"
-      :width="240"
+      :collapsed-width="themeStore.sider.collapsedWidth"
+      :width="themeStore.sider.width"
       :collapsed="appStore.siderCollapse"
     >
       <GlobalSider />
