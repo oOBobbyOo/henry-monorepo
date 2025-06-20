@@ -71,6 +71,20 @@ const local = {
       error: 'Error',
       followPrimary: 'Follow Primary',
     },
+    pageSetting: {
+      title: 'Page Setting',
+      animate: 'Page Animate',
+      animateMode: 'Page Animate Mode',
+      animateName: {
+        'fade': 'Fade',
+        'fade-slide': 'Fade Slide',
+        'fade-bottom': 'Fade Bottom',
+        'fade-scale': 'Fade Scale',
+        'zoom-fade': 'Zoom Fade',
+        'zoom-out': 'Zoom Out',
+        'none': 'None',
+      },
+    },
   },
   route: {
     dashboard: {

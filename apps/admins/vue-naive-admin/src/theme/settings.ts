@@ -13,6 +13,10 @@ export const themeSettings: Theme.ThemeSetting = {
   layout: {
     mode: 'basic',
   },
+  page: {
+    animate: true,
+    animateMode: 'fade-slide',
+  },
   tab: {
     visible: true,
     cache: true,

@@ -8,6 +8,9 @@ declare namespace Theme {
   /** Theme tab mode */
   type ThemeTabMode = 'chrome' | 'button'
 
+  /** Theme animate mode */
+  type ThemeAnimateMode = 'fade' | 'fade-slide' | 'fade-bottom' | 'fade-scale' | 'zoom-fade' | 'zoom-out' | 'none'
+
   interface ThemeSetting {
     /** Theme scheme */
     themeScheme: ThemeScheme
@@ -25,6 +28,13 @@ declare namespace Theme {
     layout: {
       /** Layout mode */
       mode: ThemeLayoutMode
+    }
+    /** Page */
+    page: {
+      /** Whether to show the page transition */
+      animate: boolean
+      /** Page animate mode */
+      animateMode: ThemeAnimateMode
     }
     /** Tab */
     tab: {

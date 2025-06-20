@@ -1,10 +1,16 @@
 <script setup lang='ts'>
 import type { RouteLocationNormalizedLoadedGeneric } from 'vue-router'
+import { useThemeStore } from '@/stores/modules/theme'
+import { computed, unref } from 'vue'
 
 defineOptions({ name: 'GlobalContent' })
 
+const themeStore = useThemeStore()
+
+const transitionName = computed(() => (themeStore.page.animate ? themeStore.page.animateMode : 'none'))
+
 function getTransitionName(route: RouteLocationNormalizedLoadedGeneric): string {
-  return route.meta?.transitionName || 'fade-slide'
+  return route.meta?.transitionName || unref(transitionName)
 }
 </script>
 

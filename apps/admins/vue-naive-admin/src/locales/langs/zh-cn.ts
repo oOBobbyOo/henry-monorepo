@@ -71,6 +71,20 @@ const local = {
       error: '错误色',
       followPrimary: '跟随主色',
     },
+    pageSetting: {
+      title: '页面设置',
+      animate: '页面切换动画',
+      animateMode: '页面切换动画模式',
+      animateName: {
+        'fade': '淡入淡出',
+        'fade-slide': '滑动',
+        'fade-bottom': '底部消退',
+        'fade-scale': '缩放消退',
+        'zoom-fade': '渐变',
+        'zoom-out': '闪现',
+        'none': '无',
+      },
+    },
   },
   route: {
     dashboard: {
