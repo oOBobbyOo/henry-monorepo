@@ -25,8 +25,6 @@ interface Props {
   height?: number
   /** 颜色 */
   color?: string
-  /** 是否显示区域颜色 */
-  showAreaColor?: boolean
   /** 图表数据 */
   chartData: number[]
   /** 柱状图宽度 */
@@ -39,7 +37,6 @@ const themeStore = useThemeStore()
 
 const options: ComputedRef<ECOption> = computed(() => {
   const itemColor = props.color || themeStore.themeColor
-
   return {
     grid: {
       top: 0,
@@ -76,7 +73,7 @@ const { chartRef } = useEcharts(unref(options))
 <template>
   <div class="bar-chart-card relative flex-col overflow-hidden">
     <div class="bar-chat-card__info flex-between items-start p-5">
-      <div class="line-chat-card__metric">
+      <div class="bar-chat-card__metric">
         <p class="value text-2xl font-500">
           {{ value }}
         </p>
