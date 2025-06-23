@@ -15,18 +15,25 @@ interface Props extends /* @vue-ignore */ ProgressProps {
   iconBgColor?: string
   /** 图标大小 */
   iconSize?: number
+  /** 图标圆角大小 */
+  iconBgRadius?: string
 }
 
-const { title, icon, iconBgColor, iconColor, iconSize, ...restAttrs }: Props = useAttrs()
+const { title, icon, iconBgColor, iconColor, iconSize, iconBgRadius = '50%', ...restAttrs }: Props = useAttrs()
 </script>
 
 <template>
   <div class="progress-card relative flex-col justify-center p-5 overflow-hidden">
-    <div class="progress-card_info mb-2 flex-between">
+    <div class="progress-card_info mb-4 flex-between">
       <div
         v-if="icon"
-        class="progress-card__icon flex-center w-12 h-12 rd-2 text-xl"
-        :style="{ backgroundColor: iconBgColor, color: iconColor, fontSize: `${iconSize}px` }"
+        class="progress-card__icon flex-center w-12 h-12 text-xl !dark:bg-gray-800"
+        :style="{
+          backgroundColor: iconBgColor,
+          color: iconColor,
+          fontSize: `${iconSize}px`,
+          borderRadius: iconBgRadius,
+        }"
       >
         <SvgIcon :icon="icon" />
       </div>

@@ -5,6 +5,7 @@ withDefaults(defineProps<Props>(), {
   iconBgColor: 'transparent',
   iconColor: '#fff',
   iconSize: 20,
+  iconBgRadius: '50%',
 })
 
 interface Props {
@@ -22,12 +23,12 @@ interface Props {
   iconBgColor?: string
   /** 图标大小 */
   iconSize?: number
+  /** 图标圆角大小 */
+  iconBgRadius?: string
   /** 文本颜色 */
   textColor?: string
   /** 背景颜色 */
   backgroundColor?: string
-  /** 是否显示箭头 */
-  showArrow?: boolean
 }
 </script>
 
@@ -35,8 +36,13 @@ interface Props {
   <div class="stats-card relative flex-y-center gap-4 p-5 overflow-hidden cursor-pointer" :style="{ backgroundColor }">
     <div
       v-if="icon"
-      class="stats-card__icon flex-center w-12 h-12 rd-50%"
-      :style="{ backgroundColor: iconBgColor, color: iconColor, fontSize: `${iconSize}px` }"
+      class="stats-card__icon flex-center w-12 h-12"
+      :style="{
+        backgroundColor: iconBgColor,
+        color: iconColor,
+        fontSize: `${iconSize}px`,
+        borderRadius: iconBgRadius,
+      }"
     >
       <SvgIcon :icon="icon" />
     </div>

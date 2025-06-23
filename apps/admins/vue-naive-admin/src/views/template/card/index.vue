@@ -9,6 +9,7 @@ const statsCards = [
     iconColor: 'rgb(83, 155, 255)',
     iconSize: 40,
     iconBgColor: 'rgb(83, 155, 255)',
+    iconBgRadius: '8px',
     textColor: 'rgb(52, 132, 244)',
     backgroundColor: 'rgb(236, 242, 255)',
     showArrow: false,
@@ -22,6 +23,7 @@ const statsCards = [
     iconColor: 'rgb(19, 222, 185)',
     iconSize: 40,
     iconBgColor: 'rgb(19, 222, 185)',
+    iconBgRadius: '8px',
     textColor: 'rgb(10, 175, 145)',
     backgroundColor: 'rgb(200, 248, 238)',
     showArrow: false,
@@ -35,6 +37,7 @@ const statsCards = [
     iconColor: 'rgb(255, 128, 164)',
     iconSize: 46,
     iconBgColor: 'rgb(73, 190, 255)',
+    iconBgRadius: '8px',
     textColor: 'rgb(212, 62, 105)',
     backgroundColor: 'rgb(255, 222, 232)',
     showArrow: false,
@@ -48,6 +51,7 @@ const statsCards = [
     iconColor: 'rgb(255, 191, 0)',
     iconSize: 46,
     iconBgColor: 'rgb(255, 191, 0)',
+    iconBgRadius: '8px',
     textColor: 'rgb(255, 191, 0)',
     backgroundColor: 'rgb(246, 244, 228)',
     showArrow: false,
@@ -64,6 +68,7 @@ const progressCards = [
     iconColor: 'rgb(82, 196, 26)',
     iconBgColor: 'rgb(230, 255, 250)',
     iconSize: 20,
+    iconBgRadius: '8px',
   },
   {
     id: 2,
@@ -74,6 +79,7 @@ const progressCards = [
     iconColor: 'rgb(32, 128, 240)',
     iconBgColor: 'rgb(236, 242, 255)',
     iconSize: 20,
+    iconBgRadius: '8px',
   },
   {
     id: 3,
@@ -84,6 +90,7 @@ const progressCards = [
     iconColor: 'rgb(250, 137, 107)',
     iconBgColor: 'rgb(253, 237, 232)',
     iconSize: 20,
+    iconBgRadius: '8px',
   },
   {
     id: 4,
@@ -94,6 +101,7 @@ const progressCards = [
     iconColor: 'rgb(73, 190, 255)',
     iconBgColor: 'rgb(232, 247, 255)',
     iconSize: 20,
+    iconBgRadius: '8px',
   },
 ]
 </script>
@@ -124,6 +132,18 @@ const progressCards = [
           :icon-size="20"
           icon-color="#fff"
           :icon-bg-color="card.iconBgColor"
+          :show-arrow="card.showArrow"
+        />
+      </NGi>
+      <NGi v-for="card in statsCards" :key="card.id">
+        <StatsCard
+          :icon="card.icon"
+          :title="card.title"
+          :description="card.description"
+          :icon-size="20"
+          icon-color="#fff"
+          :icon-bg-color="card.iconBgColor"
+          :icon-bg-radius="card.iconBgRadius"
           :show-arrow="card.showArrow"
         />
       </NGi>
