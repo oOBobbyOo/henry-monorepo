@@ -237,6 +237,17 @@ const progressCards = [
           :chart-data="[150, 180, 160, 200, 180, 220, 240]"
         />
       </NGi>
+      <NGi>
+        <PieChartCard
+          :is-mini-chart="true"
+          :value="36358"
+          label="粉丝量"
+          date="较去年"
+          :percentage="40"
+          :radius="['50%', '70%']"
+          :chart-data="[{ name: '2024', value: 30 }, { name: '2025', value: 70 }]"
+        />
+      </NGi>
     </NGrid>
 
     <NH2 class="mb-0">
@@ -270,6 +281,18 @@ const progressCards = [
           label="粉丝数"
           :percentage="1.2"
           :chart-data="[120, 132, 101, 134, 90, 230, 210]"
+        />
+      </NGi>
+      <NGi>
+        <PieChartCard
+          :is-mini-chart="false"
+          :value="36358"
+          label="粉丝量"
+          date="较去年"
+          :percentage="-20"
+          :radius="['50%', '70%']"
+          :chart-data="[{ label: '2024', value: 60 }, { label: '2025', value: 40 }]"
+          :format="{ name: 'label', value: 'value' }"
         />
       </NGi>
     </NGrid>

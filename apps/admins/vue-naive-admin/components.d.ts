@@ -75,6 +75,7 @@ declare module 'vue' {
     NTabs: typeof import('naive-ui')['NTabs']
     NTooltip: typeof import('naive-ui')['NTooltip']
     PaperLayerLoading: typeof import('./src/components/Animate/loading/PaperLayerLoading.vue')['default']
+    PieChartCard: typeof import('./src/components/Card/PieChartCard.vue')['default']
     PinballLoading: typeof import('./src/components/Animate/loading/PinballLoading.vue')['default']
     ProgressBarLoading: typeof import('./src/components/Animate/loading/ProgressBarLoading.vue')['default']
     ProgressCard: typeof import('./src/components/Card/ProgressCard.vue')['default']
