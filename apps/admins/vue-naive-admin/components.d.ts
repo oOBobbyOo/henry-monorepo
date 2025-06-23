@@ -28,6 +28,7 @@ declare module 'vue' {
     IconGridiconsFullscreen: typeof import('~icons/gridicons/fullscreen')['default']
     IconGridiconsFullscreenExit: typeof import('~icons/gridicons/fullscreen-exit')['default']
     ImgLoading: typeof import('./src/components/Animate/loading/ImgLoading.vue')['default']
+    LineChartCard: typeof import('./src/components/Card/LineChartCard.vue')['default']
     MarqueeNotice: typeof import('./src/components/TextEffect/MarqueeNotice.vue')['default']
     MisplacedButton: typeof import('./src/components/Animate/Button/MisplacedButton.vue')['default']
     ModernButton: typeof import('./src/components/Animate/Button/ModernButton.vue')['default']

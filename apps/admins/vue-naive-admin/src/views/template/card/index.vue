@@ -200,6 +200,59 @@ const progressCards = [
         />
       </NGi>
     </NGrid>
+
+    <NH2 class="mb-0">
+      图表卡片（小图表）
+    </NH2>
+    <NGrid cols="1 m:2 l:4" :x-gap="12" :y-gap="12" responsive="screen" item-responsive>
+      <NGi>
+        <LineChartCard
+          :is-mini-chart="true"
+          :value="2545"
+          label="新用户"
+          date="过去7天"
+          :percentage="1.2"
+          :chart-data="[120, 132, 101, 134, 90, 230, 210]"
+        />
+      </NGi>
+      <NGi>
+        <LineChartCard
+          :is-mini-chart="true"
+          :value="2545"
+          label="粉丝数"
+          date="过去 30 天"
+          :percentage="1.2"
+          :show-area-color="true"
+          :chart-data="[150, 180, 160, 200, 180, 220, 240]"
+        />
+      </NGi>
+    </NGrid>
+
+    <NH2 class="mb-0">
+      图表卡片（大图表）
+    </NH2>
+    <NGrid cols="1 m:2 l:4" :x-gap="12" :y-gap="12" responsive="screen" item-responsive>
+      <NGi>
+        <LineChartCard
+          :is-mini-chart="false"
+          :value="2545"
+          label="新用户"
+          date="过去7天"
+          :percentage="1.2"
+          :chart-data="[120, 132, 101, 134, 90, 230, 210]"
+        />
+      </NGi>
+      <NGi>
+        <LineChartCard
+          :is-mini-chart="false"
+          :show-area-color="true"
+          :value="2545"
+          label="粉丝数"
+          :percentage="1.2"
+          :chart-data="[120, 132, 101, 134, 90, 230, 210]"
+        />
+      </NGi>
+    </NGrid>
   </div>
 </template>
 
