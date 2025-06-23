@@ -216,6 +216,17 @@ const progressCards = [
         />
       </NGi>
       <NGi>
+        <BarChartCard
+          :is-mini-chart="true"
+          :value="15480"
+          label="浏览量"
+          date="过去 14 天"
+          :percentage="-4.15"
+          bar-width="45%"
+          :chart-data="[120, 100, 150, 140, 90, 120, 130]"
+        />
+      </NGi>
+      <NGi>
         <LineChartCard
           :is-mini-chart="true"
           :value="2545"
@@ -240,6 +251,15 @@ const progressCards = [
           date="过去7天"
           :percentage="1.2"
           :chart-data="[120, 132, 101, 134, 90, 230, 210]"
+        />
+      </NGi>
+      <NGi>
+        <BarChartCard
+          :value="15480"
+          label="浏览量"
+          :percentage="-4.15"
+          :height="72"
+          :chart-data="[120, 100, 150, 140, 90, 120, 130, 110]"
         />
       </NGi>
       <NGi>

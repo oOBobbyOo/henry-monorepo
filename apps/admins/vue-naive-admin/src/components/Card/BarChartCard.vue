@@ -2,14 +2,14 @@
 import type { ECOption } from '@henry/vhooks'
 import type { ComputedRef } from 'vue'
 import { useThemeStore } from '@/stores/modules/theme'
-import { createHoverColor } from '@/utils/color'
-import { echarts, useEcharts } from '@henry/vhooks'
+import { useEcharts } from '@henry/vhooks'
 import { computed, unref } from 'vue'
 
-defineOptions({ name: 'LineChartCard' })
+defineOptions({ name: 'BarChartCard' })
 
 const props = withDefaults(defineProps<Props>(), {
   height: 90,
+  barWidth: '26%',
 })
 
 interface Props {
@@ -29,6 +29,8 @@ interface Props {
   showAreaColor?: boolean
   /** 图表数据 */
   chartData: number[]
+  /** 柱状图宽度 */
+  barWidth?: string
   /** 是否为迷你图表 */
   isMiniChart?: boolean
 }
@@ -36,19 +38,18 @@ interface Props {
 const themeStore = useThemeStore()
 
 const options: ComputedRef<ECOption> = computed(() => {
-  const lineColor = props.color || themeStore.themeColor
+  const itemColor = props.color || themeStore.themeColor
 
   return {
     grid: {
       top: 0,
       right: 0,
-      bottom: 0,
+      bottom: 15,
       left: 0,
     },
     xAxis: {
       type: 'category',
       show: false,
-      boundaryGap: false,
     },
     yAxis: {
       type: 'value',
@@ -57,28 +58,14 @@ const options: ComputedRef<ECOption> = computed(() => {
     series: [
       {
         data: props.chartData,
-        type: 'line',
-        smooth: true,
-        showSymbol: false,
-        lineStyle: {
-          width: 3,
-          color: lineColor,
+        type: 'bar',
+        barWidth: props.barWidth,
+        itemStyle: {
+          color: itemColor,
+          borderRadius: 2,
         },
-        areaStyle: props.showAreaColor
-          ? {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                {
-                  offset: 0,
-                  color: lineColor,
-                },
-                {
-                  offset: 1,
-                  color: createHoverColor(lineColor, 0.96),
-                },
-              ]),
-            }
-          : undefined,
       },
+
     ],
   }
 })
@@ -87,8 +74,8 @@ const { chartRef } = useEcharts(unref(options))
 </script>
 
 <template>
-  <div class="line-chart-card relative flex-col overflow-hidden">
-    <div class="line-chat-card__info flex-between items-start p-5">
+  <div class="bar-chart-card relative flex-col overflow-hidden">
+    <div class="bar-chat-card__info flex-between items-start p-5">
       <div class="line-chat-card__metric">
         <p class="value text-2xl font-500">
           {{ value }}
@@ -98,7 +85,7 @@ const { chartRef } = useEcharts(unref(options))
         </p>
       </div>
       <div
-        class="line-chat-card__percentage text-sm font-500 space-y-1"
+        class="bar-chat-card__percentage text-sm font-500 space-y-1"
         :class="{
           'is-mini-chart': isMiniChart,
           'flex-between': isMiniChart,
@@ -117,7 +104,7 @@ const { chartRef } = useEcharts(unref(options))
     </div>
     <div
       ref="chartRef"
-      class="line-chart-card__chart"
+      class="bar-chart-card__chart"
       :class="{ 'is-mini-chart': isMiniChart }"
       :style="{ height: `${props.height}px` }"
     />
@@ -125,43 +112,42 @@ const { chartRef } = useEcharts(unref(options))
 </template>
 
 <style scoped>
-.line-chart-card {
+.bar-chart-card {
   min-height: 10rem;
   border: 1px solid rgb(239, 239, 245);
   border-radius: 16px;
   background-color: #fff;
 }
 
-.line-chat-card__percentage .percentage {
+.bar-chat-card__percentage .percentage {
   color: #f56c6c;
 }
 
-.line-chat-card__percentage .is-increase {
+.bar-chat-card__percentage .is-increase {
   color: #67c23a;
 }
 
-.line-chat-card__percentage.is-mini-chart {
+.bar-chat-card__percentage.is-mini-chart {
   position: absolute;
   left: 20px;
   right: 20px;
   bottom: 20px;
 }
 
-.line-chart-card__chart {
+.bar-chart-card__chart {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   box-sizing: border-box;
-  width: 100%;
+  width: calc(100% - 20px);
   height: 90px;
+  margin: auto;
 }
 
-.line-chart-card__chart.is-mini-chart {
+.bar-chart-card__chart.is-mini-chart {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  left: auto;
+  inset: 25px 20px auto auto;
   width: 40%;
   height: 60px !important;
 }
