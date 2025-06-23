@@ -5,10 +5,15 @@ import { useAttrs } from 'vue'
 defineOptions({ name: 'ProgressCard' })
 
 interface Props extends /* @vue-ignore */ ProgressProps {
+  /** 标题 */
   title?: string
+  /** 图标 */
   icon?: string
-  iconBgColor?: string
+  /** 图标颜色 */
   iconColor?: string
+  /** 图标背景颜色 */
+  iconBgColor?: string
+  /** 图标大小 */
   iconSize?: number
 }
 
@@ -16,7 +21,7 @@ const { title, icon, iconBgColor, iconColor, iconSize, ...restAttrs }: Props = u
 </script>
 
 <template>
-  <div class="progress-card relative flex-col justify-center">
+  <div class="progress-card relative flex-col justify-center p-5 overflow-hidden">
     <div class="progress-card_info mb-2 flex-between">
       <div
         v-if="icon"
@@ -45,10 +50,9 @@ const { title, icon, iconBgColor, iconColor, iconSize, ...restAttrs }: Props = u
 
 <style scoped>
 .progress-card {
-  padding: 1.5rem;
   min-height: 8rem;
-  border: 1px solid rgb(239, 239, 245);
   border-radius: 16px;
-  background-color: #fff;
+  border: 1px solid var(--hb-border-color);
+  background-color: var(--hb-background-color);
 }
 </style>

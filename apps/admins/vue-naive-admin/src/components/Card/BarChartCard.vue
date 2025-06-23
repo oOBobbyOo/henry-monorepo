@@ -3,7 +3,7 @@ import type { ECOption } from '@henry/vhooks'
 import type { ComputedRef } from 'vue'
 import { useThemeStore } from '@/stores/modules/theme'
 import { useEcharts } from '@henry/vhooks'
-import { computed, unref } from 'vue'
+import { computed, unref, watch } from 'vue'
 
 defineOptions({ name: 'BarChartCard' })
 
@@ -67,7 +67,11 @@ const options: ComputedRef<ECOption> = computed(() => {
   }
 })
 
-const { chartRef } = useEcharts(unref(options))
+const { chartRef, setTheme } = useEcharts(unref(options))
+
+watch(() => themeStore.themeMode, (newTheme) => {
+  setTheme(newTheme)
+})
 </script>
 
 <template>
@@ -111,9 +115,9 @@ const { chartRef } = useEcharts(unref(options))
 <style scoped>
 .bar-chart-card {
   min-height: 10rem;
-  border: 1px solid rgb(239, 239, 245);
   border-radius: 16px;
-  background-color: #fff;
+  border: 1px solid var(--hb-border-color);
+  background-color: var(--hb-background-color);
 }
 
 .bar-chat-card__percentage .percentage {

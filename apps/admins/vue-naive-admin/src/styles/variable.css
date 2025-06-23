@@ -7,6 +7,9 @@
   --hb-tabs-shadow: 0 1px 2px rgba(0, 21, 41, 0.08);
   --hb-sider-shadow: 2px 0 8px 0 rgba(29, 35, 41, 0.05);
   --hb-footer-shadow: 0 -2px 8px 0 rgba(29, 35, 41, 0.05);
+
+  --hb-border-color: rgb(239, 239, 245);
+  --hb-background-color: rgb(255, 255, 255);
 }
 
 html.dark {
@@ -14,4 +17,7 @@ html.dark {
   --hb-tabs-shadow: 0 1px 2px rgba(255, 221, 241, 0.08);
   --hb-sider-shadow: 2px 0 8px 0 rgba(229, 235, 241, 0.1);
   --hb-footer-shadow: 0 -1px 8px 0 rgba(229, 235, 241, 0.1);
+
+  --hb-border-color: rgba(255, 255, 255, 0.09);
+  --hb-background-color: rgb(24, 24, 28);
 }

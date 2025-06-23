@@ -124,7 +124,6 @@ const progressCards = [
           :icon-size="20"
           icon-color="#fff"
           :icon-bg-color="card.iconBgColor"
-          background-color="#fff"
           :show-arrow="card.showArrow"
         />
       </NGi>
@@ -160,7 +159,6 @@ const progressCards = [
           :icon-size="20"
           icon-color="#fff"
           :icon-bg-color="card.iconBgColor"
-          background-color="#fff"
           :show-arrow="card.showArrow"
         />
       </NGi>

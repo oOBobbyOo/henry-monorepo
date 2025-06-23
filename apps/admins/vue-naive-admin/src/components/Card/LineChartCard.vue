@@ -2,9 +2,9 @@
 import type { ECOption } from '@henry/vhooks'
 import type { ComputedRef } from 'vue'
 import { useThemeStore } from '@/stores/modules/theme'
-import { createHoverColor } from '@/utils/color'
+import { createHoverColor, createPressedColor } from '@/utils/color'
 import { echarts, useEcharts } from '@henry/vhooks'
-import { computed, unref } from 'vue'
+import { computed, unref, watch } from 'vue'
 
 defineOptions({ name: 'LineChartCard' })
 
@@ -36,7 +36,8 @@ interface Props {
 const themeStore = useThemeStore()
 
 const options: ComputedRef<ECOption> = computed(() => {
-  const lineColor = props.color || themeStore.themeColor
+  const itemColor = props.color || themeStore.themeColor
+  const areaColor = themeStore.darkMode ? createPressedColor(itemColor, 0.96) : createHoverColor(itemColor, 0.96)
 
   return {
     grid: {
@@ -62,18 +63,18 @@ const options: ComputedRef<ECOption> = computed(() => {
         showSymbol: false,
         lineStyle: {
           width: 3,
-          color: lineColor,
+          color: itemColor,
         },
         areaStyle: props.showAreaColor
           ? {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 {
                   offset: 0,
-                  color: lineColor,
+                  color: itemColor,
                 },
                 {
                   offset: 1,
-                  color: createHoverColor(lineColor, 0.96),
+                  color: areaColor,
                 },
               ]),
             }
@@ -83,7 +84,11 @@ const options: ComputedRef<ECOption> = computed(() => {
   }
 })
 
-const { chartRef } = useEcharts(unref(options))
+const { chartRef, setTheme } = useEcharts(unref(options))
+
+watch(() => themeStore.themeMode, (newTheme) => {
+  setTheme(newTheme)
+})
 </script>
 
 <template>
@@ -127,9 +132,9 @@ const { chartRef } = useEcharts(unref(options))
 <style scoped>
 .line-chart-card {
   min-height: 10rem;
-  border: 1px solid rgb(239, 239, 245);
   border-radius: 16px;
-  background-color: #fff;
+  border: 1px solid var(--hb-border-color);
+  background-color: var(--hb-background-color);
 }
 
 .line-chat-card__percentage .percentage {
