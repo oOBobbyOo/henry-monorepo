@@ -104,6 +104,45 @@ const progressCards = [
     iconBgRadius: '8px',
   },
 ]
+
+const digitalCards = [
+  {
+    id: 1,
+    title: '今日销售额',
+    count: 123456,
+    description: '日销售额超过¥123,456+',
+    color: '#646cff',
+    icon: 'ic:baseline-shopping-cart',
+    iconSize: 24,
+  },
+  {
+    id: 2,
+    title: '今日销售额',
+    count: 123456,
+    description: '日销售额超过¥123,456+',
+    color: '#646cff',
+    icon: 'ic:baseline-shopping-cart',
+    iconSize: 24,
+  },
+  {
+    id: 3,
+    title: '今日销售额',
+    count: 123456,
+    description: '日销售额超过¥123,456+',
+    color: '#646cff',
+    icon: 'ic:baseline-shopping-cart',
+    iconSize: 24,
+  },
+  {
+    id: 4,
+    title: '今日销售额',
+    count: 123456,
+    description: '日销售额超过¥123,456+',
+    color: '#646cff',
+    icon: 'ic:baseline-shopping-cart',
+    iconSize: 24,
+  },
+]
 </script>
 
 <template>
@@ -185,36 +224,16 @@ const progressCards = [
     </NGrid>
 
     <NH2 class="mb-0">
-      进度卡片
+      数字卡片
     </NH2>
     <NGrid cols="1 m:2 l:4" :x-gap="12" :y-gap="12" responsive="screen" item-responsive>
-      <NGi v-for="card in progressCards" :key="card.id">
-        <ProgressCard
-          v-bind="card"
-          type="line"
-          icon=""
-        />
-      </NGi>
-    </NGrid>
-
-    <NH2 class="mb-0">
-      进度卡片 (图标)
-    </NH2>
-    <NGrid cols="1 m:2 l:4" :x-gap="12" :y-gap="12" responsive="screen" item-responsive>
-      <NGi v-for="card in progressCards" :key="card.id">
-        <ProgressCard
-          v-bind="card"
-          type="line"
-        />
-      </NGi>
-    </NGrid>
-
-    <NGrid cols="1 m:2 l:4" :x-gap="12" :y-gap="12" responsive="screen" item-responsive>
-      <NGi v-for="card in progressCards" :key="card.id">
-        <ProgressCard
-          v-bind="card"
-          type="circle"
-          :show-indicator="true"
+      <NGi v-for="card in digitalCards" :key="card.id">
+        <DigitalCard
+          :title="card.title"
+          :count="card.count"
+          :color="card.color"
+          :icon="card.icon"
+          :icon-size="card.iconSize"
         />
       </NGi>
     </NGrid>
@@ -311,6 +330,41 @@ const progressCards = [
           :radius="['50%', '70%']"
           :chart-data="[{ label: '2024', value: 60 }, { label: '2025', value: 40 }]"
           :format="{ name: 'label', value: 'value' }"
+        />
+      </NGi>
+    </NGrid>
+
+    <NH2 class="mb-0">
+      进度卡片
+    </NH2>
+    <NGrid cols="1 m:2 l:4" :x-gap="12" :y-gap="12" responsive="screen" item-responsive>
+      <NGi v-for="card in progressCards" :key="card.id">
+        <ProgressCard
+          v-bind="card"
+          type="line"
+          icon=""
+        />
+      </NGi>
+    </NGrid>
+
+    <NH2 class="mb-0">
+      进度卡片 (图标)
+    </NH2>
+    <NGrid cols="1 m:2 l:4" :x-gap="12" :y-gap="12" responsive="screen" item-responsive>
+      <NGi v-for="card in progressCards" :key="card.id">
+        <ProgressCard
+          v-bind="card"
+          type="line"
+        />
+      </NGi>
+    </NGrid>
+
+    <NGrid cols="1 m:2 l:4" :x-gap="12" :y-gap="12" responsive="screen" item-responsive>
+      <NGi v-for="card in progressCards" :key="card.id">
+        <ProgressCard
+          v-bind="card"
+          type="circle"
+          :show-indicator="true"
         />
       </NGi>
     </NGrid>

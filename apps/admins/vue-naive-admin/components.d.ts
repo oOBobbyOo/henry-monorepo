@@ -22,6 +22,7 @@ declare module 'vue' {
     ComicButton: typeof import('./src/components/Animate/Button/ComicButton.vue')['default']
     CountTo: typeof import('./src/components/CountTo/index.vue')['default']
     CyberpunkButton: typeof import('./src/components/Animate/Button/CyberpunkButton.vue')['default']
+    DigitalCard: typeof import('./src/components/Card/DigitalCard.vue')['default']
     DiscoverButton: typeof import('./src/components/Animate/Button/DiscoverButton.vue')['default']
     ExceptionBase: typeof import('./src/components/ExceptionBase/index.vue')['default']
     FullScreen: typeof import('./src/components/FullScreen/index.vue')['default']
@@ -92,6 +93,7 @@ declare module 'vue' {
     TextReversalLoading: typeof import('./src/components/Animate/loading/TextReversalLoading.vue')['default']
     TextScrollLoading: typeof import('./src/components/Animate/loading/TextScrollLoading.vue')['default']
     TextWaveLoading: typeof import('./src/components/Animate/loading/TextWaveLoading.vue')['default']
+    TrendRatio: typeof import('./src/components/TrendRatio/index.vue')['default']
     WangEditor: typeof import('./src/components/WangEditor/index.vue')['default']
     WaterRipplesLoading: typeof import('./src/components/Animate/loading/WaterRipplesLoading.vue')['default']
   }
