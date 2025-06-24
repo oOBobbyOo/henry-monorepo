@@ -1,19 +1,21 @@
 <script setup lang='ts'>
+import { computed } from 'vue'
+
 defineOptions({ name: 'TrendRatio' })
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
 interface Props {
   /** 标签 */
   label: string
   /** 数值 */
   value: number
-  /** 图标 */
-  icon?: string
-  /** 图标大小 */
-  iconSize?: number
+  /** 是否显示箭头 */
+  showArrow?: boolean
   /** 颜色 */
   color?: string
+  /** 图标大小 */
+  iconSize?: number
   /** 前缀 */
   prefix?: string
   /** 后缀 */
@@ -40,19 +42,21 @@ interface Props {
   // pause?: () => void
   // reset?: () => void
 }
+
+const color = computed(() => props.color || (props.value > 0 ? '#67c23a' : '#f56c6c'))
 </script>
 
 <template>
-  <div class="flex items-center gap-1 text-ellipsis text-xs">
+  <div class="trend-ratio flex items-center gap-1 text-ellipsis text-xs">
     <span>{{ label }}</span>
     <CountTo
       :end-val="value"
-      :color="color"
       :prefix="prefix"
       :suffix="suffix"
+      :style="{ color }"
       v-bind="$attrs"
     />
-    <SvgIcon v-if="icon" :icon="icon" :style="{ color, fontSize: `${iconSize}px` }" />
+    <SvgIcon v-if="showArrow" :icon="value > 0 ? 'ant-design:rise-outlined' : 'ant-design:fall-outlined'" :style="{ color, fontSize: `${iconSize}px` }" />
   </div>
 </template>
 

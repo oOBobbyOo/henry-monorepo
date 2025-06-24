@@ -111,36 +111,76 @@ const digitalCards = [
     title: '今日销售额',
     count: 123456,
     description: '日销售额超过¥123,456+',
-    color: '#646cff',
+    color: '#646CFF',
     icon: 'ic:baseline-shopping-cart',
     iconSize: 24,
+    day: {
+      label: '日',
+      radio: 12,
+      value: 1234,
+    },
+    week: {
+      label: '周',
+      radio: 20,
+      value: 2534,
+    },
   },
   {
     id: 2,
-    title: '今日销售额',
-    count: 123456,
-    description: '日销售额超过¥123,456+',
-    color: '#646cff',
-    icon: 'ic:baseline-shopping-cart',
+    title: '总访问量',
+    count: 131400,
+    description: '总访问量超过131,400+',
+    color: '#22c55e',
+    icon: 'material-symbols:planner-review',
     iconSize: 24,
+    day: {
+      label: '日',
+      radio: 10,
+      value: 1234,
+    },
+    month: {
+      label: '月',
+      radio: -18,
+      value: 5678,
+    },
   },
   {
     id: 3,
-    title: '今日销售额',
-    count: 123456,
-    description: '日销售额超过¥123,456+',
-    color: '#646cff',
-    icon: 'ic:baseline-shopping-cart',
+    title: '总收入',
+    count: 45231.50,
+    description: '总收入超过¥45,231.50+',
+    color: '#fa6f97',
+    icon: 'icon-park-outline:income',
     iconSize: 24,
+    day: {
+      label: '日',
+      radio: -6,
+      value: 10000,
+    },
+    month: {
+      label: '月',
+      radio: 16,
+      value: 40000,
+    },
   },
   {
     id: 4,
-    title: '今日销售额',
-    count: 123456,
-    description: '日销售额超过¥123,456+',
-    color: '#646cff',
-    icon: 'ic:baseline-shopping-cart',
+    title: '活跃用户',
+    count: 5000,
+    description: '日活跃用户超过5,000+',
+    color: '#ffbf00',
+    icon: 'rivet-icons:user-group',
     iconSize: 24,
+    day: {
+      label: '日',
+      radio: -15,
+      value: 6000,
+    },
+    month: {
+      label: '月',
+      radio: -10,
+      value: 3000,
+    },
   },
 ]
 </script>
@@ -234,6 +274,9 @@ const digitalCards = [
           :color="card.color"
           :icon="card.icon"
           :icon-size="card.iconSize"
+          :day="card.day"
+          :week="card.week"
+          :month="card.month"
         />
       </NGi>
     </NGrid>
