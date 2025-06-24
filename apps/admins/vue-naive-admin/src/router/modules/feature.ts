@@ -157,7 +157,7 @@ const feature: RouteRecordRaw = {
       meta: {
         title: '文字效果',
         i18nKey: 'route.feature.textEffect',
-        icon: 'icon-park-solid:volume-notice',
+        icon: 'ic:outline-text-fields',
         keepAlive: true,
       },
     },
