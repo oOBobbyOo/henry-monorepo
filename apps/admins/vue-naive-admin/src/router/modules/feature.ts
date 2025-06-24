@@ -140,6 +140,17 @@ const feature: RouteRecordRaw = {
       },
     },
     {
+      path: 'splitpanes',
+      name: 'Splitpanes',
+      component: () => import('@/views/feature/splitpanes/index.vue'),
+      meta: {
+        title: '拆分面板',
+        i18nKey: 'route.feature.splitpanes',
+        icon: 'icon-park-outline:split-cells',
+        keepAlive: true,
+      },
+    },
+    {
       path: 'text-effect',
       name: 'TextEffect',
       component: () => import('@/views/feature/text-effect/index.vue'),

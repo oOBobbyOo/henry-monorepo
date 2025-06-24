@@ -126,6 +126,7 @@ const local = {
       quillEditor: 'QuillEditor',
       wangEditor: 'WangEditor',
       qrcode: 'Qrcode',
+      splitpanes: 'Splitpanes',
       textEffect: 'TextEffect',
     },
     template: {

@@ -17,6 +17,7 @@ catalogs:
     '@types/qrcode': ^1.5.5
     '@types/react': ^19.0.10
     '@types/react-dom': ^19.0.4
+    '@types/splitpanes': ^2.2.6
     '@unocss/eslint-plugin': ^65.4.0
     '@unocss/nuxt': ^66.1.2
     '@unocss/preset-web-fonts': ^66.1.2
@@ -79,6 +80,7 @@ catalogs:
     react-dom: ^19.0.0
     react-router-dom: ^7.5.0
     seemly: ^0.3.10
+    splitpanes: ^4.0.4
     vue: ^3.5.13
     vue-i18n: ^11.1.2
     vue-router: ^4.5.0

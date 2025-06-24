@@ -126,6 +126,7 @@ const local = {
       quillEditor: 'QuillEditor',
       wangEditor: 'WangEditor',
       qrcode: '二维码',
+      splitpanes: '拆分面板',
       textEffect: '文字效果',
     },
     template: {
