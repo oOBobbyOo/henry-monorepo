@@ -10,6 +10,7 @@ defineOptions({ name: 'LineChartCard' })
 
 const props = withDefaults(defineProps<Props>(), {
   height: 90,
+  showArrow: true,
 })
 
 interface Props {
@@ -31,6 +32,8 @@ interface Props {
   chartData: number[]
   /** 是否为迷你图表 */
   isMiniChart?: boolean
+  /** 是否显示箭头 */
+  showArrow?: boolean
 }
 
 const themeStore = useThemeStore()
@@ -110,10 +113,11 @@ watch(() => themeStore.themeMode, (newTheme) => {
         }"
       >
         <p
-          class="percentage"
+          class="percentage flex-row items-center gap-2"
           :class="{ 'is-increase': percentage > 0 }"
         >
-          {{ percentage > 0 ? '+' : '' }}{{ percentage }}%
+          <SvgIcon v-if="showArrow" class="text-xl" :icon="percentage > 0 ? 'ant-design:rise-outlined' : 'ant-design:fall-outlined'" />
+          <span>{{ percentage > 0 ? '+' : '' }}{{ percentage }}%</span>
         </p>
         <p v-if="date" class="date text-xs opacity-60">
           {{ date }}
