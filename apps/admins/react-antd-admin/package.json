@@ -15,6 +15,7 @@
     "antd": "catalog:prod",
     "react": "catalog:prod",
     "react-dom": "catalog:prod",
+    "react-responsive": "catalog:prod",
     "react-router-dom": "catalog:prod",
     "zustand": "catalog:prod"
   },

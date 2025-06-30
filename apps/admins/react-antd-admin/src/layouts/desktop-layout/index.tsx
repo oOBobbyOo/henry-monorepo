@@ -4,7 +4,7 @@ import GlobalFooter from '../modules/global-footer'
 import GlobalHeader from '../modules/global-header'
 import GlobalSider from '../modules/global-sider'
 
-function BasicLayout() {
+function DesktopLayout() {
   return (
     <Layout className="h-screen">
       <GlobalSider />
@@ -17,4 +17,4 @@ function BasicLayout() {
   )
 }
 
-export default BasicLayout
+export default DesktopLayout
