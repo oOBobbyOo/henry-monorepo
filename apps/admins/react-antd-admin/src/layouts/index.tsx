@@ -1,45 +1,42 @@
 import LoadingScreen from '@/components/LoadingScreen'
 import { useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import DesktopLayout from './desktop-layout'
-import MobileLayout from './mobile-layout'
 
 function Layout() {
   const isMobile = useMediaQuery({ maxWidth: 768 })
+  const [Component, setComponent] = useState<React.ComponentType | null>(null)
   const [loaded, setLoaded] = useState(false)
+  const [error, setError] = useState(false)
 
   // 动态加载组件
   useEffect(() => {
-    const loadComponent = async () => {
-      if (isMobile) {
-        await import('./mobile-layout')
+    const loadLayout = async () => {
+      try {
+        const module = await import(
+          /* webpackChunkName: "[layout]" */
+          `./${isMobile ? 'mobile-layout' : 'desktop-layout'}`
+        )
+
+        setComponent(() => module.default)
+        setLoaded(true)
+        setError(false)
       }
-      else {
-        await import('./desktop-layout')
+      catch (err) {
+        console.error('Layout load failed:', err)
+        setError(true)
       }
-      setLoaded(true)
     }
 
-    loadComponent()
+    loadLayout()
   }, [isMobile])
 
-  return (
-    <>
-      {loaded
-        ? (
-            isMobile
-              ? (
-                  <MobileLayout />
-                )
-              : (
-                  <DesktopLayout />
-                )
-          )
-        : (
-            <LoadingScreen />
-          )}
-    </>
-  )
+  if (error)
+    return <div>Failed to load the layout component. Please refresh the page.</div>
+
+  if (!loaded)
+    return <LoadingScreen />
+
+  return Component ? <Component /> : <div>No layout loaded.</div>
 }
 
 export default Layout
