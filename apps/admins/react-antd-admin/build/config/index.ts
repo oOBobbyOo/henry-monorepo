@@ -19,8 +19,8 @@ export function setupBuildConfig(): BuildEnvironmentOptions {
     rollupOptions: {
       output: {
         manualChunks: {
-          'vue-venders': ['vue', 'vue-router'],
-          'naive-ui': ['naive-ui'],
+          'react-venders': ['react', 'react-dom', 'react-router-dom'],
+          'antd': ['antd'],
         },
         entryFileNames: 'assets/js/[name]-[hash].js',
         chunkFileNames: 'assets/js/[name]-[hash].js',

@@ -135,6 +135,9 @@ catalogs:
     vite-plugin-compression:
       specifier: ^0.5.1
       version: 0.5.1
+    vite-plugin-dynamic-import:
+      specifier: ^1.6.0
+      version: 1.6.0
     vite-plugin-fake-server:
       specifier: ^2.2.0
       version: 2.2.0
@@ -307,6 +310,9 @@ importers:
       '@eslint/js':
         specifier: catalog:dev
         version: 9.22.0
+      '@henry/lint':
+        specifier: workspace:*
+        version: link:../../../configs/lint
       '@henry/types':
         specifier: workspace:*
         version: link:../../../packages/types
@@ -352,6 +358,9 @@ importers:
       vite:
         specifier: catalog:dev
         version: 6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.2)(yaml@2.7.0)
+      vite-plugin-dynamic-import:
+        specifier: catalog:dev
+        version: 1.6.0
 
   apps/admins/vue-naive-admin:
     dependencies:
@@ -8017,6 +8026,9 @@ packages:
     resolution: {integrity: sha512-5QJKBDc+gNYVqL/skgFAP81Yuzo9R+EAf19d+EtsMF/i8kFUpNi3J/H01QD3Oo8zBQn+NzoCIFkpPLynoOzaJg==}
     peerDependencies:
       vite: '>=2.0.0'
+
+  vite-plugin-dynamic-import@1.6.0:
+    resolution: {integrity: sha512-TM0sz70wfzTIo9YCxVFwS8OA9lNREsh+0vMHGSkWDTZ7bgd1Yjs5RV8EgB634l/91IsXJReg0xtmuQqP0mf+rg==}
 
   vite-plugin-fake-server@2.2.0:
     resolution: {integrity: sha512-RP691997Q207nenNMhg7cvYyBXZyjqXwApTBa+a9kHmILgcAU2w4TMRDiAhIU0HPLAAR5MHlWTEpxA9Tbf+v8g==}
@@ -17549,6 +17561,13 @@ snapshots:
       vite: 6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.2)(yaml@2.7.0)
     transitivePeerDependencies:
       - supports-color
+
+  vite-plugin-dynamic-import@1.6.0:
+    dependencies:
+      acorn: 8.14.1
+      es-module-lexer: 1.6.0
+      fast-glob: 3.3.3
+      magic-string: 0.30.17
 
   vite-plugin-fake-server@2.2.0:
     dependencies:

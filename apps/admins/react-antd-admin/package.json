@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "catalog:dev",
+    "@henry/lint": "workspace:*",
     "@henry/types": "workspace:*",
     "@types/react": "catalog:dev",
     "@types/react-dom": "catalog:dev",
@@ -35,6 +36,7 @@
     "typescript": "catalog:dev",
     "typescript-eslint": "catalog:dev",
     "unocss": "catalog:dev",
-    "vite": "catalog:dev"
+    "vite": "catalog:dev",
+    "vite-plugin-dynamic-import": "catalog:dev"
   }
 }
