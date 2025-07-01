@@ -307,6 +307,9 @@ importers:
       '@eslint/js':
         specifier: catalog:dev
         version: 9.22.0
+      '@henry/types':
+        specifier: workspace:*
+        version: link:../../../packages/types
       '@types/react':
         specifier: catalog:dev
         version: 19.0.10
@@ -334,6 +337,9 @@ importers:
       globals:
         specifier: catalog:dev
         version: 15.15.0
+      rollup-plugin-visualizer:
+        specifier: catalog:dev
+        version: 5.14.0(rollup@4.35.0)
       typescript:
         specifier: catalog:dev
         version: 5.8.2
