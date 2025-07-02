@@ -6,13 +6,13 @@ const initialState: AppState = {
 }
 
 const appSlice = createSlice({
-  name: 'auth',
+  name: 'app',
   initialState,
   reducers: {
-    resetAuth: () => initialState,
+    resetApp: () => initialState,
   },
 })
 
-export const { resetAuth } = appSlice.actions
+export const { resetApp } = appSlice.actions
 
 export default appSlice.reducer
