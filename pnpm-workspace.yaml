@@ -59,6 +59,7 @@ catalogs:
     '@bytemd/plugin-gfm': ^1.22.0
     '@bytemd/vue-next': ^1.22.0
     '@iconify/vue': ^4.3.0
+    '@reduxjs/toolkit': ^2.8.2
     '@visactor/vchart': ^1.13.10
     '@visactor/vchart-theme': ^1.12.2
     '@vueuse/core': ^13.0.0
@@ -79,6 +80,7 @@ catalogs:
     qrcode: ^1.5.4
     react: ^19.0.0
     react-dom: ^19.0.0
+    react-redux: ^9.2.0
     react-responsive: ^10.0.1
     react-router-dom: ^7.5.0
     seemly: ^0.3.10
