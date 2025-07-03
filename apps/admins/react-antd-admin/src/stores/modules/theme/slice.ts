@@ -13,8 +13,13 @@ const themeSlice = createSlice({
   reducers: {
     resetTheme: () => initialState,
   },
+  selectors: {
+    getThemeSettings: theme => theme.settings,
+  },
 })
 
 export const { resetTheme } = themeSlice.actions
+
+export const { getThemeSettings } = themeSlice.selectors
 
 export default themeSlice.reducer
