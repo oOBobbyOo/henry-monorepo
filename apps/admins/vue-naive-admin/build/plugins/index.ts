@@ -9,6 +9,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 import { setupCompressionPlugin } from './compression'
 import { setupDevtoolsPlugin } from './devtools'
+import { setupImageminPlugin } from './imagemin'
 import { setupMockPlugin } from './mock'
 import { setupUnoCSSPlugin } from './unocss'
 import { setupUnplugin } from './unplugin'
@@ -23,6 +24,7 @@ export function setupVitePlugins(viteEnv: ImportMetaEnv) {
     ...setupUnplugin(viteEnv),
     setupCompressionPlugin(),
     setupDevtoolsPlugin(viteEnv),
+    setupImageminPlugin(),
     setupMockPlugin(viteEnv),
     setupVisualizerPlugin(viteEnv),
   ]

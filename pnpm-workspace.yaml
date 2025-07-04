@@ -49,6 +49,7 @@ catalogs:
     vite-plugin-compression: ^0.5.1
     vite-plugin-dynamic-import: ^1.6.0
     vite-plugin-fake-server: ^2.2.0
+    vite-plugin-imagemin: ^0.6.1
     vite-plugin-mock: ^3.0.2
     vite-plugin-svg-icons: ^2.0.1
     vite-plugin-vue-devtools: ^7.7.6

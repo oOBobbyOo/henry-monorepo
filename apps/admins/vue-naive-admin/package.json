@@ -60,6 +60,7 @@
     "vite": "catalog:dev",
     "vite-plugin-compression": "catalog:dev",
     "vite-plugin-fake-server": "catalog:dev",
+    "vite-plugin-imagemin": "catalog:dev",
     "vite-plugin-svg-icons": "catalog:dev",
     "vite-plugin-vue-devtools": "catalog:dev",
     "vue-tsc": "catalog:dev"
