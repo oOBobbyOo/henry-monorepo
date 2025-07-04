@@ -19,7 +19,11 @@ export function setupBuildConfig(): BuildEnvironmentOptions {
     rollupOptions: {
       output: {
         manualChunks: {
-          'vue-venders': ['vue', 'vue-router'],
+          'vue-venders': ['vue', 'vue-router', '@vueuse/core', 'pinia'],
+          'vue-lib-venders': ['vue-i18n', 'vue3-count-to', 'vue3-emoji-picker'],
+          'lib-venders': ['@better-scroll/core', 'js-calendar-converter', 'jsbarcode', 'qrcode', 'seemly', 'splitpanes'],
+          'editor-venders': ['@bytemd/plugin-gfm', '@bytemd/vue-next', 'bytemd', '@wangeditor/editor', '@wangeditor/editor-for-vue', '@vueup/vue-quill'],
+          'vhooks': ['@henry/vhooks'],
           'naive-ui': ['naive-ui'],
         },
         entryFileNames: 'assets/js/[name]-[hash].js',

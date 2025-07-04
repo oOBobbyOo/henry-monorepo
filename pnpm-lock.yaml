@@ -172,6 +172,9 @@ catalogs:
     '@visactor/vchart-theme':
       specifier: ^1.12.2
       version: 1.12.2
+    '@vueup/vue-quill':
+      specifier: ^1.2.0
+      version: 1.2.0
     '@vueuse/core':
       specifier: ^13.0.0
       version: 13.0.0
@@ -391,11 +394,8 @@ importers:
       '@iconify/vue':
         specifier: catalog:prod
         version: 4.3.0(vue@3.5.13(typescript@5.8.2))
-      '@types/splitpanes':
-        specifier: catalog:dev
-        version: 2.2.6
       '@vueup/vue-quill':
-        specifier: ^1.2.0
+        specifier: catalog:prod
         version: 1.2.0(vue@3.5.13(typescript@5.8.2))
       '@vueuse/core':
         specifier: catalog:prod
@@ -461,6 +461,9 @@ importers:
       '@types/qrcode':
         specifier: catalog:dev
         version: 1.5.5
+      '@types/splitpanes':
+        specifier: catalog:dev
+        version: 2.2.6
       '@unocss/preset-web-fonts':
         specifier: catalog:dev
         version: 66.1.2
