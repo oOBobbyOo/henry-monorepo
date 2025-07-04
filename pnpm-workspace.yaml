@@ -61,8 +61,8 @@ catalogs:
     '@reduxjs/toolkit': ^2.8.2
     '@visactor/vchart': ^1.13.10
     '@visactor/vchart-theme': ^1.12.2
-    '@vueuse/core': ^13.0.0
     '@vueup/vue-quill': ^1.2.0
+    '@vueuse/core': ^13.0.0
     '@wangeditor/editor': ^5.1.23
     '@wangeditor/editor-for-vue': ^5.1.12
     antd: ^5.24.7
