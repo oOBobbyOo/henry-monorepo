@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iconify/react": "catalog:prod",
     "@reduxjs/toolkit": "catalog:prod",
     "antd": "catalog:prod",
     "react": "catalog:prod",
