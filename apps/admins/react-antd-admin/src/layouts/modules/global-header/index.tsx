@@ -6,7 +6,7 @@ const { Header } = Layout
 
 function GlobalHeader() {
   return (
-    <Header className="layout-header flex-between px-4">
+    <Header className="global-layout-header flex-between px-4">
       <SiderToggler />
       <div className="h-full flex-y-center justify-end gap-2">
         <DarkSwitch />

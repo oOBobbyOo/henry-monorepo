@@ -37,3 +37,16 @@ html {
 .dark ::-webkit-scrollbar-thumb:hover {
   background-color: #4c4c4c;
 }
+
+
+.global-layout-header {
+  box-shadow: var(--hb-header-shadow);
+}
+
+.global-layout-sider {
+  box-shadow: var(--hb-sider-shadow);
+}
+
+.global-layout-footer {
+  box-shadow: var(--hb-footer-shadow);
+}

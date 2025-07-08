@@ -15,6 +15,7 @@
     "@iconify/react": "catalog:prod",
     "@reduxjs/toolkit": "catalog:prod",
     "antd": "catalog:prod",
+    "clsx": "catalog:prod",
     "react": "catalog:prod",
     "react-dom": "catalog:prod",
     "react-redux": "catalog:prod",

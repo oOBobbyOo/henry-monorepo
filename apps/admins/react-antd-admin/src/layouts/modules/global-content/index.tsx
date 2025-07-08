@@ -5,7 +5,7 @@ const { Content } = Layout
 
 function GlobalContent() {
   return (
-    <Content>
+    <Content className="global-layout-content">
       GlobalContent
       <Outlet />
     </Content>
