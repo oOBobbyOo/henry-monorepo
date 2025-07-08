@@ -35,7 +35,7 @@ const SiderToggler: FC<Props> = ({ arrowIcon }) => {
   return (
     <ButtonIcon
       icon={icon}
-      content={siderCollapse ? '展开侧边栏' : '收起侧边栏'}
+      tooltipContent={siderCollapse ? '展开侧边栏' : '收起侧边栏'}
       onClick={() => dispatch(toggleSiderCollapse())}
     >
     </ButtonIcon>

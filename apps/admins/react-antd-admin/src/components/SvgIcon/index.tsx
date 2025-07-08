@@ -1,8 +1,9 @@
-import type { FC } from 'react'
+import type { CSSProperties, FC } from 'react'
 import { Icon } from '@iconify/react'
 
 interface Props {
   icon?: string
+  style?: CSSProperties
 }
 
 /** local svg */

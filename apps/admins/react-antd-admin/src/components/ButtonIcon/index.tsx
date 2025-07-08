@@ -1,33 +1,53 @@
 import type { TooltipProps } from 'antd'
-import type { FC, ReactNode } from 'react'
+import type { CSSProperties, FC, ReactNode } from 'react'
 import SvgIcon from '@/components/SvgIcon'
 
 import { Button, Tooltip } from 'antd'
 
 interface Props {
-  className?: string
-  icon?: string
-  content?: string
-  placement?: TooltipProps['placement']
-  zIndex?: number
-  onClick?: () => void
   children?: ReactNode
+  /** Button class */
+  className?: string
+  /** Iconify icon name */
+  icon?: string
+  /** Tooltip content */
+  tooltipContent?: string
+  /** Tooltip placement */
+  tooltipPlacement?: TooltipProps['placement']
+  /** Trigger tooltip on parent */
+  triggerParent?: boolean
+  /** Tooltip z-index */
+  zIndex?: number
+  /** Svg style */
+  style?: CSSProperties
+  onClick?: () => void
 }
 
 const ButtonIcon: FC<Props> = ({
+  children,
   className,
   icon,
-  content,
-  placement = 'bottom',
-  zIndex,
-  children,
+  tooltipContent,
+  tooltipPlacement = 'bottom',
+  triggerParent,
+  zIndex = 98,
+  style,
   ...rest
 }) => {
+  const getPopupContainer = (triggerNode: HTMLElement) => {
+    return triggerParent ? triggerNode.parentElement! : document.body
+  }
+
   return (
-    <Tooltip placement={placement} title={content} zIndex={zIndex}>
+    <Tooltip
+      getPopupContainer={getPopupContainer}
+      placement={tooltipPlacement}
+      title={tooltipContent}
+      zIndex={zIndex}
+    >
       <Button type="text" className={`text-size-lg ${className}`} {...rest}>
         <div className="flex-center gap-2">
-          {children || <SvgIcon icon={icon} />}
+          {children || <SvgIcon icon={icon} style={style} />}
         </div>
       </Button>
     </Tooltip>
