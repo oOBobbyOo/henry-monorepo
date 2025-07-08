@@ -1,10 +1,10 @@
-import type { TooltipProps } from 'antd'
+import type { ButtonProps, TooltipProps } from 'antd'
 import type { CSSProperties, FC, ReactNode } from 'react'
 import SvgIcon from '@/components/SvgIcon'
 
 import { Button, Tooltip } from 'antd'
 
-interface Props {
+interface Props extends Omit<ButtonProps, 'icon' | 'iconPosition'> {
   children?: ReactNode
   /** Button class */
   className?: string
@@ -20,7 +20,6 @@ interface Props {
   zIndex?: number
   /** Svg style */
   style?: CSSProperties
-  onClick?: () => void
 }
 
 const ButtonIcon: FC<Props> = ({
