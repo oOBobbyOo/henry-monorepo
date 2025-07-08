@@ -5,6 +5,7 @@ import { initThemeSettings } from './shared'
 
 const initialState: ThemeState = {
   settings: initThemeSettings(),
+  darkMode: false,
 }
 
 const themeSlice = createSlice({
@@ -15,11 +16,12 @@ const themeSlice = createSlice({
   },
   selectors: {
     getThemeSettings: theme => theme.settings,
+    getDarkMode: theme => theme.darkMode,
   },
 })
 
 export const { resetTheme } = themeSlice.actions
 
-export const { getThemeSettings } = themeSlice.selectors
+export const { getThemeSettings, getDarkMode } = themeSlice.selectors
 
 export default themeSlice.reducer

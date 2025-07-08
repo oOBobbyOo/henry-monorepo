@@ -1,15 +1,21 @@
-import type { Reducer } from '@reduxjs/toolkit'
+import type { Reducer, UnknownAction } from '@reduxjs/toolkit'
 import { combineReducers } from '@reduxjs/toolkit'
 
-// 批量导入 ./modules 下所有 slice.ts 文件
-const modules: Record<string, { default: Reducer }> = import.meta.glob('./modules/*/slice.ts', { eager: true })
+export interface RootState {
+  app: import('./modules/app/type').AppState
+  auth: import('./modules/auth/type').AuthState
+  theme: import('./modules/theme/type').ThemeState
+}
 
-const reducers = Object.keys(modules).reduce((acc, path) => {
-  const key = path.split('/')[2]
-  const reducer = modules[path].default
-  acc[key] = reducer
-  return acc
-}, {} as Record<string, Reducer>)
+// 批量导入 ./modules 下所有 slice.ts 文件
+const sliceModules = import.meta.glob('./modules/*/slice.ts', { eager: true })
+
+const reducers = Object.entries(sliceModules)
+  .reduce((acc, [key, value]) => {
+    const sliceName = key.replace('./modules/', '').replace('/slice.ts', '')
+    acc[sliceName] = (value as { default: Reducer<RootState[keyof RootState], UnknownAction> }).default
+    return acc
+  }, {} as Record<string, Reducer<RootState[keyof RootState], UnknownAction>>)
 
 const rootReducer = combineReducers(reducers)
 

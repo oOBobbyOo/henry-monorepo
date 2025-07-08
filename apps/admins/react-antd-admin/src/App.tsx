@@ -1,16 +1,18 @@
 import AppProvider from '@/components/AppProvider'
 import { Router } from '@/routes'
+import { useAppSelector } from '@/stores/hook'
+import { getAntdTheme } from '@/stores/modules/theme/shared'
+import { getDarkMode } from '@/stores/modules/theme/slice'
 import { ConfigProvider } from 'antd'
 import { BrowserRouter } from 'react-router-dom'
-import { getAntdTheme } from './stores/modules/theme/shared'
 
 function App() {
-  const theme = getAntdTheme()
+  const darkMode = useAppSelector(getDarkMode)
+
+  const theme = getAntdTheme(darkMode)
 
   return (
-    <ConfigProvider
-      theme={theme}
-    >
+    <ConfigProvider theme={theme}>
       <AppProvider>
         <BrowserRouter>
           <Router />

@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState: AppState = {
   locale: 'zh-CN',
+  siderCollapse: false,
 }
 
 const appSlice = createSlice({
@@ -10,9 +11,17 @@ const appSlice = createSlice({
   initialState,
   reducers: {
     resetApp: () => initialState,
+    toggleSiderCollapse: (state) => {
+      state.siderCollapse = !state.siderCollapse
+    },
+  },
+  selectors: {
+    getSiderCollapse: app => app.siderCollapse,
   },
 })
 
-export const { resetApp } = appSlice.actions
+export const { toggleSiderCollapse, resetApp } = appSlice.actions
+
+export const { getSiderCollapse } = appSlice.selectors
 
 export default appSlice.reducer
