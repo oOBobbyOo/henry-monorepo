@@ -20,7 +20,9 @@
     "react-dom": "catalog:prod",
     "react-redux": "catalog:prod",
     "react-responsive": "catalog:prod",
-    "react-router-dom": "catalog:prod"
+    "react-router-dom": "catalog:prod",
+    "react-i18next": "catalog:prod",
+    "i18next": "catalog:prod"
   },
   "devDependencies": {
     "@eslint/js": "catalog:dev",
