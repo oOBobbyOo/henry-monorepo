@@ -1,20 +1,26 @@
+import { useAppDispatch, useAppSelector } from '@/stores/hook'
+import { getSiderCollapse, setSiderCollapse } from '@/stores/modules/app/slice'
+import { getThemeSettings } from '@/stores/modules/theme/slice'
 import { Layout } from 'antd'
-import { useState } from 'react'
 
 const { Sider } = Layout
 
 function GlobalSider() {
-  const [collapsed, setCollapsed] = useState(false)
+  const dispatch = useAppDispatch()
+  const siderCollapse = useAppSelector(getSiderCollapse)
+  const settings = useAppSelector(getThemeSettings)
 
   return (
     <Sider
       breakpoint="lg"
       onBreakpoint={(broken) => {
-        setCollapsed(broken)
+        dispatch(setSiderCollapse(broken))
       }}
       trigger={null}
       collapsible
-      collapsed={collapsed}
+      collapsed={siderCollapse}
+      width={settings.sider.width}
+      collapsedWidth={settings.sider.collapsedWidth}
     >
       GlobalSider
     </Sider>

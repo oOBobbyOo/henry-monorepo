@@ -1,3 +1,4 @@
+import type { PayloadAction } from '@reduxjs/toolkit'
 import type { AppState } from './type'
 import { createSlice } from '@reduxjs/toolkit'
 
@@ -11,6 +12,9 @@ const appSlice = createSlice({
   initialState,
   reducers: {
     resetApp: () => initialState,
+    setSiderCollapse: (state, action: PayloadAction<boolean>) => {
+      state.siderCollapse = action.payload
+    },
     toggleSiderCollapse: (state) => {
       state.siderCollapse = !state.siderCollapse
     },
@@ -20,7 +24,7 @@ const appSlice = createSlice({
   },
 })
 
-export const { toggleSiderCollapse, resetApp } = appSlice.actions
+export const { setSiderCollapse, toggleSiderCollapse, resetApp } = appSlice.actions
 
 export const { getSiderCollapse } = appSlice.selectors
 
