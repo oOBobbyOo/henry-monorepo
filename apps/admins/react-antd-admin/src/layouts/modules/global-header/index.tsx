@@ -4,6 +4,7 @@ import DarkSwitch from './components/DarkSwitch'
 import LangSwitch from './components/LangSwitch'
 import SiderToggler from './components/SiderToggler'
 import ThemeButton from './components/ThemeButton'
+import UserAvatar from './components/UserAvatar'
 
 const { Header } = Layout
 
@@ -16,6 +17,7 @@ function GlobalHeader() {
         <LangSwitch />
         <DarkSwitch />
         <ThemeButton />
+        <UserAvatar />
       </div>
     </Header>
   )

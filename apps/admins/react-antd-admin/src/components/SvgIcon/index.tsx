@@ -2,6 +2,7 @@ import type { CSSProperties, FC } from 'react'
 import { Icon } from '@iconify/react'
 
 interface Props {
+  className?: string
   icon?: string
   style?: CSSProperties
 }
