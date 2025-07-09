@@ -5,6 +5,7 @@ export interface RootState {
   app: import('./modules/app/type').AppState
   auth: import('./modules/auth/type').AuthState
   theme: import('./modules/theme/type').ThemeState
+  user: import('./modules/user/type').UserState
 }
 
 // 批量导入 ./modules 下所有 slice.ts 文件

@@ -1,11 +1,15 @@
 import type { MenuProps } from 'antd'
 import ButtonIcon from '@/components/ButtonIcon'
 import SvgIcon from '@/components/SvgIcon'
-import { Dropdown } from 'antd'
+import { useAppSelector } from '@/stores/hook'
+import { getUserInfo } from '@/stores/modules/user/slice'
+import { Avatar, Dropdown } from 'antd'
 import { useTranslation } from 'react-i18next'
 
 function UserAvatar() {
   const { t } = useTranslation()
+
+  const userInfo = useAppSelector(getUserInfo)
 
   const items: MenuProps['items'] = [
     {
@@ -43,8 +47,10 @@ function UserAvatar() {
       }}
     >
       <ButtonIcon className="px-8px">
-        <SvgIcon className="text-2xl" icon="ph:user-circle" />
-        <span className="text-16px font-medium">Henry</span>
+        {userInfo?.avatar
+          ? <Avatar size="small" src={userInfo.avatar} />
+          : <SvgIcon className="text-2xl" icon="ph:user-circle" />}
+        <span className="text-16px font-medium">{userInfo.userName}</span>
       </ButtonIcon>
     </Dropdown>
   )
