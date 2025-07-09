@@ -12,7 +12,7 @@ const GlobalLogo: FC<Props> = ({ collapsed }) => {
 
   return (
     <div className="logo-wrapper flex-center" style={{ height: `${settings.header.height}px` }}>
-      <h1 className="logo">{collapsed ? 'HA' : 'Heny Admin'}</h1>
+      <h1 className="logo">{collapsed ? 'HA' : 'Henry Admin'}</h1>
     </div>
   )
 }
