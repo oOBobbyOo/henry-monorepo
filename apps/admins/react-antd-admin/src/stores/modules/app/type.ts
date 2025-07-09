@@ -1,4 +1,4 @@
 export interface AppState {
-  locale: string
+  locale: App.I18n.LangType
   siderCollapse: boolean
 }

@@ -1,6 +1,6 @@
 import i18next from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import locale from './locale'
+import locales from './locale'
 
 export const i18n = i18next.use(initReactI18next)
 
@@ -9,8 +9,8 @@ export async function setupI18n() {
     interpolation: {
       escapeValue: false,
     },
-    lng: '',
-    resources: locale,
+    lng: 'zh-CN',
+    resources: locales,
   })
 }
 

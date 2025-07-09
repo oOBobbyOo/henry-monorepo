@@ -12,7 +12,10 @@ const appSlice = createSlice({
   initialState,
   reducers: {
     resetApp: () => initialState,
-    setSiderCollapse: (state, action: PayloadAction<boolean>) => {
+    setLocale: (state, action: PayloadAction<AppState['locale']>) => {
+      state.locale = action.payload
+    },
+    setSiderCollapse: (state, action: PayloadAction<AppState['siderCollapse']>) => {
       state.siderCollapse = action.payload
     },
     toggleSiderCollapse: (state) => {
@@ -20,12 +23,13 @@ const appSlice = createSlice({
     },
   },
   selectors: {
+    getLocale: app => app.locale,
     getSiderCollapse: app => app.siderCollapse,
   },
 })
 
-export const { setSiderCollapse, toggleSiderCollapse, resetApp } = appSlice.actions
+export const { setLocale, setSiderCollapse, toggleSiderCollapse, resetApp } = appSlice.actions
 
-export const { getSiderCollapse } = appSlice.selectors
+export const { getLocale, getSiderCollapse } = appSlice.selectors
 
 export default appSlice.reducer
