@@ -1,4 +1,5 @@
 import type { ThemeConfig } from 'antd'
+import { themeSettings } from './settings'
 
 const lightTheme: ThemeConfig = {
   components: {
@@ -7,6 +8,7 @@ const lightTheme: ThemeConfig = {
       footerBg: 'rgb(255, 255, 255)',
       siderBg: 'rgb(255, 255, 255)',
       bodyBg: 'rgb(247, 250, 252)',
+      headerHeight: themeSettings.header.height,
     },
   },
 }
@@ -18,6 +20,7 @@ const darkTheme: ThemeConfig = {
       footerBg: 'rgb(28, 28, 28)',
       siderBg: 'rgb(28, 28, 28)',
       bodyBg: 'rgb(18, 18, 18)',
+      headerHeight: themeSettings.header.height,
     },
   },
 }
