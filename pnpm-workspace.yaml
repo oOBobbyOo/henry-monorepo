@@ -74,6 +74,7 @@ catalogs:
     clsx: ^2.1.1
     dayjs: ^1.11.13
     echarts: ^5.6.0
+    i18next: ^25.3.1
     js-calendar-converter: ^0.0.7
     jsbarcode: ^3.11.6
     localforage: ^1.10.0
@@ -84,6 +85,7 @@ catalogs:
     qrcode: ^1.5.4
     react: ^19.0.0
     react-dom: ^19.0.0
+    react-i18next: ^15.6.0
     react-redux: ^9.2.0
     react-responsive: ^10.0.1
     react-router-dom: ^7.5.0
