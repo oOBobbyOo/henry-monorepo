@@ -49,6 +49,7 @@ const local = {
     fullscreenExit: 'Exit Fullscreen',
     lang: 'Switch Language',
     themeSchema: 'Theme Schema',
+    themeConfig: 'Theme Configuration',
     userCenter: 'User Center',
     logout: 'Logout',
   },
@@ -234,9 +235,7 @@ const local = {
     },
   },
   icon: {
-    themeConfig: 'Theme Configuration',
-    themeSchema: 'Theme Schema',
-    reload: 'Reload Page',
+    reload: 'Reload',
     pin: 'Pin',
     unpin: 'Unpin',
   },
