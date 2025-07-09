@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from '@/stores/hook'
 import { getSiderCollapse, setSiderCollapse } from '@/stores/modules/app/slice'
 import { getThemeSettings } from '@/stores/modules/theme/slice'
 import { Layout } from 'antd'
+import GlobalLogo from '../global-logo'
 
 const { Sider } = Layout
 
@@ -23,7 +24,9 @@ function GlobalSider() {
       width={settings.sider.width}
       collapsedWidth={settings.sider.collapsedWidth}
     >
-      GlobalSider
+      <>
+        <GlobalLogo collapsed={siderCollapse} />
+      </>
     </Sider>
   )
 }
