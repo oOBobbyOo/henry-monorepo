@@ -4,8 +4,10 @@ import ButtonIcon from '@/components/ButtonIcon'
 import { useAppDispatch, useAppSelector } from '@/stores/hook'
 import { getDarkMode, toggleDarkMode } from '@/stores/modules/theme/slice'
 import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
+  className?: string
   /** Show tooltip */
   showTooltip?: boolean
   /** Tooltip placement */
@@ -17,7 +19,14 @@ const icons = {
   dark: 'ri:moon-line',
 }
 
-const DarkSwitch: FC<Props> = ({ showTooltip = true, tooltipPlacement = 'bottom', ...reset }) => {
+const DarkSwitch: FC<Props> = ({
+  className,
+  showTooltip = true,
+  tooltipPlacement = 'bottom',
+  ...reset
+}) => {
+  const { t } = useTranslation()
+
   const dispatch = useAppDispatch()
   const darkMode = useAppSelector(getDarkMode)
   const dispatchDarkMode = () => dispatch(toggleDarkMode())
@@ -26,7 +35,7 @@ const DarkSwitch: FC<Props> = ({ showTooltip = true, tooltipPlacement = 'bottom'
     return darkMode ? icons.dark : icons.light
   }, [darkMode])
 
-  const tooltipContent = showTooltip ? '主题模式' : ''
+  const tooltipContent = showTooltip ? t('header.themeSchema') : ''
 
   const toggleDarkScheme: ButtonProps['onClick'] = (event) => {
     const isAppearanceTransition
@@ -71,6 +80,8 @@ const DarkSwitch: FC<Props> = ({ showTooltip = true, tooltipPlacement = 'bottom'
 
   return (
     <ButtonIcon
+      shape="circle"
+      className={className}
       icon={icon}
       tooltipPlacement={tooltipPlacement}
       tooltipContent={tooltipContent}

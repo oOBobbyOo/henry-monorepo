@@ -31,6 +31,7 @@ const LangSwitch: FC<Props> = ({ className, showTooltip = true }) => {
     >
       <ButtonIcon
         className={className}
+        shape="circle"
         icon="heroicons:language"
         tooltipContent={tooltipContent}
         tooltipPlacement="left"

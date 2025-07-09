@@ -3,6 +3,7 @@ import ButtonIcon from '@/components/ButtonIcon'
 import { useAppDispatch, useAppSelector } from '@/stores/hook'
 import { getSiderCollapse, toggleSiderCollapse } from '@/stores/modules/app/slice'
 import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   arrowIcon?: boolean
@@ -22,6 +23,8 @@ const icons: Record<NumberBool, Record<NumberBool, string>> = {
 }
 
 const SiderToggler: FC<Props> = ({ arrowIcon }) => {
+  const { t } = useTranslation()
+
   const dispatch = useAppDispatch()
   const siderCollapse = useAppSelector(getSiderCollapse)
 
@@ -35,7 +38,7 @@ const SiderToggler: FC<Props> = ({ arrowIcon }) => {
   return (
     <ButtonIcon
       icon={icon}
-      tooltipContent={siderCollapse ? '展开侧边栏' : '收起侧边栏'}
+      tooltipContent={siderCollapse ? t('header.expandMenu') : t('header.collapseMenu')}
       onClick={() => dispatch(toggleSiderCollapse())}
     >
     </ButtonIcon>
