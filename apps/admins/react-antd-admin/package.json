@@ -22,7 +22,8 @@
     "react-i18next": "catalog:prod",
     "react-redux": "catalog:prod",
     "react-responsive": "catalog:prod",
-    "react-router-dom": "catalog:prod"
+    "react-router-dom": "catalog:prod",
+    "ahooks": "catalog:prod"
   },
   "devDependencies": {
     "@eslint/js": "catalog:dev",
