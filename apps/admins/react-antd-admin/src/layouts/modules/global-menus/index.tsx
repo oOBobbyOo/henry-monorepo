@@ -1,11 +1,15 @@
 import type { MenuProps } from 'antd'
 import { useMenus } from '@/hooks/useMenus'
+import { useRouterPush } from '@/hooks/useRouterPush'
+import { getSelectedMenuKeyPathByKey } from '@/routes/shared'
 import { Menu } from 'antd'
 import { useMemo } from 'react'
 
 type MenuItem = Required<MenuProps>['items'][number]
 
 function GlobalMenus() {
+  const { navigate } = useRouterPush()
+
   const { menus } = useMenus()
 
   const items: MenuItem[] = useMemo(() => {
@@ -27,7 +31,12 @@ function GlobalMenus() {
     })
   }, [menus])
 
-  return <Menu items={items} mode="inline" />
+  const handleClickMenu: MenuProps['onSelect'] = ({ key }) => {
+    const routePath = getSelectedMenuKeyPathByKey(key, menus)
+    navigate(routePath)
+  }
+
+  return <Menu items={items} mode="inline" onSelect={handleClickMenu} />
 }
 
 export default GlobalMenus

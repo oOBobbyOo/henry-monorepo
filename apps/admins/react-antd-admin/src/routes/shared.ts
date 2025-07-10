@@ -66,3 +66,18 @@ export function generateMenus(routes: Router.RouteObject[], parentPath?: string)
 
   return menus
 }
+
+export function getSelectedMenuKeyPathByKey(selectedKey: string, menus: App.Global.Menu[]) {
+  let keyPath: string = ''
+
+  menus.forEach((menu: App.Global.Menu) => {
+    if (menu.routeKey === selectedKey) {
+      keyPath = menu.routePath
+    }
+    else if (menu.children?.length) {
+      keyPath = getSelectedMenuKeyPathByKey(selectedKey, menu.children)
+    }
+  })
+
+  return keyPath
+}
