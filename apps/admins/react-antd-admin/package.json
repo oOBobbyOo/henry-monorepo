@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@henry/rhooks": "workspace:*",
     "@iconify/react": "catalog:prod",
     "@reduxjs/toolkit": "catalog:prod",
     "ahooks": "catalog:prod",

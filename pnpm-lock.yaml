@@ -312,6 +312,9 @@ importers:
 
   apps/admins/react-antd-admin:
     dependencies:
+      '@henry/rhooks':
+        specifier: workspace:*
+        version: link:../../../packages/rhooks
       '@iconify/react':
         specifier: catalog:prod
         version: 6.0.0(react@19.0.0)

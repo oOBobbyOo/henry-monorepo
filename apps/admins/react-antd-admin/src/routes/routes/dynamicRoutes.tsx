@@ -1,11 +1,11 @@
-import type { IRouteModuleRaw, IRouteObject } from '@/types/router'
+import type { Router } from '@/types/router'
 
-const modules = import.meta.glob<IRouteModuleRaw>('../modules/**/*.tsx', {
+const modules = import.meta.glob<Router.RouteModuleRaw>('../modules/**/*.tsx', {
   eager: true,
 })
 
-const routeModuleList: IRouteObject[] = Object.keys(modules).reduce(
-  (list: IRouteObject[], key: string) => {
+const routeModuleList: Router.RouteObject[] = Object.keys(modules).reduce(
+  (list: Router.RouteObject[], key: string) => {
     const mod = modules[key]?.default || {}
     const modList = Array.isArray(mod) ? [...mod] : [mod]
     return [...list, ...modList]

@@ -1,14 +1,15 @@
-import type { IRouteObject } from '@/types/router'
+import type { Router } from '@/types/router'
 import Layout from '@/layouts'
 import RedirectRouteView from '../RedirectRouteView'
 import { constantRoutes } from './constantRoutes'
 import { dynamicRoutes } from './dynamicRoutes'
 
 // 根路由
-const RootRoute: IRouteObject = {
+const RootRoute: Router.RouteObject = {
   path: '/',
   element: <Layout />,
   meta: {
+    name: 'root',
     title: 'Root',
   },
   children: [

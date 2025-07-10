@@ -3,6 +3,7 @@ import { getSiderCollapse, setSiderCollapse } from '@/stores/modules/app/slice'
 import { getThemeSettings } from '@/stores/modules/theme/slice'
 import { Layout } from 'antd'
 import GlobalLogo from '../global-logo'
+import GlobalMenus from '../global-menus'
 
 const { Sider } = Layout
 
@@ -26,6 +27,7 @@ function GlobalSider() {
     >
       <>
         <GlobalLogo collapsed={siderCollapse} />
+        <GlobalMenus />
       </>
     </Sider>
   )

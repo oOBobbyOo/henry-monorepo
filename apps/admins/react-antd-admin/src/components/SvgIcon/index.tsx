@@ -1,16 +1,18 @@
-import type { CSSProperties, FC } from 'react'
+import type { CSSProperties } from 'react'
 import { Icon } from '@iconify/react'
 
 interface Props {
-  className?: string
-  icon?: string
-  style?: CSSProperties
+  readonly className?: string
+  /** Iconify icon name */
+  readonly icon?: string
+  /** Icon style */
+  readonly style?: CSSProperties
 }
 
 /** local svg */
 const localPrefix = 'local:'
 
-const SvgIcon: FC<Props> = ({ icon, ...rest }) => {
+function SvgIcon({ icon, ...rest }: Props) {
   const isLocalIcon = () => icon?.startsWith(localPrefix)
 
   const symbolId = () => {
