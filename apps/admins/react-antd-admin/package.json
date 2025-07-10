@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@henry/rhooks": "workspace:*",
+    "@henry/utils": "workspace:*",
     "@iconify/react": "catalog:prod",
     "@reduxjs/toolkit": "catalog:prod",
     "ahooks": "catalog:prod",

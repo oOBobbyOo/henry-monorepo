@@ -318,6 +318,9 @@ importers:
       '@henry/rhooks':
         specifier: workspace:*
         version: link:../../../packages/rhooks
+      '@henry/utils':
+        specifier: workspace:*
+        version: link:../../../packages/utils
       '@iconify/react':
         specifier: catalog:prod
         version: 6.0.0(react@19.0.0)
