@@ -12,7 +12,8 @@
   "dependencies": {
     "dayjs": "catalog:prod",
     "localforage": "catalog:prod",
-    "nprogress": "catalog:prod"
+    "nprogress": "catalog:prod",
+    "query-string": "catalog:prod"
   },
   "devDependencies": {
     "@henry/lint": "workspace:*",
