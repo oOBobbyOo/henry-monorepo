@@ -6,6 +6,7 @@ declare namespace Router {
     title?: string // 标题
     i18nKey?: string // 多语言
     icon?: string // 图标
+    iconFontSize?: number // 图标大小
     order?: number // 序号
     requiresAuth?: boolean // 身份验证
     hideInMenu?: boolean // 菜单隐藏

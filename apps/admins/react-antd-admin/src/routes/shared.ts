@@ -30,7 +30,7 @@ export function generateMenu(route: Router.RouteObject, parentPath?: string) {
   const { SvgIconVNode } = useSvgIcon()
 
   const { path } = route
-  const { name, title, i18nKey, icon } = route.meta ?? {}
+  const { name, title, i18nKey, icon, iconFontSize } = route.meta ?? {}
   const label = i18nKey ? $t(i18nKey) : title!
   const routePath = parentPath ? `${parentPath}/${path}` : path as string
 
@@ -39,7 +39,7 @@ export function generateMenu(route: Router.RouteObject, parentPath?: string) {
     i18nKey,
     routeKey: name as string,
     routePath,
-    icon: SvgIconVNode({ icon }),
+    icon: SvgIconVNode({ icon, fontSize: iconFontSize || 20 }),
   }
 
   return menu
