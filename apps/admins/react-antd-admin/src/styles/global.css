@@ -8,6 +8,7 @@ html {
   overflow-x: hidden;
 }
 
+/* scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -38,6 +39,10 @@ html {
   background-color: #4c4c4c;
 }
 
+/* global layout */
+.global-layout-logo {
+  box-shadow: var(--hb-header-shadow);
+}
 
 .global-layout-header {
   box-shadow: var(--hb-header-shadow);

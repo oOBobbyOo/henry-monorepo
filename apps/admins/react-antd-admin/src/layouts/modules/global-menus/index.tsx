@@ -1,4 +1,5 @@
 import type { MenuProps } from 'antd'
+import type { FC } from 'react'
 import { useMenus } from '@/hooks/useMenus'
 import { useRouterPush } from '@/hooks/useRouterPush'
 import { getSelectedMenuKeyPathByKey } from '@/routes/shared'
@@ -7,7 +8,9 @@ import { useMemo } from 'react'
 
 type MenuItem = Required<MenuProps>['items'][number]
 
-function GlobalMenus() {
+const GlobalMenus: FC<{
+  collapsed: boolean
+}> = ({ collapsed }) => {
   const { navigate } = useRouterPush()
 
   const { menus } = useMenus()
@@ -36,7 +39,16 @@ function GlobalMenus() {
     navigate(routePath)
   }
 
-  return <Menu items={items} mode="inline" onSelect={handleClickMenu} />
+  return (
+    <Menu
+      className="flex-1 overflow-y-auto"
+      items={items}
+      inlineCollapsed={collapsed}
+      mode="inline"
+      onSelect={handleClickMenu}
+      style={{ border: 0 }}
+    />
+  )
 }
 
 export default GlobalMenus

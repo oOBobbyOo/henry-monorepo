@@ -3,7 +3,7 @@ export const themeSettings = {
     height: 56,
   },
   sider: {
-    width: 220, // default: 200
+    width: 240, // default: 200
     collapsedWidth: 64, // default: 80
   },
 }

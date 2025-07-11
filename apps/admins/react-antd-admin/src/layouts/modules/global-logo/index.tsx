@@ -11,7 +11,7 @@ const GlobalLogo: FC<Props> = ({ collapsed }) => {
   const settings = useAppSelector(getThemeSettings)
 
   return (
-    <div className="logo-wrapper flex-center" style={{ height: `${settings.header.height}px` }}>
+    <div className="global-layout-logo flex-center relative z-98" style={{ height: `${settings.header.height}px` }}>
       <h1 className="logo">{collapsed ? 'HA' : 'Henry Admin'}</h1>
     </div>
   )

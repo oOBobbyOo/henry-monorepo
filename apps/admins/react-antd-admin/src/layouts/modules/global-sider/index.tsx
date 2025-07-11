@@ -2,33 +2,40 @@ import { useAppDispatch, useAppSelector } from '@/stores/hook'
 import { getSiderCollapse, setSiderCollapse } from '@/stores/modules/app/slice'
 import { getThemeSettings } from '@/stores/modules/theme/slice'
 import { Layout } from 'antd'
+import { useMemo } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import GlobalLogo from '../global-logo'
 import GlobalMenus from '../global-menus'
 
 const { Sider } = Layout
 
 function GlobalSider() {
+  const isMobile = useMediaQuery({ maxWidth: 768 })
   const dispatch = useAppDispatch()
   const siderCollapse = useAppSelector(getSiderCollapse)
   const settings = useAppSelector(getThemeSettings)
 
+  const collapsed = useMemo(() => {
+    return isMobile ? false : siderCollapse
+  }, [isMobile, siderCollapse])
+
   return (
     <Sider
-      className="global-layout-sider"
+      className="global-layout-sider h-full"
       breakpoint="lg"
       onBreakpoint={(broken) => {
         dispatch(setSiderCollapse(broken))
       }}
       trigger={null}
       collapsible
-      collapsed={siderCollapse}
+      collapsed={collapsed}
       width={settings.sider.width}
       collapsedWidth={settings.sider.collapsedWidth}
     >
-      <>
-        <GlobalLogo collapsed={siderCollapse} />
-        <GlobalMenus />
-      </>
+      <div className="h-full flex-col">
+        <GlobalLogo collapsed={collapsed} />
+        <GlobalMenus collapsed={collapsed} />
+      </div>
     </Sider>
   )
 }
