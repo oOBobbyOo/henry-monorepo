@@ -202,7 +202,7 @@ const local = {
     },
     about: {
       title: 'About',
-      introduction: `HenryAdmin is an elegant and powerful admin template, based on the latest front-end technology stack, including Vue3, Vite5, TypeScript, Pinia and UnoCSS. `,
+      introduction: `HenryAdmin is an elegant and powerful admin template, based on the latest front-end technology stack, including React19, ReactRouter7, Vite6, TypeScript, Redux/toolkit and UnoCSS. `,
       prdDep: 'Production Dependency',
       devDep: 'Development Dependency',
     },

@@ -6,7 +6,6 @@ const { Content } = Layout
 function GlobalContent() {
   return (
     <Content className="global-layout-content">
-      GlobalContent
       <Outlet />
     </Content>
   )

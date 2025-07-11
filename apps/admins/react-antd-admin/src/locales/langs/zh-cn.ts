@@ -202,7 +202,7 @@ const local = {
     },
     about: {
       title: '关于',
-      introduction: `HenryAdmin 是一个优雅且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite5, TypeScript, Pinia 和 UnoCSS。`,
+      introduction: `HenryAdmin 是一个优雅且功能强大的后台管理模板，基于最新的前端技术栈，包括 React19, ReactRouter7, Vite6, TypeScript, Redux/toolkit 和 UnoCSS。`,
       prdDep: '生产依赖',
       devDep: '开发依赖',
     },

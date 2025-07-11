@@ -19,6 +19,11 @@ export default defineConfig({
     'flex-between': 'flex justify-between items-center',
     'flex-col': 'flex flex-col',
     'flex-col-center': 'flex-center flex-col',
+    'flex-col-stretch': 'flex-col items-stretch',
+    'flex-row': 'flex flex-row',
+    'flex-row-center': 'flex flex-row items-center',
+    'flex-1-hidden': 'flex-1 overflow-hidden',
+    'card-wrapper': 'rd-8px shadow-sm',
   },
   presets: [
     presetWind4(),
