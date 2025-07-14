@@ -16,15 +16,15 @@ const collapsed = computed(() => {
 </script>
 
 <template>
-  <div class="logo-wrapper flex-center">
+  <div class="global-layout-logo flex-center">
     <h1 className="logo">
-      {{ collapsed ? 'HA' : 'Heny Admin' }}
+      {{ collapsed ? 'HA' : 'Henry Admin' }}
     </h1>
   </div>
 </template>
 
 <style scoped>
-.logo-wrapper {
+.global-layout-logo {
   height: v-bind(headerHeight);
   box-shadow: var(--hb-header-shadow);
 }
