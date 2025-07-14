@@ -3,7 +3,7 @@ declare namespace Theme {
   type ThemeScheme = 'light' | 'dark' | 'auto'
 
   /** Theme layout mode */
-  type ThemeLayoutMode = 'basic' | 'mobile'
+  type ThemeLayoutMode = 'destop' | 'mobile'
 
   /** Theme tab mode */
   type ThemeTabMode = 'chrome' | 'button'

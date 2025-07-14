@@ -11,7 +11,7 @@ export const themeSettings: Theme.ThemeSetting = {
   },
   isInfoFollowPrimary: true,
   layout: {
-    mode: 'basic',
+    mode: 'destop',
   },
   page: {
     animate: true,

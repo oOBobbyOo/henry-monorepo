@@ -10,7 +10,7 @@ import GlobalSider from '../modules/global-sider/index.vue'
 import GlobalTabs from '../modules/global-tabs/index.vue'
 import ThemeDrawer from '../modules/theme-drawer/index.vue'
 
-defineOptions({ name: 'BasicLayout' })
+defineOptions({ name: 'DestopLayout' })
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()
@@ -30,7 +30,7 @@ const contentStyle = computed(() => {
       :collapsed-width="themeStore.sider.collapsedWidth"
       :width="themeStore.sider.width"
       :collapsed="appStore.siderCollapse"
-      class="layout-sider z-9"
+      class="global-layout-sider z-9"
     >
       <GlobalSider />
     </NLayoutSider>
@@ -56,7 +56,7 @@ const contentStyle = computed(() => {
 </template>
 
 <style scoped>
-.layout-sider {
+.global-layout-sider {
   box-shadow: var(--hb-sider-shadow);
 }
 </style>

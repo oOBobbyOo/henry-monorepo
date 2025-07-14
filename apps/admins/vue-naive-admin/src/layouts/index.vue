@@ -3,14 +3,14 @@ import { useAppStore } from '@/stores/modules/app'
 import { useThemeStore } from '@/stores/modules/theme'
 
 import { computed, watch } from 'vue'
-import BasicLayout from './basic-layout/index.vue'
+import DestopLayout from './destop-layout/index.vue'
 import MobileLayout from './mobile-layout/index.vue'
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()
 
 const layoutMap = {
-  basic: BasicLayout,
+  destop: DestopLayout,
   mobile: MobileLayout,
 }
 
@@ -24,7 +24,7 @@ watch(() => appStore.isMobile, (val) => {
     themeStore.setThemeLayout('mobile')
   }
   else {
-    themeStore.setThemeLayout('basic')
+    themeStore.setThemeLayout('destop')
   }
 })
 </script>

@@ -9,7 +9,7 @@ import GlobalSider from '../modules/global-sider/index.vue'
 import GlobalTabs from '../modules/global-tabs/index.vue'
 import ThemeDrawer from '../modules/theme-drawer/index.vue'
 
-defineOptions({ name: 'BasicLayout' })
+defineOptions({ name: 'MobileLayout' })
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()
