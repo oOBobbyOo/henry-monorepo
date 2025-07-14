@@ -22,7 +22,7 @@ const { isFullscreen, toggle } = useFullscreen()
 </script>
 
 <template>
-  <div class="layout-header flex-between px-4">
+  <div class="global-layout-header flex-between px-4">
     <SiderToggler :collapsed="appStore.siderCollapse" @click="appStore.toggleSiderCollapse" />
     <div class="h-full flex-y-center justify-end gap-2">
       <FullScreen :full="isFullscreen" @click="toggle" />
@@ -38,7 +38,7 @@ const { isFullscreen, toggle } = useFullscreen()
 </template>
 
 <style scoped>
-.layout-header {
+.global-layout-header {
   height: v-bind(headerHeight);
   box-shadow: var(--hb-header-shadow);
 }

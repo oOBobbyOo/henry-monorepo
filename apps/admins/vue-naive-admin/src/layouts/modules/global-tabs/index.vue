@@ -86,7 +86,7 @@ watch(
 </script>
 
 <template>
-  <div class="layout-tabs size-full flex-y-center px-4">
+  <div class="global-layout-tabs size-full flex-y-center px-4">
     <div ref="bsWrapper" class="h-full flex-1-hidden">
       <BetterScroll ref="bsScroll" :options="{ scrollX: true, scrollY: false }">
         <div
@@ -121,7 +121,7 @@ watch(
 </template>
 
 <style scoped>
-.layout-tabs {
+.global-layout-tabs {
   height: v-bind(tabHeight);
   box-shadow: var(--hb-tabs-shadow);
 }

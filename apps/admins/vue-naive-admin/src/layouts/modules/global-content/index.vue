@@ -17,7 +17,7 @@ function getTransitionName(route: RouteLocationNormalizedLoadedGeneric): string 
 <template>
   <RouterView v-slot="{ Component, route }">
     <Transition :name="getTransitionName(route)" mode="out-in" :appear="true">
-      <component :is="Component" :key="route.path" class="p-4 flex-col gap-4 transition-300" />
+      <component :is="Component" :key="route.path" class="global-layout-content p-4 flex-col gap-4 transition-300" />
     </Transition>
   </RouterView>
 </template>

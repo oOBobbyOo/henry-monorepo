@@ -6,7 +6,7 @@ defineOptions({ name: 'GlobalSider' })
 </script>
 
 <template>
-  <div class="h-full flex-col">
+  <div class="global-layout-sider h-full flex-col">
     <GlobalLogo />
     <NScrollbar class="flex-1">
       <GlobalMenus />

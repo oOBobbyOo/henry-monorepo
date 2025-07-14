@@ -52,6 +52,7 @@ watch(
 <template>
   <NMenu
     v-model:expanded-keys="expandedKeys"
+    class="global-layout-menus"
     mode="vertical"
     :collapsed-width="64"
     :collapsed-icon-size="22"
