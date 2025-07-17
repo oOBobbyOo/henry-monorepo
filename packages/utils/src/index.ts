@@ -1,5 +1,6 @@
 export * from './await-to'
 export * from './date'
+export * from './dom'
 export * from './env'
 export * from './file'
 export * from './is'
