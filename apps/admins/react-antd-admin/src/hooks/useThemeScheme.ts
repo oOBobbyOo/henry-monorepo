@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@/stores/hook'
 import { getThemeSettings, setColourWeakness, setGrayscale, setThemeScheme } from '@/stores/modules/theme/slice'
 import { usePreferredDark } from '@henry/rhooks'
+import { toggleHtmlClass } from '@henry/utils'
 import { useEffect, useMemo } from 'react'
 
 export function useThemeScheme() {
@@ -70,20 +71,40 @@ export function useThemeScheme() {
   }
 
   const toggleCssDarkMode = (darkMode: boolean) => {
-    const htmlElementClassList = document.documentElement.classList
+    const DARK_CLASS = 'dark'
+    const { add, remove } = toggleHtmlClass(DARK_CLASS)
 
     if (darkMode) {
-      htmlElementClassList.add('dark')
+      add()
     }
     else {
-      htmlElementClassList.remove('dark')
+      remove()
     }
+  }
+
+  const toggleGrayscaleMode = (grayscaleMode = false) => {
+    const GRAYSCALE_CLASS = 'grayscale'
+    const { add, remove } = toggleHtmlClass(GRAYSCALE_CLASS)
+
+    if (grayscaleMode) {
+      add()
+    }
+    else {
+      remove()
+    }
+  }
+
+  const toggleColourWeaknessMode = (colourWeakness = false) => {
+    const htmlElement = document.documentElement
+    htmlElement.style.filter = colourWeakness ? 'invert(80%)' : ''
   }
 
   const changeGrayscale = (isGrayscale: boolean) => {
+    toggleGrayscaleMode(isGrayscale)
     dispatch(setGrayscale(isGrayscale))
   }
   const changeColourWeakness = (isColourWeakness: boolean) => {
+    toggleColourWeaknessMode(isColourWeakness)
     dispatch(setColourWeakness(isColourWeakness))
   }
 
@@ -98,7 +119,6 @@ export function useThemeScheme() {
     toggleDark,
     changeThemeScheme,
     toggleThemeScheme,
-    toggleCssDarkMode,
     changeGrayscale,
     changeColourWeakness,
   }
