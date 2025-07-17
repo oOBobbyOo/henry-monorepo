@@ -4,6 +4,7 @@ import { getThemeDrawerVisible, setThemeDrawerVisible } from '@/stores/modules/a
 import { Divider, Drawer } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ConfigOperation from './components/ConfigOperation'
+import DarkMode from './components/DarkMode'
 
 function ThemeDrawer() {
   const { t } = useTranslation()
@@ -34,6 +35,7 @@ function ThemeDrawer() {
     >
       <div className="overflow-x-hidden px-24px pb-24px pt-8px">
         <Divider>{t('theme.themeSchema.title')}</Divider>
+        <DarkMode />
         <Divider>{t('theme.themeColor.title')}</Divider>
         <Divider>{t('theme.pageSetting.title')}</Divider>
       </div>

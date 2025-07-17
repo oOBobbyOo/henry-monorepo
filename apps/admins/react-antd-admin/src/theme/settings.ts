@@ -1,4 +1,5 @@
-export const themeSettings = {
+export const themeSettings: Theme.ThemeSetting = {
+  themeScheme: 'light',
   header: {
     height: 56,
   },
