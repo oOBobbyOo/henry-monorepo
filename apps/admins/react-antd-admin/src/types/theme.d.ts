@@ -5,6 +5,10 @@ declare namespace Theme {
   interface ThemeSetting {
     /** Theme scheme */
     themeScheme: ThemeScheme
+    /** grayscale mode */
+    grayscale: boolean
+    /** colour weakness mode */
+    colourWeakness: boolean
     /** Header */
     header: {
       /** Header height */

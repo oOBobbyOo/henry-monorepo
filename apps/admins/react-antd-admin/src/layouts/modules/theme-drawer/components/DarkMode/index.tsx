@@ -1,7 +1,9 @@
 import type { SegmentedOptions } from 'antd/es/segmented'
 import SvgIcon from '@/components/SvgIcon'
 import { useThemeScheme } from '@/hooks/useThemeScheme'
-import { Segmented } from 'antd'
+import { Segmented, Switch } from 'antd'
+import { useTranslation } from 'react-i18next'
+import SettingItem from '../Settingitem'
 
 const themeSchemaRecord: Record<Theme.ThemeScheme, string> = {
   light: 'theme.themeSchema.light',
@@ -27,15 +29,38 @@ const OPTIONS = Object.entries(themeSchemaRecord).map(([key]) => {
 }) as SegmentedOptions<Theme.ThemeScheme>
 
 function DarkMode() {
-  const { themeScheme, changeThemeScheme } = useThemeScheme()
+  const { t } = useTranslation()
+  const {
+    themeSettings,
+    themeScheme,
+    changeThemeScheme,
+    changeGrayscale,
+    changeColourWeakness,
+  } = useThemeScheme()
 
   return (
-    <div className="flex-center">
-      <Segmented
-        options={OPTIONS}
-        value={themeScheme}
-        onChange={changeThemeScheme}
-      />
+    <div className="flex-col-stretch gap-16px">
+      <div className="i-flex-center">
+        <Segmented
+          options={OPTIONS}
+          value={themeScheme}
+          onChange={changeThemeScheme}
+        />
+      </div>
+
+      <SettingItem label={t('theme.grayscale')}>
+        <Switch
+          defaultChecked={themeSettings.grayscale}
+          onChange={changeGrayscale}
+        />
+      </SettingItem>
+
+      <SettingItem label={t('theme.colourWeakness')}>
+        <Switch
+          defaultChecked={themeSettings.colourWeakness}
+          onChange={changeColourWeakness}
+        />
+      </SettingItem>
     </div>
   )
 }

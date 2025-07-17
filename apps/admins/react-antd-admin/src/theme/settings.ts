@@ -1,5 +1,7 @@
 export const themeSettings: Theme.ThemeSetting = {
   themeScheme: 'light',
+  grayscale: false,
+  colourWeakness: false,
   header: {
     height: 56,
   },

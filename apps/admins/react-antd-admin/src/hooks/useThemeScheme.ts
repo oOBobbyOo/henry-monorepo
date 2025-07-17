@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@/stores/hook'
-import { getThemeSettings, setThemeScheme } from '@/stores/modules/theme/slice'
+import { getThemeSettings, setColourWeakness, setGrayscale, setThemeScheme } from '@/stores/modules/theme/slice'
 import { usePreferredDark } from '@henry/rhooks'
 import { useEffect, useMemo } from 'react'
 
@@ -80,16 +80,26 @@ export function useThemeScheme() {
     }
   }
 
+  const changeGrayscale = (isGrayscale: boolean) => {
+    dispatch(setGrayscale(isGrayscale))
+  }
+  const changeColourWeakness = (isColourWeakness: boolean) => {
+    dispatch(setColourWeakness(isColourWeakness))
+  }
+
   useEffect(() => {
     toggleCssDarkMode(darkMode)
   }, [darkMode])
 
   return {
+    themeSettings,
     themeScheme: themeSettings.themeScheme,
     darkMode,
     toggleDark,
     changeThemeScheme,
     toggleThemeScheme,
     toggleCssDarkMode,
+    changeGrayscale,
+    changeColourWeakness,
   }
 }

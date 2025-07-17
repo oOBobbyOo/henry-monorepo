@@ -23,6 +23,12 @@ export default defineConfig({
     'flex-row': 'flex flex-row',
     'flex-row-center': 'flex flex-row items-center',
     'flex-1-hidden': 'flex-1 overflow-hidden',
+    'i-flex-center': 'inline-flex justify-center items-center',
+    'i-flex-col': 'flex-col inline-flex',
+    'i-flex-col-center': 'flex-col i-flex-center',
+    'i-flex-col-stretch': 'i-flex-col items-stretch',
+    'i-flex-x-center': 'inline-flex justify-center',
+    'i-flex-y-center': 'inline-flex items-center',
     'card-wrapper': 'rd-8px shadow-sm',
   },
   presets: [
