@@ -72,7 +72,7 @@ const local = {
       error: '错误色',
       followPrimary: '跟随主色',
     },
-    page: {
+    pageSetting: {
       title: '页面设置',
       animate: '页面切换动画',
       animateMode: '页面切换动画模式',
@@ -106,6 +106,12 @@ const local = {
     footer: {
       visible: '显示底部',
       height: '底部高度',
+    },
+    configOperation: {
+      copyConfig: '复制配置',
+      copySuccessMsg: '复制成功，请替换 src/theme/settings.ts 中的变量 themeSettings',
+      resetConfig: '重置配置',
+      resetSuccessMsg: '重置成功',
     },
   },
   route: {

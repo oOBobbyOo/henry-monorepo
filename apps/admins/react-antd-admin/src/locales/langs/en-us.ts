@@ -72,7 +72,7 @@ const local = {
       error: 'Error',
       followPrimary: 'Follow Primary',
     },
-    page: {
+    pageSetting: {
       title: 'Page Setting',
       animate: 'Page Animate',
       animateMode: 'Page Animate Mode',
@@ -106,6 +106,12 @@ const local = {
     footer: {
       visible: 'Footer Visible',
       height: 'Footer Height',
+    },
+    configOperation: {
+      copyConfig: 'Copy Config',
+      copySuccessMsg: 'Copy Success, Please replace the variable "themeSettings" in "src/theme/settings.ts"',
+      resetConfig: 'Reset Config',
+      resetSuccessMsg: 'Reset Success',
     },
   },
   route: {

@@ -1,8 +1,9 @@
 import ButtonIcon from '@/components/ButtonIcon'
 import { useAppDispatch, useAppSelector } from '@/stores/hook'
 import { getThemeDrawerVisible, setThemeDrawerVisible } from '@/stores/modules/app/slice'
-import { Drawer } from 'antd'
+import { Divider, Drawer } from 'antd'
 import { useTranslation } from 'react-i18next'
+import ConfigOperation from './components/ConfigOperation'
 
 function ThemeDrawer() {
   const { t } = useTranslation()
@@ -27,9 +28,15 @@ function ThemeDrawer() {
           onClick={handleClose}
         />
       )}
+      footer={<ConfigOperation />}
       onClose={handleClose}
+      styles={{ body: { padding: 0 } }}
     >
-      <p>Some contents...</p>
+      <div className="overflow-x-hidden px-24px pb-24px pt-8px">
+        <Divider>{t('theme.themeSchema.title')}</Divider>
+        <Divider>{t('theme.themeColor.title')}</Divider>
+        <Divider>{t('theme.pageSetting.title')}</Divider>
+      </div>
     </Drawer>
   )
 }
