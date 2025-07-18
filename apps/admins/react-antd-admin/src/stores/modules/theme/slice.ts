@@ -1,6 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { ThemeState } from './type'
-import { createSlice } from '@reduxjs/toolkit'
+import { createSelector, createSlice } from '@reduxjs/toolkit'
 
 import { initThemeSettings } from './shared'
 
@@ -33,3 +33,17 @@ export const { resetTheme, setThemeScheme, setGrayscale, setColourWeakness } = t
 export const { getThemeSettings } = themeSlice.selectors
 
 export default themeSlice.reducer
+
+// 计算属性选择器
+export const themeColors = createSelector([getThemeSettings], ({ isInfoFollowPrimary, otherColor, themeColor }) => {
+  const colors: Theme.ThemeColor = {
+    primary: themeColor,
+    ...otherColor,
+    info: isInfoFollowPrimary ? themeColor : otherColor.info,
+  }
+  return colors
+})
+
+export const settingsJson = createSelector([getThemeSettings], (settings) => {
+  return JSON.stringify(settings)
+})
