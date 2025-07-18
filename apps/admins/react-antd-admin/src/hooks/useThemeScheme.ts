@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@/stores/hook'
-import { getThemeSettings, setColourWeakness, setGrayscale, setThemeScheme } from '@/stores/modules/theme/slice'
+import { getThemeColors, getThemeSettings, setColourWeakness, setGrayscale, setIsInfoFollowPrimary, setThemeColors, setThemeScheme } from '@/stores/modules/theme/slice'
 import { usePreferredDark } from '@henry/rhooks'
 import { toggleHtmlClass } from '@henry/utils'
 import { useEffect, useMemo } from 'react'
@@ -7,6 +7,7 @@ import { useEffect, useMemo } from 'react'
 export function useThemeScheme() {
   const dispatch = useAppDispatch()
   const themeSettings = useAppSelector(getThemeSettings)
+  const themeColors = useAppSelector(getThemeColors)
 
   const isDark = usePreferredDark()
 
@@ -108,6 +109,14 @@ export function useThemeScheme() {
     dispatch(setColourWeakness(isColourWeakness))
   }
 
+  const changeIsInfoFollowPrimary = (isInfoFollowPrimary: boolean) => {
+    dispatch(setIsInfoFollowPrimary(isInfoFollowPrimary))
+  }
+
+  const updateThemeColors = ({ color, key }: { color: string, key: Theme.ThemeColorKey }) => {
+    dispatch(setThemeColors({ color, key }))
+  }
+
   useEffect(() => {
     toggleCssDarkMode(darkMode)
   }, [darkMode])
@@ -115,11 +124,14 @@ export function useThemeScheme() {
   return {
     themeSettings,
     themeScheme: themeSettings.themeScheme,
+    themeColors,
     darkMode,
     toggleDark,
     changeThemeScheme,
     toggleThemeScheme,
     changeGrayscale,
     changeColourWeakness,
+    changeIsInfoFollowPrimary,
+    updateThemeColors,
   }
 }

@@ -22,20 +22,35 @@ const themeSlice = createSlice({
     setColourWeakness: (state, { payload }: PayloadAction<boolean>) => {
       state.settings.colourWeakness = payload
     },
+    setIsInfoFollowPrimary(state, { payload }: PayloadAction<boolean>) {
+      state.settings.isInfoFollowPrimary = payload
+    },
+    setThemeColors(
+      state,
+      { payload: { color, key } }: PayloadAction<{ color: string, key: Theme.ThemeColorKey }>,
+    ) {
+      const colorValue = color
+      if (key === 'primary') {
+        state.settings.themeColor = colorValue
+      }
+      else {
+        state.settings.otherColor[key] = colorValue
+      }
+    },
   },
   selectors: {
     getThemeSettings: theme => theme.settings,
   },
 })
 
-export const { resetTheme, setThemeScheme, setGrayscale, setColourWeakness } = themeSlice.actions
+export const { resetTheme, setThemeScheme, setGrayscale, setColourWeakness, setIsInfoFollowPrimary, setThemeColors } = themeSlice.actions
 
 export const { getThemeSettings } = themeSlice.selectors
 
 export default themeSlice.reducer
 
 // 计算属性选择器
-export const themeColors = createSelector([getThemeSettings], ({ isInfoFollowPrimary, otherColor, themeColor }) => {
+export const getThemeColors = createSelector([getThemeSettings], ({ isInfoFollowPrimary, otherColor, themeColor }) => {
   const colors: Theme.ThemeColor = {
     primary: themeColor,
     ...otherColor,
@@ -44,6 +59,6 @@ export const themeColors = createSelector([getThemeSettings], ({ isInfoFollowPri
   return colors
 })
 
-export const settingsJson = createSelector([getThemeSettings], (settings) => {
+export const getSettingsJson = createSelector([getThemeSettings], (settings) => {
   return JSON.stringify(settings)
 })
