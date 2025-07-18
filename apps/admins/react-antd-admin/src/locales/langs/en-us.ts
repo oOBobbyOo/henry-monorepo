@@ -72,7 +72,7 @@ const local = {
       error: 'Error',
       followPrimary: 'Follow Primary',
     },
-    pageSetting: {
+    page: {
       title: 'Page Setting',
       animate: 'Page Animate',
       animateMode: 'Page Animate Mode',

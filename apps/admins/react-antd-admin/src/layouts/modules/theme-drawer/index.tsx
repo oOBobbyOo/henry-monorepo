@@ -5,6 +5,7 @@ import { Divider, Drawer } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ConfigOperation from './components/ConfigOperation'
 import DarkMode from './components/DarkMode'
+import PageSetting from './components/PageSetting'
 import ThemeColor from './components/ThemeColor'
 
 function ThemeDrawer() {
@@ -39,7 +40,8 @@ function ThemeDrawer() {
         <DarkMode />
         <Divider>{t('theme.themeColor.title')}</Divider>
         <ThemeColor />
-        <Divider>{t('theme.pageSetting.title')}</Divider>
+        <Divider>{t('theme.page.title')}</Divider>
+        <PageSetting />
       </div>
     </Drawer>
   )

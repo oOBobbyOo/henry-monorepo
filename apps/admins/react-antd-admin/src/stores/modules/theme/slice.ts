@@ -37,13 +37,22 @@ const themeSlice = createSlice({
         state.settings.otherColor[key] = colorValue
       }
     },
+    setPage(state, { payload }: PayloadAction<Partial<Theme.ThemeSetting['page']>>) {
+      Object.assign(state.settings.page, payload)
+    },
+    setHeader(state, { payload }: PayloadAction<Partial<Theme.ThemeSetting['header']>>) {
+      Object.assign(state.settings.header, payload)
+    },
+    setFooter(state, { payload }: PayloadAction<Partial<Theme.ThemeSetting['footer']>>) {
+      Object.assign(state.settings.footer, payload)
+    },
   },
   selectors: {
     getThemeSettings: theme => theme.settings,
   },
 })
 
-export const { resetTheme, setThemeScheme, setGrayscale, setColourWeakness, setIsInfoFollowPrimary, setThemeColors } = themeSlice.actions
+export const { resetTheme, setThemeScheme, setGrayscale, setColourWeakness, setIsInfoFollowPrimary, setThemeColors, setPage, setHeader, setFooter } = themeSlice.actions
 
 export const { getThemeSettings } = themeSlice.selectors
 

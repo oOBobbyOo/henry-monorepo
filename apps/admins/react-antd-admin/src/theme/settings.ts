@@ -10,11 +10,28 @@ export const themeSettings: Theme.ThemeSetting = {
     error: '#f5222d',
   },
   isInfoFollowPrimary: true,
+  layout: {
+    mode: 'destop',
+  },
+  page: {
+    animate: true,
+    animateMode: 'fade-slide',
+  },
   header: {
     height: 56,
+  },
+  tab: {
+    visible: true,
+    cache: true,
+    height: 44,
+    mode: 'chrome',
   },
   sider: {
     width: 240, // default: 200
     collapsedWidth: 64, // default: 80
+  },
+  footer: {
+    visible: true,
+    height: 48,
   },
 }

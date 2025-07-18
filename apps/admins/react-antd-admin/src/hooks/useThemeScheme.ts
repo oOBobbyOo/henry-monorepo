@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@/stores/hook'
-import { getThemeColors, getThemeSettings, setColourWeakness, setGrayscale, setIsInfoFollowPrimary, setThemeColors, setThemeScheme } from '@/stores/modules/theme/slice'
+import { getThemeColors, getThemeSettings, setColourWeakness, setFooter, setGrayscale, setHeader, setIsInfoFollowPrimary, setPage, setThemeColors, setThemeScheme } from '@/stores/modules/theme/slice'
 import { usePreferredDark } from '@henry/rhooks'
 import { toggleHtmlClass } from '@henry/utils'
 import { useEffect, useMemo } from 'react'
@@ -117,6 +117,18 @@ export function useThemeScheme() {
     dispatch(setThemeColors({ color, key }))
   }
 
+  const changePage = (page: Partial<Theme.ThemeSetting['page']>) => {
+    dispatch(setPage(page))
+  }
+
+  const changeHeader = (header: Partial<Theme.ThemeSetting['header']>) => {
+    dispatch(setHeader(header))
+  }
+
+  const changeFooter = (footer: Partial<Theme.ThemeSetting['footer']>) => {
+    dispatch(setFooter(footer))
+  }
+
   useEffect(() => {
     toggleCssDarkMode(darkMode)
   }, [darkMode])
@@ -133,5 +145,8 @@ export function useThemeScheme() {
     changeColourWeakness,
     changeIsInfoFollowPrimary,
     updateThemeColors,
+    changePage,
+    changeHeader,
+    changeFooter,
   }
 }

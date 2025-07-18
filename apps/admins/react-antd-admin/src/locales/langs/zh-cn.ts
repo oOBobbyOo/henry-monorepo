@@ -72,7 +72,7 @@ const local = {
       error: '错误色',
       followPrimary: '跟随主色',
     },
-    pageSetting: {
+    page: {
       title: '页面设置',
       animate: '页面切换动画',
       animateMode: '页面切换动画模式',
