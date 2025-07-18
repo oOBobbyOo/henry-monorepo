@@ -1,17 +1,14 @@
 import AppProvider from '@/components/AppProvider'
+import { useAntdTheme } from '@/hooks/useAntdTheme'
 import { Router } from '@/routes'
-import { getAntdTheme } from '@/stores/modules/theme/shared'
 import { ConfigProvider } from 'antd'
 import { BrowserRouter } from 'react-router-dom'
-import { useThemeScheme } from './hooks/useThemeScheme'
 
 function App() {
-  const { darkMode } = useThemeScheme()
-
-  const theme = getAntdTheme(darkMode)
+  const { antdTheme, antdLocale } = useAntdTheme()
 
   return (
-    <ConfigProvider theme={theme}>
+    <ConfigProvider theme={antdTheme} locale={antdLocale}>
       <AppProvider>
         <BrowserRouter>
           <Router />
