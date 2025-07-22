@@ -1,16 +1,16 @@
+import { useResponsive } from '@/hooks/useResponsive'
 import { useAppDispatch, useAppSelector } from '@/stores/hook'
 import { getSiderCollapse, setSiderCollapse } from '@/stores/modules/app/slice'
 import { getThemeSettings } from '@/stores/modules/theme/slice'
 import { Layout } from 'antd'
 import { useMemo } from 'react'
-import { useMediaQuery } from 'react-responsive'
 import GlobalLogo from '../global-logo'
 import GlobalMenus from '../global-menus'
 
 const { Sider } = Layout
 
 function GlobalSider() {
-  const isMobile = useMediaQuery({ maxWidth: 768 })
+  const { isMobile } = useResponsive()
   const dispatch = useAppDispatch()
   const siderCollapse = useAppSelector(getSiderCollapse)
   const settings = useAppSelector(getThemeSettings)

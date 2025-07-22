@@ -1,9 +1,9 @@
 import LoadingScreen from '@/components/LoadingScreen'
+import { useResponsive } from '@/hooks/useResponsive'
 import { useEffect, useState } from 'react'
-import { useMediaQuery } from 'react-responsive'
 
 function Layout() {
-  const isMobile = useMediaQuery({ maxWidth: 768 })
+  const { isMobile } = useResponsive()
   const [Component, setComponent] = useState<React.ComponentType | null>(null)
   const [loaded, setLoaded] = useState(false)
   const [error, setError] = useState(false)
