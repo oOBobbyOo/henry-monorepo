@@ -1,8 +1,11 @@
 import type { MenuProps } from 'antd'
 import type { FC } from 'react'
 import { useMenus } from '@/hooks/useMenus'
+import { useResponsive } from '@/hooks/useResponsive'
 import { useRouterPush } from '@/hooks/useRouterPush'
 import { getSelectedMenuKeyPathByKey } from '@/routes/shared'
+import { useAppDispatch } from '@/stores/hook'
+import { setSiderCollapse } from '@/stores/modules/app/slice'
 import { Menu } from 'antd'
 import { useMemo } from 'react'
 
@@ -12,6 +15,8 @@ const GlobalMenus: FC<{
   collapsed: boolean
 }> = ({ collapsed }) => {
   const { navigate } = useRouterPush()
+  const { isMobile } = useResponsive()
+  const dispatch = useAppDispatch()
 
   const { menus } = useMenus()
 
@@ -36,6 +41,9 @@ const GlobalMenus: FC<{
 
   const handleClickMenu: MenuProps['onSelect'] = ({ key }) => {
     const routePath = getSelectedMenuKeyPathByKey(key, menus)
+    if (isMobile) {
+      dispatch(setSiderCollapse(false))
+    }
     navigate(routePath)
   }
 
