@@ -1,5 +1,5 @@
-import enUS from './langs/en-us'
-import zhCN from './langs/zh-cn'
+import enUS from './langs/en-US'
+import zhCN from './langs/zh-CN'
 
 const locales = {
   'en-US': {

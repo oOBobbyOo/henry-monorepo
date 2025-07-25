@@ -20,6 +20,8 @@
     "antd": "catalog:prod",
     "clsx": "catalog:prod",
     "i18next": "catalog:prod",
+    "i18next-browser-languagedetector": "catalog:prod",
+    "i18next-http-backend": "catalog:prod",
     "react": "catalog:prod",
     "react-dom": "catalog:prod",
     "react-i18next": "catalog:prod",
