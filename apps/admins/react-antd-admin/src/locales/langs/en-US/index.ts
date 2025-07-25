@@ -1,9 +1,9 @@
-import common from './common'
-import form from './form'
-import header from './header'
-import page from './page'
-import route from './route'
-import theme from './theme'
+import common from './common.json'
+import form from './form.json'
+import header from './header.json'
+import page from './page.json'
+import route from './route.json'
+import theme from './theme.json'
 
 export default {
   common,

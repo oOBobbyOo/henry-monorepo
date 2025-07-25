@@ -1,0 +1,61 @@
+{
+  "themeDrawerTitle": "Theme Configuration",
+  "themeSchema": {
+    "title": "Theme Schema",
+    "light": "Light",
+    "dark": "Dark",
+    "auto": "Follow System"
+  },
+  "grayscale": "Grayscale",
+  "colourWeakness": "Colour Weakness",
+  "themeColor": {
+    "title": "Theme Color",
+    "primary": "Primary",
+    "info": "Info",
+    "success": "Success",
+    "warning": "Warning",
+    "error": "Error",
+    "followPrimary": "Follow Primary"
+  },
+  "page": {
+    "title": "Page Setting",
+    "animate": "Page Animate",
+    "animateMode": "Page Animate Mode",
+    "animateName": {
+      "fade": "Fade",
+      "fade-slide": "Fade Slide",
+      "fade-bottom": "Fade Bottom",
+      "fade-scale": "Fade Scale",
+      "zoom-fade": "Zoom Fade",
+      "zoom-out": "Zoom Out",
+      "none": "None"
+    }
+  },
+  "header": {
+    "height": "Header Height"
+  },
+  "tab": {
+    "visible": "Tab Visible",
+    "cache": "Tag Bar Info Cache",
+    "height": "Tab Height",
+    "mode": {
+      "title": "Tab Mode",
+      "chrome": "Chrome",
+      "button": "Button"
+    }
+  },
+  "sider": {
+    "width": "Sider Width",
+    "collapsedWidth": "Sider Collapsed Width"
+  },
+  "footer": {
+    "visible": "Footer Visible",
+    "height": "Footer Height"
+  },
+  "configOperation": {
+    "copyConfig": "Copy Config",
+    "copySuccessMsg": "Copy Success, Please replace the variable \"themeSettings\" in \"src/theme/settings.ts\"",
+    "resetConfig": "Reset Config",
+    "resetSuccessMsg": "Reset Success"
+  }
+}
