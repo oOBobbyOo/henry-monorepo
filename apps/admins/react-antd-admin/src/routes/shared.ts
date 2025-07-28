@@ -31,7 +31,7 @@ export function generateMenu(route: Router.RouteObject, parentPath?: string) {
 
   const { path } = route
   const { name, title, i18nKey, icon, iconFontSize } = route.meta ?? {}
-  const label = i18nKey ? $t(i18nKey) : title!
+  const label = i18nKey ? $t(i18nKey, { ns: 'route' }) : title!
   const routePath = parentPath ? `${parentPath}/${path}` : path as string
 
   const menu: App.Global.Menu = {

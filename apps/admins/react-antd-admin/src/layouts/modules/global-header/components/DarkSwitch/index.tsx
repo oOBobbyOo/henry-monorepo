@@ -24,7 +24,7 @@ const DarkSwitch: FC<Props> = ({
   tooltipPlacement = 'bottom',
   ...reset
 }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('header')
 
   const { darkMode, toggleDark } = useThemeScheme()
 
@@ -32,7 +32,7 @@ const DarkSwitch: FC<Props> = ({
     return darkMode ? icons.dark : icons.light
   }, [darkMode])
 
-  const tooltipContent = showTooltip ? t('header.themeSchema') : ''
+  const tooltipContent = showTooltip ? t('themeSchema') : ''
 
   return (
     <ButtonIcon

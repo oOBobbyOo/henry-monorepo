@@ -11,11 +11,11 @@ interface Props {
 }
 
 const LangSwitch: FC<Props> = ({ className, showTooltip = true }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('header')
 
   const { locale, localeOptions, changeLocale } = useLang()
 
-  const tooltipContent = showTooltip ? t('header.lang') : ''
+  const tooltipContent = showTooltip ? t('lang') : ''
 
   function changeLocales({ key }: { key: string }) {
     changeLocale(key as App.I18n.LangType)

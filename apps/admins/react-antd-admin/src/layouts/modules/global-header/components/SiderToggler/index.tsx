@@ -23,7 +23,7 @@ const icons: Record<NumberBool, Record<NumberBool, string>> = {
 }
 
 const SiderToggler: FC<Props> = ({ arrowIcon }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('header')
 
   const dispatch = useAppDispatch()
   const siderCollapse = useAppSelector(getSiderCollapse)
@@ -38,7 +38,7 @@ const SiderToggler: FC<Props> = ({ arrowIcon }) => {
   return (
     <ButtonIcon
       icon={icon}
-      tooltipContent={siderCollapse ? t('header.expandMenu') : t('header.collapseMenu')}
+      tooltipContent={siderCollapse ? t('expandMenu') : t('collapseMenu')}
       onClick={() => dispatch(toggleSiderCollapse())}
     >
     </ButtonIcon>

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const FullScreen: FC<Props> = ({ className, target = document.body }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('header')
 
   const [isFullscreen, { toggleFullscreen }] = useFullscreen(target)
 
@@ -19,7 +19,7 @@ const FullScreen: FC<Props> = ({ className, target = document.body }) => {
       className={className}
       icon={isFullscreen ? 'gridicons:fullscreen-exit' : 'gridicons:fullscreen'}
       tooltipContent={
-        isFullscreen ? t('header.fullscreenExit') : t('header.fullscreen')
+        isFullscreen ? t('fullscreenExit') : t('fullscreen')
       }
       onClick={toggleFullscreen}
     >

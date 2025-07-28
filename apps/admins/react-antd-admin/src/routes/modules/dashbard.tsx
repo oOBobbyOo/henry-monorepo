@@ -8,7 +8,7 @@ const dashboard: Router.RouteObject = {
   meta: {
     name: 'dashboard',
     title: '首页',
-    i18nKey: 'route.dashboard.page',
+    i18nKey: 'dashboard.page',
     icon: 'mdi:monitor-dashboard',
     order: 1,
   },
@@ -30,7 +30,7 @@ const dashboard: Router.RouteObject = {
       meta: {
         name: 'analysis',
         title: '分析页',
-        i18nKey: 'route.dashboard.analysis',
+        i18nKey: 'dashboard.analysis',
         icon: 'icon-park-outline:analysis',
       },
     },
@@ -44,7 +44,7 @@ const dashboard: Router.RouteObject = {
       meta: {
         name: 'workbench',
         title: '工作台',
-        i18nKey: 'route.dashboard.workbench',
+        i18nKey: 'dashboard.workbench',
         icon: 'icon-park-outline:workbench',
       },
     },

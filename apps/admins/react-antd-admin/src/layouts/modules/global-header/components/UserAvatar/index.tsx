@@ -7,7 +7,7 @@ import { Avatar, Dropdown } from 'antd'
 import { useTranslation } from 'react-i18next'
 
 function UserAvatar() {
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
 
   const userInfo = useAppSelector(getUserInfo)
 
@@ -17,7 +17,7 @@ function UserAvatar() {
       label: (
         <div className="flex-center gap-8px">
           <SvgIcon className="text-18px" icon="ph:user-circle" />
-          {t('common.userCenter')}
+          {t('userCenter')}
         </div>
       ),
     },
@@ -29,7 +29,7 @@ function UserAvatar() {
       label: (
         <div className="flex-center gap-8px">
           <SvgIcon className="text-18px" icon="ph:sign-out" />
-          {t('common.logout')}
+          {t('logout')}
         </div>
       ),
     },

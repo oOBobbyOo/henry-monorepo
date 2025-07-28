@@ -11,9 +11,9 @@ interface Props {
 }
 
 const ThemeButton: FC<Props> = ({ className, showTooltip = true }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('header')
 
-  const tooltipContent = showTooltip ? t('header.themeConfig') : ''
+  const tooltipContent = showTooltip ? t('themeConfig') : ''
 
   const dispatch = useAppDispatch()
 

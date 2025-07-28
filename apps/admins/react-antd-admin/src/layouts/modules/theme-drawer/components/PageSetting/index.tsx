@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import SettingItem from '../Settingitem'
 
 function PageSetting() {
-  const { t } = useTranslation()
+  const { t } = useTranslation('theme')
 
   const { themeSettings, changePage, changeHeader, changeFooter }
      = useThemeScheme()
@@ -14,7 +14,7 @@ function PageSetting() {
   return (
     <div className="relative flex-col-stretch gap-12px">
       {/* Page */}
-      <SettingItem label={t('theme.page.animate')}>
+      <SettingItem label={t('page.animate')}>
         <Switch
           defaultValue={isPageAnimate}
           onChange={value => changePage({ animate: value })}
@@ -22,7 +22,7 @@ function PageSetting() {
       </SettingItem>
 
       {/* Header */}
-      <SettingItem label={t('theme.header.height')}>
+      <SettingItem label={t('header.height')}>
         <InputNumber
           className="w-120px"
           defaultValue={themeSettings.header.height}
@@ -31,7 +31,7 @@ function PageSetting() {
       </SettingItem>
 
       {/* Footer */}
-      <SettingItem label={t('theme.footer.visible')}>
+      <SettingItem label={t('footer.visible')}>
         <Switch
           defaultValue={themeSettings.footer.visible}
           onChange={value => changeFooter({ visible: value })}
@@ -39,7 +39,7 @@ function PageSetting() {
       </SettingItem>
 
       <SettingItem
-        label={t('theme.footer.height')}
+        label={t('footer.height')}
         show={themeSettings.footer.visible}
       >
         <InputNumber

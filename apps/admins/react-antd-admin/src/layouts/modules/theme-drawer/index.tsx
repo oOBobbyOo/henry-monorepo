@@ -9,7 +9,7 @@ import PageSetting from './components/PageSetting'
 import ThemeColor from './components/ThemeColor'
 
 function ThemeDrawer() {
-  const { t } = useTranslation()
+  const { t } = useTranslation('theme')
 
   const dispatch = useAppDispatch()
 
@@ -21,7 +21,7 @@ function ThemeDrawer() {
 
   return (
     <Drawer
-      title={t('theme.themeDrawerTitle')}
+      title={t('themeDrawerTitle')}
       closeIcon={false}
       open={themeDrawerVisible}
       extra={(
@@ -36,11 +36,11 @@ function ThemeDrawer() {
       styles={{ body: { padding: 0 } }}
     >
       <div className="overflow-x-hidden px-24px pb-24px pt-8px">
-        <Divider>{t('theme.themeSchema.title')}</Divider>
+        <Divider>{t('themeSchema.title')}</Divider>
         <DarkMode />
-        <Divider>{t('theme.themeColor.title')}</Divider>
+        <Divider>{t('themeColor.title')}</Divider>
         <ThemeColor />
-        <Divider>{t('theme.page.title')}</Divider>
+        <Divider>{t('page.title')}</Divider>
         <PageSetting />
       </div>
     </Drawer>

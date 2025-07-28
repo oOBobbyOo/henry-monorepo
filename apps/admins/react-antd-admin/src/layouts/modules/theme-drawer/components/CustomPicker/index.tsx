@@ -38,7 +38,7 @@ const CustomPicker: FC<Props> = ({
   theme,
   value,
 }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('theme')
 
   const { changeIsInfoFollowPrimary, updateThemeColors } = useThemeScheme()
 
@@ -82,14 +82,14 @@ const CustomPicker: FC<Props> = ({
 
   return (
     <SettingItem
-      label={t(`theme.themeColor.${label}`)}
+      label={t(`themeColor.${label}`)}
       suffix={
         label === 'info' && (
           <Checkbox
             defaultChecked={isInfoFollowPrimary}
             onChange={onChange}
           >
-            {t('theme.themeColor.followPrimary')}
+            {t('themeColor.followPrimary')}
           </Checkbox>
         )
       }

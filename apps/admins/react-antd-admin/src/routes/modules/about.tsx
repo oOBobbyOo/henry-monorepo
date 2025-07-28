@@ -7,7 +7,7 @@ const about: Router.RouteObject = {
   meta: {
     name: 'about',
     title: '关于',
-    i18nKey: 'route.about',
+    i18nKey: 'about',
     icon: 'fluent:book-information-24-regular',
     order: 10,
   },

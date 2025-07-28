@@ -6,9 +6,9 @@ import { useTranslation } from 'react-i18next'
 import SettingItem from '../Settingitem'
 
 const themeSchemaRecord: Record<Theme.ThemeScheme, string> = {
-  light: 'theme.themeSchema.light',
-  dark: 'theme.themeSchema.dark',
-  auto: 'theme.themeSchema.auto',
+  light: 'themeSchema.light',
+  dark: 'themeSchema.dark',
+  auto: 'themeSchema.auto',
 }
 
 const icons: Record<Theme.ThemeScheme, string> = {
@@ -29,7 +29,8 @@ const OPTIONS = Object.entries(themeSchemaRecord).map(([key]) => {
 }) as SegmentedOptions<Theme.ThemeScheme>
 
 function DarkMode() {
-  const { t } = useTranslation()
+  const { t } = useTranslation('theme')
+
   const {
     themeSettings,
     themeScheme,
@@ -48,14 +49,14 @@ function DarkMode() {
         />
       </div>
 
-      <SettingItem label={t('theme.grayscale')}>
+      <SettingItem label={t('grayscale')}>
         <Switch
           defaultChecked={themeSettings.grayscale}
           onChange={changeGrayscale}
         />
       </SettingItem>
 
-      <SettingItem label={t('theme.colourWeakness')}>
+      <SettingItem label={t('colourWeakness')}>
         <Switch
           defaultChecked={themeSettings.colourWeakness}
           onChange={changeColourWeakness}
