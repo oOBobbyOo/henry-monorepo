@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import App from './App.tsx'
 import { setupI18n } from './locales'
 
+import 'virtual:svg-icons-register'
 import '@unocss/reset/normalize.css'
 import 'virtual:uno.css'
 import '@/styles/index.css'

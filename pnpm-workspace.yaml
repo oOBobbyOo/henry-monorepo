@@ -11,6 +11,8 @@ catalogs:
     '@eslint/eslintrc': ^3.3.0
     '@eslint/js': ^9.21.0
     '@iconify/json': ^2.2.322
+    '@svgr/core': ^8.1.0
+    '@svgr/plugin-jsx': ^8.1.0
     '@types/mockjs': ^1.0.10
     '@types/node': ^22.10.6
     '@types/nprogress': ^0.2.3

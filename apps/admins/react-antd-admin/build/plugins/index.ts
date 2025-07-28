@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react'
 import dynamicImport from 'vite-plugin-dynamic-import'
 
 import { setupUnoCSSPlugin } from './unocss'
+import { setupUnplugin } from './unplugin'
 import { setupVisualizerPlugin } from './visualizer'
 
 export function setupVitePlugins(viteEnv: ImportMetaEnv) {
@@ -13,6 +14,7 @@ export function setupVitePlugins(viteEnv: ImportMetaEnv) {
     setupUnoCSSPlugin(),
     react(),
     dynamicImport(),
+    ...setupUnplugin(viteEnv),
     setupVisualizerPlugin(viteEnv),
   ]
 
