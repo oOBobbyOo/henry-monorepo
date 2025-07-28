@@ -1,5 +1,7 @@
+import ExceptionBase from '@/components/ExceptionBase'
+
 function Exception500() {
-  return <div>403</div>
+  return <ExceptionBase type="500" />
 }
 
 export default Exception500

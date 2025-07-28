@@ -1,5 +1,7 @@
+import ExceptionBase from '@/components/ExceptionBase'
+
 function Exception403() {
-  return <div>403</div>
+  return <ExceptionBase type="403" />
 }
 
 export default Exception403
