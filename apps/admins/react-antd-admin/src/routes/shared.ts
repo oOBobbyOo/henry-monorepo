@@ -1,6 +1,6 @@
 import type { Router } from '@/types/router'
 import { useSvgIcon } from '@/hooks/useSvgIcon'
-import { $t } from '@/locales'
+import { useTranslation } from 'react-i18next'
 
 /**
  * sort route by order
@@ -28,10 +28,11 @@ export function sortRoutesByOrder(routes: Router.RouteObject[]) {
 
 export function generateMenu(route: Router.RouteObject, parentPath?: string) {
   const { SvgIconVNode } = useSvgIcon()
+  const { t } = useTranslation('route')
 
   const { path } = route
   const { name, title, i18nKey, icon, iconFontSize } = route.meta ?? {}
-  const label = i18nKey ? $t(i18nKey, { ns: 'route' }) : title!
+  const label = i18nKey ? t(i18nKey) : title!
   const routePath = parentPath ? `${parentPath}/${path}` : path as string
 
   const menu: App.Global.Menu = {

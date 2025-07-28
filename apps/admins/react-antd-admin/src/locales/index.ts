@@ -42,10 +42,17 @@ export async function setupI18n() {
     interpolation: {
       escapeValue: false,
     },
-    react: { useSuspense: true },
+    react: {
+      useSuspense: true,
+      // 确保语言变化时重新渲染
+      bindI18n: 'languageChanged loaded',
+      bindI18nStore: 'added removed',
+    },
 
-    // 只加载语言代码，不加载区域代码
-    load: 'languageOnly',
+    // 只加载当前检测到的完整语言代码
+    load: 'currentOnly',
+    // 只加载语言的主代码，忽略地区代码
+    // load: 'languageOnly',
 
     // 允许非明确支持的语言
     nonExplicitSupportedLngs: true,
@@ -64,8 +71,9 @@ export async function setupI18n() {
 
 export const $t = i18n.t
 
-export function setLocale(locale: App.I18n.LangType) {
-  i18n.changeLanguage(locale)
+export async function setLocale(lng: App.I18n.LangType) {
+  // 切换语言
+  await i18n.changeLanguage(lng)
 }
 
 export function convertLang(lng: string) {
