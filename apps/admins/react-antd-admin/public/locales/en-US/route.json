@@ -30,6 +30,12 @@
     "button": "Button",
     "loading": "Loading"
   },
+  "form": {
+    "page": "Form",
+    "basicForm": "Basic Form",
+    "stepForm": "Step Form",
+    "queryForm": "Query Form"
+  },
   "manage": {
     "system": "System Manage",
     "user": "User Manage",

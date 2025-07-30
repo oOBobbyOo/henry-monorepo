@@ -30,6 +30,12 @@
     "button": "按钮",
     "loading": "加载"
   },
+  "form": {
+    "page": "表单",
+    "basicForm": "基础表单",
+    "stepForm": "分步表单",
+    "queryForm": "查询表单"
+  },
   "manage": {
     "system": "系统管理",
     "user": "用户管理",
