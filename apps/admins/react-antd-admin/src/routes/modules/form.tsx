@@ -10,7 +10,7 @@ const form: Router.RouteObject = {
     title: '表单',
     i18nKey: 'form.page',
     icon: 'material-symbols:contract-edit-outline',
-    order: 2,
+    order: 3,
   },
   children: [
     {

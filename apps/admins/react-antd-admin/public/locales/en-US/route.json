@@ -30,6 +30,9 @@
     "button": "Button",
     "loading": "Loading"
   },
+  "grid": {
+    "page": "Grid"
+  },
   "form": {
     "page": "Form",
     "basicForm": "Basic Form",

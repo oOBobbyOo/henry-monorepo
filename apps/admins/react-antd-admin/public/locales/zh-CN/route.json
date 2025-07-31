@@ -30,6 +30,9 @@
     "button": "按钮",
     "loading": "加载"
   },
+  "grid": {
+    "page": "栅格"
+  },
   "form": {
     "page": "表单",
     "basicForm": "基础表单",
