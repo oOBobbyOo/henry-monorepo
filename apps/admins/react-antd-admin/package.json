@@ -14,6 +14,7 @@
   "dependencies": {
     "@henry/rhooks": "workspace:*",
     "@henry/utils": "workspace:*",
+    "@hookform/resolvers": "catalog:prod",
     "@iconify/react": "catalog:prod",
     "@reduxjs/toolkit": "catalog:prod",
     "ahooks": "catalog:prod",
@@ -24,10 +25,12 @@
     "i18next-http-backend": "catalog:prod",
     "react": "catalog:prod",
     "react-dom": "catalog:prod",
+    "react-hook-form": "catalog:prod",
     "react-i18next": "catalog:prod",
     "react-redux": "catalog:prod",
     "react-responsive": "catalog:prod",
-    "react-router-dom": "catalog:prod"
+    "react-router-dom": "catalog:prod",
+    "zod": "catalog:prod"
   },
   "devDependencies": {
     "@eslint/js": "catalog:dev",

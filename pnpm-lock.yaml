@@ -172,6 +172,9 @@ catalogs:
     '@bytemd/vue-next':
       specifier: ^1.22.0
       version: 1.22.0
+    '@hookform/resolvers':
+      specifier: ^5.2.1
+      version: 5.2.1
     '@iconify/react':
       specifier: ^6.0.0
       version: 6.0.0
@@ -262,6 +265,9 @@ catalogs:
     react-dom:
       specifier: ^19.0.0
       version: 19.0.0
+    react-hook-form:
+      specifier: ^7.61.1
+      version: 7.61.1
     react-i18next:
       specifier: ^15.6.0
       version: 15.6.0
@@ -295,6 +301,9 @@ catalogs:
     vue3-emoji-picker:
       specifier: ^1.1.8
       version: 1.1.8
+    zod:
+      specifier: ^4.0.14
+      version: 4.0.14
 
 importers:
 
@@ -336,6 +345,9 @@ importers:
       '@henry/utils':
         specifier: workspace:*
         version: link:../../../packages/utils
+      '@hookform/resolvers':
+        specifier: catalog:prod
+        version: 5.2.1(react-hook-form@7.61.1(react@19.0.0))
       '@iconify/react':
         specifier: catalog:prod
         version: 6.0.0(react@19.0.0)
@@ -366,6 +378,9 @@ importers:
       react-dom:
         specifier: catalog:prod
         version: 19.0.0(react@19.0.0)
+      react-hook-form:
+        specifier: catalog:prod
+        version: 7.61.1(react@19.0.0)
       react-i18next:
         specifier: catalog:prod
         version: 15.6.0(i18next@25.3.1(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2)
@@ -378,6 +393,9 @@ importers:
       react-router-dom:
         specifier: catalog:prod
         version: 7.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      zod:
+        specifier: catalog:prod
+        version: 4.0.14
     devDependencies:
       '@eslint/js':
         specifier: catalog:dev
@@ -432,7 +450,7 @@ importers:
         version: 8.26.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
       unocss:
         specifier: catalog:dev
-        version: 66.1.2(@unocss/webpack@66.1.2(webpack@5.98.0))(postcss@5.2.18)(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
+        version: 66.1.2(@unocss/webpack@66.1.2(webpack@5.98.0))(postcss@8.5.3)(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
       unplugin-auto-import:
         specifier: catalog:dev
         version: 19.1.1(@nuxt/kit@3.17.4(magicast@0.3.5))(@vueuse/core@13.0.0(vue@3.5.13(typescript@5.8.2)))
@@ -580,7 +598,7 @@ importers:
         version: 5.8.2
       unocss:
         specifier: catalog:dev
-        version: 66.1.2(@unocss/webpack@66.1.2(webpack@5.98.0))(postcss@8.5.3)(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
+        version: 66.1.2(@unocss/webpack@66.1.2(webpack@5.98.0))(postcss@5.2.18)(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
       unplugin-auto-import:
         specifier: catalog:dev
         version: 19.1.1(@nuxt/kit@3.17.4(magicast@0.3.5))(@vueuse/core@13.0.0(vue@3.5.13(typescript@5.8.2)))
@@ -1694,6 +1712,11 @@ packages:
   '@eslint/plugin-kit@0.2.7':
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@hookform/resolvers@5.2.1':
+    resolution: {integrity: sha512-u0+6X58gkjMcxur1wRWokA7XsiiBJ6aK17aPZxhkoYiK5J+HcTx0Vhu9ovXe6H+dVpO6cjrn2FkJTryXEMlryQ==}
+    peerDependencies:
+      react-hook-form: ^7.55.0
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -7971,6 +7994,12 @@ packages:
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
 
+  react-hook-form@7.61.1:
+    resolution: {integrity: sha512-2vbXUFDYgqEgM2RcXcAT2PwDW/80QARi+PKmHy5q2KhuKvOlG8iIYgf7eIlIANR5trW9fJbP4r5aub3a4egsew==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+
   react-i18next@15.6.0:
     resolution: {integrity: sha512-W135dB0rDfiFmbMipC17nOhGdttO5mzH8BivY+2ybsQBbXvxWIwl3cmeH3T9d+YPBSJu/ouyJKFJTtkK7rJofw==}
     peerDependencies:
@@ -9840,6 +9869,9 @@ packages:
     resolution: {integrity: sha512-zK7YHHz4ZXpW89AHXUPbQVGKI7uvkd3hzusTdotCg1UxyaVtg0zFJSTfW/Dq5f7OBBVnq6cZIaC8Ti4hb6dtCA==}
     engines: {node: '>= 14'}
 
+  zod@4.0.14:
+    resolution: {integrity: sha512-nGFJTnJN6cM2v9kXL+SOBq3AtjQby3Mv5ySGFof5UGRHrRioSJ5iG680cYNjE/yWk671nROcpPj4hAS8nyLhSw==}
+
   zrender@5.6.1:
     resolution: {integrity: sha512-OFXkDJKcrlx5su2XbzJvj/34Q3m6PvyCZkVPHGYpcCJ52ek4U/ymZyfuV1nKE23AyBJ51E/6Yr0mhZ7xGTO4ag==}
 
@@ -10922,6 +10954,11 @@ snapshots:
     dependencies:
       '@eslint/core': 0.12.0
       levn: 0.4.1
+
+  '@hookform/resolvers@5.2.1(react-hook-form@7.61.1(react@19.0.0))':
+    dependencies:
+      '@standard-schema/utils': 0.3.0
+      react-hook-form: 7.61.1(react@19.0.0)
 
   '@humanfs/core@0.19.1': {}
 
@@ -18770,6 +18807,10 @@ snapshots:
 
   react-fast-compare@3.2.2: {}
 
+  react-hook-form@7.61.1(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+
   react-i18next@15.6.0(i18next@25.3.1(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2):
     dependencies:
       '@babel/runtime': 7.27.6
@@ -20951,6 +20992,8 @@ snapshots:
       archiver-utils: 5.0.2
       compress-commons: 6.0.2
       readable-stream: 4.7.0
+
+  zod@4.0.14: {}
 
   zrender@5.6.1:
     dependencies:

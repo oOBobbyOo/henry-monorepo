@@ -61,6 +61,7 @@ catalogs:
     '@better-scroll/core': ^2.5.1
     '@bytemd/plugin-gfm': ^1.22.0
     '@bytemd/vue-next': ^1.22.0
+    '@hookform/resolvers': ^5.2.1
     '@iconify/react': ^6.0.0
     '@iconify/vue': ^4.3.0
     '@reduxjs/toolkit': ^2.8.2
@@ -92,6 +93,7 @@ catalogs:
     query-string: ^9.2.2
     react: ^19.0.0
     react-dom: ^19.0.0
+    react-hook-form: ^7.61.1
     react-i18next: ^15.6.0
     react-redux: ^9.2.0
     react-responsive: ^10.0.1
@@ -103,4 +105,5 @@ catalogs:
     vue-router: ^4.5.0
     vue3-count-to: ^1.1.2
     vue3-emoji-picker: ^1.1.8
+    zod: ^4.0.14
     zustand: ^5.0.3
