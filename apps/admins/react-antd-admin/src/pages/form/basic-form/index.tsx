@@ -2,6 +2,7 @@ import {
   Button,
   Card,
   Cascader,
+  Checkbox,
   ColorPicker,
   DatePicker,
   Form,
@@ -14,6 +15,7 @@ import {
   Select,
   Slider,
   Space,
+  Switch,
   TimePicker,
   TreeSelect,
 } from 'antd'
@@ -23,6 +25,12 @@ import { useTranslation } from 'react-i18next'
 
 type LayoutType = Parameters<typeof Form>[0]['layout']
 type SizeType = Parameters<typeof Form>[0]['size']
+
+interface Option {
+  value: string
+  label: string
+  children?: Option[]
+}
 
 const { RangePicker } = DatePicker
 
@@ -45,9 +53,7 @@ function BasicForm() {
 
   const [formLayout, setFormLayout] = useState<LayoutType>('horizontal')
 
-  const [formSize, setFormSize] = useState<SizeType | 'default'>(
-    'default',
-  )
+  const [formSize, setFormSize] = useState<SizeType | 'default'>('default')
 
   const onValuesChange = ({
     layout,
@@ -64,6 +70,62 @@ function BasicForm() {
   const onFinish = (values: any) => {
     console.log('Received values of form:', values)
   }
+
+  const options: Option[] = [
+    {
+      value: 'zhejiang',
+      label: 'Zhejiang',
+      children: [
+        {
+          value: 'hangzhou',
+          label: 'Hangzhou',
+          children: [
+            {
+              value: 'xihu',
+              label: 'West Lake',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      value: 'jiangsu',
+      label: 'Jiangsu',
+      children: [
+        {
+          value: 'nanjing',
+          label: 'Nanjing',
+          children: [
+            {
+              value: 'zhonghuamen',
+              label: 'Zhong Hua Men',
+            },
+          ],
+        },
+      ],
+    },
+  ]
+
+  const treeData = [
+    {
+      title: 'Node1',
+      value: '0-0',
+      children: [
+        {
+          title: 'Child Node1',
+          value: '0-0-1',
+        },
+        {
+          title: 'Child Node2',
+          value: '0-0-2',
+        },
+      ],
+    },
+    {
+      title: 'Node2',
+      value: '0-1',
+    },
+  ]
 
   return (
     <Card
@@ -155,7 +217,13 @@ function BasicForm() {
 
         {/* Select */}
         <Form.Item label="Select" name="Select" rules={[{ required: true }]}>
-          <Select />
+          <Select
+            options={[
+              { value: 'A', label: 'A' },
+              { value: 'B', label: 'B' },
+              { value: 'C', label: 'C' },
+            ]}
+          />
         </Form.Item>
 
         {/* Cascader */}
@@ -164,7 +232,7 @@ function BasicForm() {
           name="Cascader"
           rules={[{ required: true }]}
         >
-          <Cascader />
+          <Cascader options={options} />
         </Form.Item>
 
         {/* TreeSelect */}
@@ -173,7 +241,7 @@ function BasicForm() {
           name="TreeSelect"
           rules={[{ required: true }]}
         >
-          <TreeSelect />
+          <TreeSelect treeData={treeData} />
         </Form.Item>
 
         {/* DatePicker */}
@@ -203,6 +271,16 @@ function BasicForm() {
           <TimePicker />
         </Form.Item>
 
+        {/* Switch */}
+        <Form.Item
+          label="Switch"
+          name="switch"
+          valuePropName="checked"
+          rules={[{ required: true }]}
+        >
+          <Switch />
+        </Form.Item>
+
         {/* Slider */}
         <Form.Item label="Slider" name="Slider" rules={[{ required: true }]}>
           <Slider />
@@ -226,6 +304,31 @@ function BasicForm() {
           />
         </Form.Item>
 
+        {/* Radio Group */}
+        <Form.Item
+          label="RadioGroup"
+          name="RadioGroup"
+          rules={[{ required: true }]}
+        >
+          <Radio.Group>
+            <Radio value="apple">Apple</Radio>
+            <Radio value="android">Android</Radio>
+          </Radio.Group>
+        </Form.Item>
+
+        {/* Checkbox Group */}
+        <Form.Item
+          label="CheckboxGroup"
+          name="CheckboxGroup"
+          rules={[{ required: true }]}
+        >
+          <Checkbox.Group>
+            <Checkbox value="A">A</Checkbox>
+            <Checkbox value="B">B</Checkbox>
+            <Checkbox value="C">C</Checkbox>
+          </Checkbox.Group>
+        </Form.Item>
+
         {/* ColorPicker */}
         <Form.Item
           label="ColorPicker"
@@ -238,19 +341,6 @@ function BasicForm() {
         {/* Rate */}
         <Form.Item label="Rate" name="Rate" rules={[{ required: true }]}>
           <Rate />
-        </Form.Item>
-
-        {/* Radio Group  */}
-        <Form.Item
-          label="Radio.Group"
-          name="RadioGroup"
-          rules={[{ required: true }]}
-        >
-          <Radio.Group>
-            <Radio value="a">A</Radio>
-            <Radio value="b">B</Radio>
-            <Radio value="c">C</Radio>
-          </Radio.Group>
         </Form.Item>
 
         <Form.Item
