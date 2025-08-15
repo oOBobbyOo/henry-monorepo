@@ -23,6 +23,7 @@
     "i18next": "catalog:prod",
     "i18next-browser-languagedetector": "catalog:prod",
     "i18next-http-backend": "catalog:prod",
+    "jsbarcode": "catalog:prod",
     "react": "catalog:prod",
     "react-dom": "catalog:prod",
     "react-hook-form": "catalog:prod",

@@ -372,6 +372,9 @@ importers:
       i18next-http-backend:
         specifier: catalog:prod
         version: 3.0.2
+      jsbarcode:
+        specifier: catalog:prod
+        version: 3.11.6
       react:
         specifier: catalog:prod
         version: 19.0.0
@@ -450,7 +453,7 @@ importers:
         version: 8.26.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
       unocss:
         specifier: catalog:dev
-        version: 66.1.2(@unocss/webpack@66.1.2(webpack@5.98.0))(postcss@8.5.3)(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
+        version: 66.1.2(@unocss/webpack@66.1.2(webpack@5.98.0))(postcss@5.2.18)(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
       unplugin-auto-import:
         specifier: catalog:dev
         version: 19.1.1(@nuxt/kit@3.17.4(magicast@0.3.5))(@vueuse/core@13.0.0(vue@3.5.13(typescript@5.8.2)))
@@ -598,7 +601,7 @@ importers:
         version: 5.8.2
       unocss:
         specifier: catalog:dev
-        version: 66.1.2(@unocss/webpack@66.1.2(webpack@5.98.0))(postcss@5.2.18)(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
+        version: 66.1.2(@unocss/webpack@66.1.2(webpack@5.98.0))(postcss@8.5.3)(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
       unplugin-auto-import:
         specifier: catalog:dev
         version: 19.1.1(@nuxt/kit@3.17.4(magicast@0.3.5))(@vueuse/core@13.0.0(vue@3.5.13(typescript@5.8.2)))
