@@ -36,6 +36,21 @@ const feature: Router.RouteObject = {
         keepAlive: true,
       },
     },
+    {
+      path: 'calendar',
+      element: (
+        <LazyLoadComponent
+          Component={lazy(() => import('@/pages/feature/calendar'))}
+        />
+      ),
+      meta: {
+        name: 'calendar',
+        title: '条形码',
+        i18nKey: 'feature.calendar',
+        icon: 'material-symbols:calendar-month-outline',
+        keepAlive: true,
+      },
+    },
   ],
 }
 

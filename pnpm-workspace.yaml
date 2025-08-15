@@ -85,6 +85,7 @@ catalogs:
     js-calendar-converter: ^0.0.7
     jsbarcode: ^3.11.6
     localforage: ^1.10.0
+    lunar-typescript: ^1.8.0
     naive-ui: ^2.41.0
     nprogress: ^0.2.0
     nuxt: ^3.15.4

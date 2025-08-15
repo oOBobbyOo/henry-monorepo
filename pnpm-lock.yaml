@@ -241,6 +241,9 @@ catalogs:
     localforage:
       specifier: ^1.10.0
       version: 1.10.0
+    lunar-typescript:
+      specifier: ^1.8.0
+      version: 1.8.0
     naive-ui:
       specifier: ^2.41.0
       version: 2.41.0
@@ -363,6 +366,9 @@ importers:
       clsx:
         specifier: catalog:prod
         version: 2.1.1
+      dayjs:
+        specifier: catalog:prod
+        version: 1.11.13
       i18next:
         specifier: catalog:prod
         version: 25.3.1(typescript@5.8.2)
@@ -375,6 +381,9 @@ importers:
       jsbarcode:
         specifier: catalog:prod
         version: 3.11.6
+      lunar-typescript:
+        specifier: catalog:prod
+        version: 1.8.0
       react:
         specifier: catalog:prod
         version: 19.0.0
@@ -6431,6 +6440,9 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
+
+  lunar-typescript@1.8.0:
+    resolution: {integrity: sha512-hz6JtkC30sd1MrdQ9QEPLrJ+ILlRVLZNWDyZUcU3p8VaYOKRqPoICwsrplM6BVAPRwwf360EFe+PukA+i8LmAw==}
 
   magic-string-ast@0.7.1:
     resolution: {integrity: sha512-ub9iytsEbT7Yw/Pd29mSo/cNQpaEu67zR1VVcXDiYjSFwzeBxNdTd0FMnSslLQXiRj8uGPzwsaoefrMD5XAmdw==}
@@ -16640,6 +16652,8 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  lunar-typescript@1.8.0: {}
 
   magic-string-ast@0.7.1:
     dependencies:

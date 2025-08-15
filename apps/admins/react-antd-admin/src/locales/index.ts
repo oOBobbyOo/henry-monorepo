@@ -2,6 +2,7 @@ import i18next from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import HttpBackend from 'i18next-http-backend'
 import { initReactI18next } from 'react-i18next'
+import { setDayjsLocale } from './dayjs'
 
 export const i18n = i18next
   .use(HttpBackend)
@@ -74,6 +75,8 @@ export const $t = i18n.t
 export async function setLocale(lng: App.I18n.LangType) {
   // 切换语言
   await i18n.changeLanguage(lng)
+  // Dayjs
+  await setDayjsLocale(lng)
 }
 
 export function convertLang(lng: string) {
