@@ -36,30 +36,26 @@ const pkgJson: PkgJson = {
 }
 
 function About() {
-  const { t } = useTranslation()
+  const { t } = useTranslation('page')
 
   return (
     <Space className="w-full" direction="vertical" size={16}>
       <Card
         className="card-wrapper"
-        title={t('page.about.title')}
+        title={t('about.title')}
         variant="borderless"
         size="small"
       >
-        <p>{t('page.about.introduction')}</p>
+        <p>{t('about.introduction')}</p>
       </Card>
 
       <Card
         className="card-wrapper"
-        title={t('page.about.title')}
+        title={t('about.prdDep')}
         variant="borderless"
         size="small"
       >
-        <Descriptions
-          bordered
-          size="small"
-          column={{ lg: 2, md: 2, sm: 2, xl: 2, xs: 1, xxl: 2 }}
-        >
+        <Descriptions bordered size="small" column={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 2 }}>
           {pkgJson.dependencies.map((item) => {
             return (
               <Descriptions.Item
@@ -76,15 +72,11 @@ function About() {
 
       <Card
         className="card-wrapper"
-        title={t('page.about.devDep')}
+        title={t('about.devDep')}
         variant="borderless"
         size="small"
       >
-        <Descriptions
-          bordered
-          size="small"
-          column={{ lg: 2, md: 2, sm: 2, xl: 2, xs: 1, xxl: 2 }}
-        >
+        <Descriptions bordered size="small" column={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 2 }}>
           {pkgJson.devDependencies.map((item) => {
             return (
               <Descriptions.Item
