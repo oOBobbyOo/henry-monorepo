@@ -47,7 +47,7 @@ import { LabelLayout, UniversalTransition } from 'echarts/features'
 
 import { CanvasRenderer, SVGRenderer } from 'echarts/renderers'
 
-export type ECOption = echarts.ComposeOption<
+export type EChartsOption = echarts.ComposeOption<
   | BarSeriesOption
   | EffectScatterSeriesOption
   | GaugeSeriesOption
@@ -68,8 +68,9 @@ export type ECOption = echarts.ComposeOption<
   | TitleComponentOption
   | ToolboxComponentOption
   | TooltipComponentOption
-
 >
+export type ECharts = echarts.ECharts
+export type SetOptionOpts = echarts.SetOptionOpts
 
 echarts.use([
   DatasetComponent,

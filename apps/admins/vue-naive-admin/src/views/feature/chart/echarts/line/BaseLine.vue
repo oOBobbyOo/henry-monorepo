@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import type { ECOption } from '@henry/vhooks'
+import type { EChartsOption } from '@henry/vhooks'
 import { useThemeStore } from '@/stores/modules/theme'
 import { echarts, useEcharts } from '@henry/vhooks'
 import { watch } from 'vue'
@@ -7,7 +7,7 @@ import { weekData } from '../../data'
 
 const seriesData = [150, 230, 224, 218, 135, 147, 260]
 
-const options: ECOption = {
+const options: EChartsOption = {
   tooltip: {
     trigger: 'axis',
     axisPointer: {

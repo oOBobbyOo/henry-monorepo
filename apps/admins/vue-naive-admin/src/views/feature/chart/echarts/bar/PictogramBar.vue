@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import type { ECOption } from '@henry/vhooks'
+import type { EChartsOption } from '@henry/vhooks'
 import { useThemeStore } from '@/stores/modules/theme'
 import { echarts, useEcharts } from '@henry/vhooks'
 import { watch } from 'vue'
@@ -7,8 +7,7 @@ import { monthData } from '../../data'
 
 const seriesData = [498, 520, 568, 432, 464, 332, 344, 458, 470, 468, 398, 310]
 
-const options: ECOption = {
-  backgroundColor: '#031d33',
+const options: EChartsOption = {
   animation: true,
   grid: {
     top: '5%',
