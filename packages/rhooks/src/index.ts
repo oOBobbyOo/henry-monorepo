@@ -1,4 +1,5 @@
 export * from './useBoolean'
+export * from './useEcharts'
 export * from './useMediaQueries'
 export * from './useMediaQuery'
 export * from './usePreferredDark'

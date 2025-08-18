@@ -9,6 +9,7 @@
     }
   },
   "dependencies": {
+    "echarts": "catalog:prod",
     "react": "catalog:prod"
   },
   "devDependencies": {
