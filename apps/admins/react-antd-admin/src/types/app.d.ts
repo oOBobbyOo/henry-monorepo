@@ -8,6 +8,13 @@ declare namespace App {
       icon?: React.ReactElement
       children?: Menu[]
     }
+
+    interface MenuItem {
+      key: string
+      label: string
+      icon?: React.ReactElement
+      children?: MenuItem[]
+    }
   }
 
   namespace I18n {

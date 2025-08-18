@@ -33,7 +33,7 @@ export function generateMenu(route: Router.RouteObject, parentPath?: string) {
   const { path } = route
   const { name, title, i18nKey, icon, iconFontSize } = route.meta ?? {}
   const label = i18nKey ? t(i18nKey) : title!
-  const routePath = parentPath ? `${parentPath}/${path}` : path as string
+  const routePath = parentPath ? `${parentPath}/${path}` : `${path}`
 
   const menu: App.Global.Menu = {
     label,
@@ -49,23 +49,36 @@ export function generateMenu(route: Router.RouteObject, parentPath?: string) {
 export function generateMenus(routes: Router.RouteObject[], parentPath?: string) {
   const menus: App.Global.Menu[] = []
 
-  routes.forEach((route: Router.RouteObject) => {
-    if (!route.meta?.hideInMenu) {
-      let menu = generateMenu(route, parentPath)
-
-      if (route.children?.some((child: Router.RouteObject) => !child.meta?.hideInMenu)) {
-        menu.children = generateMenus(route.children, route.path)
+  for (const route of routes) {
+    const children = route.children?.filter((child: Router.RouteObject) => !child.meta?.hideInMenu)
+    if (route.path && !route.meta?.hideInMenu) {
+      const newNode = generateMenu(route, parentPath)
+      if (children && children.length) {
+        const path = parentPath ? `${parentPath}/${route.path}` : route.path
+        const filteredChildren = generateMenus(children, path)
+        if (filteredChildren?.length) {
+          newNode.children = filteredChildren
+        }
       }
-
-      if (menu.children?.length === 1) {
-        menu = menu.children[0]
-      }
-
-      menus.push(menu)
+      menus.push(newNode)
     }
-  })
+    else if (children && children.length) {
+      menus.push(...generateMenus(children))
+    }
+  }
 
   return menus
+}
+
+export function generateMenuItems(menus: App.Global.Menu[]): App.Global.MenuItem[] {
+  return menus.map((item: App.Global.Menu) => {
+    return {
+      key: item.routeKey,
+      label: item.label,
+      icon: item.icon,
+      children: item.children && generateMenuItems(item.children || []),
+    }
+  })
 }
 
 export function getSelectedMenuKeyPathByKey(selectedKey: string, menus: App.Global.Menu[]) {

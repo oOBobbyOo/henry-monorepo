@@ -11,6 +11,7 @@
     "chart": "Chart",
     "echarts": "Echarts",
     "vchart": "Vchart",
+    "antv": "Antv",
     "editor": "Editor",
     "emoji": "Emoji",
     "markdown": "Markdown",
