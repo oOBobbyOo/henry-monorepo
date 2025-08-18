@@ -128,7 +128,11 @@ export function useEcharts(
   }
 
   // 获取图表的 DataURL
-  const getDataURL = (opts?: any): string => {
+  const getDataURL = (opts?: {
+    type?: 'png' | 'jpeg' | 'svg'
+    pixelRatio?: number
+    backgroundColor?: string
+  }): string => {
     if (!chartInstance.value || !isReady.value)
       return ''
     return chartInstance.value.getDataURL(opts)

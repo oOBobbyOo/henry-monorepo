@@ -45,4 +45,9 @@ export interface UseEchartsReturn {
   removeEvent: (eventName: string, handler?: (...args: any[]) => void) => void
   dispose: () => void
   resize: () => void
+  isLoading: Ref<boolean>
+  error: Ref<string | null>
+  isVisible: Ref<boolean>
+  elementSize: Ref<{ width: number, height: number }>
+  isReady: Ref<boolean>
 }
