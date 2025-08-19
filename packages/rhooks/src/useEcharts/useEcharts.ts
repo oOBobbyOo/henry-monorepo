@@ -21,7 +21,7 @@ export function useEcharts(
     loadingOptions,
     onChartReady,
     onEvents,
-    debounceDelay = 300,
+    debounceDelay = 100,
   } = config || {}
 
   // 初始化图表
@@ -55,7 +55,10 @@ export function useEcharts(
 
     // 设置初始配置
     if (initialOptions) {
-      chart.setOption(initialOptions, setOptionOpts)
+      chart.setOption({
+        backgroundColor: 'transparent',
+        ...initialOptions,
+      }, setOptionOpts)
     }
 
     // 图表准备就绪回调
