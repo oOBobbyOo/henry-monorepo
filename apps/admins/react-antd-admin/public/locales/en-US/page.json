@@ -44,6 +44,13 @@
       "resetPwdSuccess": "Password reset successful"
     }
   },
+  "feature": {
+    "chart": {
+      "line": "LineChart",
+      "bar": "BarChart",
+      "pie": "PieChart"
+    }
+  },
   "about": {
     "title": "About",
     "introduction": "HenryAdmin is an elegant and powerful admin template, based on the latest front-end technology stack, including React19, ReactRouter7, Vite6, TypeScript, Redux/toolkit and UnoCSS. ",

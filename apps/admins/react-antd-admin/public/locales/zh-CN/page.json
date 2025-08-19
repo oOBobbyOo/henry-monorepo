@@ -44,6 +44,13 @@
       "resetPwdSuccess": "重置密码成功"
     }
   },
+  "feature": {
+    "chart": {
+      "line": "折线图",
+      "bar": "柱状图",
+      "pie": "饼图"
+    }
+  },
   "about": {
     "title": "关于",
     "introduction": "HenryAdmin 是一个优雅且功能强大的后台管理模板，基于最新的前端技术栈，包括 React19, ReactRouter7, Vite6, TypeScript, Redux/toolkit 和 UnoCSS。",

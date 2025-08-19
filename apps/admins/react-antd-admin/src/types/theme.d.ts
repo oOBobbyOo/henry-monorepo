@@ -2,6 +2,9 @@ declare namespace Theme {
   /** Theme scheme */
   type ThemeScheme = 'light' | 'dark' | 'auto'
 
+  /** Theme mode */
+  type ThemeMode = 'light' | 'dark'
+
   /** Theme layout mode */
   type ThemeLayoutMode = 'destop' | 'mobile'
 

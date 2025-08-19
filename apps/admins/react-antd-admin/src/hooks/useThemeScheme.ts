@@ -18,6 +18,10 @@ export function useThemeScheme() {
     return themeSettings.themeScheme === 'dark'
   }, [isDark, themeSettings.themeScheme])
 
+  const themeMode: Theme.ThemeMode = useMemo(() => {
+    return darkMode ? 'dark' : 'light'
+  }, [darkMode])
+
   const changeThemeScheme = (theme: Theme.ThemeScheme) => {
     dispatch(setThemeScheme(theme))
   }
@@ -138,6 +142,7 @@ export function useThemeScheme() {
     themeScheme: themeSettings.themeScheme,
     themeColors,
     darkMode,
+    themeMode,
     toggleDark,
     changeThemeScheme,
     toggleThemeScheme,
