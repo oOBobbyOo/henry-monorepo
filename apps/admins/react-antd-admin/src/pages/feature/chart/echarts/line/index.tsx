@@ -1,13 +1,17 @@
 import type { ReactNode } from 'react'
 import { Grid, GridItem } from '@/components/Grid'
 import AreaLine from './AreaLine'
+import MulTypeLine from './MulTypeLine'
 
 interface Chart {
   id: string
   component: () => ReactNode
 }
 
-const charts: Chart[] = [{ id: 'AreaLine', component: AreaLine }]
+const charts: Chart[] = [
+  { id: 'MulTypeLine', component: MulTypeLine },
+  { id: 'AreaLine', component: AreaLine },
+]
 
 function LineChart() {
   return (
