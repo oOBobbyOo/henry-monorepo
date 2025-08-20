@@ -4,45 +4,19 @@ import { echarts, useEcharts } from '@henry/rhooks'
 import { useEffect } from 'react'
 import { hourData } from '../../data'
 
-function AreaChart() {
+function AreaLine() {
   const { themeMode } = useThemeScheme()
 
   const seriesData = [
     {
       name: '用户注册成功率(%)',
       key: 'register',
-      data: [
-        180,
-        240,
-        60,
-        80,
-        120,
-        160,
-        170,
-        100,
-        120,
-        110,
-        180,
-        250,
-      ],
+      data: [180, 240, 60, 80, 120, 160, 170, 100, 120, 110, 180, 250],
     },
     {
       name: '用户登录成功率(%)',
       key: 'login',
-      data: [
-        150,
-        200,
-        110,
-        170,
-        300,
-        160,
-        100,
-        130,
-        190,
-        210,
-        190,
-        360,
-      ],
+      data: [150, 200, 110, 170, 300, 160, 100, 130, 190, 210, 190, 360],
     },
   ]
 
@@ -253,4 +227,4 @@ function AreaChart() {
   return <div ref={chartRef} className="h-400px"></div>
 }
 
-export default AreaChart
+export default AreaLine
