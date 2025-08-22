@@ -100,6 +100,40 @@ const feature: Router.RouteObject = {
         },
       ],
     },
+    {
+      path: 'editor',
+      meta: {
+        name: 'editor',
+        title: '编辑器',
+        i18nKey: 'feature.editor',
+        icon: 'mdi:text-box-edit',
+        keepAlive: true,
+      },
+      children: [
+        {
+          index: true,
+          element: <RedirectRouteView to="/feature/editor/markdown" />,
+          meta: {
+            hideInMenu: true,
+          },
+        },
+        {
+          path: 'markdown',
+          element: (
+            <LazyLoadComponent
+              Component={lazy(() => import('@/pages/feature/editor/markdown'))}
+            />
+          ),
+          meta: {
+            name: 'markdown',
+            title: 'Markdown',
+            i18nKey: 'feature.markdown',
+            icon: 'ri:markdown-fill',
+            keepAlive: true,
+          },
+        },
+      ],
+    },
   ],
 }
 
