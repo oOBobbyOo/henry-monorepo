@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => {
   const viteEnv = loadEnv(mode, root) as unknown as ImportMetaEnv
 
   return {
+    assetsInclude: ['**/*.md'],
     base: viteEnv.VITE_BASE_URL,
     resolve: {
       alias: {

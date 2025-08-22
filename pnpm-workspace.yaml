@@ -19,6 +19,7 @@ catalogs:
     '@types/qrcode': ^1.5.5
     '@types/react': ^19.0.10
     '@types/react-dom': ^19.0.4
+    '@types/react-syntax-highlighter': ^15.5.13
     '@types/splitpanes': ^2.2.6
     '@unocss/eslint-plugin': ^65.4.0
     '@unocss/nuxt': ^66.1.2
@@ -79,11 +80,13 @@ catalogs:
     clsx: ^2.1.1
     dayjs: ^1.11.13
     echarts: ^5.6.0
+    github-markdown-css: ^5.8.1
     i18next: ^25.3.1
     i18next-browser-languagedetector: ^8.2.0
     i18next-http-backend: ^3.0.2
     js-calendar-converter: ^0.0.7
     jsbarcode: ^3.11.6
+    katex: ^0.16.22
     localforage: ^1.10.0
     lunar-typescript: ^1.8.0
     naive-ui: ^2.41.0
@@ -96,11 +99,19 @@ catalogs:
     react-dom: ^19.0.0
     react-hook-form: ^7.61.1
     react-i18next: ^15.6.0
+    react-markdown: ^10.1.0
     react-redux: ^9.2.0
     react-responsive: ^10.0.1
     react-router-dom: ^7.5.0
+    react-syntax-highlighter: ^15.6.3
+    rehype-katex: ^7.0.1
+    rehype-raw: ^7.0.0
+    remark-cjk-friendly: ^1.2.0
+    remark-gfm: ^4.0.1
+    remark-math: ^6.0.0
     seemly: ^0.3.10
     splitpanes: ^4.0.4
+    styled-components: ^6.1.19
     vue: ^3.5.13
     vue-i18n: ^11.1.2
     vue-router: ^4.5.0
