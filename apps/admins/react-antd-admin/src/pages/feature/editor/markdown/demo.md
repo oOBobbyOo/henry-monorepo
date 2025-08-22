@@ -104,6 +104,14 @@ ReactDom.render(
 )
 ```
 
+## KaTeX
+
+ $$
+ E=mc^2
+ $$
+
+The lift coefficient ($C_L$) is a dimensionless coefficient.
+
 ## More info?
 
 Much more info is available in the
