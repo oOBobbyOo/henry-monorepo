@@ -14,7 +14,11 @@ function Markdown() {
       })
   }, [])
 
-  return <MarkdownEditor height="100%" value={markdownText}></MarkdownEditor>
+  return (
+    <>
+      <MarkdownEditor height="100%" value={markdownText}></MarkdownEditor>
+    </>
+  )
 }
 
 export default Markdown
