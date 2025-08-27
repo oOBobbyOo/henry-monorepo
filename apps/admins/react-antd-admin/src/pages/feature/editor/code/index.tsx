@@ -15,6 +15,7 @@ function App() {
   
   return <CodeMirror value={value} height="200px" extensions={[javascript({ jsx: true })]} onChange={onChange} />;
 }
+  
 export default App;
 `
 

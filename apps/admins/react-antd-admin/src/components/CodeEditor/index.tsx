@@ -10,6 +10,7 @@ import {
 import CodeMirror from '@uiw/react-codemirror'
 import { memo, useCallback, useImperativeHandle, useMemo, useRef } from 'react'
 import { useBlurHandler, useHeightListener, useLanguageExtensions, useSaveKeymap } from './hook'
+import { useCodeTheme } from './theme'
 
 export interface CodeEditorHandles {
   save?: () => void
@@ -82,6 +83,8 @@ const CodeEditor: FC<CodeEditorProps> = ({
     options?.stream ? (value ?? '').trimEnd() : (value ?? ''),
   )
 
+  const { activeCmTheme } = useCodeTheme()
+
   const editorViewRef = useRef<EditorView | null>(null)
 
   const langExtensions = useLanguageExtensions(language, options?.lint)
@@ -128,6 +131,8 @@ const CodeEditor: FC<CodeEditorProps> = ({
         expanded ? 'none' : (maxHeight ?? `${MAX_COLLAPSED_CODE_HEIGHT}px`)
       }
       editable={editable}
+      // @ts-expect-error 强制使用，见 react-codemirror 的 Example.tsx
+      theme={activeCmTheme}
       extensions={customExtensions}
       onCreateEditor={(view: EditorView) => {
         editorViewRef.current = view
