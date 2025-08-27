@@ -132,6 +132,21 @@ const feature: Router.RouteObject = {
             keepAlive: true,
           },
         },
+        {
+          path: 'code',
+          element: (
+            <LazyLoadComponent
+              Component={lazy(() => import('@/pages/feature/editor/code'))}
+            />
+          ),
+          meta: {
+            name: 'code',
+            title: 'Code',
+            i18nKey: 'feature.code',
+            icon: 'ri:code-box-line',
+            keepAlive: true,
+          },
+        },
       ],
     },
   ],

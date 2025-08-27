@@ -1,0 +1,27 @@
+/* CodeMirror */
+.cm-editor {
+  border-radius: inherit;
+}
+
+.cm-editor.cm-focused {
+  outline: none;
+}
+
+.cm-editor .cm-scroller {
+  border-radius: inherit;
+}
+
+.cm-editor .cm-scroller .cm-gutters {
+  line-height: 1.6;
+  border-right: none;
+}
+
+.cm-editor .cm-scroller .cm-content {
+  line-height: 1.6;
+  padding-left: 0.25em;
+}
+
+.cm-editor .cm-scroller .cm-lineWrapping * {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
