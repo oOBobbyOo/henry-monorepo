@@ -49,6 +49,7 @@
     "remark-cjk-friendly": "catalog:prod",
     "remark-gfm": "catalog:prod",
     "remark-math": "catalog:prod",
+    "simplebar-react": "catalog:prod",
     "styled-components": "catalog:prod",
     "zod": "catalog:prod"
   },

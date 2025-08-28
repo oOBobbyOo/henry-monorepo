@@ -368,10 +368,6 @@ catalogs:
 importers:
 
   .:
-    dependencies:
-      simplebar-react:
-        specifier: catalog:prod
-        version: 3.3.2(react@19.0.0)
     devDependencies:
       '@commitlint/cli':
         specifier: catalog:dev
@@ -514,6 +510,9 @@ importers:
       remark-math:
         specifier: catalog:prod
         version: 6.0.0
+      simplebar-react:
+        specifier: catalog:prod
+        version: 3.3.2(react@19.0.0)
       styled-components:
         specifier: catalog:prod
         version: 6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)

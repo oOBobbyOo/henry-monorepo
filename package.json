@@ -16,9 +16,6 @@
     "prepare": "husky",
     "lint:fix": "eslint . --cache --max-warnings 0 --no-warn-ignored --fix"
   },
-  "dependencies": {
-    "simplebar-react": "catalog:prod"
-  },
   "devDependencies": {
     "@commitlint/cli": "catalog:dev",
     "@commitlint/config-conventional": "catalog:dev",

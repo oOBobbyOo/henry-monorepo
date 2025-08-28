@@ -20,7 +20,8 @@
     "wangEditor": "WangEditor",
     "qrcode": "Qrcode",
     "splitpanes": "Splitpanes",
-    "textEffect": "TextEffect"
+    "textEffect": "TextEffect",
+    "scroll": "Scroll"
   },
   "template": {
     "page": "Template",

@@ -149,6 +149,21 @@ const feature: Router.RouteObject = {
         },
       ],
     },
+    {
+      path: 'scroll',
+      element: (
+        <LazyLoadComponent
+          Component={lazy(() => import('@/pages/feature/scroll'))}
+        />
+      ),
+      meta: {
+        name: 'scroll',
+        title: '滚动',
+        i18nKey: 'feature.scroll',
+        icon: 'tdesign:scroll-bar',
+        keepAlive: true,
+      },
+    },
   ],
 }
 
