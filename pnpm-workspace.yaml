@@ -117,6 +117,7 @@ catalogs:
     remark-gfm: ^4.0.1
     remark-math: ^6.0.0
     seemly: ^0.3.10
+    simplebar-react: ^3.3.2
     splitpanes: ^4.0.4
     styled-components: ^6.1.19
     vue: ^3.5.13
