@@ -147,6 +147,23 @@ const feature: Router.RouteObject = {
             keepAlive: true,
           },
         },
+        {
+          path: 'wangEditor',
+          element: (
+            <LazyLoadComponent
+              Component={lazy(
+                () => import('@/pages/feature/editor/wangEditor'),
+              )}
+            />
+          ),
+          meta: {
+            name: 'wangEditor',
+            title: 'WangEditor',
+            i18nKey: 'feature.wangEditor',
+            icon: 'mdi:file-document-edit',
+            keepAlive: true,
+          },
+        },
       ],
     },
     {

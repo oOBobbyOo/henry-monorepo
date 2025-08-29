@@ -23,6 +23,8 @@
     "@uiw/codemirror-themes-all": "catalog:prod",
     "@uiw/react-codemirror": "catalog:prod",
     "@viz-js/lang-dot": "catalog:prod",
+    "@wangeditor/editor": "catalog:prod",
+    "@wangeditor/editor-for-react": "catalog:prod",
     "ahooks": "catalog:prod",
     "antd": "catalog:prod",
     "clsx": "catalog:prod",
