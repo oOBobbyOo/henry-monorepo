@@ -37,6 +37,7 @@
     "jsbarcode": "catalog:prod",
     "katex": "catalog:prod",
     "lunar-typescript": "catalog:prod",
+    "qrcode.react": "catalog:prod",
     "react": "catalog:prod",
     "react-dom": "catalog:prod",
     "react-hook-form": "catalog:prod",

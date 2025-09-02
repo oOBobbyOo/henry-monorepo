@@ -167,6 +167,21 @@ const feature: Router.RouteObject = {
       ],
     },
     {
+      path: 'qrcode',
+      element: (
+        <LazyLoadComponent
+          Component={lazy(() => import('@/pages/feature/qrcode'))}
+        />
+      ),
+      meta: {
+        name: 'qrcode',
+        title: '二维码',
+        i18nKey: 'feature.qrcode',
+        icon: 'ic:baseline-qrcode',
+        keepAlive: true,
+      },
+    },
+    {
       path: 'scroll',
       element: (
         <LazyLoadComponent
