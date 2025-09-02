@@ -167,6 +167,21 @@ const feature: Router.RouteObject = {
       ],
     },
     {
+      path: 'emoji',
+      element: (
+        <LazyLoadComponent
+          Component={lazy(() => import('@/pages/feature/emoji'))}
+        />
+      ),
+      meta: {
+        name: 'emoji',
+        title: '表情包',
+        i18nKey: 'feature.emoji',
+        icon: 'material-symbols:emoji-language',
+        keepAlive: true,
+      },
+    },
+    {
       path: 'qrcode',
       element: (
         <LazyLoadComponent
