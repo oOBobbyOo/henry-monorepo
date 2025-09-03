@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@better-scroll/core": "catalog:prod",
     "@codemirror/lang-json": "catalog:prod",
     "@codemirror/lint": "catalog:prod",
     "@henry/rhooks": "workspace:*",
