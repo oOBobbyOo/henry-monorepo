@@ -15,6 +15,15 @@ declare namespace App {
       icon?: React.ReactElement
       children?: MenuItem[]
     }
+
+    interface Tab {
+      id: string
+      label: string
+      i18nKey?: string
+      routeKey: string
+      routePath: string
+      icon?: string
+    }
   }
 
   namespace I18n {
