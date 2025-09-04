@@ -3,6 +3,7 @@ import GlobalContent from '../modules/global-content'
 import GlobalFooter from '../modules/global-footer'
 import GlobalHeader from '../modules/global-header'
 import GlobalSider from '../modules/global-sider'
+import GlobalTabs from '../modules/global-tabs'
 import ThemeDrawer from '../modules/theme-drawer'
 
 function DesktopLayout() {
@@ -12,6 +13,7 @@ function DesktopLayout() {
       <Layout>
         <ThemeDrawer />
         <GlobalHeader />
+        <GlobalTabs />
         <GlobalContent />
         <GlobalFooter />
       </Layout>
