@@ -1,8 +1,7 @@
-import { dynamicRoutes } from '@/routes/routes/dynamicRoutes'
-import { generateMenuItems, generateMenus, sortRoutesByOrder } from '@/routes/shared'
+import { generateMenuItems, generateMenus, getRoutes } from '@/routes/shared'
 
 export function useMenus() {
-  const routes = sortRoutesByOrder(dynamicRoutes)
+  const routes = getRoutes()
   const menus = generateMenus(routes)
   const menuItems = generateMenuItems(menus)
 

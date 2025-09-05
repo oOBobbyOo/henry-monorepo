@@ -36,6 +36,7 @@ export function useRouterPush() {
   }
 
   return {
+    pathname: location.pathname,
     location,
     navigate,
     push,

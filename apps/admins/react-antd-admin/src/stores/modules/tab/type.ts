@@ -1,4 +1,4 @@
 export interface TabState {
-  activeTabId: string
+  activeTabKey: string
   tabs: App.Global.Tab[]
 }

@@ -17,7 +17,6 @@ declare namespace App {
     }
 
     interface Tab {
-      id: string
       label: string
       i18nKey?: string
       routeKey: string

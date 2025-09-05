@@ -4,6 +4,7 @@ import { combineReducers } from '@reduxjs/toolkit'
 export interface RootState {
   app: import('./modules/app/type').AppState
   auth: import('./modules/auth/type').AuthState
+  tab: import('./modules/tab/type').TabState
   theme: import('./modules/theme/type').ThemeState
   user: import('./modules/user/type').UserState
 }

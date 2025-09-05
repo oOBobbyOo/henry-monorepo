@@ -3,8 +3,8 @@ import type { TabState } from './type'
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState: TabState = {
-  /** Active tab id */
-  activeTabId: '',
+  /** Active tab key */
+  activeTabKey: '',
   /** Tabs */
   tabs: [],
 }
@@ -13,21 +13,28 @@ const tabSlice = createSlice({
   name: 'tab',
   initialState,
   reducers: {
-    setActiveTabId: (state, { payload }: PayloadAction<TabState['activeTabId']>) => {
-      state.activeTabId = payload
+    setActiveTabKey: (state, { payload }: PayloadAction<TabState['activeTabKey']>) => {
+      state.activeTabKey = payload
     },
     setTabs: (state, { payload }: PayloadAction<TabState['tabs']>) => {
       state.tabs = payload
     },
+    addTab(state, { payload }: PayloadAction<App.Global.Tab>) {
+      state.tabs.push(payload)
+    },
+    updateTab(state, { payload }: PayloadAction<App.Global.Tab>) {
+      const index = state.tabs.findIndex(tab => tab.routeKey === payload.routeKey)
+      state.tabs[index] = payload
+    },
   },
   selectors: {
-    getActiveTabId: tab => tab.activeTabId,
+    getActiveTabKey: state => state.activeTabKey,
     getTabs: state => state.tabs,
   },
 })
 
-export const { setActiveTabId, setTabs } = tabSlice.actions
+export const { setActiveTabKey, setTabs, addTab, updateTab } = tabSlice.actions
 
-export const { getActiveTabId, getTabs } = tabSlice.selectors
+export const { getActiveTabKey, getTabs } = tabSlice.selectors
 
 export default tabSlice.reducer
