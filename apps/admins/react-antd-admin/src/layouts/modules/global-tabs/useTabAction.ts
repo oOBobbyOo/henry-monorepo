@@ -1,7 +1,7 @@
 import { useRouterPush } from '@/hooks/useRouterPush'
 import { useAppDispatch, useAppSelector } from '@/stores/hook'
 import { getRouteByPathName, getTabByRoute, isTabInTabs } from '@/stores/modules/tab/shared'
-import { addTab, getActiveTabKey, getTabs, updateTab } from '@/stores/modules/tab/slice'
+import { addTab, getActiveTabKey, getTabs, setTabs, updateTab } from '@/stores/modules/tab/slice'
 import { useEffect } from 'react'
 
 function useTabAction() {
@@ -23,6 +23,11 @@ function useTabAction() {
     }
   }
 
+  function removeTabBykey(key: string) {
+    const excludes = tabs.filter(tab => tab.routeKey !== key)
+    dispatch(setTabs(excludes))
+  }
+
   useEffect(() => {
     _addTab(pathname)
   }, [pathname])
@@ -30,6 +35,7 @@ function useTabAction() {
   return {
     activeTabKey,
     tabs,
+    removeTabBykey,
   }
 }
 

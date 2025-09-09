@@ -16,6 +16,7 @@ export interface Props {
   activeColor?: string
   closable?: boolean
   handleClose?: () => void
+  onClick: () => void
   prefix?: ReactNode
   suffix?: ReactNode
   children?: ReactNode
