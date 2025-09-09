@@ -30,6 +30,7 @@
     "antd": "catalog:prod",
     "clsx": "catalog:prod",
     "codemirror-lang-mermaid": "catalog:prod",
+    "colord": "catalog:prod",
     "dayjs": "catalog:prod",
     "emoji-picker-react": "catalog:prod",
     "github-markdown-css": "catalog:prod",

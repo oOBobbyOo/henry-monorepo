@@ -86,6 +86,7 @@ catalogs:
     classnames: ^2.5.1
     clsx: ^2.1.1
     codemirror-lang-mermaid: ^0.5.0
+    colord: ^2.9.3
     dayjs: ^1.11.13
     echarts: ^5.6.0
     emoji-picker-react: ^4.13.2
