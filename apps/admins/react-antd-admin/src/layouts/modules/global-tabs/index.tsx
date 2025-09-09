@@ -7,7 +7,7 @@ import useTabAction from './useTabAction'
 import { useTabScroll } from './useTabScroll'
 
 function GlobalTabs() {
-  const { themeSettings } = useThemeScheme()
+  const { themeSettings, darkMode } = useThemeScheme()
 
   const { activeTabKey, tabs } = useTabAction()
 
@@ -17,7 +17,14 @@ function GlobalTabs() {
     = themeSettings.tab.mode === 'chrome' ? 'items-end' : 'items-center gap-12px'
 
   return (
-    <div className="global-layout-tabs flex-y-center px-4" ref={bsWrapper}>
+    <div
+      className={clsx(
+        'global-layout-tabs flex-y-center px-4 z-98',
+        'bg-[rgb(255,255,255)] dark:bg-[rgb(28,28,28)]',
+      )}
+      style={{ height: `${themeSettings.tab.height}px` }}
+      ref={bsWrapper}
+    >
       <div className="h-full flex-1-hidden">
         <BetterScroll
           options={{ scrollX: true, scrollY: false }}
@@ -30,7 +37,10 @@ function GlobalTabs() {
             {tabs.map(item => (
               <PageTab
                 key={item.routeKey}
+                active={item.routeKey === activeTabKey}
+                activeColor={themeSettings.themeColor}
                 mode={themeSettings.tab.mode}
+                darkMode={darkMode}
                 prefix={(
                   <SvgIcon
                     className="inline-block align-text-bottom text-16px"

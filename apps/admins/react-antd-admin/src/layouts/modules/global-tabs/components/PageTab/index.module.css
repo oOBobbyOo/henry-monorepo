@@ -1,0 +1,101 @@
+/** Button Tab */
+.button-tab {
+  border-color: #e5e7eb;
+}
+
+.button-tab_dark {
+  border-color: #ffffff3d;
+}
+
+.button-tab:hover {
+  color: var(--hb-primary-color);
+  border-color: var(--hb-primary-color-opacity3);
+}
+
+.button-tab_dark:hover {
+  color: var(--hb-primary-color);
+  border-color: var(--hb-primary-color-opacity4);
+}
+
+.button-tab_active {
+  color: var(--hb-primary-color);
+  border-color: var(--hb-primary-color-opacity3);
+  background-color: var(--hb-primary-color-opacity1);
+}
+
+.button-tab_active_dark {
+  border-color: var(--hb-primary-color-opacity4);
+  background-color: var(--hb-primary-color-opacity2);
+}
+
+.button-tab .close-tab:hover {
+  color: #ffffff;
+  background-color: var(--hb-primary-color);
+}
+
+.button-tab_dark .close-tab:hover {
+  color: #000000;
+}
+
+/** Chrome Tab */
+.chrome-tab:hover {
+  z-index: 9;
+}
+
+.chrome-tab_active {
+  z-index: 10;
+  color: var(--hb-primary-color);
+}
+
+.chrome-tab__bg {
+  color: transparent;
+}
+
+.chrome-tab_active .chrome-tab__bg {
+  color: var(--hb-primary-color1);
+}
+
+.chrome-tab_active_dark .chrome-tab__bg {
+  color: var(--hb-primary-color2);
+}
+
+.chrome-tab:hover .chrome-tab__bg {
+  color: #f2f3f4;
+}
+
+.chrome-tab_active:hover .chrome-tab__bg {
+  color: var(--hb-primary-color1);
+}
+
+.chrome-tab_dark:hover .chrome-tab__bg {
+  color: #333333;
+}
+
+.chrome-tab_active_dark:hover .chrome-tab__bg {
+  color: var(--hb-primary-color2);
+}
+
+.chrome-tab .close-tab:hover {
+  color: #ffffff;
+  background-color: #9ca3af;
+}
+
+.chrome-tab_active .close-tab:hover {
+  background-color: var(--hb-primary-color);
+}
+
+.chrome-tab_dark .close-tab:hover {
+  color: #000000;
+}
+
+.chrome-tab_active .chrome-tab__divider {
+  opacity: 0;
+}
+
+.chrome-tab:hover .chrome-tab__divider {
+  opacity: 0;
+}
+
+.chrome-tab_dark .chrome-tab__divider {
+  background-color: rgba(255, 255, 255, 0.9);
+}

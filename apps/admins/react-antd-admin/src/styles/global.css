@@ -52,6 +52,10 @@ html.grayscale {
   box-shadow: var(--hb-header-shadow);
 }
 
+.global-layout-tabs {
+  box-shadow: var(--hb-tabs-shadow);
+}
+
 .global-layout-sider {
   box-shadow: var(--hb-sider-shadow);
 }

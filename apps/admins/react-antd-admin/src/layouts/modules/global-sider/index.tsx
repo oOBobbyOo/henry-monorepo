@@ -21,7 +21,7 @@ function GlobalSider() {
 
   return (
     <Sider
-      className="global-layout-sider h-full"
+      className="global-layout-sider h-full z-100"
       breakpoint="lg"
       onBreakpoint={(broken) => {
         dispatch(setSiderCollapse(broken))
