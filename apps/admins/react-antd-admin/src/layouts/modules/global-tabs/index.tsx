@@ -47,6 +47,7 @@ function GlobalTabs() {
           >
             {tabs.map(item => (
               <PageTab
+                data-tab-key={item.routeKey}
                 key={item.routeKey}
                 active={item.routeKey === activeTabKey}
                 activeColor={themeSettings.themeColor}

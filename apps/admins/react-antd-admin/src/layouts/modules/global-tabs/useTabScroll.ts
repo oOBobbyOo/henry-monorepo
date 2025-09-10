@@ -2,7 +2,7 @@ import type BScroll from '@better-scroll/core'
 import { useMount, useUpdateEffect } from 'ahooks'
 import { useRef } from 'react'
 
-export function useTabScroll(activeTabId: string) {
+export function useTabScroll(activeTabKey: string) {
   const bsWrapper = useRef<HTMLDivElement>(null)
 
   const tabRef = useRef<HTMLDivElement>(null)
@@ -37,9 +37,9 @@ export function useTabScroll(activeTabId: string) {
     for (let i = 0; i < children.length; i += 1) {
       const child = children[i]
 
-      const tabId = child.id
+      const tabkey = child.getAttribute('data-tab-key')
 
-      if (tabId === activeTabId) {
+      if (tabkey === activeTabKey) {
         const { left, width } = child.getBoundingClientRect()
 
         const clientX = left + width / 2
@@ -72,7 +72,7 @@ export function useTabScroll(activeTabId: string) {
 
   useUpdateEffect(() => {
     _scrollToActiveTab()
-  }, [activeTabId])
+  }, [activeTabKey])
 
   return {
     bsWrapper,
