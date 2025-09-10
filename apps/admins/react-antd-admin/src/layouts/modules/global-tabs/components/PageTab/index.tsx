@@ -2,6 +2,7 @@ import type { CSSProperties, FC, MouseEvent, ReactNode } from 'react'
 import clsx from 'clsx'
 import ButtonTab from '../ButtonTab'
 import ChromeTab from '../ChromeTab'
+import { createTabCssVars } from './shared'
 import SvgClose from './SvgClose'
 import './index.module.css'
 
@@ -27,6 +28,7 @@ const PageTab: FC<Props> = ({
   mode = 'chrome',
   darkMode,
   active,
+  activeColor = '#1890ff',
   className,
   chromeClass,
   buttonClass,
@@ -38,6 +40,8 @@ const PageTab: FC<Props> = ({
   children,
   ...rest
 }) => {
+  const cssVars = createTabCssVars(activeColor) as CSSProperties
+
   const getActiveTabComponent = {
     chrome: {
       class: chromeClass,
@@ -69,7 +73,7 @@ const PageTab: FC<Props> = ({
       darkMode={darkMode}
       prefix={prefix}
       suffix={suffixComponent}
-      style={{ ...style }}
+      style={{ ...cssVars, ...style }}
       {...rest}
     >
       {children}

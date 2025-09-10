@@ -12,7 +12,7 @@ function GlobalTabs() {
 
   const { themeSettings, darkMode } = useThemeScheme()
 
-  const { activeTabKey, tabs, removeTabBykey } = useTabAction()
+  const { activeTabKey, tabs, removeTabBykey, isTabRetain } = useTabAction()
 
   const { bsWrapper, setBsScroll, tabRef } = useTabScroll(activeTabKey)
 
@@ -52,6 +52,7 @@ function GlobalTabs() {
                 activeColor={themeSettings.themeColor}
                 mode={themeSettings.tab.mode}
                 darkMode={darkMode}
+                closable={!isTabRetain(item.routeKey)}
                 prefix={(
                   <SvgIcon
                     className="inline-block align-text-bottom text-16px"

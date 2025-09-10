@@ -2,6 +2,10 @@ import type { Router } from '@/types/router'
 import { $t } from '@/locales'
 import { flattenRoutes, getRoutes } from '@/routes/shared'
 
+/**
+ * Get route by pathname
+ * @param pathname
+ */
 export function getRouteByPathName(pathname: string) {
   const routes = getRoutes()
   const flatRoutes = flattenRoutes(routes)
