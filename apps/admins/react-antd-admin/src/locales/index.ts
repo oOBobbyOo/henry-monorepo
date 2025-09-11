@@ -16,7 +16,7 @@ export async function setupI18n() {
     debug: VITE_APP_ENV === 'dev',
     lng: 'zh-CN', // 默认语言
     fallbackLng: 'zh-CN', // 回退语言
-    ns: ['common', 'form', 'header', 'page', 'route', 'theme'], // 命名空间列表
+    ns: ['common', 'form', 'header', 'page', 'route', 'theme', 'tab'], // 命名空间列表
     defaultNS: 'common', // 默认命名空间
     backend: {
       // loadPath: '/locales/{{lng}}/{{ns}}.json',

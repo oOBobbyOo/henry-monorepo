@@ -1,0 +1,9 @@
+{
+  "dropdown": {
+    "closeAll": "关闭所有",
+    "closeCurrent": "关闭",
+    "closeLeft": "关闭左侧",
+    "closeOther": "关闭其它",
+    "closeRight": "关闭右侧"
+  }
+}

@@ -4,6 +4,7 @@ import { useRouterPush } from '@/hooks/useRouterPush'
 import { useThemeScheme } from '@/hooks/useThemeScheme'
 import clsx from 'clsx'
 import PageTab from './components/PageTab'
+import ContextMenu from './components/TabContextMenu'
 import useTabAction from './useTabAction'
 import { useTabScroll } from './useTabScroll'
 
@@ -18,6 +19,23 @@ function GlobalTabs() {
 
   const tabWrapperClass
     = themeSettings.tab.mode === 'chrome' ? 'items-end' : 'items-center gap-12px'
+
+  function getContextMenuDisabledKeys(routeKey: string, index: number) {
+    const disabledKeys: App.Global.DropdownKey[] = []
+    const isRetain = isTabRetain(routeKey)
+    if (isRetain) {
+      const homeDisable: App.Global.DropdownKey[] = [
+        'closeCurrent',
+        'closeLeft',
+      ]
+      disabledKeys.push(...homeDisable)
+    }
+    if (index === 1)
+      disabledKeys.push('closeLeft')
+    if (index === tabs.length - 1)
+      disabledKeys.push('closeRight')
+    return disabledKeys
+  }
 
   function handleCloseTab(tab: App.Global.Tab) {
     removeTabBykey(tab.routeKey)
@@ -45,28 +63,34 @@ function GlobalTabs() {
             className={clsx('h-full flex pr-18px', tabWrapperClass)}
             ref={tabRef}
           >
-            {tabs.map(item => (
-              <PageTab
-                data-tab-key={item.routeKey}
+            {tabs.map((item, index) => (
+              <ContextMenu
                 key={item.routeKey}
                 active={item.routeKey === activeTabKey}
-                activeColor={themeSettings.themeColor}
-                mode={themeSettings.tab.mode}
-                darkMode={darkMode}
-                closable={!isTabRetain(item.routeKey)}
-                prefix={(
-                  <SvgIcon
-                    className="inline-block align-text-bottom text-16px"
-                    icon={item.icon}
-                  />
-                )}
-                handleClose={() => handleCloseTab(item)}
-                onClick={() => handleClickTab(item)}
+                disabledKeys={getContextMenuDisabledKeys(item.routeKey, index)}
               >
-                <div className="max-w-240px text-ellipsis overflow-hidden whitespace-nowrap">
-                  {item.label}
-                </div>
-              </PageTab>
+                <PageTab
+                  data-tab-key={item.routeKey}
+                  key={item.routeKey}
+                  active={item.routeKey === activeTabKey}
+                  activeColor={themeSettings.themeColor}
+                  mode={themeSettings.tab.mode}
+                  darkMode={darkMode}
+                  closable={!isTabRetain(item.routeKey)}
+                  prefix={(
+                    <SvgIcon
+                      className="inline-block align-text-bottom text-16px"
+                      icon={item.icon}
+                    />
+                  )}
+                  handleClose={() => handleCloseTab(item)}
+                  onClick={() => handleClickTab(item)}
+                >
+                  <div className="max-w-240px text-ellipsis overflow-hidden whitespace-nowrap">
+                    {item.label}
+                  </div>
+                </PageTab>
+              </ContextMenu>
             ))}
           </div>
         </BetterScroll>

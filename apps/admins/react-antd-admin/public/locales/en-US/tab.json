@@ -1,0 +1,9 @@
+{
+  "dropdown": {
+    "closeAll": "Close All",
+    "closeCurrent": "Close Current",
+    "closeLeft": "Close Left",
+    "closeOther": "Close Other",
+    "closeRight": "Close Right"
+  }
+}

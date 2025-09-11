@@ -1,5 +1,6 @@
 declare namespace App {
   namespace Global {
+    /** The global menu */
     interface Menu {
       label: string
       i18nKey?: string
@@ -16,6 +17,7 @@ declare namespace App {
       children?: MenuItem[]
     }
 
+    /** The global tab */
     interface Tab {
       label: string
       i18nKey?: string
@@ -23,6 +25,9 @@ declare namespace App {
       routePath: string
       icon?: string
     }
+
+    /** The global dropdown key */
+    type DropdownKey = 'closeAll' | 'closeCurrent' | 'closeLeft' | 'closeOther' | 'closeRight'
   }
 
   namespace I18n {
