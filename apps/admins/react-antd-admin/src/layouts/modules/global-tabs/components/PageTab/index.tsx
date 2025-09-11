@@ -2,9 +2,9 @@ import type { CSSProperties, FC, MouseEvent, ReactNode } from 'react'
 import clsx from 'clsx'
 import ButtonTab from '../ButtonTab'
 import ChromeTab from '../ChromeTab'
+import styles from './index.module.css'
 import { createTabCssVars } from './shared'
 import SvgClose from './SvgClose'
-import './index.module.css'
 
 export interface Props {
   mode?: Theme.ThemeTabMode
@@ -63,8 +63,7 @@ const PageTab: FC<Props> = ({
   }
 
   const suffixComponent
-    = suffix
-      || (closable && <SvgClose className="svg-close" onClick={closeTab} />)
+    = suffix || (closable && <SvgClose className={styles['close-tab']} onClick={closeTab} />)
 
   return (
     <ActiveTabComponent
