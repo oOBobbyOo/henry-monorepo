@@ -4,9 +4,11 @@ import SvgIcon from '@/components/SvgIcon'
 import { Dropdown } from 'antd'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useTabControl } from '../../useTabHook'
 
 interface Props {
   active: boolean
+  routerKey: string
   disabledKeys?: App.Global.DropdownKey[]
   excludeKeys?: App.Global.DropdownKey[]
   children: ReactNode
@@ -19,8 +21,21 @@ interface DropdownOption {
   label: string
 }
 
-const TabContextMenu: FC<Props> = ({ disabledKeys = [], excludeKeys = [], children }) => {
+const TabContextMenu: FC<Props> = ({
+  routerKey,
+  disabledKeys = [],
+  excludeKeys = [],
+  children,
+}) => {
   const { t } = useTranslation('tab')
+
+  const {
+    clearAllTabs,
+    clearCurrentTab,
+    clearLeftTabs,
+    clearOtherTabs,
+    clearRightTabs,
+  } = useTabControl()
 
   const options = useMemo(() => {
     const opts: DropdownOption[] = [
@@ -72,8 +87,26 @@ const TabContextMenu: FC<Props> = ({ disabledKeys = [], excludeKeys = [], childr
     return items
   }, [options])
 
+  const dropdownAction: Record<App.Global.DropdownKey, () => void> = {
+    closeAll() {
+      clearAllTabs()
+    },
+    closeCurrent() {
+      clearCurrentTab(routerKey)
+    },
+    closeLeft() {
+      clearLeftTabs(routerKey)
+    },
+    closeOther() {
+      clearOtherTabs(routerKey)
+    },
+    closeRight() {
+      clearRightTabs(routerKey)
+    },
+  }
+
   const handleClick: MenuProps['onClick'] = (e) => {
-    console.log('[ e ] >>:', e)
+    dropdownAction[e.key as App.Global.DropdownKey]()
   }
 
   return (

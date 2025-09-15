@@ -5,7 +5,7 @@ import { useThemeScheme } from '@/hooks/useThemeScheme'
 import clsx from 'clsx'
 import PageTab from './components/PageTab'
 import ContextMenu from './components/TabContextMenu'
-import useTabAction from './useTabAction'
+import { useTabAction } from './useTabHook'
 import { useTabScroll } from './useTabScroll'
 
 function GlobalTabs() {
@@ -66,12 +66,12 @@ function GlobalTabs() {
             {tabs.map((item, index) => (
               <ContextMenu
                 key={item.routeKey}
+                routerKey={item.routeKey}
                 active={item.routeKey === activeTabKey}
                 disabledKeys={getContextMenuDisabledKeys(item.routeKey, index)}
               >
                 <PageTab
                   data-tab-key={item.routeKey}
-                  key={item.routeKey}
                   active={item.routeKey === activeTabKey}
                   activeColor={themeSettings.themeColor}
                   mode={themeSettings.tab.mode}
