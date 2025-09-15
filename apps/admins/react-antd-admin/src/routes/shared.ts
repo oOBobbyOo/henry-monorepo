@@ -126,21 +126,21 @@ export function generateMenuItems(menus: App.Global.Menu[]): App.Global.MenuItem
   })
 }
 
-export function getSelectedMenuKeyPathByKey(selectedKey: string, menus: App.Global.Menu[]) {
-  const findMenuPath = (items: App.Global.Menu[]): string => {
+export function getSelectedMenu(key: keyof App.Global.Menu, value: string, menus: App.Global.Menu[]) {
+  const findMenuItem = (items: App.Global.Menu[]): App.Global.Menu | null => {
     for (const item of items) {
-      if (item.routeKey === selectedKey) {
-        return item.routePath
+      if (item[key] === value) {
+        return item
       }
       if (item.children && item.children.length > 0) {
-        const result = findMenuPath(item.children)
+        const result = findMenuItem(item.children)
         if (result) {
           return result
         }
       }
     }
-    return ''
+    return null
   }
 
-  return findMenuPath(menus)
+  return findMenuItem(menus)
 }

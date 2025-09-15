@@ -9,6 +9,8 @@ const homePath = import.meta.env.VITE_ROUTE_HOME
 export function useUpdateTabs() {
   const dispatch = useAppDispatch()
 
+  const { navigate } = useRouterPush()
+
   /**
    * 更新标签列表
    * @param newTabs
@@ -17,7 +19,20 @@ export function useUpdateTabs() {
     dispatch(setTabs(newTabs))
   }
 
-  return updateTabs
+  /**
+   * 根据标签页切换路由
+   * @param tab
+   */
+  async function switchRouteByTab(tab: App.Global.Tab) {
+    navigate(tab.routePath)
+
+    dispatch(setActiveTabKey(tab.routeKey))
+  }
+
+  return {
+    updateTabs,
+    switchRouteByTab,
+  }
 }
 
 export function useTabAction() {
@@ -25,15 +40,17 @@ export function useTabAction() {
 
   const dispatch = useAppDispatch()
 
-  const updateTabs = useUpdateTabs()
-
   const activeTabKey = useAppSelector(getActiveTabKey)
 
   const tabs = useAppSelector(getTabs)
 
   const _fixedTabs = tabs.filter(tab => tab.routePath === homePath)
 
+  const _tabKeys = tabs.map(tab => tab.routeKey)
+
   const { pathname } = useRouterPush()
+
+  const { updateTabs, switchRouteByTab } = useUpdateTabs()
 
   /**
    * 获取首页标签
@@ -86,11 +103,21 @@ export function useTabAction() {
   }
 
   /**
-   * 删除标签页
+   * 删除当前标签页
    * @param key
    */
   function removeTabBykey(key: string) {
     const excludes = tabs.filter(tab => tab.routeKey !== key)
+
+    if (key === activeTabKey) {
+      const currentIndex = _tabKeys.findIndex(key => key === activeTabKey)
+
+      const newActive = tabs[currentIndex + 1] || tabs[currentIndex - 1] || excludes.at(-1)
+
+      if (newActive)
+        switchRouteByTab(newActive)
+    }
+
     updateTabs(excludes)
   }
 
@@ -117,29 +144,15 @@ export function useTabAction() {
 }
 
 export function useTabControl() {
-  const dispatch = useAppDispatch()
-
   const activeTabKey = useAppSelector(getActiveTabKey)
 
   const tabs = useAppSelector(getTabs)
-
-  const updateTabs = useUpdateTabs()
 
   const _fixedTabs = tabs.filter(tab => tab.routePath === homePath)
 
   const _tabKeys = tabs.map(tab => tab.routeKey)
 
-  const { navigate } = useRouterPush()
-
-  /**
-   * 根据标签页切换路由
-   * @param tab
-   */
-  async function switchRouteByTab(tab: App.Global.Tab) {
-    navigate(tab.routePath)
-
-    dispatch(setActiveTabKey(tab.routeKey))
-  }
+  const { updateTabs, switchRouteByTab } = useUpdateTabs()
 
   /**
    * 清除标签页
