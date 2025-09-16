@@ -3,7 +3,7 @@ import type { FC } from 'react'
 import { useMenus } from '@/hooks/useMenus'
 import { useResponsive } from '@/hooks/useResponsive'
 import { useRouterPush } from '@/hooks/useRouterPush'
-import { getSelectedMenu } from '@/routes/shared'
+import { getSelectedMenu, getSelectedOpenKeys } from '@/routes/shared'
 import { useAppDispatch } from '@/stores/hook'
 import { setSiderCollapse } from '@/stores/modules/app/slice'
 import { Menu } from 'antd'
@@ -20,6 +20,10 @@ const GlobalMenus: FC<{
   const [selectedKeys, setSelectedKeys] = useState<string[]>([])
 
   const { menus, menuItems } = useMenus()
+
+  const onOpenChange: MenuProps['onOpenChange'] = (keys) => {
+    setOpenKeys([...new Set(keys)])
+  }
 
   const handleClickMenu: MenuProps['onSelect'] = ({ key, selectedKeys }) => {
     if (isMobile) {
@@ -38,6 +42,8 @@ const GlobalMenus: FC<{
     const menu = getSelectedMenu('routePath', pathname, menus)
     if (menu) {
       setSelectedKeys([menu.routeKey])
+      const selectedOpenKeys = getSelectedOpenKeys(menu)
+      setOpenKeys([...new Set([...openKeys, ...selectedOpenKeys])])
     }
   }, [pathname])
 
@@ -49,7 +55,7 @@ const GlobalMenus: FC<{
       mode="inline"
       openKeys={openKeys}
       selectedKeys={selectedKeys}
-      onOpenChange={setOpenKeys}
+      onOpenChange={onOpenChange}
       onSelect={handleClickMenu}
       style={{ border: 0 }}
     />

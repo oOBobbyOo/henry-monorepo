@@ -144,3 +144,9 @@ export function getSelectedMenu(key: keyof App.Global.Menu, value: string, menus
 
   return findMenuItem(menus)
 }
+
+export function getSelectedOpenKeys(menu: App.Global.Menu) {
+  const arrs = menu.routePath.split('/')
+  const openKeys = arrs.slice(1, -1)
+  return openKeys
+}
