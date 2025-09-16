@@ -232,8 +232,16 @@ export function useTabControl() {
     clearTabs(excludes)
   }
 
+  /**
+   * 清除所有标签页(排除首页)
+   */
+  function clearAllTabs() {
+    switchRouteByTab(_fixedTabs[0])
+    updateTabs(_fixedTabs)
+  }
+
   return {
-    clearAllTabs: clearTabs,
+    clearAllTabs,
     clearCurrentTab,
     clearLeftTabs,
     clearRightTabs,
