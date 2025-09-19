@@ -5,6 +5,7 @@ import { useThemeScheme } from '@/hooks/useThemeScheme'
 import clsx from 'clsx'
 import PageTab from './components/PageTab'
 import ContextMenu from './components/TabContextMenu'
+import TabReloadButton from './components/TabReloadButton'
 import { useTabAction } from './useTabHook'
 import { useTabScroll } from './useTabScroll'
 
@@ -95,6 +96,8 @@ function GlobalTabs() {
           </div>
         </BetterScroll>
       </div>
+
+      <TabReloadButton />
     </div>
   )
 }

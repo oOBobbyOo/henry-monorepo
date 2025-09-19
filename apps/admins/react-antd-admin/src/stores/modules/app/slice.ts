@@ -6,6 +6,7 @@ const initialState: AppState = {
   locale: 'zh-CN',
   siderCollapse: false,
   themeDrawerVisible: false,
+  reloadFlag: false,
 }
 
 const appSlice = createSlice({
@@ -28,16 +29,20 @@ const appSlice = createSlice({
     toggleThemeDrawerVisible: (state) => {
       state.themeDrawerVisible = !state.themeDrawerVisible
     },
+    setReloadFlag: (state, action: PayloadAction<boolean>) => {
+      state.reloadFlag = action.payload
+    },
   },
   selectors: {
     getLocale: app => app.locale,
     getSiderCollapse: app => app.siderCollapse,
     getThemeDrawerVisible: app => app.themeDrawerVisible,
+    getReloadFlag: app => app.reloadFlag,
   },
 })
 
-export const { resetApp, setLocale, setSiderCollapse, toggleSiderCollapse, setThemeDrawerVisible, toggleThemeDrawerVisible } = appSlice.actions
+export const { resetApp, setLocale, setSiderCollapse, toggleSiderCollapse, setThemeDrawerVisible, toggleThemeDrawerVisible, setReloadFlag } = appSlice.actions
 
-export const { getLocale, getSiderCollapse, getThemeDrawerVisible } = appSlice.selectors
+export const { getLocale, getSiderCollapse, getThemeDrawerVisible, getReloadFlag } = appSlice.selectors
 
 export default appSlice.reducer
