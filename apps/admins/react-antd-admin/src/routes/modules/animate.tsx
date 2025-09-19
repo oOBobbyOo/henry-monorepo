@@ -50,6 +50,21 @@ const animate: Router.RouteObject = {
         keepAlive: true,
       },
     },
+    {
+      path: 'motion',
+      element: (
+        <LazyLoadComponent
+          Component={lazy(() => import('@/pages/animate/motion'))}
+        />
+      ),
+      meta: {
+        name: 'motion',
+        title: 'Motion',
+        i18nKey: 'animate.motion',
+        icon: 'hugeicons:loading-03',
+        keepAlive: true,
+      },
+    },
   ],
 }
 

@@ -31,7 +31,8 @@
   "animate": {
     "page": "动画示例",
     "button": "按钮",
-    "loading": "加载"
+    "loading": "加载",
+    "motion": "动画"
   },
   "grid": {
     "page": "栅格"

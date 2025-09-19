@@ -31,7 +31,8 @@
   "animate": {
     "page": "Animate",
     "button": "Button",
-    "loading": "Loading"
+    "loading": "Loading",
+    "motion": "Motion"
   },
   "grid": {
     "page": "Grid"

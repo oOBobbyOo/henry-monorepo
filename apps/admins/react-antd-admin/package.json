@@ -40,6 +40,7 @@
     "jsbarcode": "catalog:prod",
     "katex": "catalog:prod",
     "lunar-typescript": "catalog:prod",
+    "motion": "catalog:prod",
     "qrcode.react": "catalog:prod",
     "react": "catalog:prod",
     "react-dom": "catalog:prod",
