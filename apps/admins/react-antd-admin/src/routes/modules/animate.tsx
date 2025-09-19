@@ -61,7 +61,7 @@ const animate: Router.RouteObject = {
         name: 'motion',
         title: 'Motion',
         i18nKey: 'animate.motion',
-        icon: 'hugeicons:loading-03',
+        icon: 'tabler:brand-framer-motion',
         keepAlive: true,
       },
     },
