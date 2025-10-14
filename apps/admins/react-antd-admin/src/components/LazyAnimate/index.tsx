@@ -1,8 +1,9 @@
 import type { FC, ReactNode } from 'react'
 import { LazyMotion } from 'motion/react'
 
-function loadFeatures() {
-  return import('./features').then(res => res.default)
+async function loadFeatures() {
+  const res = await import('./features')
+  return res.default
 }
 
 const LazyAnimate: FC<{
