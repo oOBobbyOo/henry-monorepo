@@ -17,7 +17,7 @@ function MotionAnimate() {
 
   return (
     <div className="motion m-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-20 gap-y-10 justify-center content-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-30 justify-items-center items-center">
         <LazyAnimate>
           <m.div
             className="w-25 h-25 bg-red-500 rd-2"
