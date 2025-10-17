@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 
-  // @see https://nuxt.com/docs/api/nuxt-config#head
   app: {
+    // https://nuxt.com/docs/api/nuxt-config#head
     head: {
       viewport: 'width=device-width, initial-scale=1',
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -15,6 +15,12 @@ export default defineNuxtConfig({
       ],
       title: 'nuxt temp',
     },
+  },
+
+  // https://nuxt.com/docs/4.x/api/nuxt-config#devserver
+  devServer: {
+    port: 5171, // default: 3000
+    host: '0.0.0.0', // default: localhost
   },
 
   compatibilityDate: '2024-11-01',

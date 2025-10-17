@@ -24,11 +24,11 @@ export default defineConfig(({ mode }) => {
     plugins: setupVitePlugins(viteEnv),
     server: {
       host: '0.0.0.0',
-      port: 5171, // 默认端口 5173
+      port: 5174, // 默认端口 5173
       open: true, // 是否自动打开浏览器
       proxy: {
         '/api': {
-          target: 'http://localhost:5171',
+          target: 'http://localhost:5174',
           changeOrigin: true,
           rewrite: path => path.replace(/^\/api/, ''),
         },
