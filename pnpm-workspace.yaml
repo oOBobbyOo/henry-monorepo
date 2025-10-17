@@ -11,8 +11,13 @@ catalogs:
     '@eslint/eslintrc': ^3.3.0
     '@eslint/js': ^9.21.0
     '@iconify/json': ^2.2.322
+    '@nestjs/cli': ^11.0.0
+    '@nestjs/schematics': ^11.0.0
+    '@nestjs/testing': ^11.0.1
     '@svgr/core': ^8.1.0
     '@svgr/plugin-jsx': ^8.1.0
+    '@types/express': ^5.0.0
+    '@types/jest': ^30.0.0
     '@types/mockjs': ^1.0.10
     '@types/node': ^22.10.6
     '@types/nprogress': ^0.2.3
@@ -21,6 +26,7 @@ catalogs:
     '@types/react-dom': ^19.0.4
     '@types/react-syntax-highlighter': ^15.5.13
     '@types/splitpanes': ^2.2.6
+    '@types/supertest': ^6.0.2
     '@unocss/eslint-plugin': ^66.5.0
     '@unocss/nuxt': ^66.5.0
     '@unocss/preset-web-fonts': ^66.5.0
@@ -31,16 +37,25 @@ catalogs:
     '@vue/compiler-sfc': ^3.5.13
     '@vue/tsconfig': ^0.7.0
     eslint: ^9.21.0
+    eslint-config-prettier: ^10.0.1
     eslint-plugin-format: ^1.0.1
+    eslint-plugin-prettier: ^5.2.2
     eslint-plugin-react-hooks: ^5.1.0
     eslint-plugin-react-refresh: ^0.4.19
     globals: ^15.15.0
     husky: ^9.1.7
+    jest: ^30.0.0
     lint-staged: ^15.3.0
     mockjs: ^1.1.0
     prettier: ^3.2.5
     rollup-plugin-visualizer: ^5.9.0
+    source-map-support: ^0.5.21
+    supertest: ^7.0.0
     terser: ^5.39.2
+    ts-jest: ^29.2.5
+    ts-loader: ^9.5.2
+    ts-node: ^10.9.2
+    tsconfig-paths: ^4.2.0
     turbo: ^2.4.4
     typescript: ^5.7.3
     typescript-eslint: ^8.24.1
@@ -67,6 +82,9 @@ catalogs:
     '@hookform/resolvers': ^5.2.1
     '@iconify/react': ^6.0.0
     '@iconify/vue': ^4.3.0
+    '@nestjs/common': ^11.0.1
+    '@nestjs/core': ^11.0.1
+    '@nestjs/platform-express': ^11.0.1
     '@reduxjs/toolkit': ^2.8.2
     '@uiw/codemirror-extensions-langs': ^4.25.1
     '@uiw/codemirror-themes-all': ^4.25.1
@@ -116,11 +134,13 @@ catalogs:
     react-responsive: ^10.0.1
     react-router-dom: ^7.5.0
     react-syntax-highlighter: ^15.6.3
+    reflect-metadata: ^0.2.2
     rehype-katex: ^7.0.1
     rehype-raw: ^7.0.0
     remark-cjk-friendly: ^1.2.0
     remark-gfm: ^4.0.1
     remark-math: ^6.0.0
+    rxjs: ^7.8.1
     seemly: ^0.3.10
     simplebar-react: ^3.3.2
     splitpanes: ^4.0.4

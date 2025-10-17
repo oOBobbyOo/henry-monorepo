@@ -9,8 +9,9 @@ export default antfu({
     'no-console': 'off',
   },
   ignores: [
-    'node_modules',
-    'dist',
+    '**/nest-admin/',
+    '**/node_modules/',
+    '**/dist/',
     '.turbo',
     '.vscode',
     '.nuxt',

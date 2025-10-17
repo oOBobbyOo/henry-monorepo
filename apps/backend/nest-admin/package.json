@@ -1,0 +1,68 @@
+{
+  "name": "@henry/nest-admin",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "catalog:prod",
+    "@nestjs/core": "catalog:prod",
+    "@nestjs/platform-express": "catalog:prod",
+    "reflect-metadata": "catalog:prod",
+    "rxjs": "catalog:prod"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "catalog:dev",
+    "@eslint/js": "catalog:dev",
+    "@nestjs/cli": "catalog:dev",
+    "@nestjs/schematics": "catalog:dev",
+    "@nestjs/testing": "catalog:dev",
+    "@types/express": "catalog:dev",
+    "@types/jest": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "@types/supertest": "catalog:dev",
+    "eslint": "catalog:dev",
+    "eslint-config-prettier": "catalog:dev",
+    "eslint-plugin-prettier": "catalog:dev",
+    "globals": "catalog:dev",
+    "jest": "catalog:dev",
+    "prettier": "catalog:dev",
+    "source-map-support": "catalog:dev",
+    "supertest": "catalog:dev",
+    "ts-jest": "catalog:dev",
+    "ts-loader": "catalog:dev",
+    "ts-node": "catalog:dev",
+    "tsconfig-paths": "catalog:dev",
+    "typescript": "catalog:dev",
+    "typescript-eslint": "catalog:dev"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}

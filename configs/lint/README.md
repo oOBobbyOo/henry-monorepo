@@ -1,4 +1,4 @@
-## [husky](https://typicode.github.io/husky/get-started.html)
+# [husky](https://typicode.github.io/husky/get-started.html)
 
 ```bash
 ## install
