@@ -1,0 +1,28 @@
+{
+  "name": "@henry/next-temp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "dependencies": {
+    "next": "catalog:prod",
+    "react": "catalog:prod",
+    "react-dom": "catalog:prod"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "@types/react": "catalog:dev",
+    "@types/react-dom": "catalog:dev",
+    "babel-plugin-react-compiler": "catalog:dev",
+    "eslint": "catalog:dev",
+    "eslint-config-next": "catalog:dev",
+    "tailwindcss": "catalog:dev",
+    "typescript": "catalog:dev"
+  }
+}
