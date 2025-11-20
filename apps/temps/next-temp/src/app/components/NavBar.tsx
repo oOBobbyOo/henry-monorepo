@@ -1,7 +1,13 @@
+'use client'
+
+import { cn } from '@/utils/cn'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { FaBookReader, FaHome, FaRegListAlt, FaSortNumericDown } from 'react-icons/fa'
 
 function NavBar() {
+  const pathname = usePathname()
+
   const navLinks = [
     {
       label: 'Home',
@@ -34,7 +40,7 @@ function NavBar() {
           <Link
             href={item.href}
             key={i}
-            className={navClasses}
+            className={cn(navClasses, `${pathname === item.href ? 'font-bold! bg-gray-500/10 dark:bg-gray-500/30' : ''}`)}
           >
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-4 justify-between">
