@@ -10,10 +10,12 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "clsx": "catalog:prod",
     "next": "catalog:prod",
     "react": "catalog:prod",
     "react-dom": "catalog:prod",
-    "react-icons": "catalog:prod"
+    "react-icons": "catalog:prod",
+    "tailwind-merge": "catalog:prod"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "catalog:dev",
