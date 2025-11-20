@@ -1,12 +1,17 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 function InputEntry() {
   const [name, setName] = useState('')
 
+  const router = useRouter()
+
   const go = () => {
-    console.log(name)
+    if (name) {
+      router.push(`/hi/${encodeURIComponent(name)}`)
+    }
   }
 
   return (

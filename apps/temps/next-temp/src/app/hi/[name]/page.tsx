@@ -7,7 +7,7 @@ async function page({ params }: { params: Promise<Props> }) {
 
   return (
     <div>
-      page
+      name:
       {name}
     </div>
   )
