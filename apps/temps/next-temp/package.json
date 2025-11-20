@@ -12,7 +12,8 @@
   "dependencies": {
     "next": "catalog:prod",
     "react": "catalog:prod",
-    "react-dom": "catalog:prod"
+    "react-dom": "catalog:prod",
+    "react-icons": "catalog:prod"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "catalog:dev",
