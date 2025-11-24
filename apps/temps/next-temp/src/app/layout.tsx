@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Footer from '@/components/Footer'
 import NavBar from '@/components/NavBar'
+import { ThemeProvider } from '@/provider/ThemeProvider'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
@@ -29,11 +30,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="px-10 py-20 text-center">
-          <NavBar />
-          {children}
-          <Footer />
-        </div>
+        <ThemeProvider>
+          <div className="px-10 py-20 text-center">
+            <NavBar />
+            {children}
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )

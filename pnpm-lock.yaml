@@ -981,6 +981,9 @@ importers:
       tailwind-merge:
         specifier: catalog:prod
         version: 3.4.0
+      zod:
+        specifier: catalog:prod
+        version: 4.0.14
     devDependencies:
       '@tailwindcss/postcss':
         specifier: catalog:dev

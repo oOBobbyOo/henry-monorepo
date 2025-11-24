@@ -15,7 +15,8 @@
     "react": "catalog:prod",
     "react-dom": "catalog:prod",
     "react-icons": "catalog:prod",
-    "tailwind-merge": "catalog:prod"
+    "tailwind-merge": "catalog:prod",
+    "zod": "catalog:prod"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "catalog:dev",

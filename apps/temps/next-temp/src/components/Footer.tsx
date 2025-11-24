@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { FaGithub, FaHome } from 'react-icons/fa'
 import { MdLibraryBooks } from 'react-icons/md'
 
+import { ThemeToggle } from './ThemeToggle'
+
 function Footer() {
   const links = [
     {
@@ -34,6 +36,8 @@ function Footer() {
           </Link>
         )
       })}
+
+      <ThemeToggle />
     </div>
   )
 }
