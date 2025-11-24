@@ -23,16 +23,25 @@ function Footer() {
     },
   ]
 
+  const linkClasses = `flex items-center justify-between group px-2 py-1 rounded-lg
+   hover:bg-gray-500/10 font-black`
+
   return (
-    <div className="text-2xl m-5 flex justify-center gap-4">
+    <div className="text-2xl m-5 flex justify-center gap-3">
       {links.map((item, i) => {
         return (
           <Link
             href={item.to}
             key={i}
+            className={linkClasses}
             target={item.to.startsWith('http') ? '_blank' : undefined}
           >
-            {item.icon}
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-4 justify-between">
+                {item.icon}
+              </div>
+              <div className="hidden uppercase select-none opacity-70 text-xs">{item.label}</div>
+            </div>
           </Link>
         )
       })}
