@@ -7,6 +7,7 @@ definePageMeta({
 <template>
   <div>
     <Logos mb-6 />
+    <InputEntry />
   </div>
 </template>
 
