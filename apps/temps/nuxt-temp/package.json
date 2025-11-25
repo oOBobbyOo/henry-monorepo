@@ -1,9 +1,10 @@
 {
   "name": "@henry/nuxt-temp",
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --open",
+    "dev": "nuxt dev -o",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -17,7 +18,6 @@
     "@iconify-json/carbon": "catalog:dev",
     "@unocss/nuxt": "catalog:dev",
     "@unocss/preset-web-fonts": "catalog:dev",
-    "unocss": "catalog:dev",
-    "vue-tsc": "catalog:dev"
+    "unocss": "catalog:dev"
   }
 }

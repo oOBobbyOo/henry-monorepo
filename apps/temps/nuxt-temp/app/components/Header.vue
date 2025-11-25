@@ -1,12 +1,10 @@
 <script setup lang='ts'>
-definePageMeta({
-  layout: 'home',
-})
+
 </script>
 
 <template>
   <div>
-    index
+    header
   </div>
 </template>
 
