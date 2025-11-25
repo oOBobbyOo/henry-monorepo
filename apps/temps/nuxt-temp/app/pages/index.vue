@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <div>
-    index
+    <Logos mb-6 />
   </div>
 </template>
 
