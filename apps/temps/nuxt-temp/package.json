@@ -14,6 +14,7 @@
     "vue-router": "catalog:prod"
   },
   "devDependencies": {
+    "@iconify-json/carbon": "catalog:dev",
     "@unocss/nuxt": "catalog:dev",
     "@unocss/preset-web-fonts": "catalog:dev",
     "unocss": "catalog:dev",
