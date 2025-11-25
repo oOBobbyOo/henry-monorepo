@@ -1,5 +1,5 @@
 <template>
   <header>
-    hader
+    header
   </header>
 </template>

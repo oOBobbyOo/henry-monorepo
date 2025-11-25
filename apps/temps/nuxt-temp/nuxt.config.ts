@@ -23,11 +23,15 @@ export default defineNuxtConfig({
     host: '0.0.0.0', // default: localhost
   },
 
-  compatibilityDate: '2024-11-01',
+  // https://devtools.nuxt.com/guide/getting-started
   devtools: { enabled: true },
 
+  // https://nuxt.com/modules
   modules: ['@unocss/nuxt'],
 
-  // 定义Nuxt应用程序的源目录
-  srcDir: 'src/',
+  // https://nuxt.com/docs/4.x/api/nuxt-config#dir
+  srcDir: 'app',
+
+  // https://nuxt.com/docs/4.x/api/nuxt-config#compatibilitydate
+  compatibilityDate: '2024-11-01',
 })
