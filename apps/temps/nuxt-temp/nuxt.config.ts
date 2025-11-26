@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   // https://nuxt.com/modules
   modules: [
     '@unocss/nuxt',
+    '@nuxtjs/color-mode',
   ],
 
   app: {

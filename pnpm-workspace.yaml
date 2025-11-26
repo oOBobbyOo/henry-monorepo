@@ -91,6 +91,7 @@ catalogs:
     '@nestjs/common': ^11.0.1
     '@nestjs/core': ^11.0.1
     '@nestjs/platform-express': ^11.0.1
+    '@nuxtjs/color-mode': ^4.0.0
     '@reduxjs/toolkit': ^2.8.2
     '@uiw/codemirror-extensions-langs': ^4.25.1
     '@uiw/codemirror-themes-all': ^4.25.1
