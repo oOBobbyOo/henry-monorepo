@@ -1,4 +1,8 @@
 <script setup lang='ts'>
+useSeoMeta({
+  title: 'Count',
+})
+
 const { count, inc, dec } = useCount()
 </script>
 
