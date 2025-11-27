@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@nuxtjs/color-mode": "catalog:prod",
+    "@pinia/nuxt": "catalog:prod",
     "nuxt": "catalog:prod",
+    "pinia": "catalog:prod",
     "vue": "catalog:prod",
     "vue-router": "catalog:prod"
   },

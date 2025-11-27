@@ -7,7 +7,21 @@ export default defineNuxtConfig({
   modules: [
     '@unocss/nuxt',
     '@nuxtjs/color-mode',
+    '@pinia/nuxt',
   ],
+
+  // https://nuxt.com/modules/pinia
+  pinia: {
+    /**
+     * Automatically add stores dirs to the auto imports. This is the same as
+     * directly adding the dirs to the `imports.dirs` option. If you want to
+     * also import nested stores, you can use the glob pattern `./stores/**`
+     * (on Nuxt 3) or `app/stores/**` (on Nuxt 4+)
+     *
+     * @default `['stores']`
+     */
+    storesDirs: ['stores'],
+  },
 
   app: {
     // https://nuxt.com/docs/api/nuxt-config#head
