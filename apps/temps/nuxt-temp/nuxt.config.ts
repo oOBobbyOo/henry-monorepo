@@ -8,20 +8,11 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
+    '@nuxt/eslint',
   ],
 
-  // https://nuxt.com/modules/pinia
-  pinia: {
-    /**
-     * Automatically add stores dirs to the auto imports. This is the same as
-     * directly adding the dirs to the `imports.dirs` option. If you want to
-     * also import nested stores, you can use the glob pattern `./stores/**`
-     * (on Nuxt 3) or `app/stores/**` (on Nuxt 4+)
-     *
-     * @default `['stores']`
-     */
-    storesDirs: ['stores'],
-  },
+  // https://devtools.nuxt.com/guide/getting-started
+  devtools: { enabled: true },
 
   app: {
     // https://nuxt.com/docs/api/nuxt-config#head
@@ -49,6 +40,27 @@ export default defineNuxtConfig({
 
   // https://nuxt.com/docs/4.x/api/nuxt-config#compatibilitydate
   compatibilityDate: '2025-07-15',
-  // https://devtools.nuxt.com/guide/getting-started
-  devtools: { enabled: true },
+
+  // https://eslint.nuxt.com/packages/module
+  eslint: {
+    config: {
+      standalone: false,
+      nuxt: {
+        sortConfigKeys: true,
+      },
+    },
+  },
+
+  // https://nuxt.com/modules/pinia
+  pinia: {
+    /**
+     * Automatically add stores dirs to the auto imports. This is the same as
+     * directly adding the dirs to the `imports.dirs` option. If you want to
+     * also import nested stores, you can use the glob pattern `./stores/**`
+     * (on Nuxt 3) or `app/stores/**` (on Nuxt 4+)
+     *
+     * @default `['stores']`
+     */
+    storesDirs: ['stores'],
+  },
 })

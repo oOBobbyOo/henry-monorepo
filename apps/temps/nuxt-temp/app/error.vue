@@ -5,10 +5,10 @@ defineProps<{ error: NuxtError }>()
 </script>
 
 <template>
-  <div size-full flex="~ col gap3" justify-center items-center>
+  <div flex="~ col gap3" size-full items-center justify-center>
     <h1>{{ error.statusCode }}</h1>
 
-    <NuxtLink to="/" class="btn text-sm">
+    <NuxtLink to="/" class="text-sm btn">
       Go back
     </NuxtLink>
   </div>

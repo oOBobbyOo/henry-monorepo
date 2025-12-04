@@ -16,6 +16,7 @@ catalogs:
     '@nestjs/cli': ^11.0.0
     '@nestjs/schematics': ^11.0.0
     '@nestjs/testing': ^11.0.1
+    '@nuxt/eslint': ^1.11.0
     '@svgr/core': ^8.1.0
     '@svgr/plugin-jsx': ^8.1.0
     '@tailwindcss/postcss': ^4.0.0
@@ -40,10 +41,10 @@ catalogs:
     '@vue/compiler-sfc': ^3.5.13
     '@vue/tsconfig': ^0.7.0
     babel-plugin-react-compiler: ^1.0.0
-    eslint: ^9.21.0
+    eslint: ^9.38.0
     eslint-config-next: ^16.0.0
     eslint-config-prettier: ^10.0.1
-    eslint-plugin-format: ^1.0.1
+    eslint-plugin-format: ^1.0.2
     eslint-plugin-prettier: ^5.2.2
     eslint-plugin-react-hooks: ^5.1.0
     eslint-plugin-react-refresh: ^0.4.19
