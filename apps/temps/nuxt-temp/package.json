@@ -23,6 +23,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
     "@iconify-json/carbon": "catalog:dev",
+    "@iconify-json/mdi": "catalog:dev",
     "@iconify-json/twemoji": "catalog:dev",
     "@nuxt/eslint": "catalog:dev",
     "@unocss/nuxt": "catalog:dev",
