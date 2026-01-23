@@ -12,6 +12,7 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "@nuxt/hints": "catalog:prod",
     "@nuxtjs/color-mode": "catalog:prod",
     "@pinia/nuxt": "catalog:prod",
     "nuxt": "catalog:prod",

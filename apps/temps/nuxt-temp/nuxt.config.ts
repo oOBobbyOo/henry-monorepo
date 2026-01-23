@@ -2,13 +2,13 @@ import { appDescription } from './app/constants/index'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-
   // https://nuxt.com/modules
   modules: [
     '@unocss/nuxt',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
     '@nuxt/eslint',
+    '@nuxt/hints',
   ],
 
   // https://devtools.nuxt.com/guide/getting-started
@@ -26,9 +26,20 @@ export default defineNuxtConfig({
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: appDescription },
-        { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
-        { name: 'theme-color', media: '(prefers-color-scheme: light)', content: 'white' },
-        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#222222' },
+        {
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: 'black-translucent',
+        },
+        {
+          name: 'theme-color',
+          media: '(prefers-color-scheme: light)',
+          content: 'white',
+        },
+        {
+          name: 'theme-color',
+          media: '(prefers-color-scheme: dark)',
+          content: '#222222',
+        },
       ],
     },
   },
