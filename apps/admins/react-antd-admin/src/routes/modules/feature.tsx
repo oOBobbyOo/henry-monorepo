@@ -164,6 +164,23 @@ const feature: Router.RouteObject = {
             keepAlive: true,
           },
         },
+        {
+          path: 'tipTap',
+          element: (
+            <LazyLoadComponent
+              Component={lazy(
+                () => import('@/pages/feature/editor/tipTap'),
+              )}
+            />
+          ),
+          meta: {
+            name: 'tipTap',
+            title: 'tipTap',
+            i18nKey: 'feature.tipTap',
+            icon: 'material-symbols:tooltip-2',
+            keepAlive: true,
+          },
+        },
       ],
     },
     {
