@@ -19,6 +19,7 @@
     "quillEditor": "QuillEditor",
     "wangEditor": "WangEditor",
     "tipTap": "TipTap",
+    "tinyMCE": "TinyMCE",
     "qrcode": "Qrcode",
     "splitpanes": "Splitpanes",
     "textEffect": "TextEffect",

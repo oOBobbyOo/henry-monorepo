@@ -181,6 +181,23 @@ const feature: Router.RouteObject = {
             keepAlive: true,
           },
         },
+        {
+          path: 'tinyMCE',
+          element: (
+            <LazyLoadComponent
+              Component={lazy(
+                () => import('@/pages/feature/editor/tinyMCE'),
+              )}
+            />
+          ),
+          meta: {
+            name: 'tinyMCE',
+            title: 'tinyMCE',
+            i18nKey: 'feature.tinyMCE',
+            icon: 'file-icons:tinymce',
+            keepAlive: true,
+          },
+        },
       ],
     },
     {

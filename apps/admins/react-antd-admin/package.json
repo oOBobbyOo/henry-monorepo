@@ -20,6 +20,7 @@
     "@hookform/resolvers": "catalog:prod",
     "@iconify/react": "catalog:prod",
     "@reduxjs/toolkit": "catalog:prod",
+    "@tinymce/tinymce-react": "catalog:prod",
     "@tiptap/pm": "catalog:prod",
     "@tiptap/react": "catalog:prod",
     "@tiptap/starter-kit": "catalog:prod",
