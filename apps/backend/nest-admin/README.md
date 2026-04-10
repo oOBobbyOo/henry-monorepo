@@ -29,3 +29,15 @@ pnpm run test:e2e
 # test coverage
 pnpm run test:cov
 ```
+
+## Configuration
+
+[configuration](https://docs.nestjs.com/techniques/configuration)
+
+[nestjs/config](https://github.com/nestjs/config)
+
+[js-yaml](https://github.com/nodeca/js-yaml)
+
+[node-config](https://github.com/node-config/node-config)
+
+[nestjs-config](https://github.com/nestjsx/nestjs-config)
