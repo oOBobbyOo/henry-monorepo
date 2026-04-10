@@ -8,13 +8,13 @@ pnpm install
 
 ```bash
 # development
-pnpm run start
+pnpm run dev
 
 # watch mode
-pnpm run start:dev
+pnpm run dev:watch
 
 # production mode
-pnpm run start:prod
+pnpm run dev:prod
 ```
 
 ## Run tests
