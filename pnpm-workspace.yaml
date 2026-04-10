@@ -24,6 +24,7 @@ catalogs:
     '@tailwindcss/postcss': ^4.0.0
     '@types/express': ^5.0.0
     '@types/jest': ^30.0.0
+    '@types/js-yaml': ^4.0.9
     '@types/mockjs': ^1.0.10
     '@types/node': ^22.10.6
     '@types/nprogress': ^0.2.3
@@ -132,6 +133,7 @@ catalogs:
     i18next-browser-languagedetector: ^8.2.0
     i18next-http-backend: ^3.0.2
     js-calendar-converter: ^0.0.7
+    js-yaml: ^4.1.1
     jsbarcode: ^3.11.6
     katex: ^0.16.22
     localforage: ^1.10.0

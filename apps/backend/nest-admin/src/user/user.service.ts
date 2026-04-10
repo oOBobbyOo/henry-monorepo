@@ -7,12 +7,13 @@ export class UserService {
 
   @Get()
   getUsers() {
-    const user = this.configService.get<string>('DATABASE_USER')
-    const host = this.configService.get<string>('DB_HOST')
+    // const user = this.configService.get<string>('DATABASE_USER')
+    // const host = this.configService.get<string>('DB_HOST')
 
-    return `
-      user: ${user}
-      host: ${host}
-    `
+    const db = this.configService.get('db') as Record<string, any>
+
+    console.log('[ db ] >>:', db)
+
+    return `get all users`
   }
 }

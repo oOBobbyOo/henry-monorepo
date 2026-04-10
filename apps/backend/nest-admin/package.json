@@ -22,6 +22,7 @@
     "@nestjs/core": "catalog:prod",
     "@nestjs/platform-express": "catalog:prod",
     "dotenv": "catalog:prod",
+    "js-yaml": "catalog:prod",
     "reflect-metadata": "catalog:prod",
     "rxjs": "catalog:prod"
   },
@@ -33,6 +34,7 @@
     "@nestjs/testing": "catalog:dev",
     "@types/express": "catalog:dev",
     "@types/jest": "catalog:dev",
+    "@types/js-yaml": "catalog:dev",
     "@types/node": "catalog:dev",
     "@types/supertest": "catalog:dev",
     "cross-env": "catalog:dev",
