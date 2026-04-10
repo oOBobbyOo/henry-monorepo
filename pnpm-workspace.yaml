@@ -124,6 +124,7 @@ catalogs:
     codemirror-lang-mermaid: ^0.5.0
     colord: ^2.9.3
     dayjs: ^1.11.13
+    dotenv: ^17.4.1
     echarts: ^5.6.0
     emoji-picker-react: ^4.13.2
     github-markdown-css: ^5.8.1

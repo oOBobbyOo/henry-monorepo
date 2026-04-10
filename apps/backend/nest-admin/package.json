@@ -21,6 +21,7 @@
     "@nestjs/config": "catalog:prod",
     "@nestjs/core": "catalog:prod",
     "@nestjs/platform-express": "catalog:prod",
+    "dotenv": "catalog:prod",
     "reflect-metadata": "catalog:prod",
     "rxjs": "catalog:prod"
   },

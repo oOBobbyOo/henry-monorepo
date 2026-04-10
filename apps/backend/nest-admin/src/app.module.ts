@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
+import * as dotenv from 'dotenv'
 
 import { UserController } from './user/user.controller'
 import { UserService } from './user/user.service'
@@ -9,7 +10,19 @@ import { UserModule } from './user/user.module'
 const envFilePath = `.env.${process.env.NODE_ENV || 'dev'}`
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true, envFilePath }), UserModule],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath,
+      load: [
+        () =>
+          dotenv.config({
+            path: '.env',
+          }),
+      ],
+    }),
+    UserModule,
+  ],
   controllers: [UserController],
   providers: [UserService],
 })

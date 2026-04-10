@@ -8,7 +8,11 @@ export class UserService {
   @Get()
   getUsers() {
     const user = this.configService.get<string>('DATABASE_USER')
+    const host = this.configService.get<string>('DB_HOST')
 
-    return `user: ${user}`
+    return `
+      user: ${user}
+      host: ${host}
+    `
   }
 }
