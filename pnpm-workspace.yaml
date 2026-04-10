@@ -43,6 +43,7 @@ catalogs:
     '@vue/compiler-sfc': ^3.5.13
     '@vue/tsconfig': ^0.7.0
     babel-plugin-react-compiler: ^1.0.0
+    cross-env: ^10.1.0
     eslint: ^9.38.0
     eslint-config-next: ^16.0.0
     eslint-config-prettier: ^10.0.1
@@ -92,6 +93,7 @@ catalogs:
     '@iconify/react': ^6.0.0
     '@iconify/vue': ^4.3.0
     '@nestjs/common': ^11.0.1
+    '@nestjs/config': ^4.0.4
     '@nestjs/core': ^11.0.1
     '@nestjs/platform-express': ^11.0.1
     '@nuxt/hints': ^1.0.0-alpha.5

@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@nestjs/common": "catalog:prod",
+    "@nestjs/config": "catalog:prod",
     "@nestjs/core": "catalog:prod",
     "@nestjs/platform-express": "catalog:prod",
     "reflect-metadata": "catalog:prod",
@@ -33,6 +34,7 @@
     "@types/jest": "catalog:dev",
     "@types/node": "catalog:dev",
     "@types/supertest": "catalog:dev",
+    "cross-env": "catalog:dev",
     "eslint": "catalog:dev",
     "eslint-config-prettier": "catalog:dev",
     "eslint-plugin-prettier": "catalog:dev",
