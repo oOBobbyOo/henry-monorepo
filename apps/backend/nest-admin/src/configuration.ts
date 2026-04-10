@@ -1,13 +1,23 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import * as yaml from 'js-yaml'
+import { merge } from 'lodash-es'
 
-const YAML_CONFIG_FILENAME = 'config.yaml'
+const YAML_COMMON_CONFIG_FILENAME = 'config.yaml'
 
-const filePath = join(__dirname, '../config', YAML_CONFIG_FILENAME)
+const filePath = join(__dirname, '../config', YAML_COMMON_CONFIG_FILENAME)
 
-console.log('[ filePath ] >>:', filePath)
+const envPath = join(
+  __dirname,
+  '../config',
+  `config.${process.env.NODE_ENV || 'dev'}.yaml`,
+)
+
+const commonConfig = yaml.load(readFileSync(filePath, 'utf8'))
+
+const devConfig = yaml.load(readFileSync(envPath, 'utf8'))
 
 export default () => {
-  return yaml.load(readFileSync(filePath, 'utf8')) as Record<string, any>
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  return merge(commonConfig, devConfig) as Record<string, any>
 }
