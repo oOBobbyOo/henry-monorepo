@@ -41,3 +41,11 @@ pnpm run test:cov
 [node-config](https://github.com/node-config/node-config)
 
 [nestjs-config](https://github.com/nestjsx/nestjs-config)
+
+## Logger
+
+[Logger](https://docs.nestjs.com/techniques/logger#using-the-logger-for-application-logging)
+
+[nestjs-pino](https://github.com/iamolegga/nestjs-pino)
+
+[nest-winston](https://github.com/gremo/nest-winston)
