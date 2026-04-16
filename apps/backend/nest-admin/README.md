@@ -49,3 +49,9 @@ pnpm run test:cov
 [nestjs-pino](https://github.com/iamolegga/nestjs-pino)
 
 [nest-winston](https://github.com/gremo/nest-winston)
+
+## Authentication
+
+[Authentication](https://docs.nestjs.com/security/authentication)
+
+[passport](https://docs.nestjs.com/recipes/passport)
